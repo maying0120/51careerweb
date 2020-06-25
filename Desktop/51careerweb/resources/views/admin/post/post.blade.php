@@ -56,8 +56,20 @@
 
    @include('admin.layouts.sidebar')
 
+
+
+
+
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+
+
+
+
+
+
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -65,7 +77,12 @@
           <div class="col-sm-6">
             <h1>Text Editors</h1>
           </div>
+
+
           <div class="col-sm-6">
+
+
+
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Text Editors</li>
@@ -75,6 +92,68 @@
       </div><!-- /.container-fluid -->
     </section>
 
+
+
+   <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Quick Example</h3>
+                </div>
+                <!-- /.card-hea der -->
+                <!-- form start -->
+
+                @if (count($errors)>0)
+                    @foreach($errors->all() as $error)
+                     <p class="alert alert-danger">{{ $error }}</p>
+                    @endforeach
+                @endif
+
+
+                <form role="form" action="{{ route('post.store') }}" method="post">
+                {{ csrf_field() }}
+
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="title">post title</label>
+                      <input type="text" class="form-control" id="title" name="title" placeholder="title">
+
+
+
+                       <div class="form-group">
+                         <label for="subtitle">subtitle</label>
+                           <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="subtitle">
+
+
+
+                    <div class="form-group">
+                        <label for="slug">slug</label>
+                        <input type="text" class="form-control" id="slug" name="slug" placeholder="slug">
+
+                    <div class="form-group">
+                        <label for="image">image file input</label>
+                          <div class="input-group">
+                             <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="image" name="image">
+                               <label class="custom-file-label" for="image">Choose file</label>
+                               </div>
+                                <div class="input-group-append">
+                              <span class="input-group-text" id="">Upload</span>
+                            </div>
+                        </div>
+
+                      </div>
+
+
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="status">
+                      <label class="form-check-label" for="exampleCheck1">publish</label>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+
+
+              </div>
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -82,7 +161,7 @@
           <div class="card card-outline card-info">
             <div class="card-header">
               <h3 class="card-title">
-                Bootstrap WYSIHTML5
+                此处编辑正文
                 <small>Simple and fast</small>
               </h3>
               <!-- tools box -->
@@ -99,10 +178,12 @@
             <!-- /.card-header -->
             <div class="card-body pad">
               <div class="mb-3">
-                <textarea class="textarea" placeholder="Place some text here"
-                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                <textarea class="textarea" id="body" name="body"  placeholder="Place some text here" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
+<div class="card-footer">
 
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </div>
         </div>
@@ -111,6 +192,7 @@
       <!-- ./row -->
     </section>
     <!-- /.content -->
+     </form>
   </div>
   <!-- /.content-wrapper -->
   @include('admin.layouts.footer')

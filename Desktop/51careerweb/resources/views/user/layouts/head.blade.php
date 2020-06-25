@@ -1,17 +1,29 @@
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
 
-  <!-- Bootstrap core CSS -->
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+
+  <!-- Favicons -->
+  <link href="{{ asset('user/img/51careerlogo1.png') }}" rel="icon">
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fongoogleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="{{ asset('user/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('user/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('user/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('user/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('user/vendor/nivo-slider/css/nivo-slider.css') }}" rel="stylesheet">
+  <link href="{{ asset('user/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('user/vendor/venobox/venobox.css') }}" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
-  <link href="{{ asset('user/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('user/css/style.css') }}" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="{{ asset('user/css/clean-blog.min.css') }}" rel="stylesheet">
+</head>

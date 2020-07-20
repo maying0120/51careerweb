@@ -6,6 +6,23 @@
 <body data-spy="scroll" data-target="#navbar-example">
 
 
+
+
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'TjSQeyfYP6ipurbem';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+
+
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex">
@@ -44,6 +61,8 @@
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
+
+         <li><a href="{{ route('login') }}">Login</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->

@@ -16,17 +16,33 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/','User\HomeController@index');
+Route::group(['namespace'=> 'User'],function()
+{
+   Route::get('/','HomeController@index');
+   Route::get('post','PostController@index');
+   Route::get('post/{post}','PostController@post')->name('post');
+   Route::get('vedio','PostdetailController@index');
 
-Route::get('/','User\PostController@index')->name('post');
+   Route::get('post/tag/{tag}','PostController@tag')->name('tag');
+   Route::get('post/category/{category}','PostController@category')->name('category');
+   //Route::get('/post/detail','PostdetailController@index');
+  // Route::get('post/{slug}','PostdetailController@post')->name('post');
+ //Route::get('/','PostdetailController@index')->name('post');
 
+});
+
+//Route::get('/','User\HomeController@index');
+
+//Route::get('/','User\PostController@index')->name('post');
+
+//Route::get('/','User\PostController@index');
 
 /*Route::get('post', function () {
     return view('post');
 })->name('post');
 
 
-Route::get('admin/home', function () {
+Route::get('admin/post', function () {
     return view('admin/layouts/app');
 })->name('home');
 */
@@ -67,3 +83,7 @@ Route::resource('admin/category','admin\CategoryController');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

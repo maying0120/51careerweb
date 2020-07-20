@@ -14,9 +14,11 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.css') }}">
+  #<link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -108,7 +110,7 @@
                 @endif
 
 
-                <form role="form" action="{{ route('post.store') }}" method="post">
+                <form role="form" action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
                   <div class="card-body">
@@ -144,13 +146,35 @@
 
 
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="status">
+                      <input type="checkbox" name="status" value="1" class="form-check-input" id="status">
                       <label class="form-check-label" for="exampleCheck1">publish</label>
                     </div>
                   </div>
                   <!-- /.card-body -->
 
+     <div class="form-group">
+                        <label>select tags </label>
+                        <div class="select2-blue">
+                          <select class="select2" multiple="multiple" data-placeholder="Select a State" name="tags[]"
+                          data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                            @foreach($tags as $tag)
+                            <option value="{{ $tag->id}}"> {{$tag->name}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                      </div>
 
+  <div class="form-group">
+                        <label>select category </label>
+                        <div class="select2-blue">
+                          <select class="select2" multiple="multiple" data-placeholder="Select a State" name="categories[]"
+                          data-dropdown-css-class="select2-blue" style="width: 100%;">
+                         @foreach($categories as $category)
+                       <option value="{{ $category->id}}"> {{$category->name}}</option>
+                       @endforeach
+                          </select>
+                        </div>
+                      </div>
 
               </div>
 
@@ -178,12 +202,13 @@
             <!-- /.card-header -->
             <div class="card-body pad">
               <div class="mb-3">
-                <textarea class="textarea" id="body" name="body"  placeholder="Place some text here" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                <textarea class="textarea" id="editor1"  name="body"  placeholder="Place some text here" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
 <div class="card-footer">
 
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
+                  <a type="button" href='{{ route('post.index') }}' class="btn btn-warning">Back</a>
             </div>
           </div>
         </div>
@@ -214,12 +239,26 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/dist/js/demo.js') }}"></script>
 <!-- Summernote -->
-<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
+#<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script src="{{ asset('admin/plugins/select2/js/select2.full.min.js') }}"></script>
 <script>
   $(function () {
     // Summernote
-    $('.textarea').summernote()
+    //$('.textarea').summernote()
+    CKEDITOR.replace('editor1');
+    $('.textarea').wysihtml5();
   })
 </script>
+
+
+<script>
+  $(document).ready(function(){
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+})
+</script>
+
 </body>
 </html>

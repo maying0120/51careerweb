@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Editors</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   @include('admin.layouts.head')
+   <link rel="stylesheet"  href="{{ asset('admin/plugins/datatables/dataTables.bootstrap.css') }}">
+   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+   <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
-  <!-- summernote -->
-  <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.css') }}">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -65,17 +57,13 @@
   <div class="content-wrapper">
 
 
-
-
-
-
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Text Editors</h1>
+            <h1>category datatable</h1>
+
           </div>
 
 
@@ -97,19 +85,84 @@
 
 
 
-  <!-- /.content-wrapper -->
+        <div class="card">
+              <div class="card-header">
+                <h3 class="card-title"></h3>
+                  <a class='col-lg-offset-20 btn btn-success' href="{{ route('post.create') }} " > Add new post </a>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>post id</th>
+                    <th>title</th>
+                    <th>subtitle</th>
+                    <th>slug</th>
+                    <th>body</th>
+                    <th>created_at</th>
+                     <th>Edit</th>
+                     <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  @foreach ($posts as $post)
+                  <tr>
+                     <td>{{ $loop->index +1 }}</td>
+                     <td>{{ $post->title }}</td>
+                     <td>{{ $post->subtitle }}</td>
+                     <td>{{ $post->slug }}</td>
+                     <td>{{ $post->body }}</td>
+                      <td>{{ $post->created_at}}</td>
+                      <td><a href="{{ route('post.edit',$post->id) }}">  <i class="fas fa-pen"> </a></td>
+                      <td>
+                      <form id="delete-form-{{ $post->id }}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
+                      {{ csrf_field() }}
+                      {{ method_field('DELETE') }}
+                      </form>
+                      <a href="" onclick="
+                      if(confirm('Are you sure want to delete?'))
+                      {
+                      event.preventDefault();
+                      document.getElementById('delete-form-{{ $post->id }}').submit();
+                      }
+                      else
+                      {
+                      event.preventDefault();
+                      }" >   <i class="fas fa-trash"></i></a>
+                      </td>
+                  </tr>
 
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+                  @endforeach
+
+
+
+                  </tbody>
+                  <tfoot>
+               <tr>
+                <th>post id</th>
+             <th>title</th>
+              <th>subtitle</th>
+              <th>slug</th>
+              <th>body</th>
+               <th>created_at</th>
+                 <th>Edit</th>
+               <th>Delete</th>
+                 </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
 </div>
-<!-- ./wrapper -->
 
 
+
+<footer>
   @include('admin.layouts.footer')
+  </footer>
 <!-- jQuery -->
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
@@ -118,8 +171,31 @@
 <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/dist/js/demo.js') }}"></script>
-<!-- Summernote -->
-<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
+
+
+
+<script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 
 </body>
 </html>

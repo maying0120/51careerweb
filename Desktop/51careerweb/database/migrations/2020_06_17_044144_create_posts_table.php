@@ -20,9 +20,11 @@ class CreatePostsTable extends Migration
             $table->string('slug',100);
             $table->text('body',100);
             $table->integer('posted_by');
+            $table->boolean('status')->nullable;
            /* $table->integer('updated_at');
             $table->integer('created_at');*/
-            $table->string('image');
+            $table->string('image')->nullable;
+            $table->timestamps();
         });
     }
 

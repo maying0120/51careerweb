@@ -99,6 +99,57 @@
                             </div>
                         </div>
 
+
+
+                                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                                    <label for="phone" class="col-md-4 control-label">phone number</label>
+
+                                                    <div class="col-md-6">
+                                                        <input id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone') }}" required>
+
+                                                        @if ($errors->has('phone'))
+                                                            <span class="help-block">
+                                                                <strong>{{ $errors->first('phone') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                                                    <label for="country" class="col-md-4 control-label">country</label>
+
+                                                    <div class="col-md-6">
+                                                        <input id="country"  class="form-control" name="country"  required>
+
+
+                                                        @if ($errors->has('country'))
+                                                            <span class="help-block">
+                                                                <strong>{{ $errors->first('country') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                                                    <label for="state" class="col-md-4 control-label">state</label>
+
+                                                    <div class="col-md-6">
+                                                        <input id="state" class="form-control" name="state"  required>
+
+                                                        @if ($errors->has('state'))
+                                                            <span class="help-block">
+                                                                <strong>{{ $errors->first('state') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+
+
+
+
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 

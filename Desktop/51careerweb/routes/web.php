@@ -25,6 +25,11 @@ Route::group(['namespace'=> 'User'],function()
 
    Route::get('post/tag/{tag}','PostController@tag')->name('tag');
    Route::get('post/category/{category}','PostController@category')->name('category');
+
+
+   Route::get('job','JobController@index');
+   Route::get('job/detail','JobController@detail');
+
    //Route::get('/post/detail','PostdetailController@index');
   // Route::get('post/{slug}','PostdetailController@post')->name('post');
  //Route::get('/','PostdetailController@index')->name('post');

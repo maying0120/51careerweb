@@ -1,8 +1,3 @@
-
-@extends('layouts.app')
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Editors</title>
+  <title>51Career - Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,7 +21,19 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+    <style>
+      .login-box{
+        position: relative;
+        margin: auto;
+        align-self: center;
+      }
+
+      input[type="checkbox"]{
+        -webkit-appearance: checkbox;
+      }
+    </style>
 </head>
+
 
 <body data-spy="scroll" data-target="#navbar-example">
 
@@ -79,27 +86,12 @@
 </br>
 </br>
 </br>
-
-
-
-
-
-
-
-
-</br>
-</br>
 </br>
 
 
 
-@section('content')
 
-<body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
 
 
 
@@ -110,89 +102,76 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+          <div class="panel-body">
+              <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                  {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
 
-                             <div class="input-group mb-3">
-                                <input id="email" type="email" class="form-control" placeholder="email" name="email" value="{{ old('email') }}" required autofocus>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                     <span class="fas fa-envelope"></span>
-                                         </div>
-                                       </div>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                             <div class="input-group mb-3">
-                                <input id="password" type="password" class="form-control" placeholder="password" name="password" required>
+                       <div class="input-group mb-3">
+                          <input id="email" type="email" class="form-control" placeholder="email" name="email" value="{{ old('email') }}" required autofocus>
                           <div class="input-group-append">
-                            <div class="input-group-text">
-                              <span class="fas fa-lock"></span>
+                              <div class="input-group-text">
+                               <span class="fas fa-envelope"></span>
+                                   </div>
+                                 </div>
+
+                          @if ($errors->has('email'))
+                              <span class="help-block">
+                                  <strong>{{ $errors->first('email') }}</strong>
+                              </span>
+                          @endif
+                      </div>
+                  </div>
+
+                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      <label for="password" class="col-md-4 control-label">Password</label>
+
+                       <div class="input-group mb-3">
+                          <input id="password" type="password" class="form-control" placeholder="password" name="password" required>
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
+                          @if ($errors->has('password'))
+                              <span class="help-block">
+                                  <strong>{{ $errors->first('password') }}</strong>
+                              </span>
+                          @endif
+                      </div>
+                  </div>
+
+                   <div class="row">
+                            <div class="col-8">
+                              <div class="icheck-primary">
+                              <label>
+                                  <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                              </label>
+                                </div>
+                                        </div>
+                             <div class="col-4">
+                         <button type="submit" class="btn btn-outline-secondary btn-sm">Log in</button>
                             </div>
                           </div>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                      </div>
+                  </div>
 
-                         <div class="row">
-                                  <div class="col-8">
-                                    <div class="icheck-primary">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                      </div>
-                                              </div>
-                                   <div class="col-4">
-                               <button type="submit" class="btn btn-primary">登陆</button>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
+                          <a class="btn btn-link" href="{{ route('password.request') }}">
+                              Forgot your password?
+                          </a>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
+                          <a class="btn btn-link" href="{{route('register') }}">
+                             Sign up now
+                          </a>
 
+                  </div>
+            </div>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
+          </br>
+          </br>
 
-                                <a class="btn btn-link" href="{{route('register') }}">
-                                   注册成为新用户
-                                </a>
-
-                            </div>
-                        </div>
-                 </div>
-                        </div>
-                                         </div>
-
-
-</body>
   <footer>
 
  @include('user/layouts/footer')
@@ -204,7 +183,5 @@
 <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
-
-
-
-@endsection
+</body>
+</html>

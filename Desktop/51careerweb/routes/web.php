@@ -29,6 +29,7 @@ Route::group(['namespace'=> 'User'],function()
 
    Route::get('job','JobController@index');
    Route::get('job/detail','JobController@detail');
+   Route::get('info','InfoController@index');
 
    //Route::get('/post/detail','PostdetailController@index');
   // Route::get('post/{slug}','PostdetailController@post')->name('post');
@@ -72,15 +73,6 @@ Route::resource('admin/home','admin\HomeController');
 Route::resource('admin/post','admin\PostController');
 Route::resource('admin/tag','admin\TagController');
 Route::resource('admin/category','admin\CategoryController');
-
-
-
-
-
-
-
-
-
 
 
 

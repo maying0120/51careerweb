@@ -181,9 +181,6 @@
                                   <a href={{route('login') }} class="btn btn-primary">
                                       返回登陆
                                   </a>
-
-
-
                             </div>
                         </div>
                     </form>

@@ -72,6 +72,7 @@ Route::resource('admin/home','admin\HomeController');
 Route::resource('admin/post','admin\PostController');
 Route::resource('admin/tag','admin\TagController');
 Route::resource('admin/category','admin\CategoryController');
+Route::resource('admin/user','admin\UserController');
 
 
 

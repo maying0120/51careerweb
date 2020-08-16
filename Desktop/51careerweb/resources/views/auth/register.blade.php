@@ -17,8 +17,8 @@
   <!-- summernote -->
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
 
 <!-- Firebase function initializing and specs loading -->
@@ -136,45 +136,6 @@
                                   @endif
                               </div>
                           </div>
-
-
-
-
-
-
-                                                  <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                                                      <label for="country" class="col-md-4 control-label">country</label>
-
-                                                      <div class="col-md-6">
-                                                          <input id="country"  class="form-control" name="country"  required>
-
-
-                                                          @if ($errors->has('country'))
-                                                              <span class="help-block">
-                                                                  <strong>{{ $errors->first('country') }}</strong>
-                                                              </span>
-                                                          @endif
-                                                      </div>
-                                                  </div>
-
-
-                                                  <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
-                                                      <label for="state" class="col-md-4 control-label">state</label>
-
-                                                      <div class="col-md-6">
-                                                          <input id="state" class="form-control" name="state"  required>
-
-                                                          @if ($errors->has('state'))
-                                                              <span class="help-block">
-                                                                  <strong>{{ $errors->first('state') }}</strong>
-                                                              </span>
-                                                          @endif
-                                                      </div>
-                                                  </div>
-
-
-
-
 
                           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                               <label for="password" class="col-md-4 control-label">Password</label>

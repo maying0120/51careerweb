@@ -30,6 +30,9 @@ Route::group(['namespace'=> 'User'],function()
    Route::get('job','JobController@index');
    Route::get('job/detail','JobController@detail');
 
+   Route::get('/userProfileFill', function(){
+     return view('user/profile/fill');
+   });
    //Route::get('/post/detail','PostdetailController@index');
   // Route::get('post/{slug}','PostdetailController@post')->name('post');
  //Route::get('/','PostdetailController@index')->name('post');

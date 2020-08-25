@@ -55,7 +55,8 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     @include('user/layouts/header')
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
 </br>
 </br>

@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>51Career - Login</title>
+  <title>51Career-Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,8 +19,8 @@
   <!-- summernote -->
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <style>
       .login-box{
         position: relative;
@@ -39,50 +39,9 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex">
-
-      <div class="logo mr-auto">
-       <h1 class="text-light">
-
-        <a href="index.html"><img src="{{ asset('user/img/51careerlogo.png') }}" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-         <!-- <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>-->
-          <li class="active"><a href="#header">Home</a></li>
-         <li><a href="about.html">about</a></li>
-          <li><a href="service.html">Services</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#portfolio">Jobs</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-
-         <li><a href="{{ route('login') }}">Login</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-  </header><!-- End Header -->
+    @include('user/layouts/header')
+  </header>
+  <!-- End Header -->
 </br>
 </br>
 </br>
@@ -173,9 +132,9 @@
           </br>
 
   <footer>
-
- @include('user/layouts/footer')
-  </footer><!-- End  Footer -->
+   @include('user/layouts/footer')
+  </footer>
+  <!-- End  Footer -->
 
  @include('user/layouts/vendorjsfiles')
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>

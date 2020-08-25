@@ -3,7 +3,7 @@
 @include('user/layouts/head')
 <head>
   <meta charset="UTF-8">
-  <title>51Career - Signup</title>
+  <title>51Career-Signup</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">

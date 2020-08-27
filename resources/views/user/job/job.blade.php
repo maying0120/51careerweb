@@ -28,9 +28,50 @@
 			<link rel="stylesheet" href="{{ asset('user/job/css/animate.min.css') }}">
 			<link rel="stylesheet" href="{{ asset('user/job/css/owl.carousel.css') }}">
 			<link rel="stylesheet" href="{{ asset('user/job/css/main.css') }}">
+
+
+
+
+			<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+			</script>
+			<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+			<script>
+			   function getMessage(){
+				  $.ajax({
+					 type:'get',
+					 url:'{{ route('ajax') }}',
+					 data:filter,
+
+					 success:function(data){
+						dataset.jobs= data.jobs;
+					 }
+				  });
+			   }
+			   
+			</script>
+
+
+			<script>
+				filter ={
+						location:'', industry:'', exp_level:''
+				}
+			</script>
+
+			<script>
+				function feedfilter(){
+					filter.location = $("#default-selects").val();
+					filter.industry = $("#default-selects2").val();
+					filter.exp_level = $("#default-selects3").val();
+					getMessage();
+			}
+			</script>
+
+	  
+	  
 		</head>
 		<body>
-
+	   
 		<!--  <header id="header" id="home">
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
@@ -324,37 +365,39 @@
 							</div>
 
 							<div class="col-lg-2 form-cols">
-								<div class="default-select" id="default-selects">
-									<select>
-										<option value="1">area</option>
-										<option value="2">Dhaka</option>
-										<option value="3">Rajshahi</option>
-										<option value="4">Barishal</option>
-										<option value="5">Noakhali</option>
+								<div class="default-select" >
+									<select onchange="feedfilter()" id="default-selects" >
+										<option value="Location">Location</option>
+										<option value="New York">New York</option>
+										<option value="Los Angeles">Los Angeles</option>
+										<option value="Dallas">Dallas</option>
+										<option value="Brooklyn">Brooklyn</option>
+										<option value="Houston">Houston</option>
+										<option value="Chicago">Chicago</option>
 									</select>
 								</div>
 							</div>
 
 							<div class="col-lg-2 form-cols">
-								<div class="default-select" id="default-selects2">
-									<select>
-										<option value="1">Industry</option>
-										<option value="2">Medical</option>
-										<option value="3">Technology</option>
-										<option value="4">Goverment</option>
-										<option value="5">Development</option>
+								<div class="default-select" >
+									<select onchange="feedfilter()" id="default-selects2">
+										<option value="Industry">Industry</option>
+										<option value="Medical">Medical</option>
+										<option value="Technology">Technology</option>
+										<option value="Goverment">Goverment</option>
+										<option value="Development">Development</option>
 									</select>
 								</div>
 							</div>
 
 							<div class="col-lg-2 form-cols">
-								<div class="default-select" id="default-selects3">
-									<select>
-										<option value="1">Exp Level</option>
-										<option value="2">Internship</option>
-										<option value="3">Entry Level</option>
-										<option value="4">Associate</option>
-										<option value="5">Mid-senior level</option>
+								<div class="default-select" >
+									<select onchange="feedfilter()" id="default-selects3">
+										<option value="Exp Level">Exp Level</option>
+										<option value="Internship">Internship</option>
+										<option value="Entry Level">Entry Level</option>
+										<option value="Associate">Associate</option>
+										<option value="Mid-senior level">Mid-senior level</option>
 									</select>
 								</div>
 							</div>
@@ -370,7 +413,7 @@
 						</br>	</br>	</br>	</br>
 
 
-					<div class="row justify-content-center d-flex">
+					<div class="row justify-content-center d-flex" id = 'jobdetails'>
 						<div class="col-lg-8 post-list">
 							<ul class="cat-list">
 								<li><a href="#">Recent</a></li>
@@ -378,6 +421,8 @@
 								<li><a href="#">Intern</a></li>
 								<li><a href="#">Part</a></li>
 							</ul>
+
+						  <div v-for="job in jobs">	
 							<div class="single-post d-flex flex-row">
 								<div class="thumb">
 									<img src="img/post.png" alt="">
@@ -396,8 +441,8 @@
 								<div class="details">
 									<div class="title d-flex flex-row justify-content-between">
 										<div class="titles">
-											<a href="single.html"><h4>Software Engineer I</h4></a>
-											<h6>Entry level</h6>
+											<a href="single.html"><h4>${ job.position }</h4></a>
+											<h6>${ job.job_type }</h6>
 										</div>
 										<ul class="btns">
 											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
@@ -407,82 +452,16 @@
 									<p>
 										Solid foundation in software programming in one or more of the following languages: Java, Python, C, C++, Ruby, Scala, C#, Objective C
 									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span>location: new york city</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-									<p class="address"><span class="lnr lnr-clock"></span> 09/01/2020 </p>
+									<h5>Job Nature: ${ job.job_type }</h5>
+									<p class="address"><span class="lnr lnr-map"></span>location: ${ job.location }</p>
+									<p class="address"><span class="lnr lnr-database"></span> ${ job.salary }</p>
+									<p class="address"><span class="lnr lnr-clock"></span> ${ job.start_time }</p>
 								</div>
 							</div>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Software Engineer I</h4></a>
-											<h6>Entry level</h6>
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Solid foundation in software programming in one or more of the following languages: Java, Python, C, C++, Ruby, Scala, C#, Objective C
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> new york city</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-									<p class="address"><span class="lnr lnr-clock"></span> 09/01/2020 </p>
-								</div>
-							</div>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Software Engineer I</h4></a>
-											<h6>Entry level</h6>
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Solid foundation in software programming in one or more of the following languages: Java, Python, C, C++, Ruby, Scala, C#, Objective C
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> new york city</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-									<p class="address"><span class="lnr lnr-clock"></span> 09/01/2020 </p>
-								</div>
-							</div>
+						</div>
+						 
+							
+							
 
 
 							<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
@@ -557,6 +536,25 @@
 								</ul>
 							</div>
 
+
+							<script>
+								dataset = {
+									jobs:[
+										{position: '', location:'', salary:'', start_time:'',job_type:''},
+									
+									]
+								}
+
+								new Vue({
+								delimiters: ['${', '}'],
+								  el: '#jobdetails',
+								data: dataset
+								})
+								getMessage();
+								
+
+
+							</script>
 						<!--	<div class="single-slidebar">
 								<h4>Carrer Advice Blog</h4>
 								<div class="blog-list">

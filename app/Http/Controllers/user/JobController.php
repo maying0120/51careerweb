@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\user;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Model\job\Job;
 
 
 class JobController extends Controller
@@ -22,6 +23,25 @@ class JobController extends Controller
       return view('user/job/jobdetail');
      }
 
+     public function ajaxtest(Request $request){
+      $jobs = Job::all();
+      
+      
+      if ($request->input('location') != null && $request->input('location') != 'Location')  {
+         $jobs = $jobs->where('location',$request->input('location'));
+         
+      }
+      if ($request->input('industry') != null && $request->input('industry') != 'Industry') {
+         $jobs = $jobs->Where('industry',$request->input('industry'));
+      }
+
+      if ($request->input('exp_level') != null && $request->input('exp_level') != 'Exp Level') {
+         $jobs = $jobs->Where('exp_level',$request->input('exp_level'));
+      }
+
+
+      return response()->json(array('jobs'=> $jobs ), 200);
+   }
 
 
   }

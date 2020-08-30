@@ -29,6 +29,7 @@ Route::group(['namespace'=> 'User'],function()
 
    Route::get('job','JobController@index');
    Route::get('job/detail','JobController@detail');
+   Route::get('info','InfoController@index');
 
    Route::get('/userProfileEdit', function(){
      return view('user/profile/edit');
@@ -76,15 +77,6 @@ Route::resource('admin/post','admin\PostController');
 Route::resource('admin/tag','admin\TagController');
 Route::resource('admin/category','admin\CategoryController');
 Route::resource('admin/user','admin\UserController');
-
-
-
-
-
-
-
-
-
 
 
 

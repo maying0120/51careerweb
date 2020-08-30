@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
-    <link href="user/profile/style/css/style.css" rel="stylesheet">
+    <link href="user/profile/style/css/style2.css" rel="stylesheet">
     <link href="user/profile/style/css/external.min.css"  rel="stylesheet">
     <link href="user/profile/style/css/popup.css"  rel="stylesheet">
 </head>

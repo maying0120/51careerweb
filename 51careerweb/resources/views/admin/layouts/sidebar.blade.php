@@ -31,7 +31,7 @@
                   </a>
                    <ul>
                     <li class="nav-item">
-                      <a href="./index1.html" class="nav-link">
+                      <a href="{{route('user.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>注册信息</p>
                       </a>

@@ -31,7 +31,10 @@ Route::group(['namespace'=> 'User'],function()
    Route::get('job/detail','JobController@detail');
    Route::get('info','InfoController@index');
 
-   Route::resource('/userProfileEdit', 'UserController');
+   Route::get('/userProfileEdit', 'UserController@index');
+   Route::post('/experienceStore', 'ExperienceController@store');
+   Route::post('/educationStore', 'EducationController@store');
+   Route::post('/showcaseStore', 'ShowcaseController@store');
    //Route::get('/post/detail','PostdetailController@index');
   // Route::get('post/{slug}','PostdetailController@post')->name('post');
  //Route::get('/','PostdetailController@index')->name('post');

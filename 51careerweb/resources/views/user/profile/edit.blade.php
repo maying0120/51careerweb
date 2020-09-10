@@ -332,127 +332,22 @@
                 <div class="profile_box" id="workExperience">
                     <h2>工作经历  <span> （required）</span></h2>
                     <span class="c_add dn"></span>
-                    <div class="experienceShow dn">
-                        <form class="experienceForm borderBtm dn">
-                            <table>
-                                <tbody><tr>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <input type="text" placeholder="公司名称" name="companyName" class="companyName">
-                                    </td>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="positionName">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <div class="fl">
-                                            <input type="hidden" class="companyYearStart" value="" name="companyYearStart">
-                                            <input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart">
-                                            <div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
-
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-                                            <input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart">
-                                            <div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </td>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <div class="fl">
-                                            <input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-                                            <input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd">
-                                            <div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <ul>
-                                                        <li>2020</li>
-                                                        <li>2019</li>
-                                                        <li>2018</li>
-                                                        <li>2017</li>
-                                                        <li>2016</li>
-                                                        <li>2015</li>
-                                                        <li>2014</li>
-                                                        <li>2013</li>
-                                                        <li>2012</li>
-                                                        <li>2011</li>
-                                                        <li>2010</li>
-
-                                                    </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-                                            <input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd">
-                                            <div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan="3">
-                                        <input type="submit" value="保 存" class="btn_profile_save">
-                                        <a class="btn_profile_cancel" >取 消</a>
-                                    </td>
-                                </tr>
-                                </tbody></table>
-                            <input type="hidden" class="expId" value="">
-                        </form><!--end .experienceForm-->
-
-                        <ul class="wlist clearfix">
-                        </ul>
-                    </div><!--end .experienceShow-->
                     <div class="experienceEdit">
-                        <form class="experienceForm">
+                        <form class="experienceForm" method="POST" action="/experienceStore">
+                          {{ csrf_field() }}
                             <table>
                                 <tbody><tr>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="公司名称" name="companyName" class="companyName">
+                                        <input type="text" placeholder="Company name" name="companyName" class="companyName">
                                     </td>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="positionName">
+                                        <input type="text" placeholder="Your title" name="title" class="companyTitle">
                                     </td>
                                 </tr>
                                 <tr>
@@ -461,32 +356,7 @@
                                     </td>
                                     <td>
                                         <div class="fl">
-                                            <input type="hidden" class="companyYearStart" value="" name="companyYearStart">
-                                            <input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart">
-                                            <div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-                                            <input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart">
-                                            <div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
-                                                </ul>
-                                            </div>
+                                            <input type="date" class="companyStartDate" value="" name="startDate">
                                         </div>
                                         <div class="clear"></div>
                                     </td>
@@ -495,46 +365,26 @@
                                     </td>
                                     <td>
                                         <div class="fl">
-                                            <input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-                                            <input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd">
-                                            <div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>至今</li>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-                                            <input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd">
-                                            <div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
-                                                </ul>
-                                            </div>
+                                            <input type="date" class="companyEndDate" value="" name="endDate">
                                         </div>
                                         <div class="clear"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"></td>
+                                    <td colspan="3">
+                                        <textarea class="workDescription s_textarea" name="description" placeholder="Work description"></textarea>
+                                        <div class="word_count">你还可以输入 <span>500</span> 字</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td colspan="3">
-                                        <input type="submit" value="保 存" class="btn_profile_save">
-                                        <a class="btn_profile_cancel" >取 消</a>
+                                        <input type="submit" value="Save" class="btn_profile_save">
+                                        <a class="btn_profile_cancel" >Cancel</a>
                                     </td>
                                 </tr>
                                 </tbody></table>
-                            <input type="hidden" class="expId" value="">
                         </form><!--end .experienceForm-->
                     </div><!--end .experienceEdit-->
 
@@ -554,20 +404,21 @@
                         </ul>
                     </div><!--end .projectShow-->
                     <div class="projectEdit">
-                        <form class="projectForm">
+                        <form class="projectForm" method="POST" action="/experienceStore">
+                          {{ csrf_field() }}
                             <table>
                                 <tbody><tr>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="项目名称" name="projectName" class="projectName">
+                                        <input type="text" placeholder="Project name" name="projectName" class="projectName">
                                     </td>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="担任职务，如：产品负责人" name="thePost" class="thePost">
+                                        <input type="text" placeholder="Your role" name="title" class="projectTitle">
                                     </td>
                                 </tr>
                                 <tr>
@@ -576,32 +427,7 @@
                                     </td>
                                     <td>
                                         <div class="fl">
-                                            <input type="hidden" class="projectYearStart" value="" name="projectYearStart">
-                                            <input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_projectYearStart">
-                                            <div class="box_projectYearStart  boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="projectMonthStart" value="" name="projectMonthStart">
-                                            <input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_projectMonthStart">
-                                            <div style="display: none;" class="box_projectMonthStart boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
-                                                </ul>
-                                            </div>
+                                            <input type="date" placeholder="start_date" class="projectStartDate" value="" name="startDate">
                                         </div>
                                         <div class="clear"></div>
                                     </td>
@@ -610,33 +436,7 @@
                                     </td>
                                     <td>
                                         <div class="fl">
-                                            <input type="hidden" class="projectYearEnd" value="" name="projectYearEnd">
-                                            <input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_projectYearEnd">
-                                            <div class="box_projectYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>至今</li>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="projectMonthEnd" value="" name="projectMonthEnd">
-                                            <input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_projectMonthEnd">
-                                            <div style="display: none;" class="box_projectMonthEnd boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li>
-                                                </ul>
-                                            </div>
+                                            <input type="date" placeholder="end_date" class="projectEndDate" value="" name="endDate">
                                         </div>
                                         <div class="clear"></div>
                                     </td>
@@ -644,7 +444,7 @@
                                 <tr>
                                     <td valign="top"></td>
                                     <td colspan="3">
-                                        <textarea class="projectDescription s_textarea" name="projectDescription" placeholder="项目描述"></textarea>
+                                        <textarea class="projectDescription s_textarea" name="description" placeholder="Project description"></textarea>
                                         <div class="word_count">你还可以输入 <span>500</span> 字</div>
                                     </td>
                                 </tr>
@@ -652,8 +452,8 @@
                                 <tr>
                                     <td valign="top"></td>
                                     <td colspan="3">
-                                        <input type="submit" value="保 存" class="btn_profile_save">
-                                        <a class="btn_profile_cancel" >取 消</a>
+                                        <input type="submit" value="Save" class="btn_profile_save">
+                                        <a class="btn_profile_cancel" >Cancel</a>
                                     </td>
                                 </tr>
                                 </tbody></table>
@@ -671,123 +471,28 @@
                 <div class="profile_box" id="educationalBackground">
                     <h2>教育背景<span>（required）</span></h2>
                     <span class="c_add dn"></span>
-                    <div class="educationalShow dn">
-                        <form class="educationalForm borderBtm dn">
-                            <table>
-                                <tbody><tr>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <input type="text" placeholder="学校名称" name="schoolName" class="schoolName">
-                                    </td>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <input type="hidden" class="degree" value="" name="degree">
-                                        <input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree">
-                                        <div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
-                                            <ul>
-
-                                                <li>Bachelor</li>
-                                                <li>Master</li>
-                                                <li>PhD</li>
-                                                <li>Other</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <input type="text" placeholder="专业名称" name="professionalName" class="professionalName">
-                                    </td>
-                                    <td valign="top">
-                                        <span class="redstar">*</span>
-                                    </td>
-                                    <td>
-                                        <div class="fl">
-                                            <input type="hidden" class="schoolYearStart" value="" name="schoolYearStart">
-                                            <input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart">
-                                            <div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fl">
-                                            <input type="hidden" class="schoolYearEnd" value="" name="schoolYearEnd">
-                                            <input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd">
-                                            <div style="display: none;" class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn">
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan="3">
-                                        <input type="submit" value="保 存" class="btn_profile_save">
-                                        <a class="btn_profile_cancel">取 消</a>
-                                    </td>
-                                </tr>
-                                </tbody></table>
-                            <input type="hidden" class="eduId" value="">
-                        </form><!--end .educationalForm-->
-
-                        <ul class="elist clearfix">
-                        </ul>
-                    </div><!--end .educationalShow-->
                     <div class="educationalEdit">
-                        <form class="educationalForm">
+                        <form class="educationalForm" method="POST" action="/educationStore">
+                          {{ csrf_field() }}
                             <table>
                                 <tbody><tr>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="学校名称" name="schoolName" class="schoolName">
+                                        <input type="text" placeholder="School name" name="schoolName" class="schoolName">
                                     </td>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="hidden" class="degree" value="" name="degree">
-                                        <input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree">
-                                        <div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
-                                            <ul>
-                                                <li>Bachelor</li>
-                                                <li>Master</li>
-                                                <li>PhD</li>
-                                                <li>Other</li>
-                                            </ul>
-                                        </div>
+                                        <select class="degree" name="degree">
+                                          <option value="" disabled selected>Degree</option>
+                                          <option value="Bachelor">Bachelor</option>
+                                          <option value="Master">Master</option>
+                                          <option value="Phd">Phd</option>
+                                          <option value="Other">Other</option>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
@@ -795,49 +500,17 @@
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="专业名称" name="professionalName" class="professionalName">
+                                        <input type="text" placeholder="Major" name="major" class="major">
                                     </td>
                                     <td valign="top">
                                         <span class="redstar">*</span>
                                     </td>
                                     <td>
                                         <div class="fl">
-                                            <input type="hidden" class="schoolYearStart" value="" name="schoolYearStart">
-                                            <input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart">
-                                            <div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
+                                            <input type="date" class="schoolStartDate" value="" name="startDate">
                                         </div>
                                         <div class="fl">
-                                            <input type="hidden" class="schoolYearEnd" value="" name="schoolYearEnd">
-                                            <input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd">
-                                            <div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
-                                                <ul>
-                                                    <li>2020</li>
-                                                    <li>2019</li>
-                                                    <li>2018</li>
-                                                    <li>2017</li>
-                                                    <li>2016</li>
-                                                    <li>2015</li>
-                                                    <li>2014</li>
-                                                    <li>2013</li>
-                                                    <li>2012</li>
-                                                    <li>2011</li>
-                                                    <li>2010</li>
-                                                </ul>
-                                            </div>
+                                            <input type="date" class="schoolEndDate" value="" name="endDate">
                                         </div>
                                         <div class="clear"></div>
                                     </td>
@@ -901,16 +574,17 @@
                         </ul>
                     </div><!--end .workShow-->
                     <div class="workEdit">
-                        <form class="workForm">
+                        <form class="workForm" method="POST" action="/showcaseStore">
+                          {{ csrf_field() }}
                             <table>
                                 <tbody><tr>
                                     <td>
-                                        <input type="text" placeholder="请输入作品链接" name="workLink" class="workLink">
+                                        <input type="text" placeholder="Enter link to your work" name="link" class="showcase-link">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <textarea maxlength="100" class="workDescription s_textarea" name="workDescription" placeholder="请输入说明文字"></textarea>
+                                        <textarea maxlength="100" class="showcaseDescription s_textarea" name="description" placeholder="Enter description of the work"></textarea>
                                         <div class="word_count">你还可以输入 <span>100</span> 字</div>
                                     </td>
                                 </tr>
@@ -1067,7 +741,7 @@
 
     <script src="user/profile/js/userProfile.js"></script>
 
-    <script src="user/profile/style/js/profile.min.js"></script>
+    <!-- <script src="user/profile/style/js/profile.min.js"></script>
     <script async="" src="user/profile/style/js/conversion.js"></script>
     <script src="user/profile/style/js/jquery.1.10.1.min.js"></script>
     <script src="user/profile/style/js/jquery.lib.min.js" ></script>
@@ -1078,7 +752,7 @@
     <script src="user/profile/style/js/ajaxCross.json" charset="UTF-8"></script>
     <script src="user/profile/style/js/Chart.min.js"></script>
     <script src="user/profile/style/js/core.min.js"></script>
-    <script src="user/profile/style/js/popup.min.js"></script>
+    <script src="user/profile/style/js/popup.min.js"></script> -->
 
 
 

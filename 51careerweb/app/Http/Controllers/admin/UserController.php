@@ -27,8 +27,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-          $user =  user::where('id',$id)->first();
-          return view('admin/user/edit',compact('user'));
+        $user =  user::where('id',$id)->first();
+        return view('admin/user/edit',compact('user'));
     }
 
     /**
@@ -45,7 +45,6 @@ class UserController extends Controller
         $user->save();
 
         return redirect(route('user.index'));
-
     }
 
     /**

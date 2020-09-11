@@ -11,6 +11,7 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
+
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -48,7 +49,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>user datatable</h1>
+            <h1>education datatable</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -59,51 +60,165 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    <div class="education card">
+      <!-- /.card-header -->
+      <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>id</th>
+              <th>user</th>
+              <th>school</th>
+              <th>degree</th>
+              <th>major</th>
+              <th>start_date</th>
+              <th>end_date</th>
+              <th>edit</th>
+              <th>delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($educations as $education)
+            <tr>
+              <td>{{ $education->id }}</td>
+              <td>{{ $education->user }}</td>
+              <td>{{ $education->school }}</td>
+              <td>{{ $education->degree }}</td>
+              <td>{{ $education->major }}</td>
+              <td>{{ $education->start_date}}</td>
+              <td>{{ $education->end_date }}</td>
+            </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>project datatable</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <div class="card">
+      <!-- /.card-header -->
+      <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>user</th>
+                <th>project</th>
+                <th>title</th>
+                <th>start_date</th>
+                <th>end_date</th>
+                <th>description</th>
+                <!-- <th>edit</th>
+                <th>delete</th> -->
+              </tr>
+              </thead>
+              <tbody>
+              @foreach ($projects as $project)
+              <tr>
+                <td>{{ $project->id }}</td>
+                <td>{{ $project->user }}</td>
+                <td>{{ $project->project }}</td>
+                <td>{{ $project->title }}</td>
+                <td>{{ $project->start_date}}</td>
+                <td>{{ $project->end_date }}</td>
+                <td>{{ $project->description }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>work datatable</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <div class="card">
+      <!-- /.card-header -->
+      <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>user</th>
+                <th>company</th>
+                <th>title</th>
+                <th>start_date</th>
+                <th>end_date</th>
+                <th>description</th>
+                <!-- <th>edit</th>
+                <th>delete</th> -->
+              </tr>
+              </thead>
+              <tbody>
+              @foreach ($works as $work)
+              <tr>
+                <td>{{ $work->id }}</td>
+                <td>{{ $work->user }}</td>
+                <td>{{ $work->project }}</td>
+                <td>{{ $work->title }}</td>
+                <td>{{ $work->start_date}}</td>
+                <td>{{ $work->end_date }}</td>
+                <td>{{ $work->description }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>showcase datatable</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th>user id</th>
-              <th>user name</th>
-              <th>user phone</th>
-              <th>user email</th>
-              <th>user signup time</th>
-              <th>user status</th>
-              <th>edit</th>
-              <th>delete</th>
+              <th>id</th>
+              <th>user</th>
+              <th>link</th>
+              <th>description</th>
+              <!-- <th>edit</th>
+              <th>delete</th> -->
             </tr>
             </thead>
             <tbody>
-            @foreach ($users as $user)
+            @foreach ($showcases as $showcase)
             <tr>
-               <td>{{ $user->id }}</td>
-               <td>{{ $user->name }}</td>
-               <td>{{ $user->phone }}</td>
-               <td>{{ $user->email }}</td>
-               <td>{{ $user->created_at}}</td>
-               <td>{{ $user->status }}</td>
-               <td><a href="{{ route('user.edit',$user->id) }}">
-                 <i class="fas fa-pen"></i>
-               </a></td>
-               <td>
-                 <form id="delete-form-{{ $user->id }}" method="post" action="{{ route('user.destroy',$user->id) }}" style="display: none">
-                   {{ csrf_field() }} {{ method_field('DELETE') }}
-                 </form>
-                 <a href="" onclick="
-                   if(confirm('Are you sure want to delete?'))
-                   {
-                   event.preventDefault();
-                   document.getElementById('delete-form-{{ $user->id }}').submit();
-                   }
-                   else
-                   {
-                   event.preventDefault();
-                   }" >
-                   <i class="fas fa-trash"></i>
-                 </a>
-               </td>
+              <td>{{ $showcase->id }}</td>
+              <td>{{ $showcase->user }}</td>
+              <td><a href="http://{{ $showcase->link }}">{{ $showcase->link }}</a></td>
+              <td>{{ $showcase->description }}</td>
             </tr>
             @endforeach
             </tbody>

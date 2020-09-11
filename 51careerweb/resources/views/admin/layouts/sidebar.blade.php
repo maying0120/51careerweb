@@ -37,7 +37,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="./index2.html" class="nav-link">
+                      <a href="{{route('profile.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>求职信息</p>
                       </a>

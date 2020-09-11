@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\user\user;
 
 class UserController extends Controller
 {
@@ -15,8 +15,15 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
-        return view('user/profile/edit',compact('user'));
+      $user = auth()->user();
+
+      // Select data specific to user
+      $projects = DB::select("SELECT * FROM experiences WHERE user={$user->id} AND company IS NULL");
+      $works = DB::select("SELECT * FROM experiences WHERE user={$user->id} AND project IS NULL");
+      $educations = DB::select("SELECT * FROM educations WHERE user={$user->id}");
+      $showcases = DB::select("SELECT * FROM showcases WHERE user={$user->id}");
+
+      return view('user/profile/edit',compact('user', 'projects', 'works', 'educations', 'showcases'));
     }
 
 }

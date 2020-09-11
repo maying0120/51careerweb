@@ -48,8 +48,7 @@
                     <h2>基本信息</h2>
                     <span class="c_edit"></span>
                     <div class="basicShow">
-                      <span>{{ $user->name }} |  女 |  Master | New York<br>
-                        {{ $user->phone }} | {{ $user->email }}<br>
+                      <span>{{ $user->name }} | {{ $user->phone }} | {{ $user->email }}<br>
                       </span>
                       <div class="m_portrait">
                           <div></div>
@@ -332,6 +331,13 @@
                 <div class="profile_box" id="workExperience">
                     <h2>工作经历  <span> （required）</span></h2>
                     <span class="c_add dn"></span>
+                    <div>
+                      <ul class="slist clearfix">
+                        @foreach ($works as $work)
+                        <li>{{ $work->company }} | {{ $work->title }} | {{ $work->start_date }} | {{ $work->end_date }} | {{ $work->description }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
                     <div class="experienceEdit">
                         <form class="experienceForm" method="POST" action="/experienceStore">
                           {{ csrf_field() }}
@@ -399,9 +405,12 @@
                 <div class="profile_box" id="projectExperience">
                     <h2>项目经验</h2>
                     <span class="c_add dn"></span>
-                    <div class="projectShow dn">
-                        <ul class="plist clearfix">
-                        </ul>
+                    <div class="projectShow">
+                      <ul class="slist clearfix">
+                        @foreach ($projects as $project)
+                        <li>{{ $project->project }} | {{ $project->title }} | {{ $project->start_date }} | {{ $project->end_date }} | {{ $project->description }} </li>
+                        @endforeach
+                      </ul>
                     </div><!--end .projectShow-->
                     <div class="projectEdit">
                         <form class="projectForm" method="POST" action="/experienceStore">
@@ -471,6 +480,13 @@
                 <div class="profile_box" id="educationalBackground">
                     <h2>教育背景<span>（required）</span></h2>
                     <span class="c_add dn"></span>
+                    <div class="educationalShow">
+                      <ul class="slist clearfix">
+                        @foreach ($educations as $education)
+                        <li>{{ $education->school }} | {{ $education->degree }} | {{ $education->major }} | {{ $education->start_date }} | {{ $education->end_date }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
                     <div class="educationalEdit">
                         <form class="educationalForm" method="POST" action="/educationStore">
                           {{ csrf_field() }}
@@ -569,8 +585,12 @@
                 <div class="profile_box" id="worksShow">
                     <h2>作品展示</h2>
                     <span class="c_add dn"></span>
-                    <div class="workShow dn">
+                    <div class="workShow">
                         <ul class="slist clearfix">
+                          @foreach ($showcases as $showcase)
+                          <li> <a href="http://{{$showcase->link}}"> {{ $showcase->link }}</a> |
+                            {{ $showcase->description }}</li>
+                          @endforeach
                         </ul>
                     </div><!--end .workShow-->
                     <div class="workEdit">

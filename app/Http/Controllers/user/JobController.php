@@ -7,7 +7,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\job\Job;
 
-
 class JobController extends Controller
 {
 
@@ -24,23 +23,25 @@ class JobController extends Controller
      }
 
      public function ajaxtest(Request $request){
-      $jobs = Job::all();
       
+      $curtime = date('Y-m-d' , time());
+      $jobs = Job::where('expire_time', '>=', $curtime );
       
-      if ($request->input('location') != null && $request->input('location') != 'Location')  {
+
+
+      if ($request->input('location') != null && $request->input('location') != 'Location' )  {
          $jobs = $jobs->where('location',$request->input('location'));
          
       }
       if ($request->input('industry') != null && $request->input('industry') != 'Industry') {
-         $jobs = $jobs->Where('industry',$request->input('industry'));
+         $jobs = $jobs->Where('industry', 'like' , '%'.$request->input('industry').'%');
       }
 
       if ($request->input('exp_level') != null && $request->input('exp_level') != 'Exp Level') {
          $jobs = $jobs->Where('exp_level',$request->input('exp_level'));
       }
-
-
-      return response()->json(array('jobs'=> $jobs ), 200);
+      
+      return response()->json(array('jobs'=> $jobs->get()), 200);
    }
 
 

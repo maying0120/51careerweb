@@ -62,7 +62,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Jobs</h1>
+            <h1>category datatable</h1>
 
           </div>
 
@@ -88,76 +88,28 @@
         <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
-                  <a class='col-lg-offset-20 btn btn-success' href="{{ route('job_create') }} " > Add new job </a>
+                  <a class='col-lg-offset-20 btn btn-success' href="{{ route('skill_create') }} " > Add new skill </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>job id</th>
-                    <th>position</th>
-                    <th>country</th>
-                    <th>state</th>
-                    <th>city</th>
-                    <th>job type</th>
-                    <th>salary</th>
-                    <th>company size</th>
-                    <th>company</th>
-                    <th>start time</th>
-                     <th>end time</th>
-                     <th>hire time</th>
-                     <th>major</th>
-                     <th>visa status</th>
-                     <th>english skill</th>
-                     <th>skill</th>
-                     <th>industry</th>
-                     <th>exp_level</th>
-                     <th>edit</th>
-                     <th>delete</th>
+                    <th>skill id</th>
+                    <th>skill name</th>
+                    <th>edit</th>
+                    <th>delete</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach ($jobs as $job)
+                  @foreach ($skills as $skill)
                   <tr>
-                     <td>{{ $job->id}}</td>
-                     <td>{{ $job->position}}</td>
-                     <td>{{ $job->country}}</td>
-                     <td>{{ $job->state}}</td>
-                     <td>{{ $job->city}}</td>
-                     <td>{{ $job->job_type}}</td>
-                     <td>{{ $job->salary}}</td>
-                     <td>{{ $job->company_size}}</td>
-                     <td>{{ $job->company}}</td>
-                     <td>{{ $job->start_time}}</td>
-                     <td>{{ $job->end_time}}</td>
-                     <td>{{ $job->hire_time}}</td>
-                     <td>{{ $job->major}}</td>
-                     <td>{{ $job->visa_status}}</td>
-                     <td>{{ $job->english_level}}</td>
-                     <td>{{ $job->skill}}</td>
-                     <td>{{ $job->industry}}</td>
-                     <td>{{ $job->exp_level}}</td>
+                     <td>{{ $skill->id }}</td>
+                     <td>{{ $skill->name }}</td>
+                      <td><a href="{{ route('skill_edit',$skill->id) }}">  <i class="fas fa-pen"> </a></td>
+                       <td>
+                        <a href="{{ route('skill_delete',$skill->id) }}">  <i class="fas fa-trash"> </a></td>
 
-                     <td><a href="{{ route('job_edit',$job->id) }}">  <i class="fas fa-pen"> </a></td>
-                     <td>
-                      <a href="{{ route('job_delete',$job->id) }}">  <i class="fas fa-trash"> </a></td>
-                    
-                      {{-- <form id="delete-form-{{ $post->id }}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
-                      {{ csrf_field() }}
-                      {{ method_field('DELETE') }}
-                      </form>
-                      <a href="" onclick="
-                      if(confirm('Are you sure want to delete?'))
-                      {
-                      event.preventDefault();
-                      document.getElementById('delete-form-{{ $post->id }}').submit();
-                      }
-                      else
-                      {
-                      event.preventDefault();
-                      }" >   <i class="fas fa-trash"></i></a>
-                      </td> --}}
                   </tr>
 
 
@@ -167,28 +119,12 @@
 
                   </tbody>
                   <tfoot>
-               <tr>
-                <th>job id</th>
-                <th>position</th>
-                <th>country</th>
-                <th>state</th>
-                <th>city</th>
-                <th>job type</th>
-                <th>salary</th>
-                <th>company size</th>
-                <th>company</th>
-                <th>start time</th>
-                 <th>end time</th>
-                 <th>hire time</th>
-                 <th>major</th>
-                 <th>visa status</th>
-                 <th>english skill</th>
-                 <th>skill</th>
-                 <th>industry</th>
-                 <th>exp_level</th>
-                 <th>edit</th>
-                 <th>delete</th>
-                 </tr>
+                  <tr>
+                    <th>skill id</th>
+                     <th>skill name</th>
+                            <td>Edit</td>
+                           <td>Delete</td>
+                  </tr>
                   </tfoot>
                 </table>
               </div>
@@ -218,7 +154,7 @@
 <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-{{-- <script>
+<script>
   $(function () {
     $("#example1").DataTable({
       "responsive": true,
@@ -234,7 +170,7 @@
       "responsive": true,
     });
   });
-</script> --}}
+</script>
 
 </body>
 </html>

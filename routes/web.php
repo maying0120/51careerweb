@@ -47,7 +47,48 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/admin/job/create', 'JobController@create')->name("job_create");
     Route::get('/admin/job/delete/{jobid}', 'JobController@delete')->name("job_delete");
 
+
+
+    Route::get('/admin/skill/skill', 'SkillController@index')->name("skill_view");
+    Route::get('/admin/skill/edit/{skillid}', 'SkillController@edit')->name("skill_edit");
+    Route::post('/admin/skill/add', 'SkillController@add')->name("skill_add");
+    Route::get('/admin/skill/create', 'SkillController@create')->name("skill_create");
+    Route::get('/admin/skill/delete/{skillid}', 'SkillController@delete')->name("skill_delete");
+
+
+    Route::get('/admin/industry/industry', 'IndustryController@index')->name("industry_view");
+    Route::get('/admin/industry/edit/{industryid}', 'IndustryController@edit')->name("industry_edit");
+    Route::post('/admin/industry/add', 'IndustryController@add')->name("industry_add");
+    Route::get('/admin/industry/create', 'IndustryController@create')->name("industry_create");
+    Route::get('/admin/industry/delete/{industryid}', 'IndustryController@delete')->name("industry_delete");
+
+    Route::get('/admin/major/major', 'MajorController@index')->name("major_view");
+    Route::get('/admin/major/edit/{majorid}', 'MajorController@edit')->name("major_edit");
+    Route::post('/admin/major/add', 'MajorController@add')->name("major_add");
+    Route::get('/admin/major/create', 'MajorController@create')->name("major_create");
+    Route::get('/admin/major/delete/{majorid}', 'MajorController@delete')->name("major_delete");
+
+
+
 });
+
+
+Route::group(['namespace' => 'location'], function () {
+    Route::get('/getcountry','LocationController@getCountry')->name('getcountry');
+    Route::get('/getstate','LocationController@getState')->name('getstate');
+    Route::get('/getcity','LocationController@getCity')->name('getcity');
+
+});
+
+
+
+
+Route::get('user/job/t1', 'TestController@t1');
+Route::get('user/job/t2', 'TestController@t2');
+Route::get('user/job/t3', 'TestController@t3');
+
+
+
 
 
 

@@ -31,13 +31,13 @@
                   </a>
                    <ul>
                     <li class="nav-item">
-                      <a href="{{route('user.index')}}" class="nav-link">
+                      <a href="{{ route('user.index') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>注册信息</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{route('profile.index')}}" class="nav-link">
+                      <a href="/admin/profile/0" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>求职信息</p>
                       </a>

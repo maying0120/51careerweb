@@ -34,4 +34,51 @@ class ExperienceController extends Controller
 
     return back();
   }
+
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function edit($id)
+  {
+      $experience = experience::where('id',$id)->first();
+      if ($experience->company) $name = $experience->company;
+      if ($experience->project) $name = $experience->project;
+      return view('user/profile/experience',compact('experience', 'name'));
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+      $experience = experience::find($id);
+      if ($experience->company) $experience->company = $request->companyName;
+      if ($experience->project) $experience->project = $request->projectName;
+      $experience->title = $request->title;
+      $experience->start_date = $request->startDate;
+      $experience->end_date = $request->endDate;
+      $experience->description = $request->description;
+      $experience->save();
+
+      return redirect('profile');
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+      experience::where('id',$id)->delete();
+      return redirect()->back();
+  }
 }

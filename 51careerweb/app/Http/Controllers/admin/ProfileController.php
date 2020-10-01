@@ -16,14 +16,14 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         $users = user::all();
         $educations = education::all();
         $showcases = showcase::all();
         $projects = DB::select("SELECT * FROM experiences WHERE company IS NULL");
         $works = DB::select("SELECT * FROM experiences WHERE project IS NULL");
-        return view('admin/profile/profile',compact('users', 'educations', 'showcases', 'projects', 'works'));
+        return view('admin/profile/profile',compact('users', 'educations', 'showcases', 'projects', 'works', 'id'));
     }
 
 }

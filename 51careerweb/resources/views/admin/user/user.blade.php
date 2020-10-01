@@ -105,8 +105,8 @@
                   <tbody>
                   @foreach ($users as $user)
                   <tr>
-                     <td>{{ $user->id }}</td>
-                     <td>{{ $user->name }}</td>
+                     <td><a href="profile/{{ $user->id }}">{{ $user->id }}</a></td>
+                     <td><a href="profile/{{ $user->id }}">{{ $user->name }}</a></td>
                      <td>{{ $user->phone }}</td>
                      <td>{{ $user->email }}</td>
                      <td>{{ $user->created_at}}</td>

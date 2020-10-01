@@ -44,6 +44,11 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    <div style="text-align: center; padding-top: 15px">
+      <p>Search database by user
+        <input type="text" class="filter" data-column="1"/>
+      </p>
+    </div>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -63,7 +68,7 @@
     <div class="education card">
       <!-- /.card-header -->
       <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="education-table" class="table table-bordered table-striped">
             <thead>
             <tr>
               <th>id</th>
@@ -73,8 +78,8 @@
               <th>major</th>
               <th>start_date</th>
               <th>end_date</th>
-              <th>edit</th>
-              <th>delete</th>
+              <!-- <th>edit</th>
+              <th>delete</th> -->
             </tr>
             </thead>
             <tbody>
@@ -109,7 +114,7 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="project-table" class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>id</th>
@@ -155,7 +160,7 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="company-table" class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>id</th>
@@ -174,9 +179,9 @@
               <tr>
                 <td>{{ $work->id }}</td>
                 <td>{{ $work->user }}</td>
-                <td>{{ $work->project }}</td>
+                <td>{{ $work->company }}</td>
                 <td>{{ $work->title }}</td>
-                <td>{{ $work->start_date}}</td>
+                <td>{{ $work->start_date }}</td>
                 <td>{{ $work->end_date }}</td>
                 <td>{{ $work->description }}</td>
               </tr>
@@ -201,7 +206,7 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="showcase-table" class="table table-bordered table-striped">
             <thead>
             <tr>
               <th>id</th>
@@ -217,7 +222,7 @@
             <tr>
               <td>{{ $showcase->id }}</td>
               <td>{{ $showcase->user }}</td>
-              <td><a href="http://{{ $showcase->link }}">{{ $showcase->link }}</a></td>
+              <td><a href="{{ $showcase->link }}">{{ $showcase->link }}</a></td>
               <td>{{ $showcase->description }}</td>
             </tr>
             @endforeach
@@ -253,10 +258,39 @@
 <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script>
-  $(function () {
-    $("#example1").DataTable({
+  $(document).ready(function () {
+    // Initialise datatables
+    var tables = [];
+    tables[0] = $("#education-table").DataTable({
       "responsive": true,
       "autoWidth": false,
+      "scrollX": 300
+    }), tables[1] = $("#project-table").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "scrollX": 300
+    }), tables[2] = $("#company-table").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "scrollX": 300
+    }), tables[3] = $("#showcase-table").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "scrollX": 300
+    });
+
+    // Display user-specific database based on user '$id' passed through laravel route
+    if ({{ $id }} != 0){
+      for (var i=0; i<tables.length; ++i) {
+        tables[i].column(1).search({{ $id }}).draw();
+      };
+    }
+
+    // Filter database according to user id
+    $('.filter').keyup(function() {
+      for (var i=0; i<tables.length; ++i) {
+        tables[i].column($(this).data('column')).search($(this).val()).draw();
+      };
     });
   });
 </script>

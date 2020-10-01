@@ -30,4 +30,33 @@ class ShowcaseController extends Controller
 
     return back();
   }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+      $showcase = showcase::find($id);
+      $showcase->link = $request->link;
+      $showcase->description = $request->description;
+      $showcase->save();
+
+      return redirect('profile');
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+      showcase::where('id',$id)->delete();
+      return redirect()->back();
+  }
 }

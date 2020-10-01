@@ -85,7 +85,7 @@
 
 
 <!-- Show when phone verified -->
-<div id="phone-verified">
+<div id="phone-verified" class="hidden">
   <div class="container-fluid">
     <div class="card">
       <div class="card-body">

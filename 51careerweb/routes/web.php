@@ -31,10 +31,11 @@ Route::group(['namespace'=> 'User'], function()
    Route::get('job/detail','JobController@detail');
    // Route::get('info','InfoController@index');
 
-   Route::get('/userProfileEdit', 'UserController@index')->middleware('auth');
-   Route::post('/experienceStore', 'ExperienceController@store');
-   Route::post('/educationStore', 'EducationController@store');
-   Route::post('/showcaseStore', 'ShowcaseController@store');
+   Route::get('profile', 'UserController@index')->middleware('auth');
+   Route::resource('education', 'EducationController');
+   Route::resource('experience', 'ExperienceController');
+   Route::resource('showcase', 'ShowcaseController');
+
    //Route::get('/post/detail','PostdetailController@index');
   // Route::get('post/{slug}','PostdetailController@post')->name('post');
  //Route::get('/','PostdetailController@index')->name('post');
@@ -77,9 +78,10 @@ Route::resource('admin/home','admin\HomeController');
 Route::resource('admin/post','admin\PostController');
 Route::resource('admin/tag','admin\TagController');
 Route::resource('admin/category','admin\CategoryController');
-Route::resource('admin/user','admin\UserController');
-Route::resource('admin/profile','admin\ProfileController');
-
+Route::resource('admin/user', 'admin\UserController');
+Route::get('admin/profile/{id?}', 'admin\ProfileController@index', function($id = null){
+  return $id;
+});
 
 
 

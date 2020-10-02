@@ -80,6 +80,12 @@ Route::group(['namespace' => 'location'], function () {
 
 });
 
+Route::group(['namespace' => 'Admin'], function () {
+    Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+    Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
+    Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
+
+});
 
 
 

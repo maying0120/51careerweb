@@ -66,7 +66,7 @@
                   {{ csrf_field() }}
 
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
+                    <label for="Email" class="col-md-4 control-label">Email</label>
 
                        <div class="input-group mb-3">
                           <input id="email" type="email" class="form-control" placeholder="email" name="email" value="{{ old('email') }}" required autofocus>

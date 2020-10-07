@@ -227,7 +227,7 @@
                                   {{ csrf_field() }} {{ method_field('PUT') }}
                                   <div class="form-group">
                                     <select class="form-control" name="degree">
-                                      <option value="{{ $education->degree }}" disabled selected>{{ $education->degree }}</option>
+                                      <option value="" disabled selected>Degree</option>
                                       <option value="Bachelor">Bachelor</option>
                                       <option value="Master">Master</option>
                                       <option value="Phd">Phd</option>

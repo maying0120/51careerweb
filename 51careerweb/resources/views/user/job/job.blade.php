@@ -28,440 +28,289 @@
 			<link rel="stylesheet" href="{{ asset('user/job/css/animate.min.css') }}">
 			<link rel="stylesheet" href="{{ asset('user/job/css/owl.carousel.css') }}">
 			<link rel="stylesheet" href="{{ asset('user/job/css/main.css') }}">
-
-			<script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
-
-			{{-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> --}}
-			{{-- </script> --}}
-		
-			<!-- Magnific Popup core js file -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-		
-			<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-			
-			<script>
-				$(document).ready(function() {
-					$('#btn').magnificPopup({
-						type: 'inline',         // 行内的类型，类比图片的模式
-						closeBtnInside: true,   // 显示关闭按钮
-						closeonBgClick: false  // 点击遮罩透明背景关闭弹出层
-					});
-				});
-				
-			</script>
-			
-
-			
-			<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-
-			<script>
-			   function getMessage(){
-				  $.ajax({
-					 type:'get',
-					 url:'{{ route('ajax') }}',
-					 data:filter,
-
-					 success:function(data){
-						dataset.jobs= data.jobs;
-					 }
-				  });
-			   }
-			   
-			</script>
-			
-
-
-			<script>
-				filter ={
-						location:'', industry:'', exp_level:''
-				}
-			</script>
-
-			<script>
-				function feedfilter(){
-					filter.location = $("#default-selects").val();
-					filter.industry = $("#default-selects2").val();
-					filter.exp_level = $("#default-selects3").val();
-					getMessage();
-			}
-			</script>
-
-
-	  
 		</head>
-
-
-<style>
-    #pop {
-        position: relative;
-        background: #FFF;
-        padding: 20px;
-        width: 800px;
-
-        max-width: 800px;
-        margin: 20px auto;
-    }
-
-    .job_details_area {
-        background: #F5F7FA;
-
-        margin-left:0px;
-        margin-right:0px;
-
-
-        padding-top:0px;
-        padding-left:0px;
-        padding-right:0px;
-        padding-bottom: 0px;
-    }
-
-
-
-
-
-
-    /* line 5, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs {
-        padding: 30px;
-        border-bottom: 1px solid #EAEAEA;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-    }
-
-    @media (max-width: 800px) {
-        /* line 5, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs {
-            display: block !important;
-        }
-    }
-
-    @media (max-width: 800px) {
-        /* line 13, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs .jobs_left {
-            display: block !important;
-            overflow: hidden;
-        }
-    }
-
-    /* line 18, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .thumb {
-        float: left;
-        width: 82px;
-        height: 82px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        padding: 15px;
-        background: #F5F7FA;
-        margin-right: 25px;
-        border: 1px solid #F0F0F0;
-    }
-
-    /* line 32, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .jobs_conetent {
-        float: left;
-    }
-
-    /* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        font-weight: 400;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-    }
-
-    @media (max-width: 800px) {
-        /* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
-            margin-top: 15px;
-        }
-    }
-
-    /* line 42, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .jobs_conetent h4:hover {
-        color: #00D363;
-    }
-
-    @media (max-width: 800px) {
-        /* line 46, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat {
-            display: block !important;
-        }
-    }
-
-    /* line 50, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
-        margin-right: 10px;
-    }
-
-    @media (max-width: 800px) {
-        /* line 50, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
-            margin-right: 10px;
-        }
-    }
-
-    /* line 55, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p {
-        margin-bottom: 0;
-        font-size: 16px;
-        color: #AAB1B7;
-    }
-
-    /* line 59, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p i {
-        margin-right: 7px;
-    }
-
-    @media (max-width: 800px) {
-        /* line 68, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs .jobs_right .apply_now {
-            margin: 10px 0;
-        }
-    }
-
-    /* line 73, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_right .apply_now a.heart_mark {
-        width: 40px;
-        height: 40px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        color: #00D363;
-        font-size: 14px;
-        line-height: 40px;
-        text-align: center;
-        display: inline-block;
-        background: #EFFDF5;
-    }
-
-    /* line 83, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_right .apply_now a.heart_mark:hover {
-        background: #00D363;
-        color: #fff;
-    }
-
-    /* line 88, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_right .apply_now a.boxed-btn3 {
-        padding: 9px 27px 9px 27px;
-        font-size: 14px;
-    }
-
-    /* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_right .date {
-        text-align: right;
-        margin-top: 10px;
-    }
-
-    @media (max-width: 800px) {
-        /* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .single_jobs .jobs_right .date {
-            text-align: left;
-        }
-    }
-
-    /* line 100, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .single_jobs .jobs_right .date p {
-        margin-bottom: 0;
-        font-size: 14px;
-        font-style: italic;
-        color: #7A838B;
-    }
-
-    /* line 110, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap {
-        padding: 40px;
-    }
-
-    /* line 112, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap .single_wrap {
-        margin-bottom: 30px;
-    }
-
-    /* line 114, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap .single_wrap:last-child {
-        margin-bottom: 0;
-    }
-
-    /* line 117, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap .single_wrap h4 {
-        font-size: 20px;
-        font-weight: 500;
-        color: #001D38;
-        margin-bottom: 25px;
-    }
-
-    /* line 123, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap .single_wrap p {
-        color: #7A838B;
-        font-size: 16px;
-        line-height: 28px;
-        font-weight: 400;
-    }
-
-    /* line 130, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap .single_wrap ul li {
-        font-size: 16px;
-        line-height: 32px;
-        color: #7A838B;
-        font-weight: 400;
-        position: relative;
-        padding-left: 25px;
-    }
-
-    /* line 137, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .descript_wrap .single_wrap ul li::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 7px;
-        height: 7px;
-        background: #7A838B;
-        content: '';
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        top: 12px;
-    }
-
-    /* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form {
-        margin-top: 0px;
-        padding: 20px;
-    }
-
-    @media (max-width:800px) {
-        /* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-        .job_details_area .apply_job_form {
-            padding: 0px;
-        }
-    }
-
-    /* line 158, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form h4 {
-        font-size: 24px;
-        font-weight: 500;
-        margin-bottom: 30px;
-    }
-
-    /* line 164, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input_field input, .job_details_area .apply_job_form .input_field textarea {
-        height: 60px;
-        border: 1px solid #E8E8E8;
-        width: 100%;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        padding-left: 20px;
-        margin-bottom: 20px;
-    }
-
-    /* line 171, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input_field input::placeholder, .job_details_area .apply_job_form .input_field textarea::placeholder {
-        color: #7A838B;
-        font-size: 16px;
-    }
-
-    /* line 175, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input_field input:focus, .job_details_area .apply_job_form .input_field textarea:focus {
-        outline: none;
-    }
-
-    /* line 179, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input_field textarea {
-        height: 188px;
-        padding: 20px;
-    }
-
-    /* line 184, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input_field.file_up input {
-        position: relative;
-    }
-
-    /* line 186, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input_field.file_up input:before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: 'Upload CV';
-    }
-
-    /* line 195, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input-group {
-        width: 100%;
-        height: 60px;
-        border-radius: 5px !important;
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
-    }
-
-    /* line 201, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input-group button {
-        background: transparent;
-        border: none;
-        font-size: 16px;
-        color: #7A838B;
-        padding-left: 20px;
-        margin-right: 5px;
-    }
-
-    /* line 209, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input-group .custom-file {
-        margin-bottom: 0;
-        height: 60px;
-        border: none;
-    }
-
-    /* line 228, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-    .job_details_area .apply_job_form .input-group .custom-file-input {
-        height: 100%;
-    }
-    .form-select {
-        height: 40px;
-        width: 100%;
-    }
-
-    .boxed-btn3 {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#F91842+0,fd8e5e+100 */
-        background: #00D363;
-        color: #fff;
-        display: inline-block;
-        padding: 13px 29px 13px 29px;
-        font-family: "Roboto", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        border: 0;
-        border: 1px solid transparent;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        text-align: center;
-        color: #fff !important;
-        text-transform: capitalize;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-
-
-</style>
-
-
-
 		<body>
-			
-		
+
+		<!--  <header id="header" id="home">
+            <div class="container">
+                <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+                  </div>
+                  <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                      <li class="menu-active"><a href="index.html">Home</a></li>
+                      <li><a href="about-us.html">About Us</a></li>
+                      <li><a href="category.html">Category</a></li>
+                      <li><a href="price.html">Price</a></li>
+                      <li><a href="blog-home.html">Blog</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                      <li class="menu-has-children"><a href="">Pages</a>
+                        <ul>
+                            <li><a href="elements.html">elements</a></li>
+                            <li><a href="search.html">search</a></li>
+                            <li><a href="single.html">single</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="ticker-btn" href="#">Signup</a></li>
+                      <li><a class="ticker-btn" href="#">Login</a></li>
+                    </ul>
+                  </nav><!-- #nav-menu-container -->
+		<!--	</div>
+			    </div>
+			  </header> #header -->
+
+
+			<!-- start banner Area
+			<section class="banner-area relative" id="home">	ss
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-center">
+						<div class="banner-content col-lg-12">
+							<h1 class="text-white">
+								<span>1500+</span> Jobs posted last week
+							</h1>
+							<form action="search.html" class="serach-form-area">
+								<div class="row justify-content-center form-wrap">
+									<div class="col-lg-4 form-cols">
+										<input type="text" class="form-control" name="search" placeholder="what are you looging for?">
+									</div>
+									<div class="col-lg-3 form-cols">
+										<div class="default-select" id="default-selects">
+											<select>
+												<option value="1">Select area</option>
+												<option value="2">Dhaka</option>
+												<option value="3">Rajshahi</option>
+												<option value="4">Barishal</option>
+												<option value="5">Noakhali</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-3 form-cols">
+										<div class="default-select" id="default-selects2">
+											<select>
+												<option value="1">All Category</option>
+												<option value="2">Medical</option>
+												<option value="3">Technology</option>
+												<option value="4">Goverment</option>
+												<option value="5">Development</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-2 form-cols">
+									    <button type="button" class="btn btn-info">
+									      <span class="lnr lnr-magnifier"></span> Search
+									    </button>
+									</div>
+								</div>
+							</form>
+							<p class="text-white"> <span>Search by tags:</span> Tecnology, Business, Consulting, IT Company, Design, Development</p>
+						</div>
+					</div>
+				</div>-->
+				<!--	</section>
+                     End banner Area -->
+
+			<!-- Start features Area
+			<section class="features-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Searching</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Applying</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Security</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Notifications</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End features Area -->
+
+			<!-- Start popular-post Area
+			<section class="popular-post-area pt-100">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="active-popular-post-carusel">
+							<div class="single-popular-post d-flex flex-row">
+								<div class="thumb">
+									<img class="img-fluid" src="img/p1.png" alt="">
+									<a class="btns text-uppercase" href="#">view job post</a>
+								</div>
+								<div class="details">
+									<a href="#"><h4>Creative Designer</h4></a>
+									<h6>Los Angeles</h6>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+									</p>
+								</div>
+							</div>
+							<div class="single-popular-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/p2.png" alt="">
+									<a class="btns text-uppercase" href="#">view job post</a>
+								</div>
+								<div class="details">
+									<a href="#"><h4>Creative Designer</h4></a>
+									<h6>Los Angeles</h6>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+									</p>
+								</div>
+							</div>
+							<div class="single-popular-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/p1.png" alt="">
+									<a class="btns text-uppercase" href="#">view job post</a>
+								</div>
+								<div class="details">
+									<a href="#"><h4>Creative Designer</h4></a>
+									<h6>Los Angeles</h6>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+									</p>
+								</div>
+							</div>
+							<div class="single-popular-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/p2.png" alt="">
+									<a class="btns text-uppercase" href="#">view job post</a>
+								</div>
+								<div class="details">
+									<a href="#"><h4>Creative Designer</h4></a>
+									<h6>Los Angeles</h6>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+									</p>
+								</div>
+							</div>
+							<div class="single-popular-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/p1.png" alt="">
+									<a class="btns text-uppercase" href="#">view job post</a>
+								</div>
+								<div class="details">
+									<a href="#"><h4>Creative Designer</h4></a>
+									<h6>Los Angeles</h6>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+									</p>
+								</div>
+							</div>
+							<div class="single-popular-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/p2.png" alt="">
+									<a class="btns text-uppercase" href="#">view job post</a>
+								</div>
+								<div class="details">
+									<a href="#"><h4>Creative Designer</h4></a>
+									<h6>Los Angeles</h6>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End popular-post Area -->
+
+			<!-- Start feature-cat Area
+			<section class="feature-cat-area pt-100" id="category">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-10">
+							<div class="title text-center">
+								<h1 class="mb-10">Featured Job Categories</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="single-fcat">
+								<a href="category.html">
+									<img src="img/o1.png" alt="">
+								</a>
+								<p>Accounting</p>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="single-fcat">
+								<a href="category.html">
+									<img src="img/o2.png" alt="">
+								</a>
+								<p>Development</p>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="single-fcat">
+								<a href="category.html">
+									<img src="img/o3.png" alt="">
+								</a>
+								<p>Technology</p>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="single-fcat">
+								<a href="category.html">
+									<img src="img/o4.png" alt="">
+								</a>
+								<p>Media & News</p>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="single-fcat">
+								<a href="category.html">
+									<img src="img/o5.png" alt="">
+								</a>
+								<p>Medical</p>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="single-fcat">
+								<a href="category.html">
+									<img src="img/o6.png" alt="">
+								</a>
+								<p>Goverment</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End feature-cat Area -->
+
+
+
+
+
+			<!-- Start post Area -->
 			<section class="post-area section-gap">
 
 
@@ -475,39 +324,37 @@
 							</div>
 
 							<div class="col-lg-2 form-cols">
-								<div class="default-select" >
-									<select onchange="feedfilter()" id="default-selects" >
-										<option value="Location">Location</option>
-										<option value="New York">New York</option>
-										<option value="Los Angeles">Los Angeles</option>
-										<option value="Dallas">Dallas</option>
-										<option value="Brooklyn">Brooklyn</option>
-										<option value="Houston">Houston</option>
-										<option value="Chicago">Chicago</option>
+								<div class="default-select" id="default-selects">
+									<select>
+										<option value="1">area</option>
+										<option value="2">Dhaka</option>
+										<option value="3">Rajshahi</option>
+										<option value="4">Barishal</option>
+										<option value="5">Noakhali</option>
 									</select>
 								</div>
 							</div>
 
 							<div class="col-lg-2 form-cols">
-								<div class="default-select" >
-									<select onchange="feedfilter()" id="default-selects2">
-										<option value="Industry">Industry</option>
-										<option value="Medical">Medical</option>
-										<option value="Technology">Technology</option>
-										<option value="Goverment">Goverment</option>
-										<option value="Development">Development</option>
+								<div class="default-select" id="default-selects2">
+									<select>
+										<option value="1">Industry</option>
+										<option value="2">Medical</option>
+										<option value="3">Technology</option>
+										<option value="4">Goverment</option>
+										<option value="5">Development</option>
 									</select>
 								</div>
 							</div>
 
 							<div class="col-lg-2 form-cols">
-								<div class="default-select" >
-									<select onchange="feedfilter()" id="default-selects3">
-										<option value="Exp Level">Exp Level</option>
-										<option value="Internship">Internship</option>
-										<option value="Entry Level">Entry Level</option>
-										<option value="Associate">Associate</option>
-										<option value="Mid-senior level">Mid-senior level</option>
+								<div class="default-select" id="default-selects3">
+									<select>
+										<option value="1">Exp Level</option>
+										<option value="2">Internship</option>
+										<option value="3">Entry Level</option>
+										<option value="4">Associate</option>
+										<option value="5">Mid-senior level</option>
 									</select>
 								</div>
 							</div>
@@ -520,9 +367,10 @@
 						</div>
 					</form>
 
+						</br>	</br>	</br>	</br>
 
 
-					<div class="row justify-content-center d-flex" id = 'jobdetails'>
+					<div class="row justify-content-center d-flex">
 						<div class="col-lg-8 post-list">
 							<ul class="cat-list">
 								<li><a href="#">Recent</a></li>
@@ -530,8 +378,6 @@
 								<li><a href="#">Intern</a></li>
 								<li><a href="#">Part</a></li>
 							</ul>
-
-						  <div v-for="job in jobs">	
 							<div class="single-post d-flex flex-row">
 								<div class="thumb">
 									<img src="img/post.png" alt="">
@@ -550,35 +396,93 @@
 								<div class="details">
 									<div class="title d-flex flex-row justify-content-between">
 										<div class="titles">
-											<a href="single.html"><h4>${ job.position }</h4></a>
-											<h6>${ job.job_type }</h6>
+											<a href="single.html"><h4>Software Engineer I</h4></a>
+											<h6>Entry level</h6>
 										</div>
 										<ul class="btns">
 											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											
-											<li><a href="#pop" class="button is-large has-text-primary" id="btn">Apply</a></li>
+											<li><a href="#">Apply</a></li>
 										</ul>
 									</div>
-									<p >
-										${ job.description}
+									<p>
+										Solid foundation in software programming in one or more of the following languages: Java, Python, C, C++, Ruby, Scala, C#, Objective C
 									</p>
-									
-									<h5>Job Nature: ${ job.job_type }</h5>
-									<p class="address"><span class="lnr lnr-map"></span>location: ${ job.location }</p>
-									<p class="address"><span class="lnr lnr-database"></span> ${ job.salary }</p>
-									<p class="address">
-										<span class="lnr lnr-clock"></span> 
-										${ job.start_time }
-									</p>
-									<span v-html="job.detail">
-									</span>
-									
+									<h5>Job Nature: Full time</h5>
+									<p class="address"><span class="lnr lnr-map"></span>location: new york city</p>
+									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+									<p class="address"><span class="lnr lnr-clock"></span> 09/01/2020 </p>
 								</div>
 							</div>
-						</div>
-						 
-							
-							
+							<div class="single-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/post.png" alt="">
+									<ul class="tags">
+										<li>
+											<a href="#">Art</a>
+										</li>
+										<li>
+											<a href="#">Media</a>
+										</li>
+										<li>
+											<a href="#">Design</a>
+										</li>
+									</ul>
+								</div>
+								<div class="details">
+									<div class="title d-flex flex-row justify-content-between">
+										<div class="titles">
+											<a href="single.html"><h4>Software Engineer I</h4></a>
+											<h6>Entry level</h6>
+										</div>
+										<ul class="btns">
+											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+											<li><a href="#">Apply</a></li>
+										</ul>
+									</div>
+									<p>
+										Solid foundation in software programming in one or more of the following languages: Java, Python, C, C++, Ruby, Scala, C#, Objective C
+									</p>
+									<h5>Job Nature: Full time</h5>
+									<p class="address"><span class="lnr lnr-map"></span> new york city</p>
+									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+									<p class="address"><span class="lnr lnr-clock"></span> 09/01/2020 </p>
+								</div>
+							</div>
+							<div class="single-post d-flex flex-row">
+								<div class="thumb">
+									<img src="img/post.png" alt="">
+									<ul class="tags">
+										<li>
+											<a href="#">Art</a>
+										</li>
+										<li>
+											<a href="#">Media</a>
+										</li>
+										<li>
+											<a href="#">Design</a>
+										</li>
+									</ul>
+								</div>
+								<div class="details">
+									<div class="title d-flex flex-row justify-content-between">
+										<div class="titles">
+											<a href="single.html"><h4>Software Engineer I</h4></a>
+											<h6>Entry level</h6>
+										</div>
+										<ul class="btns">
+											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+											<li><a href="#">Apply</a></li>
+										</ul>
+									</div>
+									<p>
+										Solid foundation in software programming in one or more of the following languages: Java, Python, C, C++, Ruby, Scala, C#, Objective C
+									</p>
+									<h5>Job Nature: Full time</h5>
+									<p class="address"><span class="lnr lnr-map"></span> new york city</p>
+									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+									<p class="address"><span class="lnr lnr-clock"></span> 09/01/2020 </p>
+								</div>
+							</div>
 
 
 							<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
@@ -598,7 +502,47 @@
 								</ul>
 							</div>
 
-
+							<!--<div class="single-slidebar">
+								<h4>Top rated job posts</h4>
+								<div class="active-relatedjob-carusel">
+									<div class="single-rated">
+										<img class="img-fluid" src="img/r1.jpg" alt="">
+										<a href="single.html"><h4>Creative Art Designer</h4></a>
+										<h6>Premium Labels Limited</h6>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+										</p>
+										<h5>Job Nature: Full time</h5>
+										<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+										<a href="#" class="btns text-uppercase">Apply job</a>
+									</div>
+									<div class="single-rated">
+										<img class="img-fluid" src="img/r1.jpg" alt="">
+										<a href="single.html"><h4>Creative Art Designer</h4></a>
+										<h6>Premium Labels Limited</h6>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+										</p>
+										<h5>Job Nature: Full time</h5>
+										<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+										<a href="#" class="btns text-uppercase">Apply job</a>
+									</div>
+									<div class="single-rated">
+										<img class="img-fluid" src="img/r1.jpg" alt="">
+										<a href="single.html"><h4>Creative Art Designer</h4></a>
+										<h6>Premium Labels Limited</h6>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+										</p>
+										<h5>Job Nature: Full time</h5>
+										<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+										<a href="#" class="btns text-uppercase">Apply job</a>
+									</div>
+								</div>
+							</div>		-->
 
 							<div class="single-slidebar">
 								<h4>Jobs by Category</h4>
@@ -613,126 +557,213 @@
 								</ul>
 							</div>
 
-
-
-
-							{{-- 申请工作弹窗 --}}
-							<div id="pop" class="mfp-hide">
-
-								<div class="job_details_area">
-									<div class="row">
-										<div class="col-md-12">
-											<div class="apply_job_form white-bg">
-												<h4>Quick Apply For The Job</h4>
-												<form action="#">
-												
-													<h5> 1: Upload your Resume</h5>
-			
-													<div class="col-md-12">
-														<div class="input-group">
-															<div class="custom-file">
-																<label> <input  value="Browse" type="file" accept=".pdf, .doc, .docx" /> accept .pdf, .doc, .docx </label>
-															</div>
-			
-														</div>
-													</div>
-													
-			
-													<h5> 2: Upload your Coverletter</h5>
-			
-													<div class="col-md-12">
-														<div class="input-group">
-															<div class="custom-file">
-																<label> <input  value="Browse" type="file" accept=".pdf, .doc, .docx" />accept .pdf, .doc, .docx </label>
-															</div>
-			
-														</div>
-													</div>
-													
-			
-													<h5> 3: Upload your Transcript</h5>
-			
-													<div class="col-md-12">
-														<div class="input-group">
-															<div class="custom-file">
-																<label> <input  value="Browse" type="file" accept=".pdf, .doc, .docx" />accept .pdf, .doc, .docx </label>
-															</div>
-			
-														</div>
-													</div>
-												   
-													
-													<div class="col-md-12">
-														<div class="submit_btn">
-															<button class="boxed-btn3 w-100" type="submit">Apply Now</button>
-														</div>
-													</div>
-												</form>
-											</div>
-											
+						<!--	<div class="single-slidebar">
+								<h4>Carrer Advice Blog</h4>
+								<div class="blog-list">
+									<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
+										<a href="single.html"><h4>Home Audio Recording <br>
+										For Everyone</h4></a>
+										<div class="meta justify-content-between d-flex">
+											<p>
+												02 Hours ago
+											</p>
+											<p>
+												<span class="lnr lnr-heart"></span>
+												06
+												 <span class="lnr lnr-bubble"></span>
+												02
+											</p>
+										</div>
+									</div>
+									<div class="single-blog " style="background:#000 url(img/blog2.jpg);">
+										<a href="single.html"><h4>Home Audio Recording <br>
+										For Everyone</h4></a>
+										<div class="meta justify-content-between d-flex">
+											<p>
+												02 Hours ago
+											</p>
+											<p>
+												<span class="lnr lnr-heart"></span>
+												06
+												 <span class="lnr lnr-bubble"></span>
+												02
+											</p>
+										</div>
+									</div>
+									<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
+										<a href="single.html"><h4>Home Audio Recording <br>
+										For Everyone</h4></a>
+										<div class="meta justify-content-between d-flex">
+											<p>
+												02 Hours ago
+											</p>
+											<p>
+												<span class="lnr lnr-heart"></span>
+												06
+												 <span class="lnr lnr-bubble"></span>
+												02
+											</p>
 										</div>
 									</div>
 								</div>
-			
 							</div>
 
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End post Area -->
 
 
+			<!-- Start callto-action Area
+			<section class="callto-action-area section-gap" id="join">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content col-lg-9">
+							<div class="title text-center">
+								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
+								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+								<a class="primary-btn" href="#">I am a Candidate</a>
+								<a class="primary-btn" href="#">Request Free Demo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End calto-action Area -->
 
+			<!-- Start download Area
+			<section class="download-area section-gap" id="app">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 download-left">
+							<img class="img-fluid" src="img/d1.png" alt="">
+						</div>
+						<div class="col-lg-6 download-right">
+							<h1>Download the <br>
+							Job Listing App Today!</h1>
+							<p class="subs">
+								It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned.
+							</p>
+							<div class="d-flex flex-row">
+								<div class="buttons">
+									<i class="fa fa-apple" aria-hidden="true"></i>
+									<div class="desc">
+										<a href="#">
+											<p>
+												<span>Available</span> <br>
+												on App Store
+											</p>
+										</a>
+									</div>
+								</div>
+								<div class="buttons">
+									<i class="fa fa-android" aria-hidden="true"></i>
+									<div class="desc">
+										<a href="#">
+											<p>
+												<span>Available</span> <br>
+												on Play Store
+											</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End download Area -->
 
+			<!-- start footer Area
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3  col-md-12">
+							<div class="single-footer-widget">
+								<h6>Top Products</h6>
+								<ul class="footer-nav">
+									<li><a href="#">Managed Website</a></li>
+									<li><a href="#">Manage Reputation</a></li>
+									<li><a href="#">Power Tools</a></li>
+									<li><a href="#">Marketing Service</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-6  col-md-12">
+							<div class="single-footer-widget newsletter">
+								<h6>Newsletter</h6>
+								<p>You can trust us. we only send promo offers, not a single spam.</p>
+								<div id="mc_embed_signup">
+									<form target="_blank" novalidate action="#/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
+										<div class="form-group row" style="width: 100%">
+											<div class="col-lg-8 col-md-12">
+												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+												<div style="position: absolute; left: -5000px;">
+													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+												</div>
+											</div>
 
+											<div class="col-lg-4 col-md-12">
+												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+											</div>
+										</div>
+										<div class="info"></div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3  col-md-12">
+							<div class="single-footer-widget mail-chimp">
+								<h6 class="mb-20">Instragram Feed</h6>
+								<ul class="instafeed d-flex flex-wrap">
+									<li><img src="img/i1.jpg" alt=""></li>
+									<li><img src="img/i2.jpg" alt=""></li>
+									<li><img src="img/i3.jpg" alt=""></li>
+									<li><img src="img/i4.jpg" alt=""></li>
+									<li><img src="img/i5.jpg" alt=""></li>
+									<li><img src="img/i6.jpg" alt=""></li>
+									<li><img src="img/i7.jpg" alt=""></li>
+									<li><img src="img/i8.jpg" alt=""></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 
-							<script>
-								dataset = {
-									jobs:[
-										{position: '', location:'', salary:'', start_time:'',job_type:''},
-									
-									]
-								}
+					<div class="row footer-bottom d-flex justify-content-between">
+						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 
-								new Vue({
-								delimiters: ['${', '}'],
-								  el: '#jobdetails',
-								data: dataset
-								})
-								getMessage();
-								
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made with Colorlib -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
 
+						</p>
+						<div class="col-lg-4 col-sm-12 footer-social">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- End footer Area -->
 
-							</script>
-			
+			<script src="{{ asset('user/job/js/vendor/jquery-2.2.4.min.js') }}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="{{ asset('user/job/js/vendor/bootstrap.min.js') }}"></script>
 
-						
-
+  			<script src="{{ asset('user/job/js/easing.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/hoverIntent.js') }}"></script>
+			<script src="{{ asset('user/job/js/superfish.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/jquery.ajaxchimp.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/jquery.magnific-popup.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/owl.carousel.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/jquery.sticky.js') }}"></script>
+			<script src="{{ asset('user/job/js/jquery.nice-select.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/parallax.min.js') }}"></script>
+			<script src="{{ asset('user/job/js/mail-script.js') }}"></script>
+			<script src="{{ asset('user/job/js/main.js') }}"></script>
 		</body>
-		
-		
-
-
-
-
-
-
-
-
-
-<script src="{{ asset('user/job/js/vendor/jquery-2.2.4.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="{{ asset('user/job/js/vendor/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-
-  <script src="{{ asset('user/job/js/easing.min.js') }}"></script>
-<script src="{{ asset('user/job/js/hoverIntent.js') }}"></script>
-<script src="{{ asset('user/job/js/superfish.min.js') }}"></script>
-<script src="{{ asset('user/job/js/jquery.ajaxchimp.min.js') }}"></script>
-{{-- <script src="{{ asset('user/job/js/jquery.magnific-popup.min.js') }}"></script> --}}
-<script src="{{ asset('user/job/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('user/job/js/jquery.sticky.js') }}"></script>
-<script src="{{ asset('user/job/js/jquery.nice-select.min.js') }}"></script>
-<script src="{{ asset('user/job/js/parallax.min.js') }}"></script>
-<script src="{{ asset('user/job/js/mail-script.js') }}"></script>
-<script src="{{ asset('user/job/js/main.js') }}"></script>
 	</html>
 
 

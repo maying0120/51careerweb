@@ -31,13 +31,13 @@
                   </a>
                    <ul>
                     <li class="nav-item">
-                      <a href="./index1.html" class="nav-link">
+                      <a href="{{ route('user.index') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>注册信息</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="./index2.html" class="nav-link">
+                      <a href="/admin/profile/0" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>求职信息</p>
                       </a>
@@ -62,47 +62,23 @@
                    </a>
                     <ul>
                      <li class="nav-item">
-                       <a href="{{ route('job_create') }}" class="nav-link">
+                       <a href="./index1.html" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
                          <p>发布职位</p>
                        </a>
                      </li>
-
                      <li class="nav-item">
-                      <a href="{{ route('job_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理职位</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('skill_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理技能</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('industry_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理行业</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('major_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理专业</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('application_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理申请</p>
-                      </a>
-                    </li>
-
+                       <a href="./index2.html" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>职位分类</p>
+                       </a>
+                     </li>
+                     <li class="nav-item">
+                       <a href="./index3.html" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>简历管理</p>
+                       </a>
+                     </li>
                    </ul>
                  </li>
                </ul>

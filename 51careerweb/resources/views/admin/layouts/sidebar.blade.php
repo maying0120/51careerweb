@@ -31,13 +31,13 @@
                   </a>
                    <ul>
                     <li class="nav-item">
-                      <a href="./index1.html" class="nav-link">
+                      <a href="{{ route('user.index') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>注册信息</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="./index2.html" class="nav-link">
+                      <a href="/admin/profile/0" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>求职信息</p>
                       </a>
@@ -50,146 +50,146 @@
 
 
 
-         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                 <!-- Add icons to the links using the .nav-icon class
-                      with font-awesome or any other icon font library -->
-                 <li class="nav-item has-treeview menu-open">
-                   <a href="#" class="nav-link active">
-                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                     <p>
-                       求职
-                     </p>
-                   </a>
-                    <ul>
-                     <li class="nav-item">
-                       <a href="{{ route('job_create') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>发布职位</p>
-                       </a>
-                     </li>
-
-                     <li class="nav-item">
-                      <a href="{{ route('job_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理职位</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('skill_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理技能</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('industry_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理行业</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('major_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理专业</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="{{ route('application_view') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>管理申请</p>
-                      </a>
-                    </li>
-
-                   </ul>
-                 </li>
-               </ul>
-
-
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                         <!-- Add icons to the links using the .nav-icon class
-                              with font-awesome or any other icon font library -->
-                         <li class="nav-item has-treeview menu-open">
-                           <a href="./index2.html" class="nav-link active">
-                             <i class="nav-icon fas fa-tachometer-alt"></i>
-                             <p>
-                                文章
-
-                             </p>
-                           </a>
-                            <ul>
-
-                             <li class="nav-item">
-                               <a href="{{ route('post.index') }}" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>发布文章</p>
-                               </a>
-                             </li>
-
-                             <li class="nav-item">
-                               <a href="{{ route('category.index') }}" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>文章分类</p>
-                               </a>
-                             </li>
-
-                             <li class="nav-item">
-                               <a href="{{ route('tag.index') }}" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>tag管理</p>
-                               </a>
-                             </li>
-
-
-                           <li class="nav-item">
-                           <a href="./index2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>评论管理</p>
+              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                      <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>
+                            求职
+                          </p>
+                        </a>
+                         <ul>
+                          <li class="nav-item">
+                            <a href="{{ route('job_create') }}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>发布职位</p>
                             </a>
-                             </li>
-                            </ul>
                           </li>
 
+                          <li class="nav-item">
+                           <a href="{{ route('job_view') }}" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                             <p>管理职位</p>
+                           </a>
+                         </li>
 
-                       </ul>
+                         <li class="nav-item">
+                           <a href="{{ route('skill_view') }}" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                             <p>管理技能</p>
+                           </a>
+                         </li>
+
+                         <li class="nav-item">
+                           <a href="{{ route('industry_view') }}" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                             <p>管理行业</p>
+                           </a>
+                         </li>
+
+                         <li class="nav-item">
+                           <a href="{{ route('major_view') }}" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                             <p>管理专业</p>
+                           </a>
+                         </li>
+
+                         <li class="nav-item">
+                           <a href="{{ route('application_view') }}" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                             <p>管理申请</p>
+                           </a>
+                         </li>
+
+                        </ul>
+                      </li>
+                    </ul>
 
 
-                          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
-                             <li class="nav-item has-treeview menu-open">
-                                          <a href="#" class="nav-link active">
-                                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                                            <p>
-                                              视频
-                                            </p>
-                                          </a>
-                                           <ul>
-                                            <li class="nav-item">
-                                              <a href="./index1.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>发布视频</p>
-                                              </a>
-                                            </li>
-                                            <li class="nav-item">
-                                              <a href="./index2.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>视频分类</p>
-                                              </a>
-                                            </li>
-                                            <li class="nav-item">
-                                              <a href="./index3.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>评论管理</p>
-                                              </a>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                              <!-- Add icons to the links using the .nav-icon class
+                                   with font-awesome or any other icon font library -->
+                              <li class="nav-item has-treeview menu-open">
+                                <a href="./index2.html" class="nav-link active">
+                                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                                  <p>
+                                     文章
+
+                                  </p>
+                                </a>
+                                 <ul>
+
+                                  <li class="nav-item">
+                                    <a href="{{ route('post.index') }}" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>发布文章</p>
+                                    </a>
+                                  </li>
+
+                                  <li class="nav-item">
+                                    <a href="{{ route('category.index') }}" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>文章分类</p>
+                                    </a>
+                                  </li>
+
+                                  <li class="nav-item">
+                                    <a href="{{ route('tag.index') }}" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>tag管理</p>
+                                    </a>
+                                  </li>
+
+
+                                <li class="nav-item">
+                                <a href="./index2.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>评论管理</p>
+                                 </a>
+                                  </li>
+                                 </ul>
+                               </li>
+
+
+                            </ul>
+
+
+                               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                              <!-- Add icons to the links using the .nav-icon class
+                                  with font-awesome or any other icon font library -->
+                                  <li class="nav-item has-treeview menu-open">
+                                               <a href="#" class="nav-link active">
+                                                 <i class="nav-icon fas fa-tachometer-alt"></i>
+                                                 <p>
+                                                   视频
+                                                 </p>
+                                               </a>
+                                                <ul>
+                                                 <li class="nav-item">
+                                                   <a href="./index1.html" class="nav-link">
+                                                     <i class="far fa-circle nav-icon"></i>
+                                                     <p>发布视频</p>
+                                                   </a>
+                                                 </li>
+                                                 <li class="nav-item">
+                                                   <a href="./index2.html" class="nav-link">
+                                                     <i class="far fa-circle nav-icon"></i>
+                                                     <p>视频分类</p>
+                                                   </a>
+                                                 </li>
+                                                 <li class="nav-item">
+                                                   <a href="./index3.html" class="nav-link">
+                                                     <i class="far fa-circle nav-icon"></i>
+                                                     <p>评论管理</p>
+                                                   </a>
+                                                 </li>
+                                               </ul>
+                                             </li>
+                                           </ul>
+           </nav>
+           <!-- /.sidebar-menu -->
+         </div>
+         <!-- /.sidebar -->
+       </aside>

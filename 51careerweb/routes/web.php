@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 */
 
-Route::group(['namespace'=> 'User'], function()
+Route::group(['namespace'=> 'user'], function()
 {
    Route::get('/','HomeController@index');
    Route::get('post','PostController@index');
@@ -45,7 +45,7 @@ Route::group(['namespace'=> 'User'], function()
 
 
 
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'admin'], function () {
 
     Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 

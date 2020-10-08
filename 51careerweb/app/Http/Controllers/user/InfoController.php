@@ -8,8 +8,9 @@ use App\Http\Controllers\Controller;
 class InfoController extends Controller
 {
 
- public function index()
-    {
-    return view('user/info/info');
+    public function index(){
+        return view('user/info/info');
     }
+    
+    
 }

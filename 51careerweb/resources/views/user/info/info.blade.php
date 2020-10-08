@@ -943,7 +943,8 @@
                             <!--	<td align="left" style="color:#dd4a38; padding-top:10px;">注：若从其它网站下载的word简历，请将文件另存为.docx格式后上传</td>-->
                         </tr>
                         <tr>
-                            <td align="center"><img width="55" height="16" alt="loading" style="visibility: hidden;" id="loadingImg" src="style/images/loading.gif"></td>
+                            {{-- <td align="center"><img width="55" height="16" alt="loading" style="visibility: hidden;" id="loadingImg" src="style/images/loading.gif"></td> --}}
+                            {{-- 找不到loading.gif文件  08/14/2020 --}}
                         </tr>
                         </tbody></table>
                 </div>

@@ -149,10 +149,14 @@ Route::get('admin/profile/{id?}', 'admin\ProfileController@index', function($id 
   return $id;
 });
 
-Route::group(['namespace' => 'Admin'],function(){
-	// Admin Auth Routes
-	Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
-	Route::post('admin/login', 'Auth\LoginController@login');
+Route::post('/', 'Auth\LoginController@logout')->name('user.logout');
+
+
+// Admin Auth Routes
+Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'Admin\Auth\LoginController@login');
+
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']],function(){
 
 	Route::resource('admin/admin','AdminUserController');
 

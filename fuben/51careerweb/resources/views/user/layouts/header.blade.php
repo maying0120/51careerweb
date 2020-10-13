@@ -39,11 +39,11 @@
             @if (Auth::guest())
             <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('register') }}">Sign up</a></li>
-            @else
+            @elseif(Auth::guard('web')->check())
             <li><a href="profile">Profile</a></li>
             <li>
-              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout {{ Auth::user()->name }}</a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout {{ Auth::user()->name }}</a>
+              <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
               </form>
             </li>

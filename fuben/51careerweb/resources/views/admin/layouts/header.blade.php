@@ -30,18 +30,7 @@
                     </form>
 
 
-                    @elseif(Auth::guard('web')->check())
 
-                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                              <span> {{ Auth::user()->name }}</span>
-
-                                                  <button class="btn btn-primary btn-sm">
-                                                      logout</button>
-                                                    </div>
-                                              </a>
-                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                           {{ csrf_field() }}
-                                        </form>
 
 @endif
 

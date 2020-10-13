@@ -55,13 +55,13 @@ class LoginController extends Controller
 
 
 
-            public function logout(Request $request)
-            {
-                $this->guard()->logout();
-                $request->session()->forget($this->guard()->getName());
-                $request->session()->regenerate();
-                  return view('admin.login');
-            }
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->forget($this->guard()->getName());
+        $request->session()->regenerate();
+          return view('admin.login');
+    }
 
 
 

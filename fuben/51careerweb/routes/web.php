@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::group(['namespace'=> 'user'], function()
 {
-   Route::get('/','HomeController@index');
+   Route::get('/','HomeController@index')->name('host');
    Route::get('post','PostController@index');
    Route::get('post/{post}','PostController@post')->name('post');
    Route::get('vedio','PostdetailController@index');
@@ -36,6 +36,9 @@ Route::group(['namespace'=> 'user'], function()
    Route::resource('experience', 'ExperienceController');
    Route::resource('showcase', 'ShowcaseController');
 
+   Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
+
+
    //Route::get('/post/detail','PostdetailController@index');
   // Route::get('post/{slug}','PostdetailController@post')->name('post');
  //Route::get('/','PostdetailController@index')->name('post');
@@ -47,7 +50,6 @@ Route::group(['namespace'=> 'user'], function()
 
 Route::group(['namespace' => 'admin'], function () {
 
-    Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 
 
     Route::get('/admin/job/job', 'JobController@index')->name("job_view");
@@ -94,9 +96,10 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
     Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
     Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
+    Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+
 
 });
-
 
 
 Route::get('user/job/t1', 'TestController@t1');

@@ -484,7 +484,9 @@
 
 
 <body>
-
+	@if (Session::has('message'))
+		<div class="alert alert-info">{{ Session::get('message') }}</div>
+ 	@endif
 
 <section class="post-area section-gap">
 
@@ -688,7 +690,7 @@
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <label> <input name="resume" id="resume" type="file"
-                                                                   accept=".pdf, .doc, .docx"/> accept .pdf, .doc, .docx </label>
+                                                                   accept=".pdf, .doc, .docx"  required  /> accept .pdf, .doc, .docx </label>
                                                 </div>
 
                                             </div>

@@ -10,15 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('app');
-});
-*/
-
 Route::group(['namespace'=> 'user'], function()
 {
-   Route::get('/','HomeController@index');
    Route::get('post','PostController@index');
    Route::get('post/{post}','PostController@post')->name('post');
    Route::get('vedio','PostdetailController@index');
@@ -27,7 +20,7 @@ Route::group(['namespace'=> 'user'], function()
    Route::get('post/category/{category}','PostController@category')->name('category');
 
 
-   Route::get('job','JobController@index');
+   Route::get('job','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
    // Route::get('info','InfoController@index');
 
@@ -104,43 +97,6 @@ Route::get('user/job/t2', 'TestController@t2');
 Route::get('user/job/t3', 'TestController@t3');
 
 
-
-
-
-
-
-//Route::get('/','User\HomeController@index');
-
-//Route::get('/','User\PostController@index')->name('post');
-
-//Route::get('/','User\PostController@index');
-
-/*Route::get('post', function () {
-    return view('post');
-})->name('post');
-
-
-Route::get('admin/post', function () {
-    return view('admin/layouts/app');
-})->name('home');
-*/
-
-/*
-Route::get('admin/post', function () {
-    return view('admin/post/post');
-});
-
-
-Route::get('admin/tag', function () {
-    return view('admin/tag/tag');
-});
-
-
-Route::get('admin/category', function () {
-    return view('admin/category/category');
-});
-*/
-
 Route::resource('admin/home','admin\HomeController');
 
 Route::resource('admin/category','admin\CategoryController');
@@ -174,4 +130,4 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']],function()
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

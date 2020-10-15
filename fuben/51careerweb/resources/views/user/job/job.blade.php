@@ -669,70 +669,6 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
-                <!-- 模态框主体 -->
-                <div class="modal-body">
-                    <div class="job_details_area">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="apply_job_form white-bg">
-                                    <h4>Quick Apply For The Job</h4>
-                                    <form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-
-                                        <input type="text" class="form-control" id="jobid" name="jobid" placeholder="jobid" value=""
-                                               hidden>
-
-                                        <h5> 1: Upload your Resume</h5>
-
-                                        <div class="col-md-12">
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <label> <input name="resume" id="resume" type="file"
-                                                                   accept=".pdf, .doc, .docx"/> accept .pdf, .doc, .docx </label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                        <h5> 2: Upload your Coverletter</h5>
-
-                                        <div class="col-md-12">
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <label> <input name="coverletter" id="coverletter" type="file"
-                                                                   accept=".pdf, .doc, .docx"/>accept .pdf, .doc, .docx </label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                        <h5> 3: Upload your Transcript</h5>
-
-                                        <div class="col-md-12">
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <label> <input name="transcript" id="transcript" type="file"
-                                                                   accept=".pdf, .doc, .docx"/>accept .pdf, .doc, .docx </label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-12">
-                                            <div class="submit_btn">
-                                                <button class="boxed-btn3 w-100" type="submit">Apply Now</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- 模态框底部 -->
 {{--                <div class="modal-footer">--}}
@@ -745,72 +681,6 @@
 
 
 
-
-{{--    <div id="pop" class="mfp-hide">--}}
-
-{{--        <div class="job_details_area">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12">--}}
-{{--                    <div class="apply_job_form white-bg">--}}
-{{--                        <h4>Quick Apply For The Job</h4>--}}
-{{--                        <form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">--}}
-{{--                            {{ csrf_field() }}--}}
-
-{{--                            <input type="text" class="form-control" id="jobid" name="jobid" placeholder="jobid" value=""--}}
-{{--                                   hidden>--}}
-
-{{--                            <h5> 1: Upload your Resume</h5>--}}
-
-{{--                            <div class="col-md-12">--}}
-{{--                                <div class="input-group">--}}
-{{--                                    <div class="custom-file">--}}
-{{--                                        <label> <input name="resume" id="resume" type="file"--}}
-{{--                                                       accept=".pdf, .doc, .docx"/> accept .pdf, .doc, .docx </label>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-
-{{--                            <h5> 2: Upload your Coverletter</h5>--}}
-
-{{--                            <div class="col-md-12">--}}
-{{--                                <div class="input-group">--}}
-{{--                                    <div class="custom-file">--}}
-{{--                                        <label> <input name="coverletter" id="coverletter" type="file"--}}
-{{--                                                       accept=".pdf, .doc, .docx"/>accept .pdf, .doc, .docx </label>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-
-{{--                            <h5> 3: Upload your Transcript</h5>--}}
-
-{{--                            <div class="col-md-12">--}}
-{{--                                <div class="input-group">--}}
-{{--                                    <div class="custom-file">--}}
-{{--                                        <label> <input name="transcript" id="transcript" type="file"--}}
-{{--                                                       accept=".pdf, .doc, .docx"/>accept .pdf, .doc, .docx </label>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-
-{{--                            <div class="col-md-12">--}}
-{{--                                <div class="submit_btn">--}}
-{{--                                    <button class="boxed-btn3 w-100" type="submit">Apply Now</button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--    </div>--}}
 
 
     <script>
@@ -837,6 +707,3 @@
 
 
 </html>
-
-
-

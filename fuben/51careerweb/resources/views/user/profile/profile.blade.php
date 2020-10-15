@@ -1,11 +1,10 @@
-<!DOCTYPE HTML>
 <html>
 <head>
   @include('user/layouts/head')
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>51carrer-Profile</title>
+  <title>51Careers-Profile</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -227,11 +226,19 @@
                                   {{ csrf_field() }} {{ method_field('PUT') }}
                                   <div class="form-group">
                                     <select class="form-control" name="degree">
-                                      <option value="" disabled selected>{{ $education->degree }}</option>
-                                      <option value="Bachelor">Bachelor</option>
+                                      <option value="{{ $education->degree }}" selected>{{ $education->degree }}</option>
+                                      @if ( $education->degree != 'Bachelor')
+                                        <option value="Bachelor">Bachelor</option>
+                                      @endif
+                                      @if ( $education->degree != 'Master')
                                       <option value="Master">Master</option>
+                                      @endif
+                                      @if ( $education->degree != 'Phd')
                                       <option value="Phd">Phd</option>
+                                      @endif
+                                      @if ( $education->degree != 'Other')
                                       <option value="Other">Other</option>
+                                      @endif
                                     </select>
                                     <input type="text" class="form-control" name="schoolName" value="{{ $education->school }}">
                                     <input type="text" class="form-control" name="major" value="{{ $education->major }}">
@@ -948,9 +955,6 @@
     <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 
     <script src="user/profile/style/js/profile.js"></script>
-    <script>
-      $()
-    </script>
 
     <!-- <script src="user/profile/style/js/profile.min.js"></script>
     <script async="" src="user/profile/style/js/conversion.js"></script>

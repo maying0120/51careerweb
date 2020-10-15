@@ -30,10 +30,11 @@ class CreateJobsTable extends Migration
             $table->string('exp_level');
             $table->date('expire_time');
             $table->text('description');
-            $table->date('detail');
+            $table->text('detail');
             $table->string('country');
             $table->string('state');
             $table->string('city');
+            $table->string('job_type')
             $table->timestamps();
         });
     }

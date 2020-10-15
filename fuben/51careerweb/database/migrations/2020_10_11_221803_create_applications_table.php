@@ -17,7 +17,7 @@ class CreateApplicationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('job_id');
-            $table->string('review');
+            $table->string('review')->nullable();
             $table->string('resume_path');
             $table->string('coverletter_path');
             $table->string('transcript_path');

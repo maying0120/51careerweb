@@ -97,6 +97,8 @@
                     <th>company name</th>
                     <th>position</th>
                      <th>resume</th>
+                     <th>coverletter</th>
+                     <th>transcript</th>
                      <th>review</th>
                      <th>edit</th>
                      <th>delete</th>
@@ -118,18 +120,18 @@
 
                      <td>{{ $application->review}}</td>
                      <td>
-                      
+
                       {{-- <a data-toggle="modal" data-target="#myModal" > <i class="fas fa-pen"> </a>  --}}
                        <a data-toggle="modal" data-target="#myModal{{ $application->id }}"> <i class="fas fa-pen"> </a>
                       </td>
-                    
-                    
+
+
 
 
                      {{-- <td><a href="{{ route('job_edit',$job->id) }}">  <i class="fas fa-pen"> </a></td> --}}
                      <td>
                          <a href="{{ route('application_delete',$application->id) }}">  <i class="fas fa-trash"></i> </a></td>
-                    
+
                       {{-- <form id="delete-form-{{ $post->id }}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
@@ -146,7 +148,7 @@
                       }" >   <i class="fas fa-trash"></i></a>
                       </td> --}}
                   </tr>
-                  
+
 
                    <!-- 模态框（Modal） -->
  <div class="modal fade" id="myModal{{ $application->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -163,15 +165,15 @@
       <form action="{{ route('application_update') }}" method="post">
         {{ csrf_field() }}
       <div class="modal-body">
-       
-        
+
+
         <div class="form-group">
           add review
           <input type="text" class="form-control" id="id" name="id" placeholder="id" value="{{$application->id}}"  hidden>
 
           <input type="text" class="form-control" id="review" name="review" placeholder="review" value="{{ $application->review }}">
         </div>
-       
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">close
@@ -198,6 +200,8 @@
                     <th>company name</th>
                     <th>position</th>
                      <th>resume</th>
+                     <th>coverletter</th>
+                     <th>transcript</th> 
                      <th>review</th>
                      <th>edit</th>
                      <th>delete</th>

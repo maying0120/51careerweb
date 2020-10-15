@@ -28,12 +28,12 @@ class ApplicationController extends Controller
 
     public function delete($applicationid) {
         $temp = Application::find($applicationid)->delete();
-        
+
         return redirect()->route('application_view');
     }
 
     private function savefile($file){
-        
+
             //original name
             $originalName = $file->getClientOriginalName();
             //extension name
@@ -45,16 +45,16 @@ class ApplicationController extends Controller
             $filename = uniqid().'.'.$ext;
 //            $bool = Storage::disk('uploads')->put($filename,file_get_contents($realPath));
             $path = $file->store('uploads');
-           
+
         return $path;
     }
 
     public function create(Request $request) {
 
         $application = new Application();
-        $application->user_id =Auth::id();
+        $application->user_id = Auth::id();
         $application->job_id = $request->input('jobid');
-        
+
 
 
         $file = $request->file('resume');
@@ -65,14 +65,14 @@ class ApplicationController extends Controller
             $cpath = $this->savefile($file);
             $application->coverletter_path = 'storage/app/'.$cpath;
         }
-        
+
         $file = $request->file('transcript');
 
         if ($file != null) {
             $tpath = $this->savefile($file);
             $application->transcript_path = 'storage/app/'.$tpath;
         }
-       
+
 
 
 
@@ -84,12 +84,12 @@ class ApplicationController extends Controller
             Session::flash('message', "You have applied this job");
             return redirect()->route('user_job');
         };
-            
-        
-            
+
+
+
 
         $application->save();
-        
+
         return redirect()->route('user_job');
     }
 

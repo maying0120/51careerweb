@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     protected $fillable = [
-        'userid','jobid'
+        'user_id','job_id'
     ];
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Model\user\User');
     }
 
     public function job()

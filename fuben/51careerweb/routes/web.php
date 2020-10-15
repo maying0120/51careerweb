@@ -12,7 +12,7 @@
 */
 Auth::routes();
 // Home
-Route::get('/', 'user\HomeController@index')->name('home');
+Route::get('/', 'user\HomeController@index')->name('host');
 // Admin Auth Routes
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin/login', 'Admin\Auth\LoginController@login');

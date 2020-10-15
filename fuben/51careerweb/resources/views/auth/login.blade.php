@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  @include('user/layouts/head')
-
+@include('user/layouts/head')
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>51Career-Login</title>
+  <title>51Careers-Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,10 +31,7 @@
       }
     </style>
 </head>
-
-
 <body data-spy="scroll" data-target="#navbar-example">
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     @include('user/layouts/header')
@@ -45,95 +40,87 @@
 </br>
 </br>
 </br>
-</br>
-
-
-
-
-
-
-
-
-
 <div class="login-box">
 
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
+      <div class="panel-body">
+        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+          {{ csrf_field() }}
 
-          <div class="panel-body">
-              <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                  {{ csrf_field() }}
 
-                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="Email" class="col-md-4 control-label">Email</label>
+          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label for="Email" class="col-md-4 control-label">Email</label>
 
-                       <div class="input-group mb-3">
-                          <input id="email" type="email" class="form-control" placeholder="email" name="email" value="{{ old('email') }}" required autofocus>
-                          <div class="input-group-append">
-                              <div class="input-group-text">
-                               <span class="fas fa-envelope"></span>
-                                   </div>
-                                 </div>
+            <div class="input-group mb-3">
+              <input id="email" type="email" class="form-control" placeholder="email" name="email" value="{{ old('email') }}" required autofocus>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
 
-                          @if ($errors->has('email'))
-                              <span class="help-block">
-                                  <strong>{{ $errors->first('email') }}</strong>
-                              </span>
-                          @endif
-                      </div>
-                  </div>
-
-                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                      <label for="password" class="col-md-4 control-label">Password</label>
-
-                       <div class="input-group mb-3">
-                          <input id="password" type="password" class="form-control" placeholder="password" name="password" required>
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                      </div>
-                    </div>
-                          @if ($errors->has('password'))
-                              <span class="help-block">
-                                  <strong>{{ $errors->first('password') }}</strong>
-                              </span>
-                          @endif
-                      </div>
-                  </div>
-
-                   <div class="row">
-                            <div class="col-8">
-                              <div class="icheck-primary">
-                              <label>
-                                  <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                              </label>
-                                </div>
-                                        </div>
-                             <div class="col-4">
-                         <button type="submit" class="btn btn-outline-secondary btn-sm">Log in</button>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-
-                          <a class="btn btn-link" href="{{ route('password.request') }}">
-                              Forgot your password?
-                          </a>
-
-                          <a class="btn btn-link" href="{{route('register') }}">
-                             Sign up now
-                          </a>
-
-                  </div>
+              @if ($errors->has('email'))
+              <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+              </span>
+              @endif
             </div>
+          </div>
 
-          </br>
-          </br>
+          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label for="password" class="col-md-4 control-label">Password</label>
 
-  <footer>
-   @include('user/layouts/footer')
-  </footer>
+            <div class="input-group mb-3">
+              <input id="password" type="password" class="form-control" placeholder="password" name="password" required>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+              @if ($errors->has('password'))
+              <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+              </span>
+              @endif
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <label>
+                  <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <button type="submit" class="btn btn-outline-secondary btn-sm">Log in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn btn-link" href="{{ route('password.request') }}">
+        Forgot your password?
+      </a>
+
+      <a class="btn btn-link" href="{{route('register') }}">
+        Sign up now
+      </a>
+
+    </div>
+  </div>
+
+</br>
+</br>
+
+<footer>
+  @include('user/layouts/footer')
+</footer>
+</br>
+
   <!-- End  Footer -->
 
  @include('user/layouts/vendorjsfiles')

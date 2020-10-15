@@ -110,7 +110,12 @@
                      <td>{{ $application->user->name}}</td>
                      <td>{{ $application->job->company}}</td>
                      <td>{{ $application->job->position}}</td>
-                     <td></td>
+                     <td><a href = "{{substr(route('host'),0,strripos(route('host'),'/'))}}/{{ $application->resume_path}}"> Resume</a> </td>
+                     <td><a  @if($application->coverletter_path == null) href=# @else href = "{{substr(route('host'),0,strripos(route('host'),'/'))}}/{{ $application->coverletter_path}}" @endif > Coverletter</a> </td>
+                     <td><a  @if($application->transcript_path == null) href=# @else href = "{{substr(route('host'),0,strripos(route('host'),'/'))}}/{{ $application->transcript_path}}" @endif > Transcript</a> </td>
+
+
+
                      <td>{{ $application->review}}</td>
                      <td>
                       
@@ -123,7 +128,7 @@
 
                      {{-- <td><a href="{{ route('job_edit',$job->id) }}">  <i class="fas fa-pen"> </a></td> --}}
                      <td>
-                      <a href="{{ route('application_delete',$application->id) }}">  <i class="fas fa-trash"> </a></td>
+                         <a href="{{ route('application_delete',$application->id) }}">  <i class="fas fa-trash"></i> </a></td>
                     
                       {{-- <form id="delete-form-{{ $post->id }}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
                       {{ csrf_field() }}

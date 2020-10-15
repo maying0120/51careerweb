@@ -23,15 +23,15 @@ class JobController extends Controller
      }
 
      public function ajaxtest(Request $request){
-
+      
       $curtime = date('Y-m-d' , time());
       $jobs = Job::where('expire_time', '>=', $curtime );
-
+      
 
 
       if ($request->input('location') != null && $request->input('location') != 'Location' )  {
-         $jobs = $jobs->where('location',$request->input('location'));
-
+         $jobs = $jobs->where('city',$request->input('location'));
+         
       }
       if ($request->input('industry') != null && $request->input('industry') != 'Industry') {
          $jobs = $jobs->Where('industry', 'like' , '%'.$request->input('industry').'%');
@@ -40,7 +40,8 @@ class JobController extends Controller
       if ($request->input('exp_level') != null && $request->input('exp_level') != 'Exp Level') {
          $jobs = $jobs->Where('exp_level',$request->input('exp_level'));
       }
-
+      
+      // dump($jobs->get());
       return response()->json(array('jobs'=> $jobs->get()), 200);
    }
 

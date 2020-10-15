@@ -27,7 +27,7 @@ Route::group(['namespace'=> 'user'], function()
    Route::get('post/category/{category}','PostController@category')->name('category');
 
 
-   Route::get('job','JobController@index');
+   Route::get('job','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
    // Route::get('info','InfoController@index');
 

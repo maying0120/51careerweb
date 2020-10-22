@@ -831,12 +831,33 @@
                 </div><!--end #myInfo-->
 
                 <div class="mycenterR" id="myResume">
-                    <h2>我的附件简历
-                        <a title="上传附件简历" href="#uploadFile" class="inline cboxElement">上传简历</a>
-                    </h2>
-                    <div class="resumeUploadDiv">
-                        暂无附件简历
-                    </div>
+                  <div>
+                    <h2>Applications</h2>
+                    <!-- <a title="上传附件简历" href="" class="inline cboxElement">上传简历</a> -->
+                    <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                      <input type="file" name="resume">
+                      <input type="submit" value="Upload" class="btn"/>
+                    </form>
+                    @if ($profile)
+                    <form action="{{ route('download_resume', $profile->resume) }}" method="POST">
+                      {{ csrf_field() }}
+                      <input type="submit" value="{{ $profile->resume }}" class="btn"/>
+                    </form>
+                    @endif
+                  </div>
+                  <br />
+                  <div class="resumeUploadDiv">
+                    <ul>
+                      @foreach ($applications as $application)
+                      <li>
+                        <span>{{ $application->job->company }} | {{ $application->job->position }} | Status: {{ $application->review }}</span>
+                        <a href = "{{ $application->resume_path }}">resume</a>
+                      </li>
+                      @endforeach
+                    </ul>
+                  </div>
+
                 </div><!--end #myResume-->
 
 

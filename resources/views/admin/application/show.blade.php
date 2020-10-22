@@ -201,7 +201,7 @@
                     <th>position</th>
                      <th>resume</th>
                      <th>coverletter</th>
-                     <th>transcript</th> 
+                     <th>transcript</th>
                      <th>review</th>
                      <th>edit</th>
                      <th>delete</th>

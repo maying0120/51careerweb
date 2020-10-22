@@ -39,6 +39,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::resource('education', 'EducationController');
    Route::resource('experience', 'ExperienceController');
    Route::resource('showcase', 'ShowcaseController');
+   Route::post('profile/avatar', 'ProfileController@avatar');
    Route::post('profile/upload', 'ProfileController@uploadResume')->name('upload_resume');
    Route::post('profile/download', 'ProfileController@downloadResume')->name('download_resume');
    // Appendix

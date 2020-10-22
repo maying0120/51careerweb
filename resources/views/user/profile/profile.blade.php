@@ -830,19 +830,37 @@
           </div><!--end #myInfo-->
 
           <div class="mycenterR" id="myResume">
-            <h2>My Resume</h2>
+            <h2>My Resume</h2><br>
             @if ($profile->resume)
             <form action="{{ route('download_resume') }}" method="POST">
               {{ csrf_field() }}
-              <input type="text" name="filename" value="{{ $profile->resume }}" class="dn" />
-              <input type="submit" value="{{ $profile->resume }}" class="btn"/>
+              <label for="download-resume">
+                <a>{{ $profile->resume }}</a>
+              </label>
+              <input type="text" name="filename" value="{{ $profile->resume }}" class="dn"/>
+              <input id="download-resume" type="submit" class="dn"/>
             </form>
-            @endif
+            <label>
+              <a id="re-upload-toggle">Upload another resume</a>
+            </label>
+            <form id="upload-form" action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data" class="dn">
+              {{ csrf_field() }}
+              <label for="upload-resume">
+                <a>Browse...</a>
+              </label>
+              <input id="upload-resume" type="file" name="resume" class="dn" required>
+              <input type="submit" value="Upload" class="btn_s"/>
+            </form>
+            @else
             <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
               {{ csrf_field() }}
-              <input type="file" name="resume">
-              <input type="submit" value="Upload" class="btn"/>
+              <label for="upload-resume">
+                <a>Browse...</a>
+              </label>
+              <input id="upload-resume" type="file" name="resume" class="dn" required>
+              <input type="submit" value="Upload" class="btn_s"/>
             </form>
+            @endif
           </div><!--end #myResume-->
 
           <div class="mycenterR" id="myApplications">

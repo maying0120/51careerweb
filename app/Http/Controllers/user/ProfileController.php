@@ -25,6 +25,11 @@ class ProfileController extends Controller
       return view('user/profile/profile',compact('user', 'projects', 'companies', 'educations', 'showcases', 'applications', 'profile'));
     }
 
+    public function avatar(Request $request)
+    {
+      
+    }
+
     public function uploadResume(Request $request)
     {
       $profile = profile::where('user', auth()->user()->id)->first();

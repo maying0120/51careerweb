@@ -447,11 +447,16 @@
 
                 success: function (data) {
                     dataset.jobs = data.jobs;
+
                 }
             });
+
+
         }
 
     </script>
+
+
 
 	<script>
 		function setjobid(id){
@@ -472,6 +477,11 @@
             filter.exp_level = $("#default-selects3").val();
             getMessage();
         }
+
+		function quicklocation(data){
+			filter.location = data;
+			getMessage();
+		}
     </script>
 
 
@@ -613,42 +623,28 @@
                 <div class="single-slidebar">
                     <h4>Jobs by Location</h4>
                     <ul class="cat-list">
-                        <li><a class="justify-content-between d-flex" href="cat4egory.html"><p>New York</p>
-                                <span>37</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="cat4egory.html"><p>Los Angeles</p>
-                                <span>57</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="cat4egory.html"><p>Dallas</p><span>33</span></a>
-                        </li>
+						@foreach ($jobsbylo as $location)
+                        <li><a  class="justify-content-between d-flex" ><p id="quickcity" onclick='quicklocation("{{ $location->city }}")'  >{{ $location->city }}</p>
+							<span>{{ $location->citycount }}</span></a></li>
 
-                        <li><a class="justify-content-between d-flex" href="cat4egory.html"><p>Brooklyn</p>
-                                <span>47</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="cate4gory.html"><p>Houston</p>
-                                <span>27</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="cat4egory.html"><p>Chicago</p>
-                                <span>17</span></a></li>
+
+						@endforeach
+
                     </ul>
                 </div>
 
 
-                <div class="single-slidebar">
+                {{-- <div class="single-slidebar">
                     <h4>Jobs by Category</h4>
                     <ul class="cat-list">
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Technology</p>
-                                <span>37</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Media & News</p>
-                                <span>57</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Goverment</p>
-                                <span>33</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Medical</p><span>36</span></a>
-                        </li>
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Restaurants</p>
-                                <span>47</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Developer</p>
-                                <span>27</span></a></li>
-                        <li><a class="justify-content-between d-flex" href="category.html"><p>Accounting</p>
-                                <span>17</span></a></li>
+						@foreach ($jobsbyin as $industry)
+                        <li><a class="justify-content-between d-flex" href="cat4egory.html"><p>{{ $industry->industry }}</p>
+							<span>{{ $industry->industrycount }}</span></a></li>
+
+
+						@endforeach
                     </ul>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -749,6 +745,8 @@
 
 
 
+
+
     <script>
         dataset = {
             jobs: [
@@ -773,3 +771,6 @@
 
 
 </html>
+
+
+

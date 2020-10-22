@@ -112,9 +112,9 @@
                      <td>{{ $application->user->name}}</td>
                      <td>{{ $application->job->company}}</td>
                      <td>{{ $application->job->position}}</td>
-                     <td><a href = "{{substr(route('host'),0,strripos(route('host'),'/'))}}/{{ $application->resume_path}}"> Resume</a> </td>
-                     <td><a  @if($application->coverletter_path == null) href=# @else href = "{{substr(route('host'),0,strripos(route('host'),'/'))}}/{{ $application->coverletter_path}}" @endif > Coverletter</a> </td>
-                     <td><a  @if($application->transcript_path == null) href=# @else href = "{{substr(route('host'),0,strripos(route('host'),'/'))}}/{{ $application->transcript_path}}" @endif > Transcript</a> </td>
+                     <td><a href = "{{route('host')}}/uploads/{{ $application->resume_path}}"> Resume</a> </td>
+                     <td><a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif > Coverletter</a> </td>
+                     <td><a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif > Transcript</a> </td>
 
 
 
@@ -201,7 +201,7 @@
                     <th>position</th>
                      <th>resume</th>
                      <th>coverletter</th>
-                     <th>transcript</th> 
+                     <th>transcript</th>
                      <th>review</th>
                      <th>edit</th>
                      <th>delete</th>

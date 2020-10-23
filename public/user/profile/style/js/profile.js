@@ -22,10 +22,4 @@ $(document).ready(function () {
       $(".workAdd").add($(".workEdit")).toggleClass("dn");
     });
   });
-
-  $(function () {
-    $("#re-upload-toggle").click(function () {
-      $("#re-upload-toggle").add($("#upload-form")).toggleClass("dn");
-    });
-  });
 });

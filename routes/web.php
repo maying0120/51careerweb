@@ -54,8 +54,9 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
 
   Route::resource('admin/tag','TagController');
   Route::resource('admin/category','CategoryController');
-  // Admin User Profile
+  // User Profile
   Route::resource('admin/user', 'UserController');
+  Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
   // Application
   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');

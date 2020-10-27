@@ -5,7 +5,9 @@ namespace App\Http\Controllers\admin;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\user\profile;
+use App\Model\admin\user;
+use App\Model\user\education;
+use App\Model\user\showcase;
 
 class ProfileController extends Controller
 {
@@ -16,24 +18,12 @@ class ProfileController extends Controller
      */
     public function index($id)
     {
-        $users = DB::select("SELECT * FROM users");
-        $educations = DB::select("SELECT * FROM educations");
-        $showcases = DB::select("SELECT * FROM showcases");
+        $users = user::all();
+        $educations = education::all();
+        $showcases = showcase::all();
         $projects = DB::select("SELECT * FROM experiences WHERE company IS NULL");
         $works = DB::select("SELECT * FROM experiences WHERE project IS NULL");
-        $profiles = DB::select("SELECT * FROM profiles");
-        return view('admin/profile/profile',compact('users', 'educations', 'showcases', 'projects', 'works', 'profiles', 'id'));
+        return view('admin/profile/profile',compact('users', 'educations', 'showcases', 'projects', 'works', 'id'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        profile::where('id',$id)->delete();
-        return redirect()->back();
-    }
 }

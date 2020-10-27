@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     protected $fillable = [
-        'user','job'
+        'user_id','job_id'
     ];
 
     public function user()

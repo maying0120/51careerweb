@@ -1,25 +1,29 @@
 $(document).ready(function () {
   $(function () {
     $(".experience-toggle").click(function () {
-      $(".experienceAdd").add($(".experienceEdit")).toggleClass("dn");
+      $(".experienceAdd").toggleClass("dn");
+      $(".experienceEdit").toggleClass("dn");
     });
   });
 
   $(function () {
     $(".project-toggle").click(function () {
-      $(".projectAdd").add($(".projectEdit")).toggleClass("dn");
+      $(".projectAdd").toggleClass("dn");
+      $(".projectEdit").toggleClass("dn");
     });
   });
 
   $(function () {
     $(".education-toggle").click(function () {
-      $(".educationalAdd").add($(".educationalEdit")).toggleClass("dn");
+      $(".educationalAdd").toggleClass("dn");
+      $(".educationalEdit").toggleClass("dn");
     });
   });
 
   $(function () {
     $(".showcase-toggle").click(function () {
-      $(".workAdd").add($(".workEdit")).toggleClass("dn");
+      $(".workAdd").toggleClass("dn");
+      $(".workEdit").toggleClass("dn");
     });
   });
 });

@@ -683,19 +683,27 @@
                                         <h5> 1: Upload your Resume</h5>
 
                                         <div class="col-md-12">
+											
+											<div class="input-group">
+												<input type = checkbox name="useprev_resume" value ="1">
+                                                
+												<td><a href = "{{route('host')}}/uploads/{{ Auth::guard('web')->user()->resume }}"> Use your previous resume</a> </td>
+		
+
+                                            </div>
+
+											
                                             <div class="input-group">
+
                                                 <div class="custom-file">
                                                     <label> <input name="resume" id="resume" type="file"
-                                                                   accept=".pdf, .doc, .docx"  required  /> accept .pdf, .doc, .docx </label>
+                                                                   accept=".pdf, .doc, .docx"   /> accept .pdf, .doc, .docx </label>
                                                 </div>
 
                                             </div>
 										</div>
 										
-										<div>
-											<td><a href = "{{route('host')}}/uploads/{{ $user->resume}}"> Use your previous resume</a> </td>
 
-										</div>
 
 
                                         <h5> 2: Upload your Coverletter</h5>

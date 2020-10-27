@@ -690,7 +690,12 @@
                                                 </div>
 
                                             </div>
-                                        </div>
+										</div>
+										
+										<div>
+											<td><a href = "{{route('host')}}/uploads/{{ $user->resume}}"> Use your previous resume</a> </td>
+
+										</div>
 
 
                                         <h5> 2: Upload your Coverletter</h5>

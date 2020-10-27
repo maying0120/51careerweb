@@ -33,7 +33,6 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    // Job
    Route::get('job','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
-   Route::post('/admin/application/create', '\App\Http\Controllers\Admin\ApplicationController@create')->name("application_create");
    // Profile
    Route::get('profile', 'ProfileController@index')->name('profile');
    Route::resource('education', 'EducationController');

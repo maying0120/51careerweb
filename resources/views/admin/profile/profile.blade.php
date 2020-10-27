@@ -24,22 +24,56 @@
         <input type="text" class="filter" data-column="1"/>
       </p>
     </div>
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>education datatable</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Text Editors</li>
-            </ol>
-          </div>
+    <div class="profile card">
+      <!-- /.card-header -->
+      <div class="card-body">
+          <table id="profile-table" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>id</th>
+              <th>user</th>
+              <th>resume</th>
+              <th>delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($profiles as $profile)
+            <tr>
+              <td>{{ $profile->id }}</td>
+              <td>{{ $profile->user }}</td>
+              <td>
+                <form action="{{ route('download_resume') }}" method="POST">
+                  {{ csrf_field() }}
+                  <input id="download-resume" type="submit" value="{{ $profile->resume }}"/>
+                  <input type="hidden" name="filename" value="{{ $profile->resume }}"/>
+                </form>
+              </td>
+              <td>
+                <form id="delete-form-{{ $profile->id }}" method="post" action="{{ route('adminprofile.destroy', $profile->id) }}" style="display: none">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+                </form>
+                <a href="" onclick="
+                if(confirm('Are you sure want to delete?'))
+                {
+                  event.preventDefault();
+                  document.getElementById('delete-form-{{ $profile->id }}').submit();
+                }
+                else
+                {
+                  event.preventDefault();
+                }" >
+                <i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            @endforeach
+            </tbody>
+          </table>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
     <div class="education card">
       <!-- /.card-header -->
       <div class="card-body">
@@ -76,16 +110,6 @@
       </div>
       <!-- /.card -->
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>project datatable</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
@@ -122,16 +146,6 @@
       </div>
       <!-- /.card -->
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>work datatable</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
@@ -168,21 +182,11 @@
       </div>
       <!-- /.card -->
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>showcase datatable</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-          <table id="showcase-table" class="table table-bordered table-striped">
-            <thead>
+        <table id="showcase-table" class="table table-bordered table-striped">
+          <thead>
             <tr>
               <th>id</th>
               <th>user</th>
@@ -191,8 +195,8 @@
               <!-- <th>edit</th>
               <th>delete</th> -->
             </tr>
-            </thead>
-            <tbody>
+          </thead>
+          <tbody>
             @foreach ($showcases as $showcase)
             <tr>
               <td>{{ $showcase->id }}</td>
@@ -201,13 +205,13 @@
               <td>{{ $showcase->description }}</td>
             </tr>
             @endforeach
-            </tbody>
-          </table>
-        </div>
-        <!-- /.card-body -->
+          </tbody>
+        </table>
       </div>
-      <!-- /.card -->
+      <!-- /.card-body -->
     </div>
+    <!-- /.card -->
+  </div>
 
 </div>
 
@@ -239,36 +243,43 @@
     tables[0] = $("#education-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "scrollX": 300
+      "sDom": 'l<"edu-table-title">frtip'
     }), tables[1] = $("#project-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "scrollX": 300
+      "sDom": 'l<"proj-table-title">frtip'
     }), tables[2] = $("#company-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "scrollX": 300
+      "sDom": 'l<"comp-table-title">frtip'
     }), tables[3] = $("#showcase-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "scrollX": 300
+      "sDom": 'l<"show-table-title">frtip'
+    }), tables[4] = $("#profile-table").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "sDom": 'l<"prof-table-title">frtip'
     });
-
-    // Display user-specific database based on user '$id' passed through laravel route
-    if ({{ $id }} != 0){
-      for (var i=0; i<tables.length; ++i) {
-        tables[i].column(1).search({{ $id }}).draw();
-      };
-    }
-
+    // Assign titles
+    $(".prof-table-title").html('<h4><b><i>Profile</i></b></h4>').css('float','left');
+    $(".edu-table-title").html('<h4><b><i>Education</i></b></h4>').css('float','left');
+    $(".proj-table-title").html('<h4><b><i>Project</i></b></h4>').css('float','left');
+    $(".comp-table-title").html('<h4><b><i>Company</i></b></h4>').css('float','left');
+    $(".show-table-title").html('<h4><b><i>Showcase</i></b></h4>').css('float','left');
     // Filter database according to user id
     $('.filter').keyup(function() {
       for (var i=0; i<tables.length; ++i) {
         tables[i].column($(this).data('column')).search($(this).val()).draw();
       };
     });
+    // Display user-specific database based on user '$id' passed through laravel route
+    if ({{ $id }} != 0){
+      for (var i=0; i<tables.length; ++i) {
+        tables[i].column(1).search({{ $id }}).draw();
+      };
+    }
   });
 </script>
-
 </body>
 </html>

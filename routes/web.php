@@ -33,30 +33,35 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    // Job
    Route::get('job','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
+   Route::post('/admin/application/create', '\App\Http\Controllers\Admin\ApplicationController@create')->name("application_create");
    // Profile
-   Route::get('profile', 'UserController@index')->name('profile');
+   Route::get('profile', 'ProfileController@index')->name('profile');
    Route::resource('education', 'EducationController');
    Route::resource('experience', 'ExperienceController');
    Route::resource('showcase', 'ShowcaseController');
+   Route::post('profile/avatar', 'ProfileController@avatar');
+   Route::post('profile/upload', 'ProfileController@uploadResume')->name('upload_resume');
+   Route::post('profile/download', 'ProfileController@downloadResume')->name('download_resume');
    // Appendix
    Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 });
 
 // Protected against Non-Admins
-Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']],function() {
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function() {
   Route::get('admin/home','HomeController@index');
   Route::resource('admin/admin','AdminUserController');
   Route::resource('admin/post','PostController');
 
   Route::resource('admin/tag','TagController');
   Route::resource('admin/category','CategoryController');
-  // Admin User Profile
+  // User Profile
   Route::resource('admin/user', 'UserController');
-  Route::get('admin/profile/{id?}', 'ProfileController@index', function($id = null){
-    return $id;
-  });
-
-
+  Route::resource('adminprofile', 'ProfileController');
+  Route::get('admin/profile/{id}', 'ProfileController@index');
+  // Application
+  Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+  Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
+  Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
   // Job
   Route::get('/admin/job/job', 'JobController@index')->name("job_view");
   Route::get('/admin/job/edit/{jobid}', 'JobController@edit')->name("job_edit");

@@ -17,6 +17,11 @@ class CreateProfilesTable extends Migration
           $table->increments('id');
 
           $table->integer('user');
+          $table->string('first_name');
+          $table->string('last_name');
+          $table->date('date_of_birth');
+          $table->string('gender');
+          $table->string('avatar');
           $table->string('resume');
 
           $table->timestamps();

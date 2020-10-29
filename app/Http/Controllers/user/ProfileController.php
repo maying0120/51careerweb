@@ -10,6 +10,18 @@ use App\Model\user\profile;
 
 class ProfileController extends Controller
 {
+    public function construct()
+    {
+      $profile = profile::where('user', auth()->user()->id)->first();
+      if (!$profile) {
+        $profile = new profile();
+        $profile->user = auth()->user()->id;
+      }
+      $profile->save();
+
+      return $profile;
+    }
+
     public function index()
     {
       $user = auth()->user();
@@ -19,25 +31,25 @@ class ProfileController extends Controller
       $companies = DB::select("SELECT * FROM experiences WHERE user=$id AND project IS NULL");
       $educations = DB::select("SELECT * FROM educations WHERE user=$id");
       $showcases = DB::select("SELECT * FROM showcases WHERE user=$id");
-      $profile = profile::where('user', $id)->first();
+      $profile = Self::construct();
       $applications = Application::where('user_id', $id)->get();
 
       return view('user/profile/profile',compact('user', 'projects', 'companies', 'educations', 'showcases', 'applications', 'profile'));
     }
 
-    public function avatar(Request $request)
+    public function uploadAvatar(Request $request)
     {
-      
+      $profile = profile::where('user', auth()->user()->id)->first();
+      $path = $request->file('avatar')->store('public/avatar');
+      $profile->avatar = $path;
+      $profile->save();
+
+      return back();
     }
 
     public function uploadResume(Request $request)
     {
       $profile = profile::where('user', auth()->user()->id)->first();
-      if (!$profile) {
-        $profile = new profile();
-        $profile->user = auth()->user()->id;
-      }
-
       $path = $request->file('resume')->storeAs('profile', $request->file('resume')->getClientOriginalName());
       $filename = explode("/", $path);
       $profile->resume = end($filename);

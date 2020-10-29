@@ -41,19 +41,22 @@
 
           <div class="profile_box" id="basicInfo">
             <h2>基本信息</h2>
-            <span class="c_edit"></span>
+            <span class="c_edit profile-toggle"></span>
             <div class="basicShow">
-              <span>{{ $user->name }} | {{ $user->phone }} | {{ $user->email }}<br>
-              </span>
+              <span>User: {{ $user->name }}</span><br>
+              <span>Phone: {{ $user->phone }}</span><br>
+              <span>Email: {{ $user->email }}</span><br>
               <div class="m_portrait">
                 <div></div>
-                <img width="120" height="120" src="style/images/default_headpic.png">
+                @if ($profile->avatar)
+                <img width="120" height="120" src="{{ Storage::url($profile->avatar) }}">
+                @endif
               </div>
             </div>
             <div class="basicEdit dn">
               <form id="profileForm">
-                <table>
-                  <tbody><tr>
+                <table><tbody>
+                  <tr>
                     <td valign="top">
                       <span class="redstar">*</span>
                     </td>
@@ -78,46 +81,6 @@
                     <td valign="top">
                       <span class="redstar">*</span>
                     </td>
-                    <td>
-                      <input type="hidden" id="topDegree" value="bachelor " name="topDegree">
-                      <input type="button" value="bachelor " id="select_topDegree" class="profile_select_190 profile_select_normal">
-                      <div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
-                        <ul>
-                          <li>Bachelor </li>
-                          <li>Master</li>
-                          <li>Phd</li>
-                          <li>Other</li>
-                        </ul>
-                      </div>
-                    </td>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <input type="hidden" id="workyear" value="" name="workyear">
-                      <input type="button" value="" id="select_workyear" class="profile_select_190 profile_select_normal">
-                      <div class="boxUpDown boxUpDown_190 dn" id="box_workyear" style="display: none;">
-                        <ul>
-                          <li>应届毕业生</li>
-                          <li>1年</li>
-                          <li>2年</li>
-                          <li>3年</li>
-                          <li>4年</li>
-                          <li>5年</li>
-                          <li>6年</li>
-                          <li>7年</li>
-                          <li>8年</li>
-                          <li>9年</li>
-                          <li>10年</li>
-                          <li>10年以上</li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
                     <td colspan="3">
                       <input type="text" placeholder="手机号码" value="3472005242" name="tel" id="tel">
                     </td>
@@ -131,43 +94,33 @@
                     </td>
                   </tr>
                   <tr>
-                    <td valign="top"> </td>
-                    <td colspan="3">
-                      <input type="hidden" id="currentState" value="" name="currentState">
-                      <input type="button" value="目前状态" id="select_currentState" class="profile_select_410 profile_select_normal">
-                      <div class="boxUpDown boxUpDown_410 dn" id="box_currentState" style="display: none;">
-                        <ul>
-                          <li>我目前已离职，可快速到岗</li>
-                          <li>我目前正在职，正考虑换个新环境</li>
-                          <li>我暂时不想找工作</li>
-                          <li>我是应届毕业生</li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
                     <td></td>
                     <td colspan="3">
-                      <input type="submit" value="保 存" class="btn_profile_save">
-                      <a class="btn_profile_cancel" href="javascript:;">取 消</a>
+                      <input type="submit" value="Save" class="btn_profile_save">
+                      <a class="btn_profile_cancel profile-toggle">Cancel</a>
                     </td>
                   </tr>
                 </tbody></table>
               </form><!--end #profileForm-->
               <div class="new_portrait">
-                <div class="portrait_upload" id="portraitNo">
-                  <span>上传自己的头像</span>
-                </div>
-                <div class="portraitShow dn" id="portraitShow">
-                  <img width="120" height="120" src="">
-                  <span>更换头像</span>
-                </div>
-                <input type="file" value="" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'h/resume/uploadPhoto.json','headPic');" name="headPic" id="headPic" class="myfiles">
-                <!-- <input type="hidden" id="headPicHidden" /> -->
-                <em>
-                  尺寸：120*120px <br>
-                  大小：小于5M
-                </em>
+                <form action="profile/avatar" method="POST" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  @if ($profile->avatar)
+                  <div class="portraitShow" id="portraitShow">
+                    <img width="120" height="120" src="{{ Storage::url($profile->avatar) }}">
+                    <span>更换头像</span>
+                  </div>
+                  @else
+                  <div class="portrait_upload" id="portraitNo">
+                    <span>上传自己的头像</span>
+                  </div>
+                  @endif
+                  <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于5M" name="avatar" onchange="this.form.submit();">
+                  <!-- <input type="hidden" id="headPicHidden" /> -->
+                  <em>
+                    Size：120*120px <br>
+                  </em>
+                </form>
                 <span style="display:none;" id="headPic_error" class="error"></span>
               </div><!--end .new_portrait-->
             </div><!--end .basicEdit-->
@@ -830,25 +783,19 @@
           </div><!--end #myInfo-->
 
           <div class="mycenterR" id="myResume">
-            <h2>My Resume</h2><br>
-            @if ($profile)
-              @if ($profile->resume)
-              <form action="{{ route('download_resume') }}" method="POST">
-                {{ csrf_field() }}
-                <label for="download-resume">
-                  <a>{{ $profile->resume }}</a>
-                </label>
-                <input type="text" name="filename" value="{{ $profile->resume }}" class="dn"/>
-                <input id="download-resume" type="submit" class="dn"/>
-              </form>
-              <label for="upload-resume">
-                <a>Choose another resume</a>
+            <h2>My Resume</h2><br />
+            @if ($profile->resume)
+            <form action="{{ route('download_resume') }}" method="POST">
+              {{ csrf_field() }}
+              <label for="download-resume">
+                <a>{{ $profile->resume }}</a>
               </label>
-              @else
-              <label for="upload-resume">
-                <a>Upload resume</a>
-              </label>
-              @endif
+              <input type="text" name="filename" value="{{ $profile->resume }}" class="dn"/>
+              <input id="download-resume" type="submit" class="dn"/>
+            </form>
+            <label for="upload-resume">
+              <a>Choose another resume</a>
+            </label>
             @else
             <label for="upload-resume">
               <a>Upload resume</a>
@@ -861,12 +808,22 @@
           </div><!--end #myResume-->
 
           <div class="mycenterR" id="myApplications">
-            <h2>My Applications</h2>
+            <h2>My Applications</h2><br />
             <ul>
-              @foreach ($applications as $application)
+              @foreach ($applications->sortBy('review') as $application)
               <li>
-                <span>Company: {{ $application->job->company }} | Position: {{ $application->job->position }} | Status: {{ $application->review }} | Resume: </span>
-                <a href = "{{ $application->resume_path }}">resume</a>
+                <span>
+                  <div>
+                    <b><i>Status: {{ $application->review }}</i></b>
+                  </div>
+                  Company: {{ $application->job->company }} | Position: {{ $application->job->position }}
+                </span>
+                <div>
+                  Files:
+                  <a href = "{{route('host')}}/uploads/{{ $application->resume_path}}"> Resume</a>
+                  <a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif > Coverletter</a>
+                  <a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif > Transcript</a>
+                </div>
               </li>
               @endforeach
             </ul>

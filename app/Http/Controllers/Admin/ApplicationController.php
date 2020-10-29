@@ -63,14 +63,17 @@ class ApplicationController extends Controller
     public function create(Request $request) {
 
         $application = new Application();
-        $application->user_id =Auth::id();
+        $application->user_id =Auth::user()->id;
         $application->job_id = $request->input('jobid');
+        if ($request->input('useprev_resume') == "1") {
+            $application->resume_path = Auth::user()->resume;
+        } else {
+            $file = $request->file('resume');
+            $rpath = $this->savefile($file);
+            $application->resume_path = $rpath;
+        }
 
 
-
-        $file = $request->file('resume');
-        $rpath = $this->savefile($file);
-        $application->resume_path = $rpath;
         $file = $request->file('coverletter');
         if ($file != null) {
             $cpath = $this->savefile($file);

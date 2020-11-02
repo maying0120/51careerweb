@@ -45,6 +45,11 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 });
 
+Route::group(['namespace'=> 'Admin', 'middleware' => ['auth']], function() {
+  Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+});
+
+
 // Protected against Non-Admins
 Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function() {
   Route::get('admin/home','HomeController@index');
@@ -82,19 +87,23 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::post('/admin/major/add', 'MajorController@add')->name("major_add");
   Route::get('/admin/major/create', 'MajorController@create')->name("major_create");
   Route::get('/admin/major/delete/{majorid}', 'MajorController@delete')->name("major_delete");
-});
-
-
-
-Route::group(['namespace' => 'Admin'],function() {
   // Application
   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
-  Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
-
-
 });
+
+
+
+// Route::group(['namespace' => 'Admin'],function() {
+//   // Application
+//   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+//   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
+//   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
+//   Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+
+
+// });
 
 
 

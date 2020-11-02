@@ -22,6 +22,7 @@ class CreateApplicationsTable extends Migration
             $table->string('coverletter_path');
             $table->string('transcript_path');
             $table->timestamps();
+            $table->string('status');
         });
     }
 

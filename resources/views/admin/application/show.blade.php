@@ -100,6 +100,7 @@
                      <th>coverletter</th>
                      <th>transcript</th>
                      <th>review</th>
+                     <th>status</th>
                      <th>edit</th>
                      <th>delete</th>
                   </tr>
@@ -119,6 +120,7 @@
 
 
                      <td>{{ $application->review}}</td>
+                     <td>{{ $application->status}}</td>
                      <td>
 
                       {{-- <a data-toggle="modal" data-target="#myModal" > <i class="fas fa-pen"> </a>  --}}
@@ -155,12 +157,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">
+          Edit Application
+        </h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
           &times;
         </button>
-        <h4 class="modal-title" id="myModalLabel">
-          Edit Review
-        </h4>
+
       </div>
       <form action="{{ route('application_update') }}" method="post">
         {{ csrf_field() }}
@@ -168,12 +171,18 @@
 
 
         <div class="form-group">
-          add review
+          <label for="title">review:</label>
           <input type="text" class="form-control" id="id" name="id" placeholder="id" value="{{$application->id}}"  hidden>
 
           <input type="text" class="form-control" id="review" name="review" placeholder="review" value="{{ $application->review }}">
         </div>
 
+        <label for="title">status:</label>
+        <select class="form-control" id="status" name="status" placeholder="status" >
+          <option value="pending" @if ($application->status == "pending") selected @endif>pending</option>
+          <option value="active" @if ($application->status == "active") selected @endif>active</option>
+          <option value="closed" @if ($application->status == "closed") selected @endif>closed</option>
+        </select>       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">close
@@ -203,6 +212,7 @@
                      <th>coverletter</th>
                      <th>transcript</th>
                      <th>review</th>
+                     <th>status</th>
                      <th>edit</th>
                      <th>delete</th>
                  </tr>

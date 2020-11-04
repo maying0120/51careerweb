@@ -15,5 +15,4 @@ yarn-error.log
 *.pdf
 composer.lock
 composer.json
-composer.json
-composer.lock
+

@@ -13,3 +13,7 @@ yarn-error.log
 .DS_Store
 .DS_Store
 *.pdf
+composer.lock
+composer.json
+composer.json
+composer.lock

@@ -773,6 +773,7 @@
             el: '#jobdetails',
             data: dataset
         })
+		
         getMessage();
 
 

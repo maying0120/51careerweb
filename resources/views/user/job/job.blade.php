@@ -450,9 +450,8 @@
 
                 }
             });
-
-
         }
+
 
     </script>
 
@@ -773,8 +772,15 @@
             el: '#jobdetails',
             data: dataset
         })
-		
-        getMessage();
+		@if ($rec_jobs == "null") {
+			getMessage();
+		} @else {
+			$(document).ready(function () {
+				dataset.jobs = {!! $rec_jobs !!};
+			});
+
+		}@endif
+        
 
 
     </script>

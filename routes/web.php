@@ -31,7 +31,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::get('post/tag/{tag}','PostController@tag')->name('tag');
    Route::get('post/category/{category}','PostController@category')->name('category');
    // Job
-   Route::get('job','JobController@index')->name('user_job');
+   Route::get('job/{id?}','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
    // Profile
    Route::get('profile', 'ProfileController@index')->name('profile');
@@ -60,6 +60,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::resource('admin/category','CategoryController');
   // User Profile
   Route::resource('admin/user', 'UserController');
+  Route::get('admin/user/recommend/{id}', 'UserController@recommend')->name("admin_recommend");
   Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
 

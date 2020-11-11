@@ -16,8 +16,8 @@ class ProfileController extends Controller
       if (!$profile) {
         $profile = new profile();
         $profile->user = auth()->user()->id;
+        $profile->save();
       }
-      $profile->save();
 
       return $profile;
     }
@@ -42,6 +42,27 @@ class ProfileController extends Controller
       $profile = profile::where('user', auth()->user()->id)->first();
       $path = $request->file('avatar')->store('public/avatar');
       $profile->avatar = $path;
+      $profile->save();
+
+      return back();
+    }
+
+    public function updateExpect(Request $request)
+    {
+      $profile = profile::where('user', auth()->user()->id)->first();
+      $profile->expected_type = $request->type;
+      $profile->expected_salary = $request->salary;
+      $profile->expected_cities = $request->city;
+      $profile->expected_title = $request->title;
+
+      $profile->save();
+      return back();
+    }
+
+    public function updateDescription(Request $request)
+    {
+      $profile = profile::where('user', auth()->user()->id)->first();
+      $profile->description = $request->description;
       $profile->save();
 
       return back();

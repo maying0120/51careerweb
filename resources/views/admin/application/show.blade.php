@@ -121,8 +121,7 @@
                      <td>{{ $application->review}}</td>
                      <td>
 
-                      {{-- <a data-toggle="modal" data-target="#myModal" > <i class="fas fa-pen"> </a>  --}}
-                       <a data-toggle="modal" data-target="#myModal{{ $application->id }}"> <i class="fas fa-pen"> </a>
+                       <a data-toggle="modal" data-target="#myModal{{ $application->id }}"> <i class="fas fa-pen"> </i></a>
                       </td>
 
 

@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class profile extends Model
 {
-    //
+  /**
+   * The attributes that should be cast.
+   *
+   * @var array
+   */
+  protected $casts = [
+      'expected_cities' => 'array',
+  ];
 }

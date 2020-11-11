@@ -1266,7 +1266,7 @@ ul.my_delivery{margin:20px 48px;}
 .profile_radio li:hover{border:2px solid #c8e6de}
 .profile_radio li.current{border:2px solid #91cebe}
 .profile_radio li.current em{width:18px;height:18px;background:url('img/radio_checked.png') no-repeat;position:absolute;right:-1px;top:-1px}
-.profile_select_normal{text-align:left;font:18px/46px "微软雅黑","宋体",Arial;color:#999;height:46px;padding:0 10px}
+.profile_select_normal{text-align:left;font:18px/46px "微软雅黑","宋体",Arial;color:#4d4d4d;height:46px;padding:0 10px}
 .profile_select_190{width:190px;background:url('img/profile_select_190.png') center top no-repeat}
 .profile_select_410{width:410px;background:url('img/profile_select_410.png') center top no-repeat}
 .profile_select_287{width:287px;background:url('img/profile_select_287.png') center top no-repeat}

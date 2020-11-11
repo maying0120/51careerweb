@@ -67,7 +67,6 @@ class ApplicationController extends Controller
         $application->job_id = $request->input('jobid');
 
 
-
         $file = $request->file('resume');
         $rpath = $this->savefile($file);
         $application->resume_path = $rpath;
@@ -99,6 +98,7 @@ class ApplicationController extends Controller
 
 
 
+        $application->review = "Processing";
         $application->save();
 
 

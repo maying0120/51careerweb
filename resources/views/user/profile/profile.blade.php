@@ -266,7 +266,7 @@
                 </table>
               </form><!--end #expectForm-->
             </div><!--end .expectEdit-->
-            <div class="expectAdd pAdd">
+            <div class="expectAdd pAdd expect-toggle">
               填写准确的期望工作能大大提高求职成功率哦…<br>
               快来添加期望工作吧！
               <span>添加期望工作</span>

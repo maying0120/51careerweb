@@ -12,6 +12,8 @@ class profile extends Model
    * @var array
    */
   protected $casts = [
-      'expected_cities' => 'array',
+      'expected_countries' => 'array',
+      'expected_states' => 'array',
+      'expected_cities' => 'array'
   ];
 }

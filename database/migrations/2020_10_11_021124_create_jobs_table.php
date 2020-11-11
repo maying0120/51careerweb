@@ -34,7 +34,7 @@ class CreateJobsTable extends Migration
             $table->string('country');
             $table->string('state');
             $table->string('city');
-            $table->string('job_type')
+            $table->string('job_type');
             $table->timestamps();
         });
     }

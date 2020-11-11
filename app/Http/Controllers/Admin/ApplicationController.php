@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Collection;
+use App\Model\user\User;
+use App\Notifications\ApplicationStatus;
 
 class ApplicationController extends Controller
 {
@@ -20,8 +22,10 @@ class ApplicationController extends Controller
 
     public function update(Request $request){
         $temp = Application::find($request->input('id'));
+        $user = User::find($request->input('user-id'));
         $temp->review = $request->input('review');
         $temp->save();
+        $user->notify(new ApplicationStatus());
         return redirect()->route('application_view');
     }
 

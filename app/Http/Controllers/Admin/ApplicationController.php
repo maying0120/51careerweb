@@ -21,6 +21,7 @@ class ApplicationController extends Controller
     public function update(Request $request){
         $temp = Application::find($request->input('id'));
         $temp->review = $request->input('review');
+        $temp->status = $request->input('status');
         $temp->save();
         return redirect()->route('application_view');
     }
@@ -99,7 +100,7 @@ class ApplicationController extends Controller
             return redirect()->route('user_job');
         };
 
-
+        $application->status = "pending";
 
 
         $application->save();

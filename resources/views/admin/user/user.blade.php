@@ -58,6 +58,8 @@
                     <th>user email</th>
                     <th>user signup time</th>
                     <th>user status</th>
+                    <th>recommend jobs</th>
+                    <th>recommend</th>
                     <th>edit</th>
                     <th>delete</th>
 
@@ -72,6 +74,12 @@
                      <td>{{ $user->email }}</td>
                      <td>{{ $user->created_at}}</td>
                      <td>{{ $user->status }}</td>
+                     <td>{{ $user->recommend_job }}</td>
+                     <td>
+                      <a href="{{ route('admin_recommend',$user->id) }}">
+                        <i class="fas fa-share"></i>
+                      </a>
+                     </td>
                      <td><a href="{{ route('user.edit',$user->id) }}">
                        <i class="fas fa-pen"></i>
                      </a></td>

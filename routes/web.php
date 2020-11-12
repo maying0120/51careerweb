@@ -31,9 +31,8 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::get('post/tag/{tag}','PostController@tag')->name('tag');
    Route::get('post/category/{category}','PostController@category')->name('category');
    // Job
-   Route::get('job','JobController@index')->name('user_job');
+   Route::get('job/{id?}','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
-   Route::post('/admin/application/create', '\App\Http\Controllers\Admin\ApplicationController@create')->name("application_create");
    // Profile
    Route::get('profile', 'ProfileController@index')->name('profile');
    Route::resource('education', 'EducationController');
@@ -52,6 +51,11 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 });
 
+Route::group(['namespace'=> 'Admin', 'middleware' => ['auth']], function() {
+  Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+});
+
+
 // Protected against Non-Admins
 Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function() {
   Route::get('admin/home','HomeController@index');
@@ -62,12 +66,10 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::resource('admin/category','CategoryController');
   // User Profile
   Route::resource('admin/user', 'UserController');
+  Route::get('admin/user/recommend/{id}', 'UserController@recommend')->name("admin_recommend");
   Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
-  // Application
-  Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
-  Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
-  Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
+
   // Job
   Route::get('/admin/job/job', 'JobController@index')->name("job_view");
   Route::get('/admin/job/edit/{jobid}', 'JobController@edit')->name("job_edit");
@@ -92,7 +94,27 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::post('/admin/major/add', 'MajorController@add')->name("major_add");
   Route::get('/admin/major/create', 'MajorController@create')->name("major_create");
   Route::get('/admin/major/delete/{majorid}', 'MajorController@delete')->name("major_delete");
+  // Application
+  Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+  Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
+  Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
 });
+
+
+
+// Route::group(['namespace' => 'Admin'],function() {
+//   // Application
+//   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+//   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
+//   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
+//   Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+
+
+// });
+
+
+
+
 
 Route::group(['namespace' => 'location'], function () {
     Route::get('/getcountry','LocationController@getCountry')->name('getcountry');

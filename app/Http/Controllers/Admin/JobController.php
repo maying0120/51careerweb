@@ -30,6 +30,7 @@ class JobController extends Controller
         $temp->industry = explode (";", $temp->industry);
         $temp->skill = explode (";", $temp->skill);
         $temp->major = explode (";", $temp->major);
+        $temp->visa_status = explode (";", $temp->visa_status);
         
         $skills = Skill::all();
         for ($i = 0; $i < count($skills); $i++){
@@ -60,13 +61,34 @@ class JobController extends Controller
         }
 
         
-        return view('admin/job/edit', ['job' => $temp, 'skills' => $skills,'majors' => $majors, 'industries' => $industries]);
+
+        $visa=array(
+            "type"  => array('OPT','H1B','Green Card','Citizen'),
+            "match"  => array(false,false,false,false),
+            
+        );
+
+
+        for ($i = 0; $i < count($visa['type']); $i++){
+            for ($y = 0; $y < count($temp->visa_status); $y++){
+                if ($visa['type'][$i] == $temp->visa_status[$y]) {
+                    $visa['match'][$i] = true;
+                } 
+            }
+        }
+
+        
+        $countryid = Country::where('name',$temp->country)->first()->id;
+        $stateid = State::where('name',$temp->state)->where('country_id',$countryid)->first()->id;
+
+
+        
+        return view('admin/job/edit', ['job' => $temp, 'skills' => $skills,'majors' => $majors, 'industries' => $industries, 'visas'=>$visa,'countryid'=>$countryid, 'stateid'=>$stateid]);
     }
 
 
     public function add(Request $request)
     {  
-        
         if ($request->input('id') != null){
             
             $temp = Job::find($request->input('id'));
@@ -82,15 +104,16 @@ class JobController extends Controller
             $temp->industry = join(";", $temp->industry);
             $temp->skill = join(";", $temp->skill);
             $temp->major = join(";", $temp->major);
+            $temp->visa_status = join(";", $temp->visa_status);
             $temp->save();
         }
         else {
             $temp = new Job();
             $temp->fill($request->all());
-            //echo gettype($temp->industry);
             $temp->industry = join(";", $temp->industry);
             $temp->skill = join(";", $temp->skill);
             $temp->major = join(";", $temp->major);
+            $temp->visa_status = join(";", $temp->visa_status);
             $temp->save();
         }
 
@@ -111,8 +134,8 @@ class JobController extends Controller
         $skills = Skill::all();
         $majors = Major::all();
         $industries = Industry::all();
-        
-        return view('/admin/job/job',['skills' => $skills,'majors' => $majors, 'industries' => $industries]);
+        $visa=array('OPT','H1B','Green Card','Citizen');
+        return view('/admin/job/job',['skills' => $skills,'majors' => $majors, 'industries' => $industries, 'visas'=>$visa]);
     }
 
 

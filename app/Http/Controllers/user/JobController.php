@@ -7,12 +7,14 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\job\Job;
 use Illuminate\Support\Facades\DB;
+use App\Model\user\Profile;
 
 class JobController extends Controller
 {
 
-   public function index()
+   public function index($id = null)
       {
+
          $curtime = date('Y-m-d' , time());
          #$jobs = Job::where('expire_time', '>=', $curtime );
          $locations = array('New York','Los Angeles','Dallas','Brooklyn','Houston','Chicago');
@@ -27,10 +29,24 @@ class JobController extends Controller
                ->get();
 
 
+         #search recommend jobs for user
+         $id_start = strpos($id,"-");
+         $id = substr($id, $id_start+1, strlen($id));
 
-         #dump($jobsbylo);
+         if ($id != null) {
+            $curtime = date('Y-m-d' , time());
+            $jobs = Job::where('expire_time', '>=', $curtime );
+            $user_profile = Profile::where('id',$id)->first();
+            $jobs = $jobs->where('city','like','%'.$user_profile->expect_city.'%')
+                         ->where('job_type','like','%'.$user_profile->expect_type.'%')
+                         ->where('position','like','%'.$user_profile->expect_position.'%')
+                         ->get();
+         } else {
+            $jobs = null;
+         }
+         $rec_jobs = json_encode($jobs);
 
-        return view('user/job/job',['jobsbylo'=>$jobsbylo]);
+        return view('user/job/job',['jobsbylo'=>$jobsbylo, 'rec_jobs'=>$rec_jobs]);
       }
 
 

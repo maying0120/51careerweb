@@ -133,20 +133,22 @@
 
                       <div class="form-group" id="location123">
                         <label for="title">location:</label>
-                        <select name="countrys" onchange = "countryid()"   class="countries form-control" id="countryId">
+                        <select name="country" onchange = "countryid()"   class="countries form-control" id="countryId">
                           {{-- <option value="">Select Country</option> --}}
-                          <option id = "selectcountry" selected = "selected"  value="{{ $job->country }}">{{ $job->country }}</option>
+                          <option id = "selectcountry" selected = "selected"  value="{{ $countryid }}">{{ $job->country }}</option>
                           <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>${ country.name }</option>
                           {{-- onclick="getState(${ country.id })" --}}
                         </select>
 
-                        <select name="states"  onchange = "stateid()" class="states form-control" id="stateId">
+                          
+                        <select name="state"  onchange = "stateid()" class="states form-control" id="stateId">
+
                           {{-- <option value="">Select State</option> --}}
-                          <option id = "selestate"  selected = "selected" value="{{ $job->state }}">{{ $job->state }}</option>
+                          <option id = "selestate"  selected = "selected" value="{{ $stateid }}">{{ $job->state }}</option>
                           <option  v-for="state in location.state" id = "selectstate"   v-bind:value=state.id>${ state.name }</option>
                         </select>
 
-                        <select name="citys" class="cities form-control"  id="cityId">
+                        <select name="city" class="cities form-control"  id="cityId">
                           {{-- <option value="">Select City</option> --}}
                           <option id = "selecity"  selected="selected" value="{{ $job->city }}">{{ $job->city }}</option>
                           <option  v-for="city in location.city" id = "selectcity"   v-bind:value=city.name>${ city.name }</option>
@@ -237,13 +239,14 @@
 
                       <div class="form-group">
                         <label for="title">visa status:</label>
-                        <select class="form-control" id="visa_status" name="visa_status" placeholder="visa_status" >
-                          <option value="visa status" @if ($job->visa_satus == "visa status") selected @endif>visa status</option>
-                          <option value="OPT" @if ($job->visa_satus == "OPT") selected @endif>OPT</option>
-                          <option value="H1B" @if ($job->visa_satus == "H1B") selected @endif>H1B</option>
-                          <option value="Green Card" @if ($job->visa_satus == "Green Card") selected @endif>Green Card</option>
-                          <option value="Citizen" @if ($job->visa_satus == "Citizen") selected @endif>Citizen</option>
-                        </select>
+                        <div class="select2-blue">
+                          <select class="select2" multiple="multiple" data-placeholder="Select a visa status" name="visa_status[]"
+                          data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                            @foreach($visas['type'] as $visa)
+                            <option value="{{ $visa}}" @if ($visas['match'][$loop->index] == true) selected = "selected" @endif> {{$visa}}</option>
+                            @endforeach
+                          </select>
+                        </div>
                       </div>
 
                       <div class="form-group">

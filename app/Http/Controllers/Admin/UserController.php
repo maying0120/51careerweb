@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\admin\user;
+use App\Model\user\Profile;
+
 
 class UserController extends Controller
 {
@@ -58,4 +60,15 @@ class UserController extends Controller
         user::where('id',$id)->delete();
         return redirect()->back();
     }
+
+    public function recommend($id){
+        $time = time();
+        $link = route('host').'/job/'.dechex($time).'-'.$id;
+        $user = user::find($id);
+        $user->recommend_job = $link;
+        $user->save();
+        return redirect(route('user.index'));
+    }
+
+
 }

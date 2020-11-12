@@ -24,6 +24,7 @@ class ApplicationController extends Controller
         $temp = Application::find($request->input('id'));
         $user = User::find($request->input('user-id'));
         $temp->review = $request->input('review');
+        $temp->status = $request->input('status');
         $temp->save();
         $user->notify(new ApplicationStatus($request));
         return redirect()->route('application_view');
@@ -67,13 +68,17 @@ class ApplicationController extends Controller
     public function create(Request $request) {
 
         $application = new Application();
-        $application->user_id =Auth::id();
+        $application->user_id =Auth::user()->id;
         $application->job_id = $request->input('jobid');
+        if ($request->input('useprev_resume') == "1") {
+            $application->resume_path = Auth::user()->resume;
+        } else {
+            $file = $request->file('resume');
+            $rpath = $this->savefile($file);
+            $application->resume_path = $rpath;
+        }
 
 
-        $file = $request->file('resume');
-        $rpath = $this->savefile($file);
-        $application->resume_path = $rpath;
         $file = $request->file('coverletter');
         if ($file != null) {
             $cpath = $this->savefile($file);
@@ -99,7 +104,7 @@ class ApplicationController extends Controller
             return redirect()->route('user_job');
         };
 
-
+        $application->status = "pending";
 
 
         $application->review = "Processing";

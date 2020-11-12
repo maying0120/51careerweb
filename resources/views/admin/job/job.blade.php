@@ -207,13 +207,14 @@
     
                     <div class="form-group">
                       <label for="title">visa status:</label>
-                      <select class="form-control" id="visa_status" name="visa_status" placeholder="visa_status" >
-                        <option value="visa status">visa status</option>
-										    <option value="OPT">OPT</option>
-										    <option value="H1B">H1B</option>
-										    <option value="Green Card">Green Card</option>
-										    <option value="Citizen">Citizen</option>
-                      </select>
+                      <div class="select2-blue">
+                        <select class="select2" multiple="multiple" data-placeholder="Select a visa type" name="visa_status[]"
+                        data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                          @foreach($visas as $visa)
+                          <option value="{{ $visa}}"> {{$visa}}</option>
+                          @endforeach
+                        </select>
+                      </div>
                     </div>
     
                     <div class="form-group">

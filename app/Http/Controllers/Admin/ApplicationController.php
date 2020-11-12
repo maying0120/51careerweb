@@ -25,7 +25,7 @@ class ApplicationController extends Controller
         $user = User::find($request->input('user-id'));
         $temp->review = $request->input('review');
         $temp->save();
-        $user->notify(new ApplicationStatus());
+        $user->notify(new ApplicationStatus($request));
         return redirect()->route('application_view');
     }
 

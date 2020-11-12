@@ -21,6 +21,8 @@
     <link href="user/profile/style/css/style2.css" rel="stylesheet">
     <link href="user/profile/style/css/external.min.css"  rel="stylesheet">
     <link href="user/profile/style/css/popup.css"  rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
@@ -224,30 +226,66 @@
                     </tr>
                     <tr>
                       <td>
-                        <input type="text" value="" name="title" placeholder="Title" required>
+                        <input type="text" name="title" placeholder="Title" @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
                       </td>
                       <td>
+                        <!-- <input type="text" class="form-control" id="country" name="country" placeholder="country" value="" hidden>
+                        <input type="text" class="form-control" id="state" name="state" placeholder="state" value="" hidden>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="city" value="" hidden> -->
                       </td>
                     </tr>
+
                     @if (!$profile->expected_cities)
                     <tr>
-                      <td colspan="2">
-                        <input id="expect-city-1" type="text" name="city[]" placeholder="Location" required>
+                      <td>
+                        <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
+                          <option id = "selecountry" selected = "selected" ></option>
+                          <option v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id></option>
+                        </select>
+                      </td>
+                      <td>
+                        <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
+                          <option id = "selestate"  selected = "selected" ></option>
+                          <option v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal" id="cityId">
+                          <option id = "selecity"  selected="selected" ></option>
+                          <option v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
+                        </select>
+                      </td>
+                      <td>
                         <a id="expect-new-add">Add another city</a>
                       </td>
                     </tr>
                     @else
-                    <tr>
-                      <td colspan="2">
-                        <input id="expect-city-1" type="text" name="city[]" placeholder="{{ $profile->expected_cities[0] }}" required>
-                        <a id="expect-new-add">Add another city</a>
-                      </td>
-                    </tr>
                     @foreach ($profile->expected_cities as $city)
-                    @if ($loop->first) @continue @endif
                     <tr>
                       <td>
-                        <input type="text" name="city[]" placeholder="{{ $city }}" required>
+                        <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
+                          <option id = "selecountry" selected="selected" value="{{ $profile->expected_countries[$loop->index] }}">{{ $profile->expected_countries[$loop->index] }}</option>
+                          <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>{{ $profile->expected_countries[$loop->index] }}</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
+                          <option id = "selestate"  selected>{{ $profile->expected_states[$loop->index] }}</option>
+                          <option  v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal"  id="cityId">
+                          <option id = "selecity"  selected>{{ $city }}</option>
+                          <option  v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
+                        </select>
+                      </td>
+                      <td>
+                        @if ($loop->last) <a id="expect-new-add">Add another city</a> @endif
                       </td>
                     </tr>
                     @endforeach
@@ -260,7 +298,6 @@
                         <a class="btn_profile_cancel expect-toggle">Cancel</a>
                       </td>
                     </tr>
-                    <input type="hidden" name="cities" value=""/>
                     <input type="hidden" id="expect-city-num" value="1"/>
                   </tfoot>
                 </table>
@@ -332,7 +369,7 @@
                               <option value="Other">Other</option>
                               @endif
                             </select>
-                            <input type="text" class="form-control" name="schoolName" value="{{ $education->school }}">
+                            <input type="text" class="form-control " name="schoolName" value="{{ $education->school }}">
                             <input type="text" class="form-control" name="major" value="{{ $education->major }}">
                             <input type="date" class="form-control" name="startDate" value="{{ $education->start_date }}">
                             <input type="date" class="form-control" name="endDate" value="{{ $education->end_date }}">
@@ -364,7 +401,7 @@
                       <span class="redstar">*</span>
                     </td>
                     <td>
-                      <select class="degree" name="degree">
+                      <select class="degree profile_select_139 profile_select_normal" name="degree">
                         <option value="" disabled selected>Degree</option>
                         <option value="Bachelor">Bachelor</option>
                         <option value="Master">Master</option>
@@ -774,10 +811,12 @@
               <a>Upload resume</a>
             </label>
             @endif
-            <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
-              {{ csrf_field() }}
-              <input id="upload-resume" type="file" name="resume" class="dn" onchange="this.form.submit();" required>
-            </form>
+            <div class="dn">
+              <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <input id="upload-resume" type="file" name="resume" onchange="this.form.submit();" required>
+              </form>
+            </div>
           </div><!--end #myResume-->
 
           <div class="mycenterR" id="myApplications">
@@ -913,8 +952,9 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 
-    <script src="user/profile/style/js/profile.js"></script>
-
+    <!-- <script src="{{ asset('admin/plugins/countrystatecity.js') }}"></script> -->
+    <script src="{{ asset('admin/plugins/location.js') }}"></script>
+    <script src="user/profile/style/js/profile.js"/></script>
     <!-- <script src="user/profile/style/js/profile.min.js"></script>
     <script async="" src="user/profile/style/js/conversion.js"></script>
     <script src="user/profile/style/js/jquery.1.10.1.min.js"></script>

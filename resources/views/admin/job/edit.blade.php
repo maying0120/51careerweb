@@ -14,7 +14,7 @@
    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
 
-  
+
   <script>
     function myprint(){
       $("#country").val($("#countryId").val());
@@ -110,7 +110,7 @@
                   {{-- <a class='col-lg-offset-20 btn btn-success' href="{{ route('job_add') }} " > Add new job </a> --}}
               </div>
 
-           
+
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -119,16 +119,16 @@
                     <form role="form" action="{{ route('job_add') }}" onsubmit="myprint()" id="editjob" method="post">
                       {{ csrf_field() }}
 
-      
+
                         <input type="text" class="form-control" id="id" name="id" placeholder="id" value="{{ $job->id }}" hidden>
-                      
-      
+
+
                       <div class="form-group">
                         <label for="title">position:</label>
                         <input type="text" class="form-control" id="position" name="position" placeholder="position" value="{{ $job->position }}">
                       </div>
 
-                      
+
 
 
                       <div class="form-group" id="location123">
@@ -139,7 +139,7 @@
                           <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>${ country.name }</option>
                           {{-- onclick="getState(${ country.id })" --}}
                         </select>
-                          
+
                         <select name="states"  onchange = "stateid()" class="states form-control" id="stateId">
                           {{-- <option value="">Select State</option> --}}
                           <option id = "selestate"  selected = "selected" value="{{ $job->state }}">{{ $job->state }}</option>
@@ -165,7 +165,7 @@
 
 
 
-      
+
                       <div class="form-group">
                         <label for="title">job type:</label>
                         <select class="form-control" id="job_type" name="job_type" placeholder="job_type" >
@@ -173,9 +173,9 @@
                           <option value="Intern" @if ($job->job_type == "Intern") selected @endif>Intern</option>
                           <option value="Part Time" @if ($job->job_type == "Part Time") selected @endif>Part Time</option>
                           <option value="Full Time" @if ($job->job_type == "Full Time") selected @endif>Full Time</option>
-                        </select>                  
+                        </select>
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">salary:</label>
                         <select class="form-control" id="salary" name="salary" placeholder="salary" >
@@ -186,7 +186,7 @@
                           <option value="more than 150k" @if ($job->salary == "more than 150k") selected @endif>more than 150k</option>
                         </select>
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">company size:</label>
                         <select class="form-control" id="company_size" name="company_size" placeholder="company_size" >
@@ -197,27 +197,27 @@
                           <option value="more than 1k" @if ($job->company_size == "more than 1k") selected @endif>more than 1k</option>
                         </select>
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">company:</label>
                         <input type="text" class="form-control" id="company" name="company" placeholder="company" value="{{ $job->company }}">
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">start time:</label>
                         <input type="date" class="form-control" id="start_time" name="start_time" placeholder="start_time" value="{{ $job->start_time }}">
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">end time:</label>
                         <input type="date" class="form-control" id="end_time" name="end_time" placeholder="end_time" value="{{ $job->end_time }}">
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">hire time:</label>
                         <input type="date" class="form-control" id="hire_time" name="hire_time" placeholder="hire_time" value="{{ $job->hire_time }}">
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">expire date:</label>
                         <input type="date" class="form-control" id="expire_time" name="expire_time" placeholder="expire_time" value="{{ $job->expire_time }}">
@@ -234,7 +234,7 @@
                           </select>
                         </div>
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">visa status:</label>
                         <select class="form-control" id="visa_status" name="visa_status" placeholder="visa_status" >
@@ -245,7 +245,7 @@
                           <option value="Citizen" @if ($job->visa_satus == "Citizen") selected @endif>Citizen</option>
                         </select>
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">english level:</label>
                         <select class="form-control" id="english_level" name="english_level" placeholder="english_level" >
@@ -256,10 +256,10 @@
                           <option value="Proficient" @if ($job->english_level == "Proficient") selected @endif>Proficient</option>
                         </select>
                       </div>
-      
+
                       <div class="form-group">
                         <label for="title">Skill:</label>
-  
+
                           <div class="select2-blue">
                             <select class="select2" multiple="multiple" data-placeholder="Select a skill" name="skill[]"
                             data-dropdown-css-class="select2-blue" style="width: 100%; ">
@@ -281,7 +281,7 @@
                           </select>
                         </div>
                       </div>
-                      
+
                       <div class="form-group">
                         <label for="title">exp level:</label>
                         <select class="form-control" id="exp_level" name="exp_level" placeholder="exp_level" >
@@ -330,17 +330,17 @@
                             </div>
                           </div>
                       </section>
-                            
+
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                   </tbody>
-                 
+
                 </table>
               </div>
               <!-- /.card-body -->
 
-            
-            
+
+
             <!-- /.card -->
 </div>
 
@@ -369,7 +369,7 @@
 		location:{
             country:[],
             state:[],
-            city:[]	
+            city:[]
         }
 
 	}
@@ -380,13 +380,13 @@
 			data: lodataset
 	})
 	getCountry();
-								
+
 
 
 function getCountry(){
     $.ajax({
        type:'get',
-       url:'{{ route('getcountry') }}', 
+       url:'{{ route('getcountry') }}',
        dataType:'json',
        success:function(data){
           lodataset.location.country= data;
@@ -400,10 +400,10 @@ function countryid(){
   getState(countryid);
 }
 
- function getState(id){ 
+ function getState(id){
     $.ajax({
        type:'get',
-       url:"{{route('getstate')}}"+"?id="+id, 
+       url:"{{route('getstate')}}"+"?id="+id,
        dataType:'json',
        success:function(data){
           lodataset.location.state= data;
@@ -419,8 +419,8 @@ function countryid(){
 
  function getCity(id){
     $.ajax({
-       type:'get',   
-       url:"{{route('getcity')}}"+"?id="+id, 
+       type:'get',
+       url:"{{route('getcity')}}"+"?id="+id,
           dataType:'json',
          success:function(data){
           lodataset.location.city= data;

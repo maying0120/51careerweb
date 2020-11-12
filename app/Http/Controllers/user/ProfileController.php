@@ -52,8 +52,10 @@ class ProfileController extends Controller
       $profile = profile::where('user', auth()->user()->id)->first();
       $profile->expected_type = $request->type;
       $profile->expected_salary = $request->salary;
-      $profile->expected_cities = $request->city;
       $profile->expected_title = $request->title;
+      $profile->expected_countries = $request->countries;
+      $profile->expected_states = $request->states;
+      $profile->expected_cities = $request->cities;
 
       $profile->save();
       return back();

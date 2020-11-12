@@ -44,6 +44,10 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::post('profile/expect', 'ProfileController@updateExpect');
    Route::post('profile/upload', 'ProfileController@uploadResume')->name('upload_resume');
    Route::post('profile/download', 'ProfileController@downloadResume')->name('download_resume');
+   // Notifications
+   Route::get('/unreadNotificationsMarkAsRead', function () {
+     auth()->user()->unreadNotifications->markAsRead();
+   });
    // Appendix
    Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 });

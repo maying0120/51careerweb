@@ -3,6 +3,7 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -16,9 +17,9 @@ class ApplicationStatus extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        //
+        $this->request = $request;
     }
 
     /**
@@ -29,7 +30,7 @@ class ApplicationStatus extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -41,9 +42,9 @@ class ApplicationStatus extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Your application to ' . $this->request->input('company') . ' is ' . $this->request->input('review'))
+                    ->action('View notification', url('/'))
+                    ->line('Thank you for using 51Career');
     }
 
     /**
@@ -55,7 +56,8 @@ class ApplicationStatus extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'reply' => 'hihibea'
+            'company' => $this->request->input('company'),
+            'review' => $this->request->input('review'),
         ];
     }
 

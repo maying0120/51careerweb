@@ -21,6 +21,8 @@
     <link href="user/profile/style/css/style2.css" rel="stylesheet">
     <link href="user/profile/style/css/external.min.css"  rel="stylesheet">
     <link href="user/profile/style/css/popup.css"  rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
@@ -41,24 +43,27 @@
 
           <div class="profile_box" id="basicInfo">
             <h2>基本信息</h2>
-            <span class="c_edit"></span>
+            <span class="c_edit profile-toggle"></span>
             <div class="basicShow">
-              <span>{{ $user->name }} | {{ $user->phone }} | {{ $user->email }}<br>
-              </span>
+              <span>User: {{ $user->name }}</span><br>
+              <span>Phone: {{ $user->phone }}</span><br>
+              <span>Email: {{ $user->email }}</span><br>
               <div class="m_portrait">
                 <div></div>
-                <img width="120" height="120" src="style/images/default_headpic.png">
+                @if ($profile->avatar)
+                <img width="120" height="120" src="{{ Storage::url($profile->avatar) }}">
+                @endif
               </div>
             </div>
             <div class="basicEdit dn">
               <form id="profileForm">
-                <table>
-                  <tbody><tr>
+                <table><tbody>
+                  <tr>
                     <td valign="top">
                       <span class="redstar">*</span>
                     </td>
                     <td>
-                      <input type="text" placeholder="姓名" value="Ying Ma" name="name" id="name">
+                      <input type="text" placeholder="姓名" value="" name="name" id="name">
                     </td>
                     <td valign="top"></td>
                     <td>
@@ -78,40 +83,8 @@
                     <td valign="top">
                       <span class="redstar">*</span>
                     </td>
-                    <td>
-                      <input type="hidden" id="topDegree" value="bachelor " name="topDegree">
-                      <input type="button" value="bachelor " id="select_topDegree" class="profile_select_190 profile_select_normal">
-                      <div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
-                        <ul>
-                          <li>Bachelor </li>
-                          <li>Master</li>
-                          <li>Phd</li>
-                          <li>Other</li>
-                        </ul>
-                      </div>
-                    </td>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <input type="hidden" id="workyear" value="" name="workyear">
-                      <input type="button" value="" id="select_workyear" class="profile_select_190 profile_select_normal">
-                      <div class="boxUpDown boxUpDown_190 dn" id="box_workyear" style="display: none;">
-                        <ul>
-                          <li>应届毕业生</li>
-                          <li>1年</li>
-                          <li>2年</li>
-                          <li>3年</li>
-                          <li>4年</li>
-                          <li>5年</li>
-                          <li>6年</li>
-                          <li>7年</li>
-                          <li>8年</li>
-                          <li>9年</li>
-                          <li>10年</li>
-                          <li>10年以上</li>
-                        </ul>
-                      </div>
+                    <td colspan="3">
+                      <input type="text" placeholder="手机号码" value="" name="tel" id="tel">
                     </td>
                   </tr>
                   <tr>
@@ -119,67 +92,229 @@
                       <span class="redstar">*</span>
                     </td>
                     <td colspan="3">
-                      <input type="text" placeholder="手机号码" value="3472005242" name="tel" id="tel">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td colspan="3">
-                      <input type="text" placeholder="接收面试通知的邮箱" value="123456789@qq.com" name="email" id="email">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top"> </td>
-                    <td colspan="3">
-                      <input type="hidden" id="currentState" value="" name="currentState">
-                      <input type="button" value="目前状态" id="select_currentState" class="profile_select_410 profile_select_normal">
-                      <div class="boxUpDown boxUpDown_410 dn" id="box_currentState" style="display: none;">
-                        <ul>
-                          <li>我目前已离职，可快速到岗</li>
-                          <li>我目前正在职，正考虑换个新环境</li>
-                          <li>我暂时不想找工作</li>
-                          <li>我是应届毕业生</li>
-                        </ul>
-                      </div>
+                      <input type="text" placeholder="接收面试通知的邮箱" value="" name="email" id="email">
                     </td>
                   </tr>
                   <tr>
                     <td></td>
                     <td colspan="3">
-                      <input type="submit" value="保 存" class="btn_profile_save">
-                      <a class="btn_profile_cancel" href="javascript:;">取 消</a>
+                      <input type="submit" value="Save" class="btn_profile_save">
+                      <a class="btn_profile_cancel profile-toggle">Cancel</a>
                     </td>
                   </tr>
                 </tbody></table>
               </form><!--end #profileForm-->
               <div class="new_portrait">
-                <div class="portrait_upload" id="portraitNo">
-                  <span>上传自己的头像</span>
-                </div>
-                <div class="portraitShow dn" id="portraitShow">
-                  <img width="120" height="120" src="">
-                  <span>更换头像</span>
-                </div>
-                <input type="file" value="" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'h/resume/uploadPhoto.json','headPic');" name="headPic" id="headPic" class="myfiles">
-                <!-- <input type="hidden" id="headPicHidden" /> -->
-                <em>
-                  尺寸：120*120px <br>
-                  大小：小于5M
-                </em>
+                <form action="profile/avatar" method="POST" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  @if ($profile->avatar)
+                  <div class="portraitShow" id="portraitShow">
+                    <img width="120" height="120" src="{{ Storage::url($profile->avatar) }}">
+                    <span>Change profile pic</span>
+                  </div>
+                  @else
+                  <div class="portrait_upload" id="portraitNo">
+                    <span>Upload profile pic</span>
+                  </div>
+                  @endif
+                  <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于5M" name="avatar" onchange="this.form.submit();">
+                  <!-- <input type="hidden" id="headPicHidden" /> -->
+                  <em>
+                    Size：120*120px <br>
+                  </em>
+                </form>
                 <span style="display:none;" id="headPic_error" class="error"></span>
               </div><!--end .new_portrait-->
             </div><!--end .basicEdit-->
-            <input type="hidden" id="nameVal" value="{$user->name}" >
-            <input type="hidden" id="genderVal" value="女">
-            <input type="hidden" id="topDegreeVal" value="Master">
-            <input type="hidden" id="workyearVal" value="1年">
+            <input type="hidden" id="nameVal" value="" >
+            <input type="hidden" id="genderVal" value="">
+            <input type="hidden" id="topDegreeVal" value="">
+            <input type="hidden" id="workyearVal" value="">
             <input type="hidden" id="currentStateVal" value="">
-            <input type="hidden" id="emailVal" value="123456789@qq.com">
-            <input type="hidden" id="telVal" value="3472005242">
+            <input type="hidden" id="emailVal" value="">
+            <input type="hidden" id="telVal" value="">
             <input type="hidden" id="pageType" value="1">
           </div><!--end #basicInfo-->
+
+          <div class="profile_box" id="selfDescription">
+            <h2>自我描述</h2>
+            <span class="c_edit description-toggle"></span>
+            <div class="descriptionShow">
+              @if ($profile->description)
+              {{ $profile->description }}
+              @endif
+            </div>
+            <div class="descriptionEdit dn">
+              <form class="descriptionForm" action="profile/description" method="POST">
+                {{ csrf_field() }}
+                <table>
+                  <tbody><tr>
+                    <td colspan="2">
+                      @if ($profile->description)
+                      <textarea class="selfDescription s_textarea" name="description" placeholder="">{{ $profile->description }}</textarea>
+                      @else
+                      <textarea class="selfDescription s_textarea" name="description" placeholder=""></textarea>
+                      @endif
+                      <div class="word_count">你还可以输入 <span>500</span> 字</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <input type="submit" value="Save" class="btn_profile_save">
+                      <a class="btn_profile_cancel description-toggle">Cancel</a>
+                    </td>
+                  </tr>
+                </tbody></table>
+              </form><!--end .descriptionForm-->
+            </div><!--end .descriptionEdit-->
+          </div><!--end #selfDescription-->
+
+          <div class="profile_box" id="expectJob">
+            <h2>期望工作</h2>
+            <span class="c_edit expect-toggle"></span>
+            <div class="expectShow dn">
+              <span></span>
+            </div><!--end .expectShow-->
+            <div class="expectEdit dn">
+              <form id="expectForm" method="POST" action="profile/expect">
+                {{ csrf_field() }}
+                <table>
+                  <tbody id="expect-new-add-city">
+                    <tr>
+                      <td>
+                        <select class="profile_select_287 profile_select_normal" name="type" required>
+                          @if ($profile->expected_type)
+                          <option value="{{ $profile->expected_type }}" selected>{{ $profile->expected_type }}</option>
+                          @else
+                          <option value="" selected>Job Type</option>
+                          @endif
+                          @if ($profile->expected_type != "intern")
+                          <option value="intern">Intern</option>
+                          @endif
+                          @if ($profile->expected_type != "part-time")
+                          <option value="part-time">Part time</option>
+                          @endif
+                          @if ($profile->expected_type != "full-time")
+                          <option value="full-time">Full time</option>
+                          @endif
+                          @if ($profile->expected_type != "all")
+                          <option value="all">Any type</option>
+                          @endif
+                        </select>
+                      </td>
+                      <td>
+                        <select class="profile_select_287 profile_select_normal" name="salary" required>
+                          @if ($profile->expected_salary)
+                          <option value="{{ $profile->expected_salary }}" selected>{{ $profile->expected_salary }}</option>
+                          @else
+                          <option value="" selected>Salary</option>
+                          @endif
+                          @if ($profile->expected_salary != "below-60k")
+                          <option value="below-60k">Below 60k</option>
+                          @endif
+                          @if ($profile->expected_salary != "60k-to-100k")
+                          <option value="60k-to-100k">60k to 100k</option>
+                          @endif
+                          @if ($profile->expected_salary != "100k-to-150k")
+                          <option value="100k-to-150k">100k to 150k</option>
+                          @endif
+                          @if ($profile->expected_salary != "above-150k")
+                          <option value="above-150k">Above 150k</option>
+                          @endif
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" name="title" placeholder="Title" @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
+                      </td>
+                      <td>
+                        <!-- <input type="text" class="form-control" id="country" name="country" placeholder="country" value="" hidden>
+                        <input type="text" class="form-control" id="state" name="state" placeholder="state" value="" hidden>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="city" value="" hidden> -->
+                      </td>
+                    </tr>
+
+                    @if (!$profile->expected_cities)
+                    <tr>
+                      <td>
+                        <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
+                          <option id = "selecountry" selected = "selected" ></option>
+                          <option v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id></option>
+                        </select>
+                      </td>
+                      <td>
+                        <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
+                          <option id = "selestate"  selected = "selected" ></option>
+                          <option v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal" id="cityId">
+                          <option id = "selecity"  selected="selected" ></option>
+                          <option v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
+                        </select>
+                      </td>
+                      <td>
+                        <a id="expect-new-add">Add another city</a>
+                      </td>
+                    </tr>
+                    @else
+                    @foreach ($profile->expected_cities as $city)
+                    <tr>
+                      <td>
+                        <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
+                          <option id = "selecountry" selected="selected" value="{{ $profile->expected_countries[$loop->index] }}">{{ $profile->expected_countries[$loop->index] }}</option>
+                          <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>{{ $profile->expected_countries[$loop->index] }}</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
+                          <option id = "selestate"  selected>{{ $profile->expected_states[$loop->index] }}</option>
+                          <option  v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal"  id="cityId">
+                          <option id = "selecity"  selected>{{ $city }}</option>
+                          <option  v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
+                        </select>
+                      </td>
+                      <td>
+                        @if ($loop->last) <a id="expect-new-add">Add another city</a> @endif
+                      </td>
+                    </tr>
+                    @endforeach
+                    @endif
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2">
+                        <input id="expect-save" type="submit" value="Save" class="btn_profile_save">
+                        <a class="btn_profile_cancel expect-toggle">Cancel</a>
+                      </td>
+                    </tr>
+                    <input type="hidden" id="expect-city-num" value="1"/>
+                  </tfoot>
+                </table>
+              </form><!--end #expectForm-->
+            </div><!--end .expectEdit-->
+            <div class="expectAdd pAdd expect-toggle">
+              填写准确的期望工作能大大提高求职成功率哦…<br>
+              快来添加期望工作吧！
+              <span>添加期望工作</span>
+            </div><!--end .expectAdd-->
+
+            <input type="hidden" id="expectJobVal" value="">
+            <input type="hidden" id="expectCityVal" value="">
+            <input type="hidden" id="typeVal" value="">
+            <input type="hidden" id="expectPositionVal" value="">
+            <input type="hidden" id="expectSalaryVal" value="">
+          </div><!--end #expectJob-->
 
           <div class="profile_box" id="educationalBackground">
             <h2>教育背景<span>（required）</span></h2>
@@ -234,7 +369,7 @@
                               <option value="Other">Other</option>
                               @endif
                             </select>
-                            <input type="text" class="form-control" name="schoolName" value="{{ $education->school }}">
+                            <input type="text" class="form-control " name="schoolName" value="{{ $education->school }}">
                             <input type="text" class="form-control" name="major" value="{{ $education->major }}">
                             <input type="date" class="form-control" name="startDate" value="{{ $education->start_date }}">
                             <input type="date" class="form-control" name="endDate" value="{{ $education->end_date }}">
@@ -266,7 +401,7 @@
                       <span class="redstar">*</span>
                     </td>
                     <td>
-                      <select class="degree" name="degree">
+                      <select class="degree profile_select_139 profile_select_normal" name="degree">
                         <option value="" disabled selected>Degree</option>
                         <option value="Bachelor">Bachelor</option>
                         <option value="Master">Master</option>
@@ -298,7 +433,7 @@
                   <tr>
                     <td></td>
                     <td colspan="3">
-                      <input type="submit" value="保 存" class="btn_profile_save">
+                      <input type="submit" value="Save" class="btn_profile_save">
                       <a class="btn_profile_cancel education-toggle">Cancel</a>
                     </td>
                   </tr>
@@ -644,179 +779,7 @@
             <!--end .workAdd-->
           </div><!--end #worksShow-->
 
-          <div class="profile_box" id="expectJob">
-            <h2>期望工作</h2>
-            <span class="c_edit dn"></span>
-            <div class="expectShow dn">
-              <span></span>
-            </div><!--end .expectShow-->
-            <div class="expectEdit">
-              <form id="expectForm">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input type="hidden" id="expectCity" value="" name="expectCity">
-                        <input type="button" value="期望城市，如：纽约" id="select_expectCity" class="profile_select_287 profile_select_normal">
-                        <div class="boxUpDown boxUpDown_596 dn" id="box_expectCity" style="display: none;">
-                          <dl>
-                            <dt>热门城市</dt>
-                            <dd>
-                              <span>New York</span>
-                              <span>Boston</span>
-                              <span>Chicago</span>
-                              <span>San Francisco</span>
-                              <span>Los Angeles</span>
-                              <span>Miami</span>
-                            </dd>
-                          </dl>
-                          <dl>
-                            <dt>Arizona</dt>
-                            <dd>
-                              <span>Phoenix</span>
-                              <span>Tucson</span>
-                              <span>Mesa</span>
 
-                            </dd>
-                          </dl>
-                          <dl>
-                            <dt>California</dt>
-                            <dd>
-                              <span>Los Angeles</span>
-                              <span>San Diego</span>
-                              <span>San José</span>
-                              <span>San Francisco</span>
-
-                            </dd>
-                          </dl>
-                          <dl>
-                            <dt>Illinois</dt>
-                            <dd>
-                              <span>Chicago</span>
-                              <span>Aurora</span>
-                              <span>Rockford</span>
-
-                            </dd>
-                          </dl>
-                          <dl>
-                            <dt>Maryland</dt>
-                            <dd>
-                              <span>Baltimore</span>
-                              <span>Frederick</span>
-                            </dd>
-                          </dl>
-                          <dl>
-                            <dt>Michigan</dt>
-                            <dd>
-                              <span>Detroit</span>
-                              <span>Grand Rapids</span>
-                              <span>Warren</span>
-
-                            </dd>
-                          </dl>
-                          <dl>
-                            <dt>New York</dt>
-                            <dd>
-                              <span>New York</span>
-                              <span>Buffalo</span>
-                              <span>Rochester</span>
-
-                            </dd>
-                          </dl>
-                        </div>
-                      </td>
-                      <td>
-                        <ul class="profile_radio clearfix reset">
-                          <li class="current">
-                            full<em></em>
-                            <input type="radio" checked="" name="type" value="全职">
-                          </li>
-                          <li>
-                            part<em></em>
-                            <input type="radio" name="type" value="兼职">
-                          </li>
-                          <li>
-                            intern<em></em>
-                            <input type="radio" name="type" value="实习">
-                          </li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="text" placeholder="期望职位，如：SDE" value="" name="expectPosition" id="expectPosition">
-                      </td>
-
-                      <td>
-                        <input type="hidden" id="expectSalary" value="" name="expectSalary">
-                        <input type="button" value="期望月薪" id="select_expectSalary" class="profile_select_287 profile_select_normal">
-                        <div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
-                          <ul>
-                            <li>2k以下</li>
-                            <li>2k-5k</li>
-                            <li>5k-10k</li>
-                            <li>10k-15k</li>
-                            <li>15k-25k</li>
-                            <li>25k-50k</li>
-                            <li>50k以上</li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <input type="submit" value="保 存" class="btn_profile_save">
-                        <a class="btn_profile_cancel" >取 消</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form><!--end #expectForm-->
-            </div><!--end .expectEdit-->
-            <div class="expectAdd pAdd dn">
-              填写准确的期望工作能大大提高求职成功率哦…<br>
-              快来添加期望工作吧！
-              <span>添加期望工作</span>
-            </div><!--end .expectAdd-->
-
-            <input type="hidden" id="expectJobVal" value="">
-            <input type="hidden" id="expectCityVal" value="">
-            <input type="hidden" id="typeVal" value="">
-            <input type="hidden" id="expectPositionVal" value="">
-            <input type="hidden" id="expectSalaryVal" value="">
-          </div><!--end #expectJob-->
-
-          <div class="profile_box" id="selfDescription">
-            <h2>自我描述</h2>
-            <span class="c_edit dn"></span>
-            <div class="descriptionShow dn">
-
-            </div><!--end .descriptionShow-->
-            <div class="descriptionEdit">
-              <form class="descriptionForm">
-                <table>
-                  <tbody><tr>
-                    <td colspan="2">
-                      <textarea class="selfDescription s_textarea" name="selfDescription" placeholder=""></textarea>
-                      <div class="word_count">你还可以输入 <span>500</span> 字</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">
-                      <input type="submit" value="保 存" class="btn_profile_save">
-                      <a class="btn_profile_cancel">取 消</a>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </form><!--end .descriptionForm-->
-            </div><!--end .descriptionEdit-->
-            <div class="descriptionAdd pAdd dn">
-              描述你的性格、爱好以及吸引人的经历等，<br>
-              让企业了解多元化的你！
-              <span>添加自我描述</span>
-            </div>
-            <!--end .descriptionAdd-->
-          </div><!--end #selfDescription-->
 
         </div><!--end .content_l-->
 
@@ -830,43 +793,49 @@
           </div><!--end #myInfo-->
 
           <div class="mycenterR" id="myResume">
-            <h2>My Resume</h2><br>
-            @if ($profile)
-              @if ($profile->resume)
-              <form action="{{ route('download_resume') }}" method="POST">
-                {{ csrf_field() }}
-                <label for="download-resume">
-                  <a>{{ $profile->resume }}</a>
-                </label>
-                <input type="text" name="filename" value="{{ $profile->resume }}" class="dn"/>
-                <input id="download-resume" type="submit" class="dn"/>
-              </form>
-              <label for="upload-resume">
-                <a>Choose another resume</a>
+            <h2>My Resume</h2><br />
+            @if ($profile->resume)
+            <form action="{{ route('download_resume') }}" method="POST">
+              {{ csrf_field() }}
+              <label for="download-resume">
+                <a>{{ $profile->resume }}</a>
               </label>
-              @else
-              <label for="upload-resume">
-                <a>Upload resume</a>
-              </label>
-              @endif
+              <input type="text" name="filename" value="{{ $profile->resume }}" class="dn"/>
+              <input id="download-resume" type="submit" class="dn"/>
+            </form>
+            <label for="upload-resume">
+              <a>Choose another resume</a>
+            </label>
             @else
             <label for="upload-resume">
               <a>Upload resume</a>
             </label>
             @endif
-            <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
-              {{ csrf_field() }}
-              <input id="upload-resume" type="file" name="resume" class="dn" onchange="this.form.submit();" required>
-            </form>
+            <div class="dn">
+              <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <input id="upload-resume" type="file" name="resume" onchange="this.form.submit();" required>
+              </form>
+            </div>
           </div><!--end #myResume-->
 
           <div class="mycenterR" id="myApplications">
-            <h2>My Applications</h2>
+            <h2>My Applications</h2><br />
             <ul>
-              @foreach ($applications as $application)
+              @foreach ($applications->sortBy('review') as $application)
               <li>
-                <span>Company: {{ $application->job->company }} | Position: {{ $application->job->position }} | Status: {{ $application->review }} | Resume: </span>
-                <a href = "{{ $application->resume_path }}">resume</a>
+                <span>
+                  <div>
+                    <b><i>Status: {{ $application->review }}</i></b>
+                  </div>
+                  Company: {{ $application->job->company }} | Position: {{ $application->job->position }}
+                </span>
+                <div>
+                  Files:
+                  <a href = "{{route('host')}}/uploads/{{ $application->resume_path}}"> Resume</a>
+                  <a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif > Coverletter</a>
+                  <a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif > Transcript</a>
+                </div>
               </li>
               @endforeach
             </ul>
@@ -983,8 +952,9 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 
-    <script src="user/profile/style/js/profile.js"></script>
-
+    <!-- <script src="{{ asset('admin/plugins/countrystatecity.js') }}"></script> -->
+    <script src="{{ asset('admin/plugins/location.js') }}"></script>
+    <script src="user/profile/style/js/profile.js"/></script>
     <!-- <script src="user/profile/style/js/profile.min.js"></script>
     <script async="" src="user/profile/style/js/conversion.js"></script>
     <script src="user/profile/style/js/jquery.1.10.1.min.js"></script>

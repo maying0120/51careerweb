@@ -67,18 +67,83 @@
           </div>
 
 
+          
+
+
           <div class="col-sm-6">
 
 
-
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Text Editors</li>
+              <li class="breadcrumb-item"><a href="{{route('application_view')}}">Home</a></li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    
+    <form action="{{route('application_view')}}" class="serach-form-area" method="post">
+      {{ csrf_field() }}
+      <div class="row justify-content-center form-wrap">
+
+        <label for="visa_status">status:</label>
+          <div class="col-lg-2 form-cols" id="visa_status">
+              <div class="default-select">
+                  <select  id="default-selects" name="visa_status" >
+                      <option value="Unselected">Unselected</option>
+                      <option value="OPT">OPT</option>
+                      <option value="H1B">H1B</option>
+                      <option value="Green Card">Green Card</option>
+                      <option value="Citizen">Citizen</option>
+                  </select>
+              </div>
+          </div>
+
+          <label for="major">major:</label>
+          <div class="col-lg-2 form-cols" id="major">
+            <div class="default-select">
+                <select  id="default-selects" name="major">
+                  <option value="Unselected">Unselected</option>
+                  @foreach($majors as $major)
+                  <option value="{{ $major->name}}">{{$major->name}}</option>
+                  @endforeach
+                </select>
+            </div>
+          </div>
+
+
+
+          <label for="degree">Degree:</label>
+          <div class="col-lg-2 form-cols" id="degree">
+            <div class="default-select">
+              <select  id="default-selects" name="degree">
+                  <option value="Unselected">Unselected</option>
+                  <option value="Bachelor">Bachelor</option>
+                  <option value="Master">Master</option>
+                  <option value="PHD">PHD</option>
+              </select>
+            </div>
+          </div>
+
+
+
+          <label for="experience">Experience:</label>
+          <div class="col-lg-2 form-cols" id="experience">
+            <div class="default-select">
+              <select  id="default-selects" name="experience">
+                  <option value="Unselected">Unselected</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-lg-1 form-cols">
+              <button type="submit" class="btn btn-info">
+                  <span class="lnr lnr-magnifier"></span> Search
+              </button>
+          </div>
+      </div>
+  </form>
 
 
 

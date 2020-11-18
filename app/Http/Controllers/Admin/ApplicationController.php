@@ -9,12 +9,71 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Collection;
+use App\Model\job\Major;
+use App\Model\job\Job;
+use Illuminate\Support\Facades\DB;
+
+
 
 class ApplicationController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $applications = Application::all();
-        return view('admin/application/show', compact('applications'));
+        $majors = Major::all();
+        // dump($request);
+
+
+        // if ($request->input('experience') != 'Unselected') {
+        //     array_push($filter,['experience', '=', $request->input('experience')]);
+        // }
+
+        if ($request->isMethod('post')) {
+            $filter = '';
+            if ($request->input('visa_status') != 'Unselected') {
+                #array_push($filter,['profiles.visa_status', '=', $request->input('status')]);
+                $filter = $filter."profiles.visa_status = '".$request->input('visa_status')."' and ";
+            }
+    
+            if ($request->input('major') != 'Unselected') {
+                #array_push($filter,['educations.major', '=', $request->input('major')]);
+                $filter = $filter."educations.major = '".$request->input('major')."' and ";
+            }
+    
+            if ($request->input('degree') != 'Unselected') {
+                #array_push($filter,['educations.degree', '=', $request->input('degree')]);
+                $filter = $filter."educations.degree = '".$request->input('degree')."' and";
+            }
+            $filter = $filter." 1";
+            $test = DB::table('applications')->join('profiles', function ($join){
+                $join->on('applications.user_id','=','profiles.id');
+            })->join('educations', function ($join){
+                $join->on('applications.user_id','=','educations.user');
+            });
+            if ($request->input('experience') != 'Yes') {
+                $test = $test->join('experiences', function ($join){
+                    $join->on('applications.user_id','=','experiences.user');
+                });
+            }
+
+
+            $test = $test->whereRaw($filter);
+            $test = $test->select('applications.id')->get()->toArray();
+            $ap_id = array();
+            foreach ($test as $key => $value) {
+                array_push($ap_id, $value->id);
+            }
+            if ($test == null) {
+                $applications =  new Collection();
+            } else {
+                $applications = Application::where('id',$ap_id)->get();
+            }
+            
+            return view('admin/application/show', ['applications'=>$applications,'majors'=>$majors]);
+        }
+
+
+
+        return view('admin/application/show', ['applications'=>$applications,'majors'=>$majors]);
 
     }
 

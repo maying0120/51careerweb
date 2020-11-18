@@ -89,7 +89,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::get('/admin/major/create', 'MajorController@create')->name("major_create");
   Route::get('/admin/major/delete/{majorid}', 'MajorController@delete')->name("major_delete");
   // Application
-  Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+  Route::match(['get', 'post'],'/admin/application/application','ApplicationController@index')->name('application_view');
   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
 });

@@ -87,7 +87,20 @@
 
         <label for="visa_status">status:</label>
           <div class="col-lg-2 form-cols" id="visa_status">
-              <div class="default-select">
+              
+                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="Unselected">
+                <label for="default-checkbox"> Unselected</label><br>
+                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="OPT">
+                <label for="default-checkbox"> OPT</label><br> 
+                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="H1B">
+                <label for="default-checkbox"> H1B</label><br>  
+                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="Green Card">
+                <label for="default-checkbox"> Green Card</label><br>  
+                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="Citizen">
+                <label for="default-checkbox"> Citizen</label><br>                   
+              
+
+                {{-- <div class="default-select">
                   <select  id="default-selects" name="visa_status" >
                       <option value="Unselected">Unselected</option>
                       <option value="OPT">OPT</option>
@@ -95,33 +108,51 @@
                       <option value="Green Card">Green Card</option>
                       <option value="Citizen">Citizen</option>
                   </select>
-              </div>
+                </div> --}}
           </div>
 
           <label for="major">major:</label>
           <div class="col-lg-2 form-cols" id="major">
-            <div class="default-select">
+
+            <input type="checkbox" id="default-checkbox" name="major[]" value="Unselected">
+            <label for="default-checkbox"> Unselected</label><br>
+            @foreach($majors as $major)
+            <input type="checkbox" id="default-checkbox" name="major[]" value="{{ $major->name}}">
+            <label for="default-checkbox"> {{$major->name}}</label><br>
+            @endforeach
+
+
+            {{-- <div class="default-select">
                 <select  id="default-selects" name="major">
                   <option value="Unselected">Unselected</option>
                   @foreach($majors as $major)
                   <option value="{{ $major->name}}">{{$major->name}}</option>
                   @endforeach
                 </select>
-            </div>
+            </div> --}}
           </div>
 
 
 
           <label for="degree">Degree:</label>
           <div class="col-lg-2 form-cols" id="degree">
-            <div class="default-select">
+            <input type="checkbox" id="default-checkbox" name="degree[]" value="Unselected">
+            <label for="default-checkbox"> Unselected</label><br>
+            <input type="checkbox" id="default-checkbox" name="degree[]" value="Bachelor">
+            <label for="default-checkbox"> Bachelor</label><br> 
+            <input type="checkbox" id="default-checkbox" name="degree[]" value="Master">
+            <label for="default-checkbox"> Master</label><br>  
+            <input type="checkbox" id="default-checkbox" name="degree[]" value="PHD">
+            <label for="default-checkbox"> PHD</label><br>  
+
+            {{-- <div class="default-select">
               <select  id="default-selects" name="degree">
                   <option value="Unselected">Unselected</option>
                   <option value="Bachelor">Bachelor</option>
                   <option value="Master">Master</option>
                   <option value="PHD">PHD</option>
               </select>
-            </div>
+            </div> --}}
           </div>
 
 
@@ -131,8 +162,11 @@
             <div class="default-select">
               <select  id="default-selects" name="experience">
                   <option value="Unselected">Unselected</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                  <option value="2">less than 1 year</option>
+                  <option value="3">1 to 5 years</option>
+                  <option value="4">more than 5 years</option>
               </select>
             </div>
           </div>

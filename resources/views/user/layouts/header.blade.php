@@ -9,16 +9,36 @@
       <li><a href="post">Post</a></li>
       <li><a href="job">Jobs</a></li>
       <li><a href="video">Blog</a></li>
-      <li class="drop-down"><a href="#">User</a>
+      @if (Auth::guard('web')->check())
+      <li class="drop-down">
+        <a onclick="markNotificationsAsRead()">Notifications
+          @if (count(auth()->user()->unreadNotifications) > 0)
+          <span class="badge badge-info">{{ count(auth()->user()->unreadNotifications) }}</span>
+          @endif
+        </a>
+        <ul>
+          @forelse (auth()->user()->unreadNotifications as $note)
+          <li>
+            <a>Your application to {{ $note->data['company'] }} is {{ $note->data['review'] }}</a>
+          </li>
+          @if ($loop->last) <a>View all notifications</a> @endif
+          @empty
+          <a>No unread notifications</a>
+          @endforelse
+        </ul>
+      </li>
+      @endif
+      <li class="drop-down">
+        <a href="#">User</a>
         <ul>
             @if (Auth::guest())
             <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('register') }}">Sign up</a></li>
-            @elseif(Auth::guard('web')->check())
+            @elseif (Auth::guard('web')->check())
             <li><a href="profile">Profile</a></li>
             <li>
-              <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout {{ Auth::user()->name }}</a>
-              <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
+              <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+              <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
                 {{ csrf_field() }}
               </form>
             </li>
@@ -29,3 +49,8 @@
     </ul>
   </nav><!-- .nav-menu -->
 </div>
+<script>
+  function markNotificationsAsRead() {
+    $.get('/unreadNotificationsMarkAsRead');
+  };
+</script>

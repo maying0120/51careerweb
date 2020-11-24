@@ -224,6 +224,7 @@
 
                       {{-- <a data-toggle="modal" data-target="#myModal" > <i class="fas fa-pen"> </a>  --}}
                        <a data-toggle="modal" data-target="#myModal{{ $application->id }}"> <i class="fas fa-pen"></i> </a>
+
                       </td>
 
 
@@ -272,7 +273,8 @@
         <div class="form-group">
           <label for="title">review:</label>
           <input type="text" class="form-control" id="id" name="id" placeholder="id" value="{{$application->id}}"  hidden>
-
+          <input type="text" class="form-control" name="user-id" value="{{$application->user->id}}"  hidden>
+          <input type="text" class="form-control" name="company" value="{{$application->job->company}}"  hidden>
           <input type="text" class="form-control" id="review" name="review" placeholder="review" value="{{ $application->review }}">
         </div>
 

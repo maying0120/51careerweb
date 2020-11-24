@@ -14,6 +14,8 @@ use App\Model\job\Job;
 use Illuminate\Support\Facades\DB;
 
 
+use App\Model\user\User;
+use App\Notifications\ApplicationStatus;
 
 class ApplicationController extends Controller
 {
@@ -121,9 +123,11 @@ class ApplicationController extends Controller
 
     public function update(Request $request){
         $temp = Application::find($request->input('id'));
+        $user = User::find($request->input('user-id'));
         $temp->review = $request->input('review');
         $temp->status = $request->input('status');
         $temp->save();
+        $user->notify(new ApplicationStatus($request));
         return redirect()->route('application_view');
     }
 
@@ -204,6 +208,7 @@ class ApplicationController extends Controller
         $application->status = "pending";
 
 
+        $application->review = "Processing";
         $application->save();
 
 

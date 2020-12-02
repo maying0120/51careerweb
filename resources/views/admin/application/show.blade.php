@@ -8,6 +8,14 @@
    <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
    <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+   <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+
+
+
+
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -114,22 +122,22 @@
           <label for="major">major:</label>
           <div class="col-lg-2 form-cols" id="major">
 
-            <input type="checkbox" id="default-checkbox" name="major[]" value="Unselected">
+            {{-- <input type="checkbox" id="default-checkbox" name="major[]" value="Unselected">
             <label for="default-checkbox"> Unselected</label><br>
             @foreach($majors as $major)
             <input type="checkbox" id="default-checkbox" name="major[]" value="{{ $major->name}}">
             <label for="default-checkbox"> {{$major->name}}</label><br>
-            @endforeach
+            @endforeach --}}
 
 
-            {{-- <div class="default-select">
-                <select  id="default-selects" name="major">
-                  <option value="Unselected">Unselected</option>
-                  @foreach($majors as $major)
-                  <option value="{{ $major->name}}">{{$major->name}}</option>
-                  @endforeach
-                </select>
-            </div> --}}
+            <div class="select2-blue">
+              <select class="select2" multiple="multiple" data-placeholder="Select a major" name="major[]"
+              data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                @foreach($majors as $major)
+                <option value="{{ $major->name}}"> {{$major->name}}</option>
+                @endforeach
+              </select>
+            </div>
           </div>
 
 
@@ -346,6 +354,12 @@
 <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script src="{{ asset('admin/plugins/select2/js/select2.full.min.js') }}"></script>
+
 {{-- <script>
   $(function () {
     $("#example1").DataTable({
@@ -363,6 +377,12 @@
     });
   });
 </script> --}}
+<script>
+  $(document).ready(function(){
+    //Initialize Select2 Elements
+    $('.select2').select2()
 
+})
+</script>
 </body>
 </html>

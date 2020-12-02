@@ -96,42 +96,24 @@
         <label for="visa_status">status:</label>
           <div class="col-lg-2 form-cols" id="visa_status">
               
-                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="Unselected">
-                <label for="default-checkbox"> Unselected</label><br>
-                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="OPT">
-                <label for="default-checkbox"> OPT</label><br> 
-                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="H1B">
-                <label for="default-checkbox"> H1B</label><br>  
-                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="Green Card">
-                <label for="default-checkbox"> Green Card</label><br>  
-                <input type="checkbox" id="default-checkbox" name="visa_status[]" value="Citizen">
-                <label for="default-checkbox"> Citizen</label><br>                   
-              
-
-                {{-- <div class="default-select">
-                  <select  id="default-selects" name="visa_status" >
-                      <option value="Unselected">Unselected</option>
-                      <option value="OPT">OPT</option>
-                      <option value="H1B">H1B</option>
-                      <option value="Green Card">Green Card</option>
-                      <option value="Citizen">Citizen</option>
+                <div class="select2-blue">
+                  <select class="select2" multiple="multiple" data-placeholder="Select visa status" name="major[]"
+                  data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                    <option value="OPT"> OPT</option>
+                    <option value="H1B"> H1B</option>
+                    <option value="Green Card"> Green Card</option>
+                    <option value="Citizen"> Citizen</option>
                   </select>
-                </div> --}}
+                </div>
+
           </div>
 
           <label for="major">major:</label>
           <div class="col-lg-2 form-cols" id="major">
 
-            {{-- <input type="checkbox" id="default-checkbox" name="major[]" value="Unselected">
-            <label for="default-checkbox"> Unselected</label><br>
-            @foreach($majors as $major)
-            <input type="checkbox" id="default-checkbox" name="major[]" value="{{ $major->name}}">
-            <label for="default-checkbox"> {{$major->name}}</label><br>
-            @endforeach --}}
-
 
             <div class="select2-blue">
-              <select class="select2" multiple="multiple" data-placeholder="Select a major" name="major[]"
+              <select class="select2" multiple="multiple" data-placeholder="Select major" name="major[]"
               data-dropdown-css-class="select2-blue" style="width: 100%; ">
                 @foreach($majors as $major)
                 <option value="{{ $major->name}}"> {{$major->name}}</option>
@@ -144,23 +126,15 @@
 
           <label for="degree">Degree:</label>
           <div class="col-lg-2 form-cols" id="degree">
-            <input type="checkbox" id="default-checkbox" name="degree[]" value="Unselected">
-            <label for="default-checkbox"> Unselected</label><br>
-            <input type="checkbox" id="default-checkbox" name="degree[]" value="Bachelor">
-            <label for="default-checkbox"> Bachelor</label><br> 
-            <input type="checkbox" id="default-checkbox" name="degree[]" value="Master">
-            <label for="default-checkbox"> Master</label><br>  
-            <input type="checkbox" id="default-checkbox" name="degree[]" value="PHD">
-            <label for="default-checkbox"> PHD</label><br>  
-
-            {{-- <div class="default-select">
-              <select  id="default-selects" name="degree">
-                  <option value="Unselected">Unselected</option>
-                  <option value="Bachelor">Bachelor</option>
-                  <option value="Master">Master</option>
-                  <option value="PHD">PHD</option>
+            <div class="select2-blue">
+              <select class="select2" multiple="multiple" data-placeholder="Select degree" name="major[]"
+              data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                <option value="Bachelor"> Bachelor</option>
+                <option value="Master"> Master</option>
+                <option value="PHD"> PHD</option>
               </select>
-            </div> --}}
+            </div>
+         
           </div>
 
 

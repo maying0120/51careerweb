@@ -65,10 +65,12 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::resource('admin/tag','TagController');
   Route::resource('admin/category','CategoryController');
   // User Profile
-  Route::resource('admin/user', 'UserController');
   Route::get('admin/user/recommend/{id}', 'UserController@recommend')->name("admin_recommend");
+  Route::get('admin/user/allrec', 'UserController@recommendall')->name("admin_recommendall");
   Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
+  Route::resource('admin/user', 'UserController');
+
 
   // Job
   Route::get('/admin/job/job', 'JobController@index')->name("job_view");

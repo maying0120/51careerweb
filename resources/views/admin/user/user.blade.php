@@ -28,6 +28,7 @@
           </div>
 
 
+
           <div class="col-sm-6">
 
 
@@ -37,6 +38,11 @@
               <li class="breadcrumb-item active">Text Editors</li>
             </ol>
           </div>
+
+          <div class="col-sm-6">
+            <a href="{{ route('admin_recommendall')}}" > recommendall </a>
+          </div>
+
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -59,6 +65,7 @@
                     <th>user signup time</th>
                     <th>user status</th>
                     <th>recommend jobs</th>
+                    <th>last recommend at</th>
                     <th>recommend</th>
                     <th>edit</th>
                     <th>delete</th>
@@ -75,6 +82,7 @@
                      <td>{{ $user->created_at}}</td>
                      <td>{{ $user->status }}</td>
                      <td>{{ $user->recommend_job }}</td>
+                     <td>{{ $user->updated_at }}</td>
                      <td>
                       <a href="{{ route('admin_recommend',$user->id) }}">
                         <i class="fas fa-share"></i>

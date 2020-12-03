@@ -57,7 +57,6 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
   margin: 0 0 15px;
   color: #444;
   font-weight: 500;
@@ -110,7 +109,6 @@ a:active, a:hover {
 body {
   background: #fff none repeat scroll 0 0;
   color: #444;
-  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   text-align: left;
   overflow-x: hidden;
@@ -138,7 +136,7 @@ body {
 }
 
 .back-to-top:focus {
-  background: #3EC1D5;
+  background: ;
   color: #fff;
   outline: none;
 }
@@ -175,12 +173,12 @@ div#preloader {
 }
 
 ::-moz-selection {
-  background: #3EC1D5;
+  background: ;
   text-shadow: none;
 }
 
 ::selection {
-  background: #3EC1D5;
+  background: ;
   text-shadow: none;
 }
 
@@ -230,6 +228,7 @@ div#preloader {
 # Header
 --------------------------------------------------------------*/
 #header {
+  font-family: 'Lora', sans-serif;
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
@@ -256,15 +255,16 @@ div#preloader {
   color: #3ec1d5;
 }
 
-#header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
+#header a:hover {
+  color: #3ec1d5;
   text-decoration: none;
 }
 
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 20px;
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {
@@ -322,14 +322,13 @@ div#preloader {
   display: block;
   position: relative;
   color: #000000;
-  padding: 8px 15px 12px 15px;
+  padding: 8px 8px 8px 8px;
   transition: 0.3s;
   font-size: 15px;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #3ec1d5;
- 
   text-decoration: none;
 }
 
@@ -2374,13 +2373,19 @@ span.email-notes {
   background: #f9f9f9;
 }
 
+.footer-area p {
+  font-family: 'Merriweather', sans-serif;
+}
+
 .footer-head p {
   color: #444;
 }
 
 .footer-head h4 {
+  font-family: 'Lora', sans-serif;
+  font-weight: bold;
   color: #444;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 2px;
   padding-bottom: 10px;
   text-transform: uppercase;
@@ -2391,6 +2396,7 @@ span.email-notes {
 }
 
 .footer-logo h2 {
+  font-family: 'Lora', sans-serif;
   color: #222;
   padding: 0;
   margin: 0;

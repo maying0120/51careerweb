@@ -16,6 +16,8 @@
   <link href="{{ asset('user/vendor/nivo-slider/css/nivo-slider.css') }}" rel="stylesheet">
   <link href="{{ asset('user/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
   <link href="{{ asset('user/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
   <!-- Template Main CSS File -->
   <link href="{{ asset('user/css/style.css') }}" rel="stylesheet">
 </head>

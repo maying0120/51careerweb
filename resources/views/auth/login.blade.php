@@ -13,23 +13,26 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
   <!-- summernote -->
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-    <style>
-      .login-box{
-        position: relative;
-        margin: auto;
-        align-self: center;
-      }
+  <style>
+  .login-box {
+    width: 360px;
+    height: 364px;
+    position: relative;
+    margin: auto;
+    align-self: center;
+  }
 
-      input[type="checkbox"]{
-        -webkit-appearance: checkbox;
-      }
-    </style>
+  .login-box-msg {
+    text-align: center;
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+  }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
   <!-- ======= Header ======= -->
@@ -126,7 +129,6 @@
  @include('user/layouts/vendorjsfiles')
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 </body>

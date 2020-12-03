@@ -9,14 +9,115 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Collection;
+use App\Model\job\Major;
+use App\Model\job\Job;
+use Illuminate\Support\Facades\DB;
+
+
 use App\Model\user\User;
 use App\Notifications\ApplicationStatus;
 
 class ApplicationController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $applications = Application::all();
-        return view('admin/application/show', compact('applications'));
+        $majors = Major::all();
+        // dump($request);
+
+        // dump($request->input());
+        // if ($request->input('experience') != 'Unselected') {
+        //     array_push($filter,['experience', '=', $request->input('experience')]);
+        // }
+
+        if ($request->isMethod('post')) {
+            $search='';
+
+            foreach ($request->input() as $key => $item) {
+                $filter = '';
+
+                if ($key == "experience"){
+                    if ($item == "1") {
+                        $filter = $key." between '0' and '0' ";
+                    } elseif ($item == "2") {
+                        $filter = $key." between '0' and '1' ";
+                    }  elseif ($item == "3") {
+                        $filter = $key." between '1' and '5' ";
+                    }  elseif ($item == "4") {
+                        $filter = $key." between '5' and '100' ";
+                    }
+
+                    if (strlen($filter) > strlen($key)){
+                        $search = $search." ( ".$filter." ) and ";
+                    }
+                }
+
+                if ($key == "_token" || $key == "experience") {
+                    continue;
+                } 
+                else {
+
+                    
+                    for ($i = 0; $i < count($item); $i++) {
+                        if ($item[$i] != 'Unselected') {
+                            $filter = $filter.$key." = '".$item[$i]."' or ";
+                        } else {
+                            $filter = "1";
+                            break;
+                        }
+                    }
+                    
+                }
+
+
+                if (strlen($filter) > strlen($key)){
+                    $search = $search." ( ".$filter." 0 ) and ";
+                }
+
+            }
+            // if ($request->input('visa_status') != 'Unselected') {
+            //     #array_push($filter,['profiles.visa_status', '=', $request->input('status')]);
+            //     $filter = $filter."profiles.visa_status = '".$request->input('visa_status')."' and ";
+            // }
+    
+            // if ($request->input('major') != 'Unselected') {
+            //     #array_push($filter,['educations.major', '=', $request->input('major')]);
+            //     $filter = $filter."educations.major = '".$request->input('major')."' and ";
+            // }
+    
+            // if ($request->input('degree') != 'Unselected') {
+            //     #array_push($filter,['educations.degree', '=', $request->input('degree')]);
+            //     $filter = $filter."educations.degree = '".$request->input('degree')."' and";
+            // }
+            $search= $search." 1";
+            // dump($search);
+            $test = DB::table('applications')->join('profiles', function ($join){
+                $join->on('applications.user_id','=','profiles.id');
+            })->join('educations', function ($join){
+                $join->on('applications.user_id','=','educations.user');
+            })->join('experiences', function ($join){
+                $join->on('applications.user_id','=','experiences.user');
+            });
+
+ 
+
+            $test = $test->whereRaw($search);
+            $test = $test->select('applications.id')->get()->toArray();
+            $ap_id = array();
+            foreach ($test as $key => $value) {
+                array_push($ap_id, $value->id);
+            }
+            if ($test == null) {
+                $applications =  new Collection();
+            } else {
+                $applications = Application::where('id',$ap_id)->get();
+            }
+            
+            return view('admin/application/show', ['applications'=>$applications,'majors'=>$majors]);
+        }
+
+
+
+        return view('admin/application/show', ['applications'=>$applications,'majors'=>$majors]);
 
     }
 

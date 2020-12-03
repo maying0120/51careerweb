@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\job\Job;
 use Illuminate\Support\Facades\DB;
-use App\Model\user\Profile;
+use App\Model\user\profile;
 
 class JobController extends Controller
 {
@@ -36,7 +36,7 @@ class JobController extends Controller
          if ($id != null) {
             $curtime = date('Y-m-d' , time());
             $jobs = Job::where('expire_time', '>=', $curtime );
-            $user_profile = Profile::where('id',$id)->first();
+            $user_profile = Profile::where('user', $id)->first();
             $jobs = $jobs->where('city','like','%'.$user_profile->expect_city.'%')
                          ->where('job_type','like','%'.$user_profile->expect_type.'%')
                          ->where('position','like','%'.$user_profile->expect_position.'%')
@@ -74,7 +74,7 @@ class JobController extends Controller
          $jobs = $jobs->Where('exp_level',$request->input('exp_level'));
       }
 
-      
+
       // dump($jobs->get());
       return response()->json(array('jobs'=> $jobs->get()), 200);
    }

@@ -27,6 +27,7 @@ class CreateProfilesTable extends Migration
           $table->string('expected_states')->nullable();
           $table->string('expected_cities')->nullable();
           $table->string('expected_title')->nullable();
+          $table->string('skills')->nullable();
           $table->string('avatar')->nullable();
           $table->string('resume')->nullable();
 

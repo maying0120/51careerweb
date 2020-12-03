@@ -13,15 +13,10 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
     <!-- summernote -->
-    <!-- Google Font: Source Sans Pro -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-
     <link href="user/profile/style/css/style2.css" rel="stylesheet">
     <link href="user/profile/style/css/external.min.css"  rel="stylesheet">
-    <link href="user/profile/style/css/popup.css"  rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <link href="user/profile/style/css/select2.css" rel="stylesheet">
 
 </head>
 
@@ -229,9 +224,14 @@
                         <input type="text" name="title" placeholder="Title" @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
                       </td>
                       <td>
-                        <!-- <input type="text" class="form-control" id="country" name="country" placeholder="country" value="" hidden>
-                        <input type="text" class="form-control" id="state" name="state" placeholder="state" value="" hidden>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="city" value="" hidden> -->
+                        <div class="select2-blue">
+                          <select class="select2" multiple="multiple" data-placeholder="Skills" name="skills[]"
+                          data-dropdown-css-class="select2-blue" >
+                          @foreach ($skills as $skill)
+                          <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
+                          @endforeach
+                          </select>
+                        </div>
                       </td>
                     </tr>
 
@@ -951,10 +951,12 @@
     <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <!-- <script src="{{ asset('admin/plugins/countrystatecity.js') }}"></script> -->
     <script src="{{ asset('admin/plugins/location.js') }}"></script>
     <script src="user/profile/style/js/profile.js"/></script>
+
     <!-- <script src="user/profile/style/js/profile.min.js"></script>
     <script async="" src="user/profile/style/js/conversion.js"></script>
     <script src="user/profile/style/js/jquery.1.10.1.min.js"></script>
@@ -967,7 +969,12 @@
     <script src="user/profile/style/js/Chart.min.js"></script>
     <script src="user/profile/style/js/core.min.js"></script>
     <script src="user/profile/style/js/popup.min.js"></script> -->
-
+    <script>
+      $(document).ready(function(){
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    })
+    </script>
 </div>
 
 </body>

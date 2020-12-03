@@ -18,12 +18,18 @@
         </a>
         <ul>
           @forelse (auth()->user()->unreadNotifications as $note)
-          <li>
-            <a>Your application to {{ $note->data['company'] }} is {{ $note->data['review'] }}</a>
-          </li>
-          @if ($loop->last) <a>View all notifications</a> @endif
-          @empty
-          <a>No unread notifications</a>
+            @if ($note->type == 'App\Notifications\ApplicationStatus')
+              <li>
+                <a>Your application to {{ $note->data['company'] }} is {{ $note->data['review'] }}</a>
+              </li>
+            @elseif ($note->type == 'App\Notifications\JobsRecommend')
+              <li onclick="markNotificationsAsRead()" >
+                <a href='{{ $note->data['link'] }}'>Some jobs were recommended for you to check out!</a>
+              </li>
+            @endif
+            @if ($loop->last) <a>View all notifications</a> @endif
+            @empty
+            <a>No unread notifications</a>
           @endforelse
         </ul>
       </li>

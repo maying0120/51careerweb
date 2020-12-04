@@ -1,6 +1,6 @@
 <div class="container d-flex">
   <div class="logo mr-auto">
-    <a href="/"><h1>51 Careers</h1></a>
+    <a href="/"><h1>51Careers</h1></a>
   </div>
   <nav class="nav-menu d-none d-lg-block">
     <ul>
@@ -9,7 +9,14 @@
       <li><a href="">Success Stories</a></li>
       <li><a href="job">Job Board</a></li>
       <li><a href="video">Feed</a></li>
-      <li><a href="">Our Company</a></li>
+      <li class="drop-down">
+        <a href="">Our Company</a>
+        <ul>
+          <li><a>About Us</a></li>
+          <li><a>Join Us</a></li>
+          <li><a>Contact Us</a></li>
+        </ul>
+      </li>
       @if (Auth::guard('web')->check())
       <li class="drop-down">
         <a onclick="markNotificationsAsRead()">
@@ -45,7 +52,9 @@
             <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('register') }}">Sign up</a></li>
             @elseif (Auth::guard('web')->check())
-            <li><a href="profile">Profile</a></li>
+            <li><a href="">My Reviews</a></li>
+            <li><a href="">My Subscription</a></li>
+            <li><a href="profile">My Profile</a></li>
             <li>
               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">

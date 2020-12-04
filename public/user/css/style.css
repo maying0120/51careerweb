@@ -7,12 +7,27 @@
 
 @charset "UTF-8";
 /*--------------------------------------------------------------
-# General
+# 51Careers Specific
 --------------------------------------------------------------*/
-html, body {
-  height: 100%;
+footer {
+  margin-top: auto;
 }
 
+.centered {
+  margin: auto;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Merriweather', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 .floatleft {
   float: left;
 }
@@ -234,11 +249,11 @@ div#preloader {
   z-index: 997;
   transition: all 0.5s;
   padding: 20px 0;
-  background: rgba(240, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 #header.header-scrolled {
-  background: rgba(240, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   height: 60px;
   padding: 10px 0;
 }
@@ -2371,10 +2386,6 @@ span.email-notes {
 .footer-area {
   padding: 40px 0;
   background: #f9f9f9;
-}
-
-.footer-area p {
-  font-family: 'Merriweather', sans-serif;
 }
 
 .footer-head p {

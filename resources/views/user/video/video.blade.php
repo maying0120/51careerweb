@@ -149,7 +149,7 @@
 
 
                                 <ul>
-                                 @foreach($vcategorys as $vcategory)
+                                 @foreach($vcategories as $vcategory)
                                   <li>
                                     <a href="/video/vcats/{{ $vcategory }}">
 

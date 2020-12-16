@@ -18,7 +18,7 @@ class VideoController extends Controller
     public function index()
     {
         $videos = video::all();
-         return view('admin/video/show',compact('videos'));
+        return view('admin/video/show',compact('videos'));
          #return view('admin/post/show');
     }
 
@@ -31,7 +31,8 @@ class VideoController extends Controller
     {
        // $tags = tag::all();
         //$categories = category::all();
-        return view('admin/video/video');
+        $vcategories = vcategory::all();
+        return view('admin/video/video',['vcategories' => $vcategories]);
     }
 
     /**
@@ -65,7 +66,7 @@ class VideoController extends Controller
         $video->subtitle = $request->subtitle;
         $video->slug = $request->slug;
         $video->body = $request->body;
-         $video->vcategory = $request->vcategory;
+        $video->vcategory = join(";", $request->vcategory);
         $video->status = $request->status;
         //先保存post才有id，才能保存tags 和 categories
         $video->save();
@@ -94,10 +95,20 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-          $video =  video::where('id',$id)->first();
+        $video =  video::where('id',$id)->first();
         //  $tags = tag::all();
          // $categories = category::all();
-          return view('admin/video/edit',compact('video'));
+         $video->vcategory = explode (";", $video->vcategory);
+         $vcategories = vcategory::all();
+         for ($i = 0; $i < count($vcategories); $i++){
+             for ($y = 0; $y < count($video->vcategory); $y++){
+                 if ($vcategories[$i]->name == $video->vcategory[$y]) {
+                     $vcategories[$i]->match = true;
+                 } 
+             }
+         }
+
+        return view('admin/video/edit',compact('video','vcategories'));
 
     }
 
@@ -129,16 +140,16 @@ class VideoController extends Controller
              }
 
 
-                $video = post::find($id);
+                $video = video::find($id);
                 $video->image = $imageName;
                 $video->title = $request->title;
                 $video->subtitle = $request->subtitle;
                 $video->slug = $request->slug;
                 $video->body = $request->body;
-                   $video->vcategory = $request->vcategory;
-               // $post->tags()->sync($request->tags);
+                $video->vcategory = join(";", $request->vcategory);
+                // $post->tags()->sync($request->tags);
                // $post->categories()->sync($request->categories);
-                $post->status = $request->status;
+                $video->status = $request->status;
 
 
                 //新增

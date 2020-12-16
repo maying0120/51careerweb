@@ -86,6 +86,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
 
   Route::resource('admin/tag','TagController');
   Route::resource('admin/category','CategoryController');
+  Route::resource('admin/vcategory','VCategoryController');
 
   Route::resource('admin/video','videoController');
 

@@ -132,6 +132,20 @@
                         <label for="slug">slug</label>
                         <input type="text" class="form-control" id="slug" name="slug" placeholder="slug" value="{{ $video->slug }}">
 
+
+
+                        <div class="form-group">
+                          <label>select category </label>
+                          <div class="select2-blue">
+                            <select class="select2" multiple="multiple" data-placeholder="Select a vcategory" name="vcategory[]"
+                            data-dropdown-css-class="select2-blue" style="width: 100%;">
+                           @foreach($vcategories as $vcategory)
+                         <option value="{{ $vcategory->id}}" @if ($vcategory->match == true) selected = "selected" @endif)> {{$vcategory->name}}</option>
+                         @endforeach
+                            </select>
+                          </div>
+                        </div>
+                      
                     <div class="form-group">
                         <label for="image">image file input</label>
                           <div class="input-group">

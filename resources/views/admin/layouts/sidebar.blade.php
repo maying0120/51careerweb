@@ -165,13 +165,19 @@
             </a>
             <ul>
               <li class="nav-item">
-                <a href="./index1.html" class="nav-link">
+                <a href="{{ route('video.create') }}" class="nav-link">
                   <i class="far"></i>
                   <p>发布视频</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ route('video.index') }}" class="nav-link">
+                  <i class="far"></i>
+                  <p>视频管理</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('vcategory.index') }}" class="nav-link">
                   <i class="far"></i>
                   <p>视频分类</p>
                 </a>

@@ -20,16 +20,36 @@ Route::post('admin-logout', 'Admin\Auth\LoginController@logout')->name('admin.lo
 // Auth Custom Logout
 Route::post('/', 'Auth\LoginController@logout')->name('user.logout');
 
+
+
+
+
+
 // Protected against Non-Users
 Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::get('/home', 'HomeController@index');
+   //about
+    Route::get('/aboutus', 'HomeController@aboutus');
+    //contact
+    Route::get('/contactus', 'HomeController@contactus');
    // Video
-   Route::get('video','PostdetailController@index');
+   Route::get('video','VideoController@index')->name('video');
+   Route::get('video/search','VideoController@search');
+   //
+   Route::get('video/vcats/{vcategory}','VideoController@catsearch');
+  // Route::get('video/vcat/test','VideoController@vcategory');
+     Route::get('video/search','VideoController@search');
+   Route::get('video/vcat/{vcategory}','VideoController@vcategory')->name('vcategory');
+
    // Post
    Route::get('post','PostController@index');
+
+    Route::get('post/search','PostController@search');
    Route::get('post/{post}','PostController@post')->name('post');
    Route::get('post/tag/{tag}','PostController@tag')->name('tag');
    Route::get('post/category/{category}','PostController@category')->name('category');
+
+
    // Job
    Route::get('job/{id?}','JobController@index')->name('user_job');
    Route::get('job/detail','JobController@detail');
@@ -38,6 +58,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::resource('education', 'EducationController');
    Route::resource('experience', 'ExperienceController');
    Route::resource('showcase', 'ShowcaseController');
+
    Route::post('profile/avatar', 'ProfileController@uploadAvatar');
    Route::post('profile/description', 'ProfileController@updateDescription');
    Route::post('profile/expect', 'ProfileController@updateExpect');
@@ -50,6 +71,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    // Appendix
    Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 });
+
 
 Route::group(['namespace'=> 'Admin', 'middleware' => ['auth']], function() {
   Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
@@ -64,14 +86,21 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
 
   Route::resource('admin/tag','TagController');
   Route::resource('admin/category','CategoryController');
+  Route::resource('admin/vcategory','VCategoryController');
+
+  Route::resource('admin/video','videoController');
+
   // User Profile
   Route::get('admin/user/recommend/{id}', 'UserController@recommend')->name("admin_recommend");
   Route::get('admin/user/allrec', 'UserController@recommendall')->name("admin_recommendall");
   Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
   Route::resource('admin/user', 'UserController');
-
-
+  // Application
+  Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
+  Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
+  Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
+  Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
   // Job
   Route::get('/admin/job/job', 'JobController@index')->name("job_view");
   Route::get('/admin/job/edit/{jobid}', 'JobController@edit')->name("job_edit");
@@ -96,27 +125,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::post('/admin/major/add', 'MajorController@add')->name("major_add");
   Route::get('/admin/major/create', 'MajorController@create')->name("major_create");
   Route::get('/admin/major/delete/{majorid}', 'MajorController@delete')->name("major_delete");
-  // Application
-  Route::match(['get', 'post'],'/admin/application/application','ApplicationController@index')->name('application_view');
-  Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
-  Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
 });
-
-
-
-// Route::group(['namespace' => 'Admin'],function() {
-//   // Application
-//   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
-//   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
-//   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
-//   Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
-
-
-// });
-
-
-
-
 
 Route::group(['namespace' => 'location'], function () {
     Route::get('/getcountry','LocationController@getCountry')->name('getcountry');

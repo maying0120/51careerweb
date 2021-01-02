@@ -37,6 +37,20 @@ class VideoController extends Controller
     }
 
 
+    public function searchbycat($vcategory){
+      $videos = video::where('vcategory','like','%'.$vcategory.'%')->get();
+      $archives =  video::selectRaw('year(created_At) year, monthname(created_at) month,count(*) published')
+        ->groupBy('year','month')
+        ->orderByRaw('min(created_at) desc')
+        ->get()
+        ->toArray();
+
+      $vcategories = vcategory::all();
+
+      return view('user.video.video',compact('videos','archives','vcategories'));
+    }
+
+
       public function vcategory(vcategory $vcategory)
       {
         # return $vcategory = vcategory::where('name',$name)->get();

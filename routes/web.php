@@ -33,6 +33,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
     //contact
     Route::get('/contactus', 'HomeController@contactus');
    // Video
+   Route::get('videos/{vcategory}','VideoController@searchbycat');
    Route::get('video','VideoController@index')->name('video');
    Route::get('video/search','VideoController@search');
    //

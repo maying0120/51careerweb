@@ -122,7 +122,7 @@
 
                <div class="single-blog-page">
                                     <div class="left-blog">
-                                      <h4>archive</h4>
+                                      <h4>Month</h4>
 
 
                                       <ul>
@@ -135,7 +135,7 @@
                                        @endforeach
 
                                         <li>
-                                                           <h5 > <a href="/video">See All Articles</a> </h5>
+                                                           <h5 > <a href="/video">See All Videos</a> </h5>
                                                             </li>
                                       </ul>
                                     </div>
@@ -145,20 +145,20 @@
 
                   <div class="single-blog-page">
                               <div class="left-blog">
-                                <h4>archive</h4>
+                                <h4>Categories</h4>
 
 
                                 <ul>
                                  @foreach($vcategories as $vcategory)
                                   <li>
-                                    <a href="/video/vcats/{{ $vcategory }}">
+                                    <a href="/videos/{{ $vcategory->name }}">
 
-                                     {{ $vcategory}} </a>
+                                     {{ $vcategory->name}} </a>
                                   </li>
                                  @endforeach
 
                                   <li>
-                                   <h5 > <a href="/video">See All videos</a> </h5>
+                                   <h5 > <a href="/video">See All Videos</a> </h5>
                                                       </li>
                                 </ul>
                               </div>

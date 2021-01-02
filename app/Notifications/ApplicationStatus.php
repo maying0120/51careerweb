@@ -42,8 +42,10 @@ class ApplicationStatus extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Your application to ' . $this->request->input('company') . ' is ' . $this->request->input('status'))
-                    ->action('View notification', url('/'))
+                    ->from('mail@example.com', '51Careers')
+                    ->subject('Job Application Status Change')
+                    ->line('Your application to ' . $this->request->input('company') . ' is now ' . $this->request->input('status'))
+                    ->action('View notification', url('/profile/application'))
                     ->line('Thank you for using 51Career');
     }
 

@@ -23,7 +23,7 @@ class ProfileController extends Controller
       return $profile;
     }
 
-    public function index()
+    public function index($tab)
     {
       $user = auth()->user();
       $id = $user->id;
@@ -44,7 +44,7 @@ class ProfileController extends Controller
       }
 
       return view('user/profile/profile',compact('user', 'projects', 'companies',
-      'educations', 'showcases', 'applications', 'profile', 'skills'));
+      'educations', 'showcases', 'applications', 'profile', 'skills', 'tab'));
     }
 
     public function uploadAvatar(Request $request)

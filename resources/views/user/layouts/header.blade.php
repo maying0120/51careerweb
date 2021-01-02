@@ -1,14 +1,14 @@
 <div class="container d-flex">
-  <div class="logo mr-auto">
-    <a href="/"><h1>51Careers</h1></a>
+  <div class="mr-auto">
+    <img src="{{ asset('user/img/51careerlogo.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
   </div>
   <nav class="nav-menu d-none d-lg-block">
     <ul>
-      <li><a href="home">Home</a></li>
+      <li><a href="/home">Home</a></li>
       <li><a href="">Service</a></li>
       <li><a href="">Success Stories</a></li>
-      <li><a href="job">Job Board</a></li>
-      <li><a href="video">Feed</a></li>
+      <li><a href="/job">Job Board</a></li>
+      <li><a href="/video">Blog</a></li>
       <li class="drop-down">
         <a href="">Our Company</a>
         <ul>
@@ -18,29 +18,15 @@
         </ul>
       </li>
       @if (Auth::guard('web')->check())
-      <li class="drop-down">
-        <a onclick="markNotificationsAsRead()">
+      <li style="margin-left: 10px; padding-left: 10px;">
+        <a href="{{ route('profile', ['tab' => 'notification']) }}">
           <i class="fa fa-bell"></i>
           @if (count(auth()->user()->unreadNotifications) > 0)
-          <span class="badge badge-info">{{ count(auth()->user()->unreadNotifications) }}</span>
+          <span class="badge badge-pill badge-info">
+            &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
+          </span>
           @endif
         </a>
-        <ul>
-          @forelse (auth()->user()->unreadNotifications as $note)
-          @if ($note->type == 'App\Notifications\ApplicationStatus')
-          <li>
-            <a>Your application to {{ $note->data['company'] }} is {{ $note->data['review'] }}</a>
-          </li>
-          @elseif ($note->type == 'App\Notifications\JobsRecommend')
-          <li onclick="markNotificationsAsRead()" >
-            <a href='{{ $note->data['link'] }}'>Some jobs were recommended for you to check out!</a>
-          </li>
-          @endif
-          @if ($loop->last) <a>View all notifications</a> @endif
-          @empty
-          <a>No unread notifications</a>
-          @endforelse
-        </ul>
       </li>
       @endif
       <li class="drop-down">
@@ -54,7 +40,7 @@
             @elseif (Auth::guard('web')->check())
             <li><a href="">My Reviews</a></li>
             <li><a href="">My Subscription</a></li>
-            <li><a href="profile">My Profile</a></li>
+            <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
             <li>
               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">

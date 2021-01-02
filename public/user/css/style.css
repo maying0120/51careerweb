@@ -22,9 +22,21 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Roboto', Helvetica;
+  font-weight: 300;
 }
 
+.title-font {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -124,7 +136,7 @@ a:active, a:hover {
 body {
   background: #fff none repeat scroll 0 0;
   color: #444;
-  font-size: 14px;
+  font-size: 17px;
   text-align: left;
   overflow-x: hidden;
   line-height: 22px;
@@ -139,8 +151,8 @@ body {
   padding: 6px 12px 9px 12px;
   font-size: 16px;
   border-radius: 2px;
-  right: 15px;
-  bottom: 15px;
+  right: 20px;
+  bottom: 75px;
   transition: background 0.5s;
 }
 
@@ -193,7 +205,7 @@ div#preloader {
 }
 
 ::selection {
-  background: ;
+  background: #3ec1d5;
   text-shadow: none;
 }
 
@@ -243,17 +255,16 @@ div#preloader {
 # Header
 --------------------------------------------------------------*/
 #header {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
-  transition: all 0.5s;
   padding: 20px 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(240, 255, 255, 0.8);
 }
 
 #header.header-scrolled {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(240, 255, 255, 0.8);
   height: 60px;
   padding: 10px 0;
 }
@@ -2393,7 +2404,7 @@ span.email-notes {
 }
 
 .footer-head h4 {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
   font-weight: bold;
   color: #444;
   font-size: 20px;
@@ -2407,7 +2418,7 @@ span.email-notes {
 }
 
 .footer-logo h2 {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
   color: #222;
   padding: 0;
   margin: 0;

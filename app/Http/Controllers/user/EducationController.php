@@ -63,7 +63,7 @@ class EducationController extends Controller
       $education->end_date = $request->endDate;
       $education->save();
 
-      return redirect('profile');
+      return redirect(route('profile', ['tab' => 'profile']));
   }
 
   /**

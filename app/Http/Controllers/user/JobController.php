@@ -73,6 +73,9 @@ class JobController extends Controller
       if ($request->input('exp_level') != null && $request->input('exp_level') != 'Exp Level') {
          $jobs = $jobs->Where('exp_level',$request->input('exp_level'));
       }
+      if ($request->input('position') != null) {
+         $jobs = $jobs->Where('position','like','%'.$request->input('position').'%');
+      }
 
       
       // dump($jobs->get());

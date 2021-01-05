@@ -74,9 +74,11 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
 });
 
 
-Route::group(['namespace'=> 'Admin', 'middleware' => ['auth']], function() {
+Route::group(['namespace'=> 'Admin' , 'middleware' => ['auth']],function() {
   Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+
 });
+
 
 
 // Protected against Non-Admins
@@ -101,7 +103,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
-  Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+  
   // Job
   Route::get('/admin/job/job', 'JobController@index')->name("job_view");
   Route::get('/admin/job/edit/{jobid}', 'JobController@edit')->name("job_edit");

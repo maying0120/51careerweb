@@ -167,7 +167,6 @@ class ApplicationController extends Controller
     }
 
     public function create(Request $request) {
-
         $application = new Application();
         $application->user_id =Auth::user()->id;
         $application->job_id = $request->input('jobid');
@@ -214,7 +213,7 @@ class ApplicationController extends Controller
 
         #$sss = route('host').'/uploads/'.$application->resume_path;
 
-
+        Session::flash('message', "Application created");
         return redirect()->route('user_job');
     }
 

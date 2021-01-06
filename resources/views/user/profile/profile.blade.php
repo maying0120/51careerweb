@@ -71,6 +71,9 @@
   .resume-icon:hover {
     transform: translateY(5px) scale(1.1);
   }
+  .resume-instruction {
+    color: grey;
+  }
   input[type="checkbox"] {
     -webkit-appearance: checkbox;
   }
@@ -166,6 +169,12 @@
                   <p>
                     {{ $profile->description }}
                   </p>
+                  @else
+                  <div class="description-toggle">
+                    <p class="resume-instruction">
+                      Add a short summary to make your profile stand out.
+                    </p>
+                  </div>
                   @endif
                 </div>
                 <div id="description-edit" class="hidden">
@@ -174,7 +183,7 @@
                     @if ($profile->description)
                     <textarea class="form-control col-12" name="description" style="min-height: 100px">{{ $profile->description }}</textarea>
                     @else
-                    <textarea class="form-control col-12" name="description"></textarea>
+                    <textarea class="form-control col-12" name="description" placeholder="Tell us more about yourself"></textarea>
                     @endif
                     <div class="button-row row justify-content-end">
                       <div class='col-3'>
@@ -184,6 +193,24 @@
                     </div>
                   </form><!--end .description-form-->
                 </div><!--end .description-edit-->
+              </div>
+            </div>
+
+            <div id="skill">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Skills</span>
+                <i class="clickable resume-icon fa fa-plus fa-lg experience-toggle"></i>
+                <i class="hidden clickable resume-icon fa fa-lg fa-minus experience-toggle"></i>
+              </div>
+              <div class="card-body">
+                <div class="select2-blue">
+                  <select class="select2" multiple="multiple" data-placeholder="Add Your Skills" name="skills[]"
+                  data-dropdown-css-class="select2-blue" >
+                  @foreach ($skills as $skill)
+                  <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
+                  @endforeach
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -255,7 +282,7 @@
                 </div><!--end .experience-edit-->
                 <div id="experience-show">
                   <ul>
-                    @foreach ($companies as $company)
+                    @forelse ($companies as $company)
                     <li>
                       <div class="row">
                         <div class="col-11">
@@ -319,7 +346,13 @@
                       </div>
                     </div>
                     @if (!$loop->last) <hr> @endif
-                    @endforeach
+                    @empty
+                    <div class="experience-toggle">
+                      <p class="resume-instruction">
+                        Add your work experience to stand out.
+                      </p>
+                    </div>
+                    @endforelse
                   </ul>
                 </div>
               </div>
@@ -398,7 +431,7 @@
                 </div><!--end .educationalEdit-->
                 <div id="education-show">
                   <ul class="slist clearfix">
-                    @foreach ($educations as $education)
+                    @forelse ($educations as $education)
                     <li>
                       <div class="row">
                         <div class="col-11 resume-title">
@@ -477,7 +510,13 @@
                       </div>
                     </div>
                     @if (!$loop->last) <hr> @endif
-                    @endforeach
+                    @empty
+                    <div class="education-toggle">
+                      <p class="resume-instruction">
+                        Update your education details to stand out.
+                      </p>
+                    </div>
+                    @endforelse
                   </ul>
                 </div>
               </div>
@@ -551,7 +590,7 @@
                 </div><!--end .projectEdit-->
                 <div id="project-show">
                   <ul>
-                    @foreach ($projects as $project)
+                    @forelse ($projects as $project)
                     <li>
                       <div class="row">
                         <div class="col-11">
@@ -615,7 +654,13 @@
                       </div>
                     </div>
                     @if (!$loop->last) <hr> @endif
-                    @endforeach
+                    @empty
+                    <div class="project-toggle">
+                      <p class="resume-instruction">
+                        Showcase other projects that you participated in!
+                      </p>
+                    </div>
+                    @endforelse
                   </ul>
                 </div><!--end .projectShow-->
               </div>
@@ -729,27 +774,8 @@
 
       <div id="job" class="container tab-pane {{($tab == 'job') ? 'active' : '' }}">
         <br>
-        <div class="row col-12">
-          <!-- Left Panel -->
+        <!-- <div class="row col-12">
           <div class="info-board left-panel col-8 bg-white ">
-            <div id="skill">
-              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
-                <span class="title-font" style="font-size: 19px">Skills</span>
-                <i class="clickable resume-icon fa fa-plus fa-lg experience-toggle"></i>
-                <i class="hidden clickable resume-icon fa fa-lg fa-minus experience-toggle"></i>
-              </div>
-              <div class="card-body">
-                <div class="select2-blue">
-                  <select class="select2" multiple="multiple" data-placeholder="Add Your Skills" name="skills[]"
-                  data-dropdown-css-class="select2-blue" >
-                  @foreach ($skills as $skill)
-                  <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
-                  @endforeach
-                  </select>
-                </div>
-              </div>
-            </div>
-
             <div id="expect">
               <div class="card-header bg-transparent border-info d-flex justify-content-between" >
                 <span class="title-font" style="font-size: 19px">Target Jobs</span>
@@ -762,16 +788,14 @@
             </div>
           </div>
 
-          <!-- Right Panel -->
           <div class="col-4">
-            <!-- Resume -->
             <div class="card mb-3 card-border" style="margin-left: 20px;">
               <div class="card-header bg-transparent border-info">Saved Jobs</div>
               <div class="card-body">
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div id="notification" class="container tab-pane {{($tab == 'notification') ? 'active' : '' }}">

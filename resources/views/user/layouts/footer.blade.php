@@ -7,21 +7,23 @@
             <div class="footer-logo">
               <h2><span>51</span>Careers</h2>
             </div>
-
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+            <p style="font-size: 19px;">We are a top career consulting firm <br>
+              that tailors clients' needs <br>
+              to achieve career ambitions.
+            </p>
             <div class="footer-icons">
               <ul>
                 <li>
-                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-google"></i></a>
+                  <a href="#"><i class="fab fa-google"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                  <a href="#"><i class="fab fa-pinterest"></i></a>
                 </li>
               </ul>
             </div>
@@ -29,20 +31,15 @@
         </div>
       </div>
       <!-- end single footer -->
-      <div class="col-1">
-      </div>
-      <div class="col-3">
+      <div class="col-4" style="display: flex; justify-content: center; transform: translateY(1px);">
         <div class="footer-content">
-          <div class="footer-head" style="margin: auto; width: 80%;">
+          <div class="footer-head">
             <h4>Contact</h4>
-            <p>
-              48 Wall St, 11th Fl<br />
-              New York, NY 10005
-            </p>
             <div class="footer-contacts">
               <p><span>Tel:</span> (+1)212-918-4477</p>
               <p><span>Email:</span> info@51careers.com</p>
               <p><span>Working Hours:</span> 9am-5pm</p>
+              <p><span>Addr:</span> 48 Wall St, 11th Fl, New York, NY 10005</p>
             </div>
           </div>
         </div>
@@ -50,9 +47,9 @@
       <!-- end single footer -->
       <div class="col-4">
         <div class="footer-content">
-          <div class="footer-head" style="text-align: right;">
+          <div class="footer-head" style="text-align: center;">
             <h4>Official Wechat:</h4>
-            <img src="{{ asset('user/img/Mia二维码.jpg') }}" style="width: 180px; height: 180px;"/>
+            <img src="{{ asset('user/img/Mia二维码.jpg') }}" style="width: 130px; height: 130px;"/>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <div class="container d-flex">
   <div class="mr-auto">
-    <img src="{{ asset('user/img/51careerlogo.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
+    <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
   </div>
   <nav class="nav-menu d-none d-lg-block">
     <ul>

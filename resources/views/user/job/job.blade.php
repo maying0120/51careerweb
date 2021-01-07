@@ -39,7 +39,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 			success: function (data) {
 				dataset.jobs = data.jobs;
-
+				dataset.jobdetail = dataset.jobs[0]
 			}
 		});
 	}
@@ -908,6 +908,7 @@ margin-bottom: 30px;
 	})
 	@if ($rec_jobs == "null") {
 		getMessage();
+
 	} @else {
 		$(document).ready(function () {
 			dataset.jobs = {!! $rec_jobs !!};

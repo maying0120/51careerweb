@@ -680,6 +680,9 @@ margin-bottom: 30px;
   
 			  <h11  class="page-header">
 				${ job.city }, ${ job.state }</h11>
+			  </br>
+			  <h11  class="page-header">
+				Job id: ${ job.id }</h11>
   
   
 			</a></li>
@@ -722,7 +725,8 @@ margin-bottom: 30px;
             </tr>
 
             </br>
-
+			<h11> Job id: ${jobdetail.id}</h11>
+			</br>	
             <h11> Industry: ${jobdetail.industry}</h11>
             </br>
 

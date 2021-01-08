@@ -75,7 +75,7 @@
           </div>
 
 
-          
+
 
 
           <div class="col-sm-6">
@@ -88,14 +88,14 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-    
+
     <form action="{{route('application_view')}}" class="serach-form-area" method="post">
       {{ csrf_field() }}
       <div class="row justify-content-center form-wrap">
 
         <label for="visa_status">status:</label>
           <div class="col-lg-2 form-cols" id="visa_status">
-              
+
                 <div class="select2-blue">
                   <select class="select2" multiple="multiple" data-placeholder="Select visa status" name="major[]"
                   data-dropdown-css-class="select2-blue" style="width: 100%; ">
@@ -134,7 +134,7 @@
                 <option value="PHD"> PHD</option>
               </select>
             </div>
-         
+
           </div>
 
 
@@ -262,10 +262,11 @@
 
         <label for="title">status:</label>
         <select class="form-control" id="status" name="status" placeholder="status" >
-          <option value="pending" @if ($application->status == "pending") selected @endif>pending</option>
-          <option value="active" @if ($application->status == "active") selected @endif>active</option>
-          <option value="closed" @if ($application->status == "closed") selected @endif>closed</option>
-        </select>       
+          <option value="Pending" @if ($application->status == "Pending") selected @endif>Pending</option>
+          <option value="Processing" @if ($application->status == "Processing") selected @endif>Processing</option>
+          <option value="Closed" @if ($application->status == "Closed") selected @endif>Closed</option>
+          <option value="Offer" @if ($application->status == "Offer") selected @endif>Offer</option>
+        </select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">close

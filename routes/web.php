@@ -62,8 +62,11 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::post('profile/profile/avatar', 'ProfileController@uploadAvatar');
    Route::post('profile/profile/description', 'ProfileController@updateDescription');
    Route::post('profile/profile/expect', 'ProfileController@updateExpect');
-   Route::post('profile/profile/upload', 'ProfileController@uploadResume')->name('upload_resume');
-   Route::post('profile/profile/download', 'ProfileController@downloadResume')->name('download_resume');
+   Route::post('profile/profile', 'ProfileController@updateSkill');
+   Route::post('profile/profile/uploadResume', 'ProfileController@uploadResume')->name('upload_resume');
+   Route::post('profile/profile/downloadResume', 'ProfileController@downloadResume')->name('download_resume');
+   Route::post('profile/profile/uploadTranscript', 'ProfileController@uploadTranscript')->name('upload_transcript');
+   Route::post('profile/profile/downloadTranscript', 'ProfileController@downloadTranscript')->name('download_transcript');
    // Notifications
    Route::get('/unreadNotificationsMarkAsRead', function () {
      auth()->user()->unreadNotifications->markAsRead();
@@ -102,7 +105,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");
   Route::post('/admin/application/edit', 'ApplicationController@update')->name("application_update");
-  
+
   // Job
   Route::get('/admin/job/job', 'JobController@index')->name("job_view");
   Route::get('/admin/job/edit/{jobid}', 'JobController@edit')->name("job_edit");

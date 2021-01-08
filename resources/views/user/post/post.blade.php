@@ -10,9 +10,6 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-<<<<<<< HEAD
-    @include('user/layouts/header')
-=======
  <div class="container d-flex">
    <div class="mr-auto">
      <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
@@ -74,17 +71,12 @@
      $.get('/unreadNotificationsMarkAsRead');
    };
  </script>
->>>>>>> origin/new_develop
   </header><!-- End Header -->
 
   <main id="main">
 
     <!-- ======= Blog Header ======= -->
-<<<<<<< HEAD
-    <div class="header-bg page-area">
-=======
     {{-- <div class="header-bg page-area">
->>>>>>> origin/new_develop
       <div class="home-overly"></div>
       <div class="container">
         <div class="row">
@@ -102,12 +94,6 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-    </div><!-- End Blog Header -->
-
-    <!-- ======= Blog Page ======= -->
-    <div class="blog-page area-padding">
-=======
     </div><!-- End Blog Header -->--}}
 
 
@@ -122,7 +108,7 @@
 
     <!-- ======= Blog Page ======= -->
     <div class="blog-page area-padding" style="margin-top:200px;">
->>>>>>> origin/new_develop
+
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -139,11 +125,9 @@
                 </form>
                 <!-- search option end -->
               </div>
-<<<<<<< HEAD
-              <div class="single-blog-page">
-=======
+
               {{-- <div class="single-blog-page">
->>>>>>> origin/new_develop
+
                 <!-- recent start -->
                 <div class="left-blog">
                   <h4>recent post</h4>
@@ -199,11 +183,9 @@
                   </div>
                 </div>
                 <!-- recent end -->
-<<<<<<< HEAD
-              </div>
-=======
+
               </div> --}}
->>>>>>> origin/new_develop
+
               <div class="single-blog-page">
                 <div class="left-blog">
                   <h4>categories</h4>
@@ -235,24 +217,7 @@
               <div class="single-blog-page">
                 <div class="left-blog">
                   <h4>archive</h4>
-<<<<<<< HEAD
-                  <ul>
-                    <li>
-                      <a href="#">07 July 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">29 June 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">13 May 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">20 March 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">09 Fabruary 2016</a>
-                    </li>
-=======
+
 
 
                   <ul>
@@ -267,7 +232,6 @@
                     <li>
                                        <h5 > <a href="/post">See All Articles</a> </h5>
                                         </li>
->>>>>>> origin/new_develop
                   </ul>
                 </div>
               </div>

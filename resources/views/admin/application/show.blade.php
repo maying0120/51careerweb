@@ -134,11 +134,6 @@
                 <option value="PHD"> PHD</option>
               </select>
             </div>
-<<<<<<< HEAD
-
-=======
-
->>>>>>> origin/new_develop
           </div>
 
 

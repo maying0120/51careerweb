@@ -133,6 +133,33 @@ font-family:'Lora';
 
 
 </br></br></br></br></br></br>
+
+
+
+
+
+  <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+  <nav class="nav-menu ">
+        <ul>
+        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
+          <li ><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
+          <li ><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
+          <li class="active"><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+</div>
+
+</div></div>
+
+  <div style="border:1px solid black;"></div>
+
+
+
+
     <!-- ======= About Section ======= -->
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">

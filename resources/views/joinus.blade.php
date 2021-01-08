@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio - Moderna Bootstrap Template</title>
+  <title>51 careers</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('user/story/assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('user/img/51careerlogo1.png') }}" rel="icon">
   <link href="{{ asset('user/story/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->

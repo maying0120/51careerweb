@@ -162,7 +162,7 @@ font-family:'Lora';
 
                                    <h2 style="font-family:'Lora';font-size:46px; line-height:1.5em;">About Us</h2>
 
- <h4  style="font-family:'roboto-thin,sans-serif'; font-size:32px;">We're passionate about transforming clients into professionals they want to become.</h4>
+ <h4  style="font-family:'roboto-thin,sans-serif'; font-size:32px;line-height:1.5em;">We're passionate about transforming clients into professionals they want to become.</h4>
 
 </br>
                 <p style="font-family:'roboto-thin,sans-serif';font-size:24px;line-height:1.5em;">
@@ -175,7 +175,7 @@ font-family:'Lora';
 
 
           <div class="col-md-5 col-sm-5 col-xs-12">
-          </br> </br>
+          </br> </br>  </br> </br>  </br> </br></br> </br>  </br> </br>
             <div class="well-middle">
               <div class="single-well">
 
@@ -197,14 +197,12 @@ font-family:'Lora';
      <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
         <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-2">
 
-                    </div>
 
-          <div class="col-md-10 col-sm-10 col-xs-10">
+          <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="well-middle">
               <div class="single-well">
-            <iframe width="1000" height="600" src="https://www.youtube.com/embed/C4g4p-fyXfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/C4g4p-fyXfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
             </div>
           </div>
@@ -228,12 +226,16 @@ font-family:'Lora';
 
      <section>
         <section class="team bg-li py-5" id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-7 col-xs-12">
+                      <div class="well-left">
 
 
-      <div class="section-headline text-center" >
+      <div class="section-headline text-left" >
                   <h2 style="font-family:'Lora';font-size:46px;">Our Philosophy </h2>
                </div>
-
+  </div>  </div>  </div>  </div>
 
    <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
         		<div class="container py-xl-5 py-lg-3" >

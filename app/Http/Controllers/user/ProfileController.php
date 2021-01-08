@@ -60,7 +60,6 @@ class ProfileController extends Controller
     public function updateExpect(Request $request)
     {
       $profile = profile::where('user', auth()->user()->id)->first();
-      $profile->skills = $request->skills;
       $profile->expected_type = $request->type;
       $profile->expected_salary = $request->salary;
       $profile->expected_title = $request->title;
@@ -70,6 +69,14 @@ class ProfileController extends Controller
 
       $profile->save();
       return back();
+    }
+
+    public function updateSkill(Request $request)
+    {
+      $profile = profile::where('user', auth()->user()->id)->first();
+      $profile->skills = $request->skills;
+
+      $profile->save();
     }
 
     public function updateDescription(Request $request)
@@ -93,6 +100,21 @@ class ProfileController extends Controller
     }
 
     public function downloadResume(Request $request) {
+      return response()->download(storage_path('app/profile/' . $request->filename));
+    }
+
+    public function uploadTranscript(Request $request)
+    {
+      $profile = profile::where('user', auth()->user()->id)->first();
+      $path = $request->file('transcript')->storeAs('profile', $request->file('transcript')->getClientOriginalName());
+      $filename = explode("/", $path);
+      $profile->transcript = end($filename);
+      $profile->save();
+
+      return back();
+    }
+
+    public function downloadTranscript(Request $request) {
       return response()->download(storage_path('app/profile/' . $request->filename));
     }
 }

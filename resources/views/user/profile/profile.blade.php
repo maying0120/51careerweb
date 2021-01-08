@@ -43,14 +43,16 @@
   }
   .info-board {
     border-radius: 5px;
-    box-shadow: 0 0 5px #3EC1D5;
+    border: 1px outset #AAA;
+    box-shadow: 3px 6px 5px #666;
   }
   .left-panel i {
     color: #3EC1D5;
   }
   .card-border {
     border-radius: 15px;
-    border: 2px outset #3EC1D5;
+    border: 2px double #CCC;
+    box-shadow: 0px 0px 5px #3EC1D5;
   }
   .button-row {
     margin-top: 10px;
@@ -201,18 +203,26 @@
             <div id="skill">
               <div class="card-header bg-transparent border-info d-flex justify-content-between" >
                 <span class="title-font" style="font-size: 19px">Skills</span>
-                <i class="clickable resume-icon fa fa-plus fa-lg experience-toggle"></i>
-                <i class="hidden clickable resume-icon fa fa-lg fa-minus experience-toggle"></i>
+                <i class="clickable resume-icon far fa-edit skill-toggle"></i>
               </div>
               <div class="card-body">
-                <div class="select2-blue">
-                  <select class="select2" multiple="multiple" data-placeholder="Add Your Skills" name="skills[]"
-                  data-dropdown-css-class="select2-blue" >
-                  @foreach ($skills as $skill)
-                  <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
-                  @endforeach
-                  </select>
-                </div>
+                <form method="POST" action="profile/skill">
+                  {{ csrf_field() }}
+                  <div class="select2-blue">
+                    <select class="select2" multiple="multiple" data-placeholder="Add Your Skills" name="skills[]"
+                    data-dropdown-css-class="select2-blue" style="width: 100%">
+                      @foreach ($skills as $skill)
+                      <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="button-row row justify-content-end skill-save hidden">
+                    <div class='col-3'>
+                      <input class="btn btn-info" type="submit" value="Save">
+                      <a class="btn skill-toggle btn-outline-secondary">Cancel</a>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
 
@@ -680,11 +690,11 @@
                 <form action="{{ route('download_resume') }}" method="POST">
                   {{ csrf_field() }}
                   <button for="download-resume" class="btn btn-block btn-light" style="border-radius: 20px;">
-                    <?php $filename = explode(".", $profile->resume); $fileExt = end($filename) ?>
-                    @if ($fileExt == "doc" || $fileExt == "docx")
-                    <?php  $fileExt ?>
+                    <?php $filenameRes = explode(".", $profile->resume); $fileExtRes = end($filenameRes) ?>
+                    @if ($fileExtRes == "doc" || $fileExtRes == "docx")
+                    <?php  $fileExtRes ?>
                     <i class="far fa-file-word fa-lg"></i>
-                    @elseif ($fileExt == "pdf")
+                    @elseif ($fileExtRes == "pdf")
                     <i class="far fa-file-pdf fa-lg"></i>
                     @else
                     <i class="far fa-file-alt fa-lg"></i>
@@ -700,7 +710,7 @@
                 </form>
                 <p class="card-text"> Download to view your resume or
                   <label for="upload-resume">
-                    <a class="text-primary" style="cursor: pointer">upload another resume</a>
+                    <a class="text-primary" style="cursor: pointer">use another resume</a>
                   </label>.
                 </p>
                 @else
@@ -715,19 +725,63 @@
                 @endif
               </div>
             </div>
+
+            <!-- Transcript -->
+            <div class="card mb-3 card-border" style="margin-left: 20px;">
+              <div class="card-header bg-transparent border-info">My Transcript</div>
+              <div class="card-body">
+                @if ($profile->transcript)
+                <form action="{{ route('download_transcript') }}" method="POST">
+                  {{ csrf_field() }}
+                  <button for="download-transcript" class="btn btn-block btn-light" style="border-radius: 20px;">
+                    <?php $filenameTr = explode(".", $profile->transcript); $fileExtTr = end($filenameTr) ?>
+                    @if ($fileExtTr == "doc" || $fileExtTr == "docx")
+                    <?php  $fileExtTr ?>
+                    <i class="far fa-file-word fa-lg"></i>
+                    @elseif ($fileExtTr == "pdf")
+                    <i class="far fa-file-pdf fa-lg"></i>
+                    @else
+                    <i class="far fa-file-alt fa-lg"></i>
+                    @endif
+                    &nbsp;{{ $profile->transcript }}
+                  </button>
+                  <input class="hidden" type="text" name="filename" value="{{ $profile->transcript }}"/>
+                  <input id="download-transcript" class="hidden" type="submit"/>
+                </form>
+                <form action="{{ route('upload_transcript') }}" method="POST" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  <input class="hidden" id="upload-transcript" type="file" name="transcript" onchange="this.form.submit();" required>
+                </form>
+                <p class="card-text"> Download to view your transcript or
+                  <label for="upload-transcript">
+                    <a class="text-primary" style="cursor: pointer">use another transcript</a>
+                  </label>.
+                </p>
+                @else
+                <form action="{{ route('upload_transcript') }}" method="POST" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  <label for="upload-transcript" class="btn btn-block btn-light" style="display: inline-block; width: 100%; border-radius: 20px;">
+                    <i class="fas fa-file-upload fa-lg"></i>&nbsp;Upload Transcript
+                  </label>
+                  <input class="hidden" id="upload-transcript" type="file" name="transcript" onchange="this.form.submit();" required>
+                </form>
+                <p class="card-text"> Click to upload your transcript to 51Careers. </p>
+                @endif
+              </div>
+            </div>
+
+
           </div>
         </div>
       </div>
 
       <div id="application" class="container tab-pane {{($tab == 'application') ? 'active' : '' }}">
-        <div class="col-12 bg-white" style="height: 100%;">
-          <div class="card-body text-primary">
+        <div class="col-12" style="height: 100%;">
+          <br>
+          <div class="info-board bg-white card-body text-primary">
             <div class="row">
-              <div class="col-1">
+              <div class="col-3">
                 <p class="card-text">Status:</p>
-              </div>
-              <div class="col-2">
-                <p class="card-text">Company:</p>
               </div>
               <div class="col-3">
                 <p class="card-text">Position:</p>
@@ -735,21 +789,16 @@
               <div class="col-3">
                 <p class="card-text">Files:</p>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <p class="card-text">Review:</p>
               </div>
             </div>
             <hr/>
             @foreach ($applications->sortBy('status') as $application)
             <div class="row">
-              <div class="col-1">
+              <div class="col-3">
                 <p class="card-text">
                   {{ $application->status }}
-                </p>
-              </div>
-              <div class="col-2">
-                <p class="card-text">
-                  {{ $application->job->company }}
                 </p>
               </div>
               <div class="col-3">
@@ -762,7 +811,7 @@
                 <a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif >Coverletter</a>
                 <a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif >Transcript</a>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <p class="card-text">
                   {{ $application->review }}
                 </p>
@@ -801,8 +850,9 @@
       </div>
 
       <div id="notification" class="container tab-pane {{($tab == 'notification') ? 'active' : '' }}">
-        <div class="col-12 bg-white">
-          <div class="card-body text-primary">
+        <div class="col-12">
+          <br>
+          <div class="info-board bg-white card-body text-primary">
             <h6 class="card-title">
               <a href="" onclick="markNotificationsAsRead()">
                 Mark all as read

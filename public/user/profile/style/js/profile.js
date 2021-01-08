@@ -1,6 +1,9 @@
 $(document).ready(function () {
   //Initialize Select2 Elements
   $('.select2').select2();
+  $('.select2').on('change', function() {
+    $('.skill-save').removeClass('hidden');
+  });
 
   function markNotificationsAsRead() {
     $.get('/unreadNotificationsMarkAsRead');
@@ -11,6 +14,11 @@ $(document).ready(function () {
     $(this).height(this.scrollHeight);
   });
 
+  $(function () {
+    $(".skill-toggle").click(function () {
+      $(".skill-save").toggleClass("hidden");
+    });
+  });
   $(function () {
     $(".description-toggle").click(function () {
       $("#description-show").add($("#description-edit")).toggleClass("hidden");

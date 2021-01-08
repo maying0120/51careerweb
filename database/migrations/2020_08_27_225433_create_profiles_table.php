@@ -21,15 +21,16 @@ class CreateProfilesTable extends Migration
           $table->date('date_of_birth')->nullable();
           $table->string('gender')->nullable();
           $table->text('description')->nullable();
-          $table->string('expected_salary')->nullable();
-          $table->string('expected_type')->nullable();
-          $table->string('expected_countries')->nullable();
-          $table->string('expected_states')->nullable();
-          $table->string('expected_cities')->nullable();
-          $table->string('expected_title')->nullable();
+          $table->string('expect_salary')->nullable();
+          $table->string('expect_type')->nullable();
+          $table->string('expect_countries')->nullable();
+          $table->string('expect_states')->nullable();
+          $table->string('expect_cities')->nullable();
+          $table->string('expect_title')->nullable();
           $table->string('skills')->nullable();
           $table->string('avatar')->nullable();
           $table->string('resume')->nullable();
+          $table->string('transcript')->nullable();          
 
           $table->timestamps();
       });

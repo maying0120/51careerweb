@@ -170,11 +170,28 @@ font-size:13px;
 
 
 
-</br></br></br>  </br></br></br> </br>
+</br></br></br>  </br></br></br>
+  <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+  <nav class="nav-menu ">
+        <ul>
+        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
+          <li ><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
+          <li class="active"><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
+          <li><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+</div>
+
+</div></div>
+
+  <div style="border:1px solid black;"></div>
 
 
-
-
+</br></br></br>  </br></br></br>
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
         <div class="row">
@@ -201,10 +218,10 @@ font-size:13px;
         </div>
       </div>
     </div>
+ </br></br></br> </br>
+   <img src="{{ asset('user/img/about/jpinus.png') }}" alt="">
 
-
-
-
+{{--
     <!-- ======= About Section ======= -->
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
@@ -253,9 +270,9 @@ font-size:13px;
         </div>
       </div>
     </div><!-- End About Section -->
+--}}
 
-
-
+ </br></br></br> </br>
 
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
@@ -306,27 +323,34 @@ font-size:13px;
                   <h3 style="color:black;">Senior Director, Human Resource & Administration </h3>
                   <p style="color:black;">New York, NY</p>
                     <h3 style="color:black;">Marketing Intern</h3>
-                    <a  href="#services"  style="text-align:left; color:#2557A7;">Learn More -></a>
+                    <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
                 </div>
               </div>
 
-               <div class="col-md-4">
-                        <div class="info-box">
-                         <i class="fa fa-handshake-o" aria-hidden="true"></i>
-                          <h3>Marketing Intern </h3>
-                          <p>New York, NY</p>
-                            <a  href="#services"  style="text-align:left; color:#2557A7;">Learn More</a>
-                        </div>
-                      </div>
+            <div class="col-md-4">
+                           <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
-                 <div class="col-md-4">
-                          <div class="info-box">
-                           <i class="fa fa-handshake-o" aria-hidden="true"></i>
-                            <h3>Marketing Intern </h3>
-                            <p>New York, NY</p>
-                              <a  href="#services"  style="text-align:left; color:#2557A7;">Learn More</a>
-                          </div>
-                        </div>
+                             <h4>FIANCE </h4>
+                             <h3 style="color:black;">Controller </h3>
+                             <p style="color:black;">New York, NY</p>
+                               <h3 style="color:black;">Business Development Intern</h3>
+
+                                </br> </br>
+                               <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
+
+                           </div>
+                         </div>
+
+            <div class="col-md-4">
+                           <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
+
+                             <h4>DEVELOPMENT </h4>
+                             <h3 style="color:black;">Senior Director, Human Resource & Administration </h3>
+                             <p style="color:black;">New York, NY</p>
+                               <h3 style="color:black;">Major Gifts Officer</h3>
+                               <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
+                           </div>
+                         </div>
 
 
             </div>

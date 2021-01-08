@@ -8,6 +8,30 @@
 
 
 <style>
+  .demo1{
+            position: relative;
+            text-decoration: none;
+            font-size: 20px;
+            color: #333;
+        }
+        .demo1:before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: #3078be;
+            transition: all .3s;
+        }
+        .demo1:hover:before{
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+
+
+
 hr{
 background-color: black;
 border:none;
@@ -132,6 +156,8 @@ font-family:'Lora';
 
   <main id="main">
 
+
+
  <div>
 
           <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
@@ -150,6 +176,43 @@ font-family:'Lora';
 
 
 </br></br></br>
+
+
+  <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+  <nav class="nav-menu ">
+        <ul>
+        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
+          <li class="active"><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
+          <li><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
+          <li><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+</div>
+
+</div></div>
+
+  <div style="border:1px solid black;"></div>
+{{--
+
+      <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+            <ul>
+         <li class="active"> <a href="aboutus" class="demo1 " style="padding-right:30px;"> AboutUs </a></li>
+       <li>    <a href="joinus" class="demo1" style="padding-right:30px;">JoinUs</a></li>
+    <li>  <a href="contactus" class="demo1" style="padding-right:30px;">ContactUs</a></li>
+</ul>
+          </div>
+
+  </div>
+--}}
+
+
     <!-- ======= About Section ======= -->
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">

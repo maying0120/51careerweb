@@ -73,19 +73,19 @@ font-size:16px;
 
 a1:link {
 color:#2557A7;
-text-decoration:none;
+text-decoration:underline;
 }
 a1:visited {
 color:#2557A7;
-text-decoration:none;
+text-decoration:underline;
 }
 a1:hover {
 color:#68A4C4;
-text-decoration:none;
+text-decoration:underline;
 }
 a1:active {
 color:#2557A7;
-text-decoration:none;
+text-decoration:underline;
 }
 
 
@@ -133,15 +133,34 @@ text-decoration:none;
 
 
 
-</br></br></br>
+</br>
+
+  <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+  <nav class="nav-menu ">
+        <ul>
+        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
+          <li ><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
+          <li class="active" ><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
+          <li ><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+</div>
+
+</div></div>
+
+  <div style="border:1px solid black;"></div>
 
  <section>
  <div class="text-center">
   <img src="{{ asset('user/img/background/51CAREERS_LOGO.png') }}" style="height:150px;" />
 
-      <h3 style="font-size:20px;line-height:30px; margin-top:-40px;"> Controllers </h3>
+      <h3 style="font-size:26px; margin-top:-40px;"> Controllers </h3>
 
-  <h4 style="font-size:15px;line-height:30px;"> Full Time · New York, United States</h4>
+  <h4 style="font-size:20px;"> Full Time · New York, United States</h4>
  <hr style="width:50%;margin-left:25%;">
 
 
@@ -164,8 +183,8 @@ text-decoration:none;
 
             <ul id="portfolio-flters" style="text-align:left; margin-top:-120px;" class="text-center">
 
-                <li ><a1 href="#"  onclick="show1()"><h2 style="font-family:'Lora'; font-size:20px; ">OVERVIEW</h2> </a1></li>
-                 <li ><a1 href="#"  onclick="show2()"> <h2 style="font-family:'Lora'; font-size:20px; ">APPLICATION</h2></a1></li>
+                <li ><a href="#"  onclick="show1()"><h2 style="font-family:'Lora'; font-size:20px; ">OVERVIEW</h2> </a></li>
+                 <li ><a href="#"  onclick="show2()"> <h2 style="font-family:'Lora'; font-size:20px; ">APPLICATION</h2></a></li>
 
             </ul>
 
@@ -197,7 +216,7 @@ text-decoration:none;
                      <div class="col-lg-12">
 
                        <h5 style="text-align:left;">About 51 Careers:</h5>
- <p> We've been a pioneer in the career consulting industry globally since 2016. Inspired by the obstacles and challenges international students face in the United States job market, we aspired to help them transition into the American workplace and achieve their career goals. We have a global network of employers looking for qualified candidates. We combine the needs of employers and future employees to achieve the perfect fi  </p>
+ <p> We've been a pioneer in the career consulting industry globally since 2016. Inspired by the obstacles and challenges international students face in the United States job market, we aspired to help them transition into the American workplace and achieve their career goals. We have a global network of employers looking for qualified candidates. We combine the needs of employers and future employees to achieve the perfect fit.  </p>
                       </br>
                           <h5 style="text-align:left;">Job Description:</h5>
                           <p>  We are seeking an energetic, passionate go-getter marketing intern to join our marketing team. We are seeking someone that has excellent communication skills, time management, multitasking and organizational skills.  This intern should be prepared to work in a fast-paced team environment and will finish the internship having gained broad experience in various aspects of marketing. This internship can work for college credit.  </p>

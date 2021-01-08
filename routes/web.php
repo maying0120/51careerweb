@@ -44,7 +44,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
         //our service
         Route::get('/ourservice', 'HomeController@ourservice');
 
-
+  Route::get('/jobreq', 'HomeController@jobreq');
    // Video
    Route::get('videos/{vcategory}','VideoController@searchbycat');
    Route::get('video','VideoController@index')->name('video');

@@ -7,6 +7,60 @@
 
 
 
+<style>
+  .demo1{
+            position: relative;
+            text-decoration: none;
+            font-size: 20px;
+            color: #333;
+        }
+        .demo1:before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: #3078be;
+            transition: all .3s;
+        }
+        .demo1:hover:before{
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+
+
+
+hr{
+background-color: black;
+border:none;
+height: 0.5px;
+}
+
+h2
+{
+font-family:'Lora';
+}
+
+
+h3
+{
+font-family:'Lora';
+color:black;
+}
+
+
+h4
+{
+font-family:'Lora';
+
+}
+
+</style>
+
+
+
 
 <script>
     (function(d, w, c) {
@@ -25,99 +79,171 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    @include('user/layouts/header')
+
+
+    <div class="container d-flex">
+      <div class="mr-auto">
+        <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
+      </div>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li ><a href="/home1">Home</a></li>
+          <li><a href="ourservice">Service</a></li>
+          <li><a href="ourstory">Success Stories</a></li>
+          <li><a href="/job">Job Board</a></li>
+          <li><a href="/post">Blog</a></li>
+          <li class="drop-down active">
+            <a href="aboutus">Our Company</a>
+            <ul>
+              <li><a href="aboutus">About Us</a></li>
+              <li><a href="joinus">Join Us</a></li>
+              <li><a href="contactus">Contact Us</a></li>
+            </ul>
+          </li>
+          @if (Auth::guard('web')->check())
+          <li style="margin-left: 10px; padding-left: 10px;">
+            <a href="{{ route('profile', ['tab' => 'notification']) }}">
+              <i class="fa fa-bell"></i>
+              @if (count(auth()->user()->unreadNotifications) > 0)
+              <span class="badge badge-pill badge-info">
+                &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
+              </span>
+              @endif
+            </a>
+          </li>
+          @endif
+          <li class="drop-down">
+            <a href="#" class="logo">
+              <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
+            </a>
+            <ul>
+                @if (Auth::guest())
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Sign up</a></li>
+                @elseif (Auth::guard('web')->check())
+                <li><a href="">My Reviews</a></li>
+                <li><a href="">My Subscription</a></li>
+                <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
+                <li>
+                  <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+                  <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
+                    {{ csrf_field() }}
+                  </form>
+                </li>
+                @endif
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+    <script>
+      function markNotificationsAsRead() {
+        $.get('/unreadNotificationsMarkAsRead');
+      };
+    </script>
+
+
+
+
+
+
+
   </header><!-- End Header -->
 
   <!-- ======= Slider Section ======= -->
-  <div id="home" class="slider-area">
-    <div class="bend niceties preview-2">
-      <div id="ensign-nivoslider" class="slides">
-        <img src="{{ asset('user/img/slider/nyc11.jpg') }}" alt="" title="#slider-direction-1" />
-        <img src="{{ asset('user/img/slider/slider1 - Copy.jpg') }}" alt="" title="#slider-direction-2" />
-        <img src="{{ asset('user/img/slider/slider3.jpg') }}" alt="" title="#slider-direction-3" />
-      </div>
 
-      <!-- direction 1 -->
-      <div id="slider-direction-1" class="slider-direction slider-one">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
-
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2"> Career Consulting </h1>
-                    </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="slider-direction-2" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content text-center">
-
-
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Career Consulting</h1>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="slider-direction-3" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
-
-
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Career Consulting</h1>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- End Slider -->
 
   <main id="main">
 
 
 
+ <div>
+
+          <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
+            <div class="text-center">
+
+         <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">ABOUT  &nbsp; US</h2>
+
+                                                </div>
+
+        </div>
+
+
+
 
 </br></br></br>
+
+
+</br></br></br>
+
+
+  <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+  <nav class="nav-menu ">
+        <ul>
+        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
+          <li class="active"><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
+          <li><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
+          <li><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+</div>
+
+</div></div>
+
+  <div style="border:1px solid black;"></div>
+{{--
+
+      <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+            <ul>
+         <li class="active"> <a href="aboutus" class="demo1 " style="padding-right:30px;"> AboutUs </a></li>
+       <li>    <a href="joinus" class="demo1" style="padding-right:30px;">JoinUs</a></li>
+    <li>  <a href="contactus" class="demo1" style="padding-right:30px;">ContactUs</a></li>
+</ul>
+          </div>
+
+  </div>
+--}}
+
+
     <!-- ======= About Section ======= -->
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="col-md-7 col-sm-7 col-xs-12">
                       <div class="well-left">
-                           <div class="section-headline text-center">
-                                   <h2>About Us</h2>
+
+                      </br>
+                           <div class="text-left section-headline">
+
+                                   <h2 style="font-family:'Lora';font-size:46px; line-height:1.5em;">About Us</h2>
+
+ <h4  style="font-family:'roboto-thin,sans-serif'; font-size:32px;line-height:1.5em;">We're passionate about transforming clients into professionals they want to become.</h4>
+
+</br>
+                <p style="font-family:'roboto-thin,sans-serif';font-size:24px;line-height:1.5em;">
+              We've been a pioneer in the career consulting industry globally since 2016. Inspired by the obstacles and challenges international students face in the United States job market, we aspired to help them transition into the American workplace and achieve their career goals. We have a global network of employers looking for qualified candidates. We combine the needs of employers and future employees to achieve the perfect fit.     </p>
+
                                  </div>
                       </div>
                     </div>
 
-          <div class="col-md-9 col-sm-9 col-xs-12">
+
+
+          <div class="col-md-5 col-sm-5 col-xs-12">
+          </br> </br>  </br> </br>  </br> </br></br> </br>  </br> </br>
             <div class="well-middle">
               <div class="single-well">
-                <a href="#">
-                  <h4 class="sec-head">We're passionate about transforming clients into professionals they want to become.</h4>
-                </a>
-                <p>
-               51 Careers is a global career consulting firm based in Manhattan, NYC. We pioneered in the global career consulting industry since 2016. Inspired by the obstacles and berries international students faced in the US job market, we aim to help international students transform into professionals at workplace and chase their career goals.  We also help employers hunt qualified candidates globally. We combine our capabilities into solutions, leading a professional life clients love to live and creating extraordinary brand experiences that reinforce our leadership in the career consulting industry.       </p>
-              </div>
+
+          <img src="{{ asset('user/img/about/aboutusjpg.jpg') }}" alt="" style="height:300px;">
+                      </div>
             </div>
           </div>
           <!-- End col-->
@@ -134,14 +260,12 @@
      <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
         <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-2">
 
-                    </div>
 
-          <div class="col-md-10 col-sm-10 col-xs-10">
+          <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="well-middle">
               <div class="single-well">
-            <iframe width="800" height="415" src="https://www.youtube.com/embed/C4g4p-fyXfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/C4g4p-fyXfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
             </div>
           </div>
@@ -158,679 +282,84 @@
 
 
 
-    {{--
-    <!-- ======= Services Section ======= -->
-    <div id="services" class="services-area area-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline services-head text-center">
-              <h2>Our Services</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row text-center">
-          <!-- Start Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-code"></i>
-                  </a>
-                  <h4>Expert Coder</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-camera-retro"></i>
-                  </a>
-                  <h4>Creative Designer</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-wordpress"></i>
-                  </a>
-                  <h4>Wordpress Developer</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-camera-retro"></i>
-                  </a>
-                  <h4>Social Marketer </h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <!-- End Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-bar-chart"></i>
-                  </a>
-                  <h4>Seo Expart</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <!-- End Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-ticket"></i>
-                  </a>
-                  <h4>24/7 Support</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Services Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <div class="our-skill-area fix hidden-sm">
-      <div class="test-overly"></div>
-      <div class="skill-bg area-padding-2">
-        <div class="container">
-          <!-- section-heading end -->
-          <div class="row">
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="95" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Web Design</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="85" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Graphics Design</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Php Developer</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="65" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Java Script</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
-          </div>
-        </div>
-      </div>
-    </div><!-- End Skills Section -->
-
-    <!-- ======= Team Section ======= -->
-    <div id="team" class="our-team-area area-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Our special Team</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="{{ asset('user/img/team/1.jpg') }}" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Jhon Mickel</h4>
-                <p>Seo</p>
-              </div>
-            </div>
-          </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="{{ asset('user/img/team/2.jpg') }}" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Andrew Arnold</h4>
-                <p>Web Developer</p>
-              </div>
-            </div>
-          </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="{{ asset('user/img/team/3.jpg') }}" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Lellien Linda</h4>
-                <p>Web Design</p>
-              </div>
-            </div>
-          </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="{{ asset('user/img/team/4.jpg') }}" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Jhon Powel</h4>
-                <p>Seo Expert</p>
-              </div>
-            </div>
-          </div>
-          <!-- End column -->
-        </div>
-      </div>
-    </div><!-- End Team Section -->
-
-    <!-- ======= Rviews Section ======= -->
-    <div class="reviews-area hidden-xs">
-      <div class="work-us">
-        <div class="work-left-text">
-          <a href="#">
-            <img src="{{ asset('user/img/about/2.jpg') }}" alt="">
-          </a>
-        </div>
-        <div class="work-right-text text-center">
-          <h2>working with us</h2>
-          <h5>Web Design, Ready Home, Construction and Co-operate Outstanding Buildings.</h5>
-          <a href="#contact" class="ready-btn scrollto">Contact us</a>
-        </div>
-      </div>
-    </div><!-- End Rviews Section -->
-    --}}
-
-{{--
-    <!-- ======= Portfolio Section ======= -->
-    <div id="portfolio" class="portfolio-area area-padding fix">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Our Portfolio</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row wesome-project-1 fix">
-          <!-- Start Portfolio -page -->
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="awesome-menu ">
-              <ul class="project-menu">
-                <li>
-                  <a href="#" class="active" data-filter="*">All</a>
-                </li>
-                <li>
-                  <a href="#" data-filter=".development">Development</a>
-                </li>
-                <li>
-                  <a href="#" data-filter=".design">Design</a>
-                </li>
-                <li>
-                  <a href="#" data-filter=".photo">Photoshop</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="row awesome-project-content">
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 design development">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="{{ asset('user/img/portfolio/1.jpg') }}" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="{{ asset('user/img/portfolio/1.jpg') }}">
-                      <h4>Business City</h4>
-                      <span>Web Development</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 photo">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="{{ asset('user/img/portfolio/2.jpg') }}" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="{{ asset('user/img/portfolio/2.jpg') }}">
-                      <h4>Blue Sea</h4>
-                      <span>Photosho</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 design">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="{{ asset('user/img/portfolio/3.jpg') }}" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="{{ asset('user/img/portfolio/3.jpg') }}">
-                      <h4>Beautiful Nature</h4>
-                      <span>Web Design</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 photo development">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="{{ asset('user/img/portfolio/4.jpg') }}" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="{{ asset('user/img/portfolio/4.jpg') }}">
-                      <h4>Creative Team</h4>
-                      <span>Web design</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 development">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="{{ asset('user/img/portfolio/5.jpg') }}" alt="" /></a>
-                <div class="add-actions text-center text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="{{ asset('user/img/portfolio/5.jpg') }}">
-                      <h4>Beautiful Flower</h4>
-                      <span>Web Development</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 design photo">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="{{ asset('user/img/portfolio/6.jpg') }}" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="{{ asset('user/img/portfolio/6.jpg') }}">
-                      <h4>Night Hill</h4>
-                      <span>Photoshop</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-        </div>
-      </div>
-    </div><!-- End Portfolio Section -->
 
 
 
 
 
-
-    <!-- ======= Pricing Section ======= -->
-    <div id="pricing" class="pricing-area area-padding"> --}}
-
-
-
+     <section>
         <section class="team bg-li py-5" id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-7 col-xs-12">
+                      <div class="well-left">
 
 
-      <div class="section-headline text-center">
-                 <h2>Our Philosophy</h2>
+      <div class="section-headline text-left" >
+                  <h2 style="font-family:'Lora';font-size:46px;">Our Philosophy </h2>
                </div>
+  </div>  </div>  </div>  </div>
 
-        		<div class="container py-xl-5 py-lg-3">
+   <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
+        		<div class="container py-xl-5 py-lg-3" >
 
         			<div class="row ab-info second pt-lg-4">
-        				<div class="col-lg-4 col-sm-6 ab-content text-center mt-lg-0 mt-4">
-        					<div class="ab-content-inner">
+        				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
+        					<div class="ab-content-inner" >
 
-        						<div class="ab-info-con">
-        							<h4 class="text-team-w3">Growth</h4>
+        						<div class="ab-info-con" style="margin:-9px;">
+     <img src="{{ asset('user/img/about/growth-icon.jpg') }}" alt="" style="height:50px; margin-bottom:-20px;">
+    <h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px; ">Growth</h4>
+<hr>
 
-        							{{--
-        							<ul class="list-unstyled team-socil-w3pvts">
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-facebook"></span></a>
-        								</li>
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-twitter"></span></a>
-        								</li>
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-google-plus"></span></a>
-        								</li>
-        							</ul>--}}
-        							<p  align='left'> We're here to discover ourselves and our clients' potential, personally and professionally.
-        							We challenge ourselves and step out of our comfort zone,
-        							 creating more extraordinary results better than we've done yesterday.
-        							 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:16px;"> We’re here to discover our members’ potential, professionally and personally. We challenge our members to step out of their comfort zone, enhancing competitiveness and creating extraordinary results.
+
         							  </p>
 
         						</div>
         					</div>
         				</div>
-        				<div class="col-lg-4 col-sm-6 ab-content text-center mt-lg-0 mt-4">
+        				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
         					<div class="ab-content-inner">
 
-        						<div class="ab-info-con">
-        							<h4 class="text-team-w3">Results</h4>
+        						<div class="ab-info-con" style="margin:-9px;">
+       <img src="{{ asset('user/img/about/result-icon.png') }}" alt="" style="height:50px; margin-bottom:-20px;">
 
-        							{{--
-        							<ul class="list-unstyled team-socil-w3pvts">
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-facebook"></span></a>
-        								</li>
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-twitter"></span></a>
-        								</li>
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-google-plus"></span></a>
-        								</li>
-        							</ul>
-        							--}}
+        							<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px;">Results</h4>
 
-        								<p  align='left'>  We're a solution-driven and outcome-oriented consulting team. We tailor clients' career plans after understanding the expectations,
-        								goals and needs behind them. We're problem solvers.
 
-        								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        								</p>
+<hr>
+
+        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:16px;"> We’re a solution driven and outcome-oriented consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
+				</p>
 
         						</div>
         					</div>
         				</div>
-        				<div class="col-lg-4 col-sm-6 ab-content text-center mt-lg-0 mt-4">
+        				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
         					<div class="ab-content-inner">
 
-        						<div class="ab-info-con">
-        							<h4 class="text-team-w3">Pepole</h4>
+        						<div class="ab-info-con" style="margin:-9px;">
+        						 <img src="{{ asset('user/img/about/people-icon.png') }}" alt=""  style="height:50px; margin-bottom:-20px;">
+        						<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px;">People</h4>
 
-        							{{--
-        							<ul class="list-unstyled team-socil-w3pvts">
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-facebook"></span></a>
-        								</li>
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-twitter"></span></a>
-        								</li>
-        								<li class="d-inline">
-        									<a href="#"><span class="fa fa-google-plus"></span></a>
-        								</li>
-        							</ul>--}}
+                        <hr>
 
-        								<p  align='left'>Our people are our strongest assets. We care about our people. The talent and diversity of our people built our success yesterday and shape our future. We have a passion for what we do, and our work environment is open and collaborative.</p>
+
+        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:16px;">
+        							People are our strongest assets. We care about people, both our staff and members. The talent and diversity of our community built our success and will continue to shape our future. We have a passion for what we do, as such our work environment is open and collaborative.
+        								 </p>
 
         						</div>
         					</div>
         				</div>
         			</div>
         		</div>
+        		</div>
         	</section>
+	</section>
 
 
-
-
- {{--
-       <div id="portfolio" class="portfolio-area area-padding fix">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Our Philodpphy</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="pri_table_list" style="height:300px;" >
-              <h3>Growth <br /> </h3>
-
-               <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-2 col-sm-offset-2">
-              <p align='left'>  We're here to discover ourselves and our clients' potential, personally and professionally. We challenge ourselves and step out of our comfort zone,
-
-                    creating more extraordinary results better than we've done yesterday
-                    </br> </br></br>
-                    </p>
-
-                    </div>
-              <ol>
-                <li class="check">Online system</li>
-                <li class="check cross">Full access</li>
-                <li class="check">Free apps</li>
-                <li class="check">Multiple slider</li>
-                <li class="check cross">Free domin</li>
-                <li class="check cross">Support unlimited</li>
-                <li class="check">Payment online</li>
-                <li class="check cross">Cash back</li>
-              </ol>
-              <button>sign up now</button>
-            </div>
-          </div>
-
-                   <div class="col-md-4 col-sm-4 col-xs-12">
-                     <div class="pri_table_list" style="height:300px;">
-                       <h3>Results <br /> </h3>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-2 col-sm-offset-2">
-
-                       <p align='left'> We're a solution-driven and outcome-oriented consulting team. We tailor clients' career plans
-                        after understanding the expectations, goals and needs behind them. We're problem solvers.
-
-                        </p>   </br></br></br>
-
-                             </div>
-                     <ol>
-                         <li class="check">Online system</li>
-                         <li class="check cross">Full access</li>
-                         <li class="check">Free apps</li>
-                         <li class="check">Multiple slider</li>
-                         <li class="check cross">Free domin</li>
-                         <li class="check cross">Support unlimited</li>
-                         <li class="check">Payment online</li>
-                         <li class="check cross">Cash back</li>
-                       </ol>
-                       <button>sign up now</button>
-                     </div>
-                   </div>
-                   <div class="col-md-4 col-sm-4 col-xs-12">
-                     <div class="pri_table_list " style="height:300px;">
-                       <h3 >People <br /> </h3>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-2 col-sm-offset-2">
-                       <p align='left'>  Our people are our strongest assets. We care about our people. The talent and diversity of our people built our
-                        success yesterday and shape our future. We have a passion for what we do, and our work environment is open and collaborative.
-                        </p>
-
-                             </div>
-                       <ol>
-                         <li class="check">Online system</li>
-                         <li class="check cross">Full access</li>
-                         <li class="check">Free apps</li>
-                         <li class="check">Multiple slider</li>
-                         <li class="check cross">Free domin</li>
-                         <li class="check cross">Support unlimited</li>
-                         <li class="check">Payment online</li>
-                         <li class="check cross">Cash back</li>
-                       </ol>
-                       <button>sign up now</button>
-                     </div>
-                   </div>
-
-        </div>
-      </div>
-    </div><!-- End Pricing Section -->
---}}
       {{--
     <!-- ======= Testimonials Section ======= -->
     <div class="testimonials-area">

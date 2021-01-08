@@ -30,7 +30,7 @@ class CreateProfilesTable extends Migration
           $table->string('skills')->nullable();
           $table->string('avatar')->nullable();
           $table->string('resume')->nullable();
-          $table->string('transcript')->nullable();          
+          $table->string('transcript')->nullable();
 
           $table->timestamps();
       });

@@ -10,6 +10,13 @@
 
   		<style>
 
+<<<<<<< HEAD
+=======
+h2,h3.h4.h5,p
+{
+font-family:'Lora';
+}
+>>>>>>> origin/new_develop
 
 
           h1 { margin:150px auto 30px auto; text-align:center; color:#fff;}
@@ -108,12 +115,21 @@
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
+<<<<<<< HEAD
         <img src="{{ asset('user/img/slider/nyc11.jpg') }}" alt="" title="#slider-direction-1" />
 
          <img src="{{ asset('user/img/slider/empire2_edited.jpg') }}" alt="" title="#slider-direction-1" />
 
      <!--  <img src="{{ asset('user/img/slider/slider2.jpg') }}" alt="" title="#slider-direction-2" /> -->
         <img src="{{ asset('user/img/slider/slider3.jpg') }}" alt="" title="#slider-direction-3" />
+=======
+        <img src="{{ asset('user/img/slider/baner1.png') }}"  alt="" title="#slider-direction-1" />
+
+         <img src="{{ asset('user/img/slider/baner2.png') }}" alt=""  title="#slider-direction-2" />
+
+     <!--  <img src="{{ asset('user/img/slider/slider2.jpg') }}" alt="" title="#slider-direction-2" />
+        <img src="{{ asset('user/img/slider/slider3.jpg') }}" alt="" title="#slider-direction-3" />-->
+>>>>>>> origin/new_develop
       </div>
 
       <!-- direction 1 -->
@@ -124,6 +140,7 @@
               <div class="slider-content">
                 <!-- layer 1 -->
                 <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+<<<<<<< HEAD
                   <h2 class="title1" style="font-size:70px;">A Leading Career</h2>
                   </br> </br>
                     <h2 class="title1"  style="font-size:70px;">Consulting Firm</h2>
@@ -132,6 +149,16 @@
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
                   <h1 class="title2" style="font-size:30px;"> Helping candidates find dream jobs</h1>
+=======
+                  <h2 class="title1" style="font-size:60px; color:black; margin-top:-50px;">A Leading Career</h2>
+                  </br> </br>
+                    <h2 class="title1"  style="font-size:60px; color:black">Consulting Firm</h2>
+                </div>
+
+                <!-- layer 2 -->
+                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                  <h1 class="title2" style="font-size:30px; color:black; margin-top:-1px; font-weight:400; " > Helping candidates find dream jobs</h1>
+>>>>>>> origin/new_develop
                     </div>
              {{--   <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -157,6 +184,7 @@
                 <!-- layer 1 -->
                 </br></br></br></br>
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+<<<<<<< HEAD
                   <h2 class="title1" style="font-size:70px;">Make Dreams Happen </h2>
                 </div>
                 <!-- layer 2 -->
@@ -164,6 +192,15 @@
                   <h1 class="title2">A Leading Career</h1>
                 </div>
                 <!-- layer 3 -->
+=======
+                  <h2 class="title1" style="font-size:60px; color:black; margin-top:-80px;">Make <span style="color:yellow">Dreams</span> Happen </h2>
+                </div>
+                <!-- layer 2 -->
+             <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                 <h1 class="title2" style="font-size:30px; color:black;margin-top:-1px; font-weight:400;"> Taking your career to next level</h1>
+                </div>
+            {{--    <!-- layer 3 -->
+>>>>>>> origin/new_develop
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                   <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
                   <a class="ready-btn page-scroll" href="#about">Learn More</a>
@@ -223,36 +260,74 @@
                                 </div> </div>
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> origin/new_develop
                          <div class="col-md-4 col-sm-4 col-xs-4">
                            <div class=" text-center">
                               <h2  style="font-size:60px; text-align:left;">99%+ </h2>
                                 </div> </div>--}}
 
      <div class=" text-center">
+<<<<<<< HEAD
               <h2 style="font-size:40px;">A Reputable Career Consulting Brand</h2> </br> </br>
         {{--     <img src="{{ asset('user/img/slider/brand.png') }}" alt="">--}}
+=======
+
+
+              <h2 style="font-family:'libre baskerville',serif; font-size:42px;">A Reputable Career Consulting Brand</h2> </br> </br>
+
+>>>>>>> origin/new_develop
             </div>
           </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-4">
+<<<<<<< HEAD
                 <div class=" text-center">
                  <h2  style="font-size:60px; ">10,000 + </h2>
                  </br>
             <h2 style="font-size:30px;  ">​Partners</h2>
+=======
+                <div class=" text-center" style="font-style: italic; ">
+                 <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">10,000 + </h2>
+                 </br>
+             <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">​Partners</h2>
+>>>>>>> origin/new_develop
            </div></div>
 
                <div class="col-md-4 col-sm-4 col-xs-4">
                  <div class=" text-center">
+<<<<<<< HEAD
                   <h2  style="font-size:60px; ">2,000 +</h2> </br>
                        <h2 style="font-size:30px;  ">​Offers</h2>
+=======
+            <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px; font-style:italic;">2,000 +</h2> </br>
+                       <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">​Offers</h2>
+
+
+>>>>>>> origin/new_develop
                       </div> </div>
 
 
                <div class="col-md-4 col-sm-4 col-xs-4">
                  <div class=" text-center">
+<<<<<<< HEAD
                    <h2  style="font-size:60px; ">99% + </h2> </br>
                        <h2 style="font-size:30px;  ">Praise​</h2>
                       </div> </div>
+=======
+
+                  <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">99% + </h2> </br>
+                        <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">Recommend</h2>
+                      </div>
+
+                      </div>
+>>>>>>> origin/new_develop
         </div>
 
 
@@ -283,6 +358,7 @@
               <!-- end about-details -->
             </div>
           </div>
+<<<<<<< HEAD
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="about-move">
               <div class="services-details">
@@ -291,6 +367,11 @@
               </div>
               <!-- end about-details -->
             </div>
+=======
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+                <img src="{{ asset('user/img/slider/51adv.PNG') }}" alt="">
+>>>>>>> origin/new_develop
           </div>
 
 
@@ -300,6 +381,7 @@
     </div><!-- End Services Section -->
 
 
+<<<<<<< HEAD
 {{--
       <div id="team" class="our-team-area area-padding">
               <div class="container">
@@ -399,6 +481,8 @@
               </div>
 
 --}}
+=======
+>>>>>>> origin/new_develop
 
 
 </br></br></br>
@@ -406,7 +490,11 @@
                <div class="col-md-12 col-sm-12 col-xs-12">
 
                          <div class=" text-center">
+<<<<<<< HEAD
                            <h2  style="font-size:40px;">Our Service System</h2>
+=======
+                           <h2  style="font-size:40px; margin-bottom:-30px;">Our Service System</h2>
+>>>>>>> origin/new_develop
                          </div>
 
 
@@ -492,11 +580,18 @@
   </div>
 
 
+<<<<<<< HEAD
       <div id="team" class="our-team-area area-padding">
+=======
+
+
+ <div id="team" class="our-team-area area-padding">
+>>>>>>> origin/new_develop
           <div class="container">
 
 
                 <div class=" text-center">
+<<<<<<< HEAD
                   <h2  style="font-size:40px;">Our Specialized ​Industries</h2>
 
               </div>
@@ -530,6 +625,38 @@
  <div class=" text-center">
               <h2  style="font-size:40px; color:white;">Our Offers</h2>
             </div>
+=======
+                       <h2  style="font-size:40px;">Our Specialized ​Industries</h2>
+
+              </div>
+
+            </div>
+
+            <img src="{{ asset('user/img/slider/hangye.PNG') }}" alt="" style="width:100%">
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class=" text-center">
+              <h2  style="font-size:40px; color:black;">Our Offers</h2>
+            </div>
+
+    <div id="about" class="about-area area-padding" style="z-index:-1;height:520px;background-image: url('user/img/slider/blue11.PNG') ; background-size:100% 520px;">
+      <div class="container">
+
+
+>>>>>>> origin/new_develop
 </br></br>
     <div class="slide hi-slide" >
     		  <div class="hi-prev "></div>
@@ -556,7 +683,13 @@
 
 
 
+<<<<<<< HEAD
 </br></br></br></br></br></br>
+=======
+
+
+{{--
+>>>>>>> origin/new_develop
 
  <div class="col-md-12 col-sm-12 col-xs-12">
  <div class=" text-center">
@@ -599,6 +732,7 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 
   <!-- controls slides -->
   <div class="controls">
@@ -618,6 +752,9 @@
 </br>
 </br>
 </br>
+=======
+--}}
+>>>>>>> origin/new_develop
 
 
 
@@ -1301,7 +1438,11 @@
       </div>
     </div><!-- End Blog Section -->    --}}
 
+<<<<<<< HEAD
     </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>
+=======
+
+>>>>>>> origin/new_develop
 
     <!-- ======= Suscribe Section ======= -->
 <!--    <div class="suscribe-area">
@@ -1319,6 +1460,25 @@
 -->
 
 
+<<<<<<< HEAD
+=======
+ <div id="team" class="our-team-area area-padding">
+          <div class="container">
+
+
+                <div class=" text-center">
+                       <h2  style="font-size:40px;">​Our Partners</h2>
+
+              </div>
+
+            </div>
+
+            <img src="{{ asset('user/img/slider/part.png') }}" alt="" style="width:100%">
+     </div>
+
+
+
+>>>>>>> origin/new_develop
   </main><!-- End #main -->
 
    <!-- ======= Footer ======= -->

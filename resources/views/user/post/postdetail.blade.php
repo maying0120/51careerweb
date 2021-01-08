@@ -9,6 +9,11 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v7.0" nonce="XE4x448g"></script>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/new_develop
 <body data-spy="scroll" data-target="#navbar-example">
 
   <!-- ======= Header ======= -->
@@ -19,7 +24,11 @@
   <main id="main">
 
     <!-- ======= Blog Header ======= -->
+<<<<<<< HEAD
     <div class="header-bg page-area">
+=======
+   {{--  <div class="header-bg page-area">
+>>>>>>> origin/new_develop
       <div class="home-overly"></div>
       <div class="container">
         <div class="row">
@@ -37,10 +46,27 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
     </div><!-- End Blog Header -->
 
     <!-- ======= Blog Page ======= -->
     <div class="blog-page area-padding">
+=======
+    </div><!-- End Blog Header -->--}}
+
+
+     <div>
+
+              <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
+                <div class="text-center">
+
+             <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">Post</h2>
+
+                                                    </div>
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding" style="margin-top:200px;">
+>>>>>>> origin/new_develop
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -236,7 +262,11 @@
                     <div class="entry-content">
                       {!! htmlspecialchars_decode($post->body) !!}
                     </div>
+<<<<<<< HEAD
  <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="8" data-width=""></div>
+=======
+ <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="1" data-width=""></div>
+>>>>>>> origin/new_develop
 
 
                    </div>

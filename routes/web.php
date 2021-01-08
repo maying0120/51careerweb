@@ -27,11 +27,24 @@ Route::post('/', 'Auth\LoginController@logout')->name('user.logout');
 
 // Protected against Non-Users
 Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
-   Route::get('/home', 'HomeController@index');
+   Route::get('/home1', 'HomeController@index');
+
+
+    Route::get('/home1', 'HomeController@home1');
+
    //about
     Route::get('/aboutus', 'HomeController@aboutus');
     //contact
     Route::get('/contactus', 'HomeController@contactus');
+
+     //our story
+        Route::get('/ourstory', 'HomeController@ourstory');
+        //join us
+        Route::get('/joinus', 'HomeController@joinus');
+        //our service
+        Route::get('/ourservice', 'HomeController@ourservice');
+
+  Route::get('/jobreq', 'HomeController@jobreq');
    // Video
    Route::get('videos/{vcategory}','VideoController@searchbycat');
    Route::get('video','VideoController@index')->name('video');

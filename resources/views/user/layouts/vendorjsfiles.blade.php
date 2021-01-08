@@ -16,4 +16,8 @@
   <script src="{{ asset('user/vendor/venobox/venobox.min.js') }}"></script>
 
   <!-- Template Main JS File -->
+<<<<<<< HEAD
   <script src="{{ asset('user/js/main.js') }}"></script>
+=======
+  <script src="{{ asset('user/js/main.js') }}"></script>
+>>>>>>> origin/new_develop

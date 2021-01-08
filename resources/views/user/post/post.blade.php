@@ -10,13 +10,81 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
+<<<<<<< HEAD
     @include('user/layouts/header')
+=======
+ <div class="container d-flex">
+   <div class="mr-auto">
+     <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
+   </div>
+   <nav class="nav-menu d-none d-lg-block">
+     <ul>
+       <li ><a href="/home">Home</a></li>
+       <li><a href="ourservice">Service</a></li>
+       <li><a href="ourstory">Success Stories</a></li>
+       <li><a href="/job">Job Board</a></li>
+       <li class="active"><a href="/post">Blog</a></li>
+       <li class="drop-down">
+         <a href="aboutus">Our Company</a>
+         <ul>
+           <li><a href="aboutus">About Us</a></li>
+           <li><a href="joinus">Join Us</a></li>
+           <li><a href="contactus">Contact Us</a></li>
+         </ul>
+       </li>
+       @if (Auth::guard('web')->check())
+       <li style="margin-left: 10px; padding-left: 10px;">
+         <a href="{{ route('profile', ['tab' => 'notification']) }}">
+           <i class="fa fa-bell"></i>
+           @if (count(auth()->user()->unreadNotifications) > 0)
+           <span class="badge badge-pill badge-info">
+             &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
+           </span>
+           @endif
+         </a>
+       </li>
+       @endif
+       <li class="drop-down">
+         <a href="#" class="logo">
+           <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
+         </a>
+         <ul>
+             @if (Auth::guest())
+             <li><a href="{{ route('login') }}">Login</a></li>
+             <li><a href="{{ route('register') }}">Sign up</a></li>
+             @elseif (Auth::guard('web')->check())
+             <li><a href="">My Reviews</a></li>
+             <li><a href="">My Subscription</a></li>
+             <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
+             <li>
+               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
+                 {{ csrf_field() }}
+               </form>
+             </li>
+             @endif
+           </li>
+         </ul>
+       </li>
+     </ul>
+   </nav><!-- .nav-menu -->
+ </div>
+ <script>
+   function markNotificationsAsRead() {
+     $.get('/unreadNotificationsMarkAsRead');
+   };
+ </script>
+>>>>>>> origin/new_develop
   </header><!-- End Header -->
 
   <main id="main">
 
     <!-- ======= Blog Header ======= -->
+<<<<<<< HEAD
     <div class="header-bg page-area">
+=======
+    {{-- <div class="header-bg page-area">
+>>>>>>> origin/new_develop
       <div class="home-overly"></div>
       <div class="container">
         <div class="row">
@@ -34,10 +102,27 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
     </div><!-- End Blog Header -->
 
     <!-- ======= Blog Page ======= -->
     <div class="blog-page area-padding">
+=======
+    </div><!-- End Blog Header -->--}}
+
+
+     <div>
+
+              <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
+                <div class="text-center">
+
+             <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">Post</h2>
+
+                                                    </div>
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding" style="margin-top:200px;">
+>>>>>>> origin/new_develop
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -54,7 +139,11 @@
                 </form>
                 <!-- search option end -->
               </div>
+<<<<<<< HEAD
               <div class="single-blog-page">
+=======
+              {{-- <div class="single-blog-page">
+>>>>>>> origin/new_develop
                 <!-- recent start -->
                 <div class="left-blog">
                   <h4>recent post</h4>
@@ -110,7 +199,11 @@
                   </div>
                 </div>
                 <!-- recent end -->
+<<<<<<< HEAD
               </div>
+=======
+              </div> --}}
+>>>>>>> origin/new_develop
               <div class="single-blog-page">
                 <div class="left-blog">
                   <h4>categories</h4>
@@ -142,6 +235,7 @@
               <div class="single-blog-page">
                 <div class="left-blog">
                   <h4>archive</h4>
+<<<<<<< HEAD
                   <ul>
                     <li>
                       <a href="#">07 July 2016</a>
@@ -158,6 +252,22 @@
                     <li>
                       <a href="#">09 Fabruary 2016</a>
                     </li>
+=======
+
+
+                  <ul>
+                   @foreach($archives as $stats)
+                    <li>
+                      <a href="/post/?month={{ $stats['month'] }}&year={{  $stats['year'] }}">
+
+                       {{ $stats['month'].' '. $stats['year'] }} </a>
+                    </li>
+                   @endforeach
+
+                    <li>
+                                       <h5 > <a href="/post">See All Articles</a> </h5>
+                                        </li>
+>>>>>>> origin/new_develop
                   </ul>
                 </div>
               </div>

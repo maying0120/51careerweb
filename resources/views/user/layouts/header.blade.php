@@ -4,17 +4,17 @@
   </div>
   <nav class="nav-menu d-none d-lg-block">
     <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="">Service</a></li>
-      <li><a href="">Success Stories</a></li>
+      <li class="active"><a href="/home1">Home</a></li>
+      <li><a href="ourservice">Service</a></li>
+      <li><a href="ourstory">Success Stories</a></li>
       <li><a href="/job">Job Board</a></li>
-      <li><a href="/video">Blog</a></li>
+      <li><a href="/post">Blog</a></li>
       <li class="drop-down">
         <a href="">Our Company</a>
         <ul>
-          <li><a>About Us</a></li>
-          <li><a>Join Us</a></li>
-          <li><a>Contact Us</a></li>
+          <li><a href="aboutus">About Us</a></li>
+          <li><a href="joinus">Join Us</a></li>
+          <li><a href="contactus">Contact Us</a></li>
         </ul>
       </li>
       @if (Auth::guard('web')->check())

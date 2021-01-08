@@ -219,7 +219,7 @@ font-size:13px;
       </div>
     </div>
  </br></br></br> </br>
-   <img src="{{ asset('user/img/about/jpinus.png') }}" alt="">
+   <img src="{{ asset('user/img/about/jpinus.png') }}"  style="width:100%" alt="">
 
 {{--
     <!-- ======= About Section ======= -->

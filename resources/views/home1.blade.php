@@ -328,7 +328,7 @@ font-family:'Lora';
 
                               <div class="team_member">
                                 <div class="team_img">
-                                   <i class="fa fa-arrows fa-5x  rounded-circle"></i>
+                                   <i class="fa fa-calendar fa-5x  rounded-circle"></i>
                                 </div>
                                 <h3>Career Plan</h3>
                               <!--  <p class="role">UI developer</p> -->
@@ -365,7 +365,7 @@ font-family:'Lora';
 
                               <div class="team_member">
                                 <div class="team_img">
-                                    <i class="fa fa-group fa-5x"></i>
+                                    <i class="fa fa-bell fa-5x"></i>
                                 </div>
                              <h3>Career Plan</h3>
                                                       <!--  <p class="role">UI developer</p> -->
@@ -383,7 +383,7 @@ font-family:'Lora';
 
                                               <div class="team_member">
                                                               <div class="team_img">
-                                                                <i class="fa fa-handshake-o fa-5x"></i>
+                                                                <i class="fa fa-users fa-5x"></i>
                                                               </div>
                                            <h3>Career Plan</h3>
                                                                     <!--  <p class="role">UI developer</p> -->

@@ -20,16 +20,18 @@
       @if (Auth::guard('web')->check())
       <li style="margin-left: 10px; padding-left: 10px;">
         <a href="{{ route('profile', ['tab' => 'notification']) }}">
-          <i class="fa fa-bell"></i>
           @if (count(auth()->user()->unreadNotifications) > 0)
+          <i class="fa fa-bell" style="transform: translateY(1px);"></i>
           <span class="badge badge-pill badge-info">
-            &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
+            {{ count(auth()->user()->unreadNotifications) }}
           </span>
+          @else
+          <i class="far fa-bell" style="padding: 5px;"></i>
           @endif
         </a>
       </li>
       @endif
-      <li class="drop-down">
+      <li class="drop-down drop-down-with-arrow">
         <a href="#" class="logo">
           <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
         </a>

@@ -96,9 +96,11 @@
           <form action="profile/avatar" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <label for="change-avatar">
-              <img id="avatar" style="width: 120px; height: 120px;"
-              src="@if ($profile->avatar) {{ Storage::url($profile->avatar) }}
-              @else {{ asset('user/img/51careerlogo1.png') }} @endif">
+              <div style="width: 120px; height: 120px;">
+                <img id="avatar" style="height: 100%; width: 100%; object-fit: cover;"
+                src="@if ($profile->avatar) {{ Storage::url($profile->avatar) }}
+                @else {{ asset('user/img/51careerlogo1.png') }} @endif">
+              </div>
             </label>
             <input id="change-avatar" class="hidden" type="file" name="avatar" onchange="this.form.submit();">
           </form>

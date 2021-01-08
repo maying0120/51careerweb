@@ -63,14 +63,30 @@ class UserController extends Controller
     }
 
     public function recommend($id){
-        $time = time();
-        $link = route('host').'/job/'.dechex($time).'-'.$id;
-        $user = User::find($id);
-        $user->recommend_job = $link;
-        $user->save();
-        $user->notify(new JobsRecommend($link));
+        rec($id);
+        return redirect(route('user.index'));
+    }
+
+    public function recommendall(){
+        $users = user::all();
+        $id = array();
+        foreach ($users as $user) {
+            array_push($id, $user->id);
+        }
+
+        for ($i = 0; $i < count($id); $i++){
+            rec($id[$i]);
+        }
         return redirect(route('user.index'));
     }
 
 
+}
+
+ function rec($id) {
+    $time = time();
+    $link = route('host').'/job/'.dechex($time).'-'.$id;
+    $user = user::find($id);
+    $user->recommend_job = $link;
+    $user->save();
 }

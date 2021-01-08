@@ -20,5 +20,17 @@ class Application extends Model
         return $this->belongsTo('App\Model\job\Job');
     }
 
+    public function education() {
+        return $this->hasOne('App\Model\user\Education','user','user_id');
+    }
+
+    public function experience() {
+        return $this->hasOne('App\Model\user\Experience','user','user_id');
+    }
+
+    public function profile() {
+        return $this->hasOne('App\Model\user\Profile','id','user_id');
+    }
+
 
 }

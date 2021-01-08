@@ -8,6 +8,14 @@
    <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
    <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+   <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+
+
+
+
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -67,18 +75,91 @@
           </div>
 
 
+          
+
+
           <div class="col-sm-6">
 
 
-
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Text Editors</li>
+              <li class="breadcrumb-item"><a href="{{route('application_view')}}">Home</a></li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    
+    <form action="{{route('application_view')}}" class="serach-form-area" method="post">
+      {{ csrf_field() }}
+      <div class="row justify-content-center form-wrap">
+
+        <label for="visa_status">status:</label>
+          <div class="col-lg-2 form-cols" id="visa_status">
+              
+                <div class="select2-blue">
+                  <select class="select2" multiple="multiple" data-placeholder="Select visa status" name="major[]"
+                  data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                    <option value="OPT"> OPT</option>
+                    <option value="H1B"> H1B</option>
+                    <option value="Green Card"> Green Card</option>
+                    <option value="Citizen"> Citizen</option>
+                  </select>
+                </div>
+
+          </div>
+
+          <label for="major">major:</label>
+          <div class="col-lg-2 form-cols" id="major">
+
+
+            <div class="select2-blue">
+              <select class="select2" multiple="multiple" data-placeholder="Select major" name="major[]"
+              data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                @foreach($majors as $major)
+                <option value="{{ $major->name}}"> {{$major->name}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+
+
+
+          <label for="degree">Degree:</label>
+          <div class="col-lg-2 form-cols" id="degree">
+            <div class="select2-blue">
+              <select class="select2" multiple="multiple" data-placeholder="Select degree" name="major[]"
+              data-dropdown-css-class="select2-blue" style="width: 100%; ">
+                <option value="Bachelor"> Bachelor</option>
+                <option value="Master"> Master</option>
+                <option value="PHD"> PHD</option>
+              </select>
+            </div>
+         
+          </div>
+
+
+
+          <label for="experience">Experience:</label>
+          <div class="col-lg-2 form-cols" id="experience">
+            <div class="default-select">
+              <select  id="default-selects" name="experience">
+                  <option value="Unselected">Unselected</option>
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                  <option value="2">less than 1 year</option>
+                  <option value="3">1 to 5 years</option>
+                  <option value="4">more than 5 years</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-lg-1 form-cols">
+              <button type="submit" class="btn btn-info">
+                  <span class="lnr lnr-magnifier"></span> Search
+              </button>
+          </div>
+      </div>
+  </form>
 
 
 
@@ -247,6 +328,12 @@
 <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script src="{{ asset('admin/plugins/select2/js/select2.full.min.js') }}"></script>
+
 {{-- <script>
   $(function () {
     $("#example1").DataTable({
@@ -264,6 +351,12 @@
     });
   });
 </script> --}}
+<script>
+  $(document).ready(function(){
+    //Initialize Select2 Elements
+    $('.select2').select2()
 
+})
+</script>
 </body>
 </html>

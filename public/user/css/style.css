@@ -7,12 +7,39 @@
 
 @charset "UTF-8";
 /*--------------------------------------------------------------
-# General
+# 51Careers Specific
 --------------------------------------------------------------*/
-html, body {
-  height: 100%;
+footer {
+  margin-top: auto;
 }
 
+.centered {
+  margin: auto;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', Helvetica;
+  font-weight: 300;
+}
+
+.title-font {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 .floatleft {
   float: left;
 }
@@ -57,7 +84,6 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
   margin: 0 0 15px;
   color: #444;
   font-weight: 500;
@@ -110,8 +136,7 @@ a:active, a:hover {
 body {
   background: #fff none repeat scroll 0 0;
   color: #444;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   text-align: left;
   overflow-x: hidden;
   line-height: 22px;
@@ -126,8 +151,8 @@ body {
   padding: 6px 12px 9px 12px;
   font-size: 16px;
   border-radius: 2px;
-  right: 15px;
-  bottom: 15px;
+  right: 20px;
+  bottom: 75px;
   transition: background 0.5s;
 }
 
@@ -138,7 +163,7 @@ body {
 }
 
 .back-to-top:focus {
-  background: #3EC1D5;
+  background: ;
   color: #fff;
   outline: none;
 }
@@ -175,12 +200,12 @@ div#preloader {
 }
 
 ::-moz-selection {
-  background: #3EC1D5;
+  background: ;
   text-shadow: none;
 }
 
 ::selection {
-  background: #3EC1D5;
+  background: #3ec1d5;
   text-shadow: none;
 }
 
@@ -230,10 +255,10 @@ div#preloader {
 # Header
 --------------------------------------------------------------*/
 #header {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
-  transition: all 0.5s;
   padding: 20px 0;
   background: rgba(240, 255, 255, 0.8);
 }
@@ -256,15 +281,16 @@ div#preloader {
   color: #3ec1d5;
 }
 
-#header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
+#header a:hover {
+  color: #3ec1d5;
   text-decoration: none;
 }
 
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 20px;
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {
@@ -308,7 +334,6 @@ div#preloader {
 /* Desktop Navigation */
 .nav-menu, .nav-menu * {
   margin: 0;
-  padding: 0;
   list-style: none;
 }
 
@@ -322,14 +347,13 @@ div#preloader {
   display: block;
   position: relative;
   color: #000000;
-  padding: 8px 15px 12px 15px;
+  padding: 8px 8px 8px 8px;
   transition: 0.3s;
   font-size: 15px;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #3ec1d5;
- 
   text-decoration: none;
 }
 
@@ -344,17 +368,16 @@ div#preloader {
   padding: 10px 0;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: ease all 0.3s;
+  transition: ease all 0.2s;
 }
 
 .nav-menu .drop-down:hover > ul {
   opacity: 1;
-  top: 100%;
+  top: 150%;
   visibility: visible;
 }
 
 .nav-menu .drop-down li {
-  min-width: 180px;
   position: relative;
 }
 
@@ -370,7 +393,7 @@ div#preloader {
   color: #3ec1d5;
 }
 
-.nav-menu .drop-down > a:after {
+.nav-menu .drop-down-with-arrow > a:after {
   content: "\ea99";
   font-family: IcoFont;
   padding-left: 5px;
@@ -2379,8 +2402,10 @@ span.email-notes {
 }
 
 .footer-head h4 {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
+  font-weight: bold;
   color: #444;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 2px;
   padding-bottom: 10px;
   text-transform: uppercase;
@@ -2391,6 +2416,7 @@ span.email-notes {
 }
 
 .footer-logo h2 {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
   color: #222;
   padding: 0;
   margin: 0;

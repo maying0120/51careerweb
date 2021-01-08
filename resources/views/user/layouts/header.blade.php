@@ -1,41 +1,48 @@
 <div class="container d-flex">
-  <div class="logo mr-auto">
-    <a href="/"><img src="{{ asset('user/img/51careerlogo.png') }}" alt="" class="img-fluid"></a>
+  <div class="mr-auto">
+    <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
   </div>
   <nav class="nav-menu d-none d-lg-block">
     <ul>
-      <li class="active"><a href="home">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="post">Post</a></li>
-      <li><a href="job">Jobs</a></li>
-      <li><a href="video">Blog</a></li>
-      @if (Auth::guard('web')->check())
+      <li><a href="/home">Home</a></li>
+      <li><a href="">Service</a></li>
+      <li><a href="">Success Stories</a></li>
+      <li><a href="/job">Job Board</a></li>
+      <li><a href="/video">Blog</a></li>
       <li class="drop-down">
-        <a onclick="markNotificationsAsRead()">Notifications
-          @if (count(auth()->user()->unreadNotifications) > 0)
-          <span class="badge badge-info">{{ count(auth()->user()->unreadNotifications) }}</span>
-          @endif
-        </a>
+        <a href="">Our Company</a>
         <ul>
-          @forelse (auth()->user()->unreadNotifications as $note)
-          <li>
-            <a>Your application to {{ $note->data['company'] }} is {{ $note->data['review'] }}</a>
-          </li>
-          @if ($loop->last) <a>View all notifications</a> @endif
-          @empty
-          <a>No unread notifications</a>
-          @endforelse
+          <li><a>About Us</a></li>
+          <li><a>Join Us</a></li>
+          <li><a>Contact Us</a></li>
         </ul>
       </li>
+      @if (Auth::guard('web')->check())
+      <li style="margin-left: 10px; padding-left: 10px;">
+        <a href="{{ route('profile', ['tab' => 'notification']) }}">
+          @if (count(auth()->user()->unreadNotifications) > 0)
+          <i class="fa fa-bell" style="transform: translateY(1px);"></i>
+          <span class="badge badge-pill badge-info">
+            {{ count(auth()->user()->unreadNotifications) }}
+          </span>
+          @else
+          <i class="far fa-bell" style="padding: 5px;"></i>
+          @endif
+        </a>
+      </li>
       @endif
-      <li class="drop-down">
-        <a href="#">User</a>
+      <li class="drop-down drop-down-with-arrow">
+        <a href="#" class="logo">
+          <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
+        </a>
         <ul>
             @if (Auth::guest())
             <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('register') }}">Sign up</a></li>
             @elseif (Auth::guard('web')->check())
-            <li><a href="profile">Profile</a></li>
+            <li><a href="">My Reviews</a></li>
+            <li><a href="">My Subscription</a></li>
+            <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
             <li>
               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">

@@ -13,23 +13,23 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
   <!-- summernote -->
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-    <style>
-      .login-box{
-        position: relative;
-        margin: auto;
-        align-self: center;
-      }
+  <style>
+  .login-box {
+    width: 360px;
+    margin-top: 5em 15em;
+  }
 
-      input[type="checkbox"]{
-        -webkit-appearance: checkbox;
-      }
-    </style>
+  .login-box-msg {
+    text-align: center;
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+  }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
   <!-- ======= Header ======= -->
@@ -37,19 +37,13 @@
     @include('user/layouts/header')
   </header>
   <!-- End Header -->
-</br>
-</br>
-</br>
-<div class="login-box">
 
-  <div class="card">
+  <div class="login-box card centered">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
       <div class="panel-body">
         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
           {{ csrf_field() }}
-
-
           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <label for="Email" class="col-md-4 control-label">Email</label>
 
@@ -99,34 +93,22 @@
               <button type="submit" class="btn btn-outline-secondary btn-sm">Log in</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-
-      <a class="btn btn-link" href="{{ route('password.request') }}">
-        Forgot your password?
-      </a>
-
-      <a class="btn btn-link" href="{{route('register') }}">
-        Sign up now
-      </a>
-
     </div>
+    <a class="btn btn-link" href="{{ route('password.request') }}">Forgot your password?</a>
+    <a class="btn btn-link" href="{{route('register') }}">Sign up now</a>
   </div>
 
-</br>
-</br>
 
-<footer>
-  @include('user/layouts/footer')
-</footer>
-</br>
-
+  <footer>
+    @include('user/layouts/footer')
+  </footer>
   <!-- End  Footer -->
 
- @include('user/layouts/vendorjsfiles')
+@include('user/layouts/vendorjsfiles')
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 </body>

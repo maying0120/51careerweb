@@ -1,30 +1,87 @@
 <html>
 <head>
-  @include('user/layouts/head')
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>51Careers-Profile</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
-    <!-- summernote -->
-    <!-- Google Font: Source Sans Pro -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-
-    <link href="user/profile/style/css/style2.css" rel="stylesheet">
-    <link href="user/profile/style/css/external.min.css"  rel="stylesheet">
-    <link href="user/profile/style/css/popup.css"  rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
-
+  @include('user/layouts/head')
+  <link href="{{ asset('user/profile/style/css/select2.css') }}" rel="stylesheet">
+  <style>
+  #body {
+    line-height: 1.6;
+    margin-top: 100px;
+  }
+  #avatar {
+    border-radius: 50%;
+    border: 2px outset grey;
+  }
+  #avatar:hover {
+    border: 2px outset #3EC1D5;
+    box-shadow:
+    inset 0 0 30px whitesmoke,
+    inset 10px 0 40px #3EC1D5,
+    inset -10px 0 40px #0ff,
+    inset 10px 0 150px #3EC1D5,
+    inset -10px 0 150px #0ff,
+    0 0 25px #fff,
+    -5px 0 15px #3EC1D5,
+    5px 0 15px #0ff;
+  }
+  #avatar:active {
+    border: 3px inset #3EC1D5;
+    transform: translateX(1px) translateY(1px);
+  }
+  #profile {
+    transition: all 1s;
+  }
+  .nav-tabs > li > a {
+    color: #3EC1D5;
+    font-family: 'Lora', sans-serif;
+    font-size: 17px;
+  }
+  .nav-link:not(.active):hover {
+    color: #444;
+  }
+  .info-board {
+    border-radius: 5px;
+    box-shadow: 0 0 5px #3EC1D5;
+  }
+  .left-panel i {
+    color: #3EC1D5;
+  }
+  .card-border {
+    border-radius: 15px;
+    border: 2px outset #3EC1D5;
+  }
+  .button-row {
+    margin-top: 10px;
+  }
+  .resume-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .resume-date {
+    font-size: 15px;
+    color: grey;
+    font-style: italic;
+  }
+  .resume-icon {
+    transform: translateY(5px);
+    transition: all 0.1s;
+  }
+  .resume-icon:hover {
+    transform: translateY(5px) scale(1.1);
+  }
+  .resume-instruction {
+    color: grey;
+  }
+  input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+  }
+  .modal input {
+    margin-bottom: 8px;
+  }
+  </style>
 </head>
-
 <body data-spy="scroll" data-target="#navbar-example">
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -32,946 +89,822 @@
   </header>
   <!-- End Header -->
 
-</br>
-</br>
-</br>
-</br>
-<div id="body">
-  <div id="container">
-    <div class="clearfix">
-        <div class="content_l">
+  <div id="body">
+    <div class="container">
+      <div class="row">
+        <div class="col-2" style="text-align: center;">
+          <form action="profile/avatar" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <label for="change-avatar">
+              <div style="width: 120px; height: 120px;">
+                <img id="avatar" style="height: 100%; width: 100%; object-fit: cover;"
+                src="@if ($profile->avatar) {{ Storage::url($profile->avatar) }}
+                @else {{ asset('user/img/51careerlogo1.png') }} @endif">
+              </div>
+            </label>
+            <input id="change-avatar" class="hidden" type="file" name="avatar" onchange="this.form.submit();">
+          </form>
+        </div>
+        <div class="col-4">
+          <h3>{{ $user->name }}</h3>
+          <hr class="solid">
+          <h6>Phone: {{ $user->phone }}</h6>
+          <h6>Email: {{ $user->email }}</h6>
+        </div>
+      </div>
+      <br>
+    </div>
+    <!-- Nav tabs -->
+    <div class="container">
+      <ul id="nav-tab" class="nav nav-tabs" role="tablist">
+        <li class="nav-item" style="margin-left: rem">
+          <a class="nav-link {{($tab != 'account' && $tab != 'notification' && $tab != 'application' && $tab != 'job') ? 'active' : '' }}" data-toggle="tab" href="#profile">
+            Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{($tab == 'application') ? 'active' : '' }}" data-toggle="tab" href="#application">
+            Application
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{($tab == 'job') ? 'active' : '' }}" data-toggle="tab" href="#job">
+            Job
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{($tab == 'notification') ? 'active' : '' }}" data-toggle="tab" href="#notification">
+            Notification
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{($tab == 'account') ? 'active' : '' }}" data-toggle="tab" href="#account">
+            Account
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content bg-light" style="height: 100%;">
+      <div id="profile" class="container tab-pane {{($tab != 'account' && $tab != 'notification' && $tab != 'application') ? 'active' : ''}}">
+        <br>
+        <div class="row col-12">
+          <!-- Left Panel -->
+          <div class="info-board left-panel col-8 bg-white ">
+            <div id="basics" class="hidden">
+              <div class="card-body">
+                <div id="basics-show" >
+                </div>
+                <div id="basics-edit" class="hidden">
+                </div>
+              </div>
+            </div>
 
-          <div class="profile_box" id="basicInfo">
-            <h2>基本信息</h2>
-            <span class="c_edit profile-toggle"></span>
-            <div class="basicShow">
-              <span>User: {{ $user->name }}</span><br>
-              <span>Phone: {{ $user->phone }}</span><br>
-              <span>Email: {{ $user->email }}</span><br>
-              <div class="m_portrait">
-                <div></div>
-                @if ($profile->avatar)
-                <img width="120" height="120" src="{{ Storage::url($profile->avatar) }}">
+            <div id="description">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between">
+                <span class="title-font" style="font-size: 19px">Description</span>
+                <i class="clickable resume-icon far fa-edit description-toggle"></i>
+              </div>
+              <div class="card-body">
+                <div id="description-show" >
+                  @if ($profile->description)
+                  <p>
+                    {{ $profile->description }}
+                  </p>
+                  @else
+                  <div class="description-toggle">
+                    <p class="resume-instruction">
+                      Add a short summary to make your profile stand out.
+                    </p>
+                  </div>
+                  @endif
+                </div>
+                <div id="description-edit" class="hidden">
+                  <form class="description-form" action="/profile/profile/description" method="POST">
+                    {{ csrf_field() }}
+                    @if ($profile->description)
+                    <textarea class="form-control col-12" name="description" style="min-height: 100px">{{ $profile->description }}</textarea>
+                    @else
+                    <textarea class="form-control col-12" name="description" placeholder="Tell us more about yourself"></textarea>
+                    @endif
+                    <div class="button-row row justify-content-end">
+                      <div class='col-3'>
+                        <input class="btn btn-info" type="submit" value="Save">
+                        <a class="description-toggle btn btn-outline-secondary">Cancel</a>
+                      </div>
+                    </div>
+                  </form><!--end .description-form-->
+                </div><!--end .description-edit-->
+              </div>
+            </div>
+
+            <div id="skill">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Skills</span>
+                <i class="clickable resume-icon fa fa-plus fa-lg experience-toggle"></i>
+                <i class="hidden clickable resume-icon fa fa-lg fa-minus experience-toggle"></i>
+              </div>
+              <div class="card-body">
+                <div class="select2-blue">
+                  <select class="select2" multiple="multiple" data-placeholder="Add Your Skills" name="skills[]"
+                  data-dropdown-css-class="select2-blue" >
+                  @foreach ($skills as $skill)
+                  <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
+                  @endforeach
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div id="experience">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Work Experience</span>
+                <i class="clickable resume-icon fa fa-plus fa-lg experience-toggle"></i>
+                <i class="hidden clickable resume-icon fa fa-lg fa-minus experience-toggle"></i>
+              </div>
+              <div class="card-body">
+                <div id="experience-add" class="hidden">
+                  <form class="experience-form" method="POST" action="{{ route('experience.store') }}">
+                    {{ csrf_field() }}
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" placeholder="Company name" name="companyName">
+                          </td>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" placeholder="Your title" name="title">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <div class="fl">
+                              <input type="date" class="form-control" value="" name="startDate">
+                            </div>
+                            <div class="clear"></div>
+                          </td>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <div class="fl">
+                              <input type="date" class="form-control" value="" name="endDate">
+                            </div>
+                            <div class="clear"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top"></td>
+                          <td colspan="3">
+                            <textarea class="form-control" name="description" placeholder="Work description"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td colspan="3">
+                            <div class="button-row">
+                              <input class="btn btn-info" type="submit" value="Save">
+                              <a class="hidden experience-toggle btn btn-outline-secondary">Cancel</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form><!--end .experience-form-->
+                  <hr>
+                </div><!--end .experience-edit-->
+                <div id="experience-show">
+                  <ul>
+                    @forelse ($companies as $company)
+                    <li>
+                      <div class="row">
+                        <div class="col-11">
+                          <p class="resume-title">
+                            {{ $company->title }}
+                          </p>
+                        </div>
+                        <div class="col-1">
+                          <div class="row">
+                            <a href="" data-toggle="modal" data-target="#company-{{ $company->id }}-edit">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <form id="delete-form-{{ $company->id }}" method="post" action="{{ route('experience.destroy',$company->id) }}" style="display: none">
+                              {{ csrf_field() }} {{ method_field('DELETE') }}
+                            </form>
+                            <span style="width: 10px"></span>
+                            <a href="" onclick="
+                            if(confirm('Are you sure want to delete?'))
+                            {
+                              event.preventDefault();
+                              document.getElementById('delete-form-{{ $company->id }}').submit();
+                            }
+                            else
+                            {
+                              event.preventDefault();
+                            }" >
+                            <i class="far fa-trash-alt" style="color: #DC143C"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div>{{ $company->company }}</div>
+                      <div class="resume-date">{{ $company->start_date }} to {{ $company->end_date }}</div>
+                      <p>{{ $company->description }}</p>
+                    </li>
+                    <div class="modal" id="company-{{ $company->id }}-edit" tabindex="-1" role="dialog">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Edit</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form role="form" action="{{ route('experience.update', $company ->id) }}" method="post">
+                            <div class="modal-body">
+                              {{ csrf_field() }} {{ method_field('PUT') }}
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="companyName" value="{{ $company->company }}">
+                                <input type="text" class="form-control" name="title" value="{{ $company->title }}">
+                                <input type="date" class="form-control" name="startDate" value="{{ $company->start_date }}">
+                                <input type="date" class="form-control" name="endDate" value="{{ $company->end_date }}">
+                                <textarea type="text" class="form-control" name="description">{{ $company->description }}</textarea>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="submit" class="btn">Submit</button>
+                              <a type="button" href="" data-toggle="modal" data-target="#company-{{ $company->id }}-edit" class="btn">Back</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    @if (!$loop->last) <hr> @endif
+                    @empty
+                    <div class="experience-toggle">
+                      <p class="resume-instruction">
+                        Add your work experience to stand out.
+                      </p>
+                    </div>
+                    @endforelse
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div id="education">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Educational Background</span>
+                <i class="clickable resume-icon fa fa-lg fa-plus education-toggle"></i>
+                <i class="hidden clickable resume-icon fa fa-lg fa-minus education-toggle"></i>
+              </div>
+              <div class="card-body">
+                <div id="education-add" class="hidden">
+                  <form class="educationalForm" method="POST" action="{{ route('education.store') }}">
+                    {{ csrf_field() }}
+                    <table>
+                      <tbody><tr>
+                        <td valign="top">
+                          <span class="redstar">*</span>
+                        </td>
+                        <td>
+                          <input type="text" placeholder="School name" name="schoolName" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top">
+                          <span class="redstar">*</span>
+                        </td>
+                        <td>
+                          <select class="form-control" name="degree">
+                            <option value="" disabled selected>Degree</option>
+                            <option value="Bachelor">Bachelor</option>
+                            <option value="Master">Master</option>
+                            <option value="Phd">Phd</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </td>
+                        <td valign="top">
+                          <span class="redstar">*</span>
+                        </td>
+                        <td>
+                          <input type="text" placeholder="Major" name="major" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top">
+                          <span class="redstar">*</span>
+                        </td>
+                        <td>
+                          <div class="fl">
+                            <input type="date" class="form-control" value="" name="startDate">
+                          </div>
+                        </td>
+                        <td valign="top">
+                          <span class="redstar">*</span>
+                        </td>
+                        <td>
+                          <div class="fl">
+                            <input type="date" class="form-control" value="" name="endDate">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td colspan="3">
+                          <div class="button-row">
+                            <input class="btn btn-info" type="submit" value="Save">
+                            <a class="hidden education-toggle btn btn-outline-secondary">Cancel</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                    <input type="hidden" class="eduId" value="">
+                  </form><!--end .educationalForm-->
+                  <hr>
+                </div><!--end .educationalEdit-->
+                <div id="education-show">
+                  <ul class="slist clearfix">
+                    @forelse ($educations as $education)
+                    <li>
+                      <div class="row">
+                        <div class="col-11 resume-title">
+                          {{ $education->school }}
+                        </div>
+                        <div class="col-1">
+                          <div class="row">
+                            <a href="" data-toggle="modal" data-target="#education-{{ $education->id }}-edit">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <span style="width: 10px"></span>
+                            <form id="delete-form-{{ $education->id }}" method="post" action="{{ route('education.destroy',$education->id) }}" style="display: none">
+                              {{ csrf_field() }} {{ method_field('DELETE') }}
+                            </form>
+                            <a href="" onclick="
+                            if(confirm('Are you sure want to delete?'))
+                            {
+                              event.preventDefault();
+                              document.getElementById('delete-form-{{ $education->id }}').submit();
+                            }
+                            else
+                            {
+                              event.preventDefault();
+                            }" >
+                            <i class="far fa-trash-alt" style="color: #DC143C"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row col-12 justify-content-between">
+                          <div>
+                            {{ $education->degree }} of {{ $education->major }}
+                          </div>
+                          <div class="resume-date">{{ date('Y', strtotime($education->start_date)) }} to {{ date('Y', strtotime($education->end_date)) }}</div>
+                      </div>
+                    </li>
+                    <div class="modal" id="education-{{ $education->id }}-edit" tabindex="-1" role="dialog">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Edit</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form role="form" action="{{ route('education.update', $education->id) }}" method="post">
+                            <div class="modal-body">
+                              {{ csrf_field() }} {{ method_field('PUT') }}
+                              <div class="form-group">
+                                <select class="form-control" name="degree">
+                                  <option value="{{ $education->degree }}" selected>{{ $education->degree }}</option>
+                                  @if ( $education->degree != 'Bachelor')
+                                  <option value="Bachelor">Bachelor</option>
+                                  @endif
+                                  @if ( $education->degree != 'Master')
+                                  <option value="Master">Master</option>
+                                  @endif
+                                  @if ( $education->degree != 'Phd')
+                                  <option value="Phd">Phd</option>
+                                  @endif
+                                  @if ( $education->degree != 'Other')
+                                  <option value="Other">Other</option>
+                                  @endif
+                                </select>
+                                <input type="text" class="form-control " name="schoolName" value="{{ $education->school }}">
+                                <input type="text" class="form-control" name="major" value="{{ $education->major }}">
+                                <input type="date" class="form-control" name="startDate" value="{{ $education->start_date }}">
+                                <input type="date" class="form-control" name="endDate" value="{{ $education->end_date }}">
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="submit" class="btn">Submit</button>
+                              <a type="button" href="" data-toggle="modal" data-target="#education-{{ $education->id }}-edit" class="btn">Back</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    @if (!$loop->last) <hr> @endif
+                    @empty
+                    <div class="education-toggle">
+                      <p class="resume-instruction">
+                        Update your education details to stand out.
+                      </p>
+                    </div>
+                    @endforelse
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div id="project">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Project</span>
+                <i class="clickable resume-icon fa fa-lg fa-plus project-toggle"></i>
+                <i class="hidden clickable resume-icon fa fa-lg fa-minus project-toggle"></i>
+              </div>
+              <div class="card-body">
+                <div id="project-edit" class="hidden">
+                  <form class="projectForm" method="POST" action="{{ route('experience.store') }}">
+                    {{ csrf_field() }}
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <input type="text" placeholder="Project name" name="projectName" class="form-control">
+                          </td>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <input type="text" placeholder="Your role" name="title" class="form-control">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <div class="fl">
+                              <input type="date" placeholder="start_date" class="form-control" value="" name="startDate">
+                            </div>
+                            <div class="clear"></div>
+                          </td>
+                          <td valign="top">
+                            <span class="redstar">*</span>
+                          </td>
+                          <td>
+                            <div class="fl">
+                              <input type="date" placeholder="end_date" class="form-control" value="" name="endDate">
+                            </div>
+                            <div class="clear"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top"></td>
+                          <td colspan="3">
+                            <textarea class="form-control" name="description" placeholder="Project description"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top"></td>
+                          <td colspan="3">
+                            <div class="button-row">
+                              <input class="btn btn-info" type="submit" value="Save">
+                              <a class="hidden project-toggle btn btn-outline-secondary">Cancel</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form><!--end .projectForm-->
+                  <hr>
+                </div><!--end .projectEdit-->
+                <div id="project-show">
+                  <ul>
+                    @forelse ($projects as $project)
+                    <li>
+                      <div class="row">
+                        <div class="col-11">
+                          <p class="resume-title">
+                            {{ $project->title }}
+                          </p>
+                        </div>
+                        <div class="col-1">
+                          <div class="row">
+                            <a href="" data-toggle="modal" data-target="#project-{{ $project->id }}-edit">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <form id="delete-form-{{ $project->id }}" method="post" action="{{ route('experience.destroy',$project->id) }}" style="display: none">
+                              {{ csrf_field() }} {{ method_field('DELETE') }}
+                            </form>
+                            <span style="width: 10px"></span>
+                            <a href="" onclick="
+                            if(confirm('Are you sure want to delete?'))
+                            {
+                              event.preventDefault();
+                              document.getElementById('delete-form-{{ $project->id }}').submit();
+                            }
+                            else
+                            {
+                              event.preventDefault();
+                            }" >
+                            <i class="far fa-trash-alt" style="color: #DC143C"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div>{{ $project->project }}</div>
+                      <div class="resume-date">{{ $project->start_date }} to {{ $project->end_date }}</div>
+                      <p>{{ $project->description }}</p>
+                    </li>
+                    <div class="modal" id="project-{{ $project->id }}-edit" tabindex="-1" role="dialog">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Edit</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form role="form" action="{{ route('experience.update', $project ->id) }}" method="post">
+                            <div class="modal-body">
+                              {{ csrf_field() }} {{ method_field('PUT') }}
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="projectName" value="{{ $project->project }}">
+                                <input type="text" class="form-control" name="title" value="{{ $project->title }}">
+                                <input type="date" class="form-control" name="startDate" value="{{ $project->start_date }}">
+                                <input type="date" class="form-control" name="endDate" value="{{ $project->end_date }}">
+                                <textarea type="text" class="form-control" name="description">{{ $project->description }}</textarea>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="submit" class="btn">Submit</button>
+                              <a type="button" href="" data-toggle="modal" data-target="#project-{{ $project->id }}-edit" class="btn">Back</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    @if (!$loop->last) <hr> @endif
+                    @empty
+                    <div class="project-toggle">
+                      <p class="resume-instruction">
+                        Showcase other projects that you participated in!
+                      </p>
+                    </div>
+                    @endforelse
+                  </ul>
+                </div><!--end .projectShow-->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Panel -->
+          <div class="col-4">
+            <!-- Resume -->
+            <div class="card mb-3 card-border" style="margin-left: 20px;">
+              <div class="card-header bg-transparent border-info">My Resume</div>
+              <div class="card-body">
+                @if ($profile->resume)
+                <form action="{{ route('download_resume') }}" method="POST">
+                  {{ csrf_field() }}
+                  <button for="download-resume" class="btn btn-block btn-light" style="border-radius: 20px;">
+                    <?php $filename = explode(".", $profile->resume); $fileExt = end($filename) ?>
+                    @if ($fileExt == "doc" || $fileExt == "docx")
+                    <?php  $fileExt ?>
+                    <i class="far fa-file-word fa-lg"></i>
+                    @elseif ($fileExt == "pdf")
+                    <i class="far fa-file-pdf fa-lg"></i>
+                    @else
+                    <i class="far fa-file-alt fa-lg"></i>
+                    @endif
+                    &nbsp;{{ $profile->resume }}
+                  </button>
+                  <input class="hidden" type="text" name="filename" value="{{ $profile->resume }}"/>
+                  <input id="download-resume" class="hidden" type="submit"/>
+                </form>
+                <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  <input class="hidden" id="upload-resume" type="file" name="resume" onchange="this.form.submit();" required>
+                </form>
+                <p class="card-text"> Download to view your resume or
+                  <label for="upload-resume">
+                    <a class="text-primary" style="cursor: pointer">upload another resume</a>
+                  </label>.
+                </p>
+                @else
+                <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  <label for="upload-resume" class="btn btn-block btn-light" style="display: inline-block; width: 100%; border-radius: 20px;">
+                    <i class="fas fa-file-upload fa-lg"></i>&nbsp;Upload Resume
+                  </label>
+                  <input class="hidden" id="upload-resume" type="file" name="resume" onchange="this.form.submit();" required>
+                </form>
+                <p class="card-text"> Click to upload your resume to 51Careers. </p>
                 @endif
               </div>
             </div>
-            <div class="basicEdit dn">
-              <form id="profileForm">
-                <table><tbody>
-                  <tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <input type="text" placeholder="姓名" value="" name="name" id="name">
-                    </td>
-                    <td valign="top"></td>
-                    <td>
-                      <ul class="profile_radio clearfix reset">
-                        <li class="current">
-                          男<em></em>
-                          <input type="radio" name="gender" value="男">
-                        </li>
-                        <li>
-                          女<em></em>
-                          <input type="radio" checked="checked" name="gender" value="女">
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td colspan="3">
-                      <input type="text" placeholder="手机号码" value="" name="tel" id="tel">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td colspan="3">
-                      <input type="text" placeholder="接收面试通知的邮箱" value="" name="email" id="email">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td colspan="3">
-                      <input type="submit" value="Save" class="btn_profile_save">
-                      <a class="btn_profile_cancel profile-toggle">Cancel</a>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </form><!--end #profileForm-->
-              <div class="new_portrait">
-                <form action="profile/avatar" method="POST" enctype="multipart/form-data">
-                  {{ csrf_field() }}
-                  @if ($profile->avatar)
-                  <div class="portraitShow" id="portraitShow">
-                    <img width="120" height="120" src="{{ Storage::url($profile->avatar) }}">
-                    <span>Change profile pic</span>
-                  </div>
-                  @else
-                  <div class="portrait_upload" id="portraitNo">
-                    <span>Upload profile pic</span>
-                  </div>
-                  @endif
-                  <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于5M" name="avatar" onchange="this.form.submit();">
-                  <!-- <input type="hidden" id="headPicHidden" /> -->
-                  <em>
-                    Size：120*120px <br>
-                  </em>
-                </form>
-                <span style="display:none;" id="headPic_error" class="error"></span>
-              </div><!--end .new_portrait-->
-            </div><!--end .basicEdit-->
-            <input type="hidden" id="nameVal" value="" >
-            <input type="hidden" id="genderVal" value="">
-            <input type="hidden" id="topDegreeVal" value="">
-            <input type="hidden" id="workyearVal" value="">
-            <input type="hidden" id="currentStateVal" value="">
-            <input type="hidden" id="emailVal" value="">
-            <input type="hidden" id="telVal" value="">
-            <input type="hidden" id="pageType" value="1">
-          </div><!--end #basicInfo-->
-
-          <div class="profile_box" id="selfDescription">
-            <h2>自我描述</h2>
-            <span class="c_edit description-toggle"></span>
-            <div class="descriptionShow">
-              @if ($profile->description)
-              {{ $profile->description }}
-              @endif
-            </div>
-            <div class="descriptionEdit dn">
-              <form class="descriptionForm" action="profile/description" method="POST">
-                {{ csrf_field() }}
-                <table>
-                  <tbody><tr>
-                    <td colspan="2">
-                      @if ($profile->description)
-                      <textarea class="selfDescription s_textarea" name="description" placeholder="">{{ $profile->description }}</textarea>
-                      @else
-                      <textarea class="selfDescription s_textarea" name="description" placeholder=""></textarea>
-                      @endif
-                      <div class="word_count">你还可以输入 <span>500</span> 字</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">
-                      <input type="submit" value="Save" class="btn_profile_save">
-                      <a class="btn_profile_cancel description-toggle">Cancel</a>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </form><!--end .descriptionForm-->
-            </div><!--end .descriptionEdit-->
-          </div><!--end #selfDescription-->
-
-          <div class="profile_box" id="expectJob">
-            <h2>期望工作</h2>
-            <span class="c_edit expect-toggle"></span>
-            <div class="expectShow dn">
-              <span></span>
-            </div><!--end .expectShow-->
-            <div class="expectEdit dn">
-              <form id="expectForm" method="POST" action="profile/expect">
-                {{ csrf_field() }}
-                <table>
-                  <tbody id="expect-new-add-city">
-                    <tr>
-                      <td>
-                        <select class="profile_select_287 profile_select_normal" name="type" required>
-                          @if ($profile->expected_type)
-                          <option value="{{ $profile->expected_type }}" selected>{{ $profile->expected_type }}</option>
-                          @else
-                          <option value="" selected>Job Type</option>
-                          @endif
-                          @if ($profile->expected_type != "intern")
-                          <option value="intern">Intern</option>
-                          @endif
-                          @if ($profile->expected_type != "part-time")
-                          <option value="part-time">Part time</option>
-                          @endif
-                          @if ($profile->expected_type != "full-time")
-                          <option value="full-time">Full time</option>
-                          @endif
-                          @if ($profile->expected_type != "all")
-                          <option value="all">Any type</option>
-                          @endif
-                        </select>
-                      </td>
-                      <td>
-                        <select class="profile_select_287 profile_select_normal" name="salary" required>
-                          @if ($profile->expected_salary)
-                          <option value="{{ $profile->expected_salary }}" selected>{{ $profile->expected_salary }}</option>
-                          @else
-                          <option value="" selected>Salary</option>
-                          @endif
-                          @if ($profile->expected_salary != "below-60k")
-                          <option value="below-60k">Below 60k</option>
-                          @endif
-                          @if ($profile->expected_salary != "60k-to-100k")
-                          <option value="60k-to-100k">60k to 100k</option>
-                          @endif
-                          @if ($profile->expected_salary != "100k-to-150k")
-                          <option value="100k-to-150k">100k to 150k</option>
-                          @endif
-                          @if ($profile->expected_salary != "above-150k")
-                          <option value="above-150k">Above 150k</option>
-                          @endif
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="text" name="title" placeholder="Title" @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
-                      </td>
-                      <td>
-                        <!-- <input type="text" class="form-control" id="country" name="country" placeholder="country" value="" hidden>
-                        <input type="text" class="form-control" id="state" name="state" placeholder="state" value="" hidden>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="city" value="" hidden> -->
-                      </td>
-                    </tr>
-
-                    @if (!$profile->expected_cities)
-                    <tr>
-                      <td>
-                        <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
-                          <option id = "selecountry" selected = "selected" ></option>
-                          <option v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id></option>
-                        </select>
-                      </td>
-                      <td>
-                        <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
-                          <option id = "selestate"  selected = "selected" ></option>
-                          <option v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal" id="cityId">
-                          <option id = "selecity"  selected="selected" ></option>
-                          <option v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
-                        </select>
-                      </td>
-                      <td>
-                        <a id="expect-new-add">Add another city</a>
-                      </td>
-                    </tr>
-                    @else
-                    @foreach ($profile->expected_cities as $city)
-                    <tr>
-                      <td>
-                        <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
-                          <option id = "selecountry" selected="selected" value="{{ $profile->expected_countries[$loop->index] }}">{{ $profile->expected_countries[$loop->index] }}</option>
-                          <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>{{ $profile->expected_countries[$loop->index] }}</option>
-                        </select>
-                      </td>
-                      <td>
-                        <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
-                          <option id = "selestate"  selected>{{ $profile->expected_states[$loop->index] }}</option>
-                          <option  v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal"  id="cityId">
-                          <option id = "selecity"  selected>{{ $city }}</option>
-                          <option  v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
-                        </select>
-                      </td>
-                      <td>
-                        @if ($loop->last) <a id="expect-new-add">Add another city</a> @endif
-                      </td>
-                    </tr>
-                    @endforeach
-                    @endif
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="2">
-                        <input id="expect-save" type="submit" value="Save" class="btn_profile_save">
-                        <a class="btn_profile_cancel expect-toggle">Cancel</a>
-                      </td>
-                    </tr>
-                    <input type="hidden" id="expect-city-num" value="1"/>
-                  </tfoot>
-                </table>
-              </form><!--end #expectForm-->
-            </div><!--end .expectEdit-->
-            <div class="expectAdd pAdd expect-toggle">
-              填写准确的期望工作能大大提高求职成功率哦…<br>
-              快来添加期望工作吧！
-              <span>添加期望工作</span>
-            </div><!--end .expectAdd-->
-
-            <input type="hidden" id="expectJobVal" value="">
-            <input type="hidden" id="expectCityVal" value="">
-            <input type="hidden" id="typeVal" value="">
-            <input type="hidden" id="expectPositionVal" value="">
-            <input type="hidden" id="expectSalaryVal" value="">
-          </div><!--end #expectJob-->
-
-          <div class="profile_box" id="educationalBackground">
-            <h2>教育背景<span>（required）</span></h2>
-            <span class="c_add education-toggle"></span>
-            <div class="educationalShow">
-              <ul class="slist clearfix">
-                @foreach ($educations as $education)
-                <li>{{ $education->school }} | {{ $education->degree }} | {{ $education->major }} | {{ $education->start_date }} | {{ $education->end_date }} |
-                  <a data-toggle="modal" data-target="#education-{{ $education->id }}-edit">
-                    <i class="fas fa-pen"></i>
-                  </a> |
-                  <form id="delete-form-{{ $education->id }}" method="post" action="{{ route('education.destroy',$education->id) }}" style="display: none">
-                    {{ csrf_field() }} {{ method_field('DELETE') }}
-                  </form>
-                  <a href="" onclick="
-                  if(confirm('Are you sure want to delete?'))
-                  {
-                    event.preventDefault();
-                    document.getElementById('delete-form-{{ $education->id }}').submit();
-                  }
-                  else
-                  {
-                    event.preventDefault();
-                  }" >
-                  <i class="fas fa-trash"></i></a>
-                </li>
-                <div class="modal" id="education-{{ $education->id }}-edit" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <form role="form" action="{{ route('education.update', $education->id) }}" method="post">
-                        <div class="modal-body">
-                          {{ csrf_field() }} {{ method_field('PUT') }}
-                          <div class="form-group">
-                            <select class="form-control" name="degree">
-                              <option value="{{ $education->degree }}" selected>{{ $education->degree }}</option>
-                              @if ( $education->degree != 'Bachelor')
-                              <option value="Bachelor">Bachelor</option>
-                              @endif
-                              @if ( $education->degree != 'Master')
-                              <option value="Master">Master</option>
-                              @endif
-                              @if ( $education->degree != 'Phd')
-                              <option value="Phd">Phd</option>
-                              @endif
-                              @if ( $education->degree != 'Other')
-                              <option value="Other">Other</option>
-                              @endif
-                            </select>
-                            <input type="text" class="form-control " name="schoolName" value="{{ $education->school }}">
-                            <input type="text" class="form-control" name="major" value="{{ $education->major }}">
-                            <input type="date" class="form-control" name="startDate" value="{{ $education->start_date }}">
-                            <input type="date" class="form-control" name="endDate" value="{{ $education->end_date }}">
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" class="btn">Submit</button>
-                          <a type="button" href="" data-toggle="modal" data-target="#education-{{ $education->id }}-edit" class="btn">Back</a>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </ul>
-            </div>
-            <div class="educationalEdit dn">
-              <form class="educationalForm" method="POST" action="{{ route('education.store') }}">
-                {{ csrf_field() }}
-                <table>
-                  <tbody><tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <input type="text" placeholder="School name" name="schoolName" class="schoolName">
-                    </td>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <select class="degree profile_select_139 profile_select_normal" name="degree">
-                        <option value="" disabled selected>Degree</option>
-                        <option value="Bachelor">Bachelor</option>
-                        <option value="Master">Master</option>
-                        <option value="Phd">Phd</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <input type="text" placeholder="Major" name="major" class="major">
-                    </td>
-                    <td valign="top">
-                      <span class="redstar">*</span>
-                    </td>
-                    <td>
-                      <div class="fl">
-                        <input type="date" class="schoolStartDate" value="" name="startDate">
-                      </div>
-                      <div class="fl">
-                        <input type="date" class="schoolEndDate" value="" name="endDate">
-                      </div>
-                      <div class="clear"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td colspan="3">
-                      <input type="submit" value="Save" class="btn_profile_save">
-                      <a class="btn_profile_cancel education-toggle">Cancel</a>
-                    </td>
-                  </tr>
-                </tbody></table>
-                <input type="hidden" class="eduId" value="">
-              </form><!--end .educationalForm-->
-            </div><!--end .educationalEdit-->
-            <div class="educationalAdd pAdd education-toggle">
-              教育背景可以充分体现你的学习和专业能力，<br>
-              且完善后才可投递简历哦！
-              <span>添加教育经历</span>
-            </div>
-            <!--end .educationalAdd-->
-          </div><!--end #educationalBackground-->
-
-          <div class="profile_box" id="workExperience">
-            <h2>工作经历  <span> （required）</span></h2>
-            <span class="c_add experience-toggle"></span>
-            <div class="experienceShow">
-              <ul class="slist clearfix">
-                @foreach ($companies as $company)
-                <li>{{ $company->company }} | {{ $company->title }} | {{ $company->start_date }} | {{ $company->end_date }} | {{ $company->description }} |
-                  <a data-toggle="modal" data-target="#company-{{ $company->id }}-edit">
-                    <i class="fas fa-pen"></i>
-                  </a> |
-                  <form id="delete-form-{{ $company->id }}" method="post" action="{{ route('experience.destroy',$company->id) }}" style="display: none">
-                    {{ csrf_field() }} {{ method_field('DELETE') }}
-                  </form>
-                  <a href="" onclick="
-                  if(confirm('Are you sure want to delete?'))
-                  {
-                    event.preventDefault();
-                    document.getElementById('delete-form-{{ $company->id }}').submit();
-                  }
-                  else
-                  {
-                    event.preventDefault();
-                  }" >
-                  <i class="fas fa-trash"></i></a>
-                </li>
-                <div class="modal" id="company-{{ $company->id }}-edit" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <form role="form" action="{{ route('experience.update', $company ->id) }}" method="post">
-                        <div class="modal-body">
-                          {{ csrf_field() }} {{ method_field('PUT') }}
-                          <div class="form-group">
-                            <input type="text" class="form-control" name="companyName" value="{{ $company->company }}">
-                            <input type="text" class="form-control" name="title" value="{{ $company->title }}">
-                            <input type="date" class="form-control" name="startDate" value="{{ $company->start_date }}">
-                            <input type="date" class="form-control" name="endDate" value="{{ $company->end_date }}">
-                            <textarea type="text" class="form-control" name="description">{{ $company->description }}</textarea>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" class="btn">Submit</button>
-                          <a type="button" href="" data-toggle="modal" data-target="#company-{{ $company->id }}-edit" class="btn">Back</a>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </ul>
-            </div>
-            <div class="experienceEdit dn">
-              <form class="experienceForm" method="POST" action="{{ route('experience.store') }}">
-                {{ csrf_field() }}
-                <table>
-                  <tbody>
-                    <tr>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <input type="text" placeholder="Company name" name="companyName" class="companyName">
-                      </td>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <input type="text" placeholder="Your title" name="title" class="companyTitle">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <div class="fl">
-                          <input type="date" class="companyStartDate" value="" name="startDate">
-                        </div>
-                        <div class="clear"></div>
-                      </td>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <div class="fl">
-                          <input type="date" class="companyEndDate" value="" name="endDate">
-                        </div>
-                        <div class="clear"></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top"></td>
-                      <td colspan="3">
-                        <textarea class="workDescription s_textarea" name="description" placeholder="Work description"></textarea>
-                        <div class="word_count">你还可以输入 <span>500</span> 字</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td colspan="3">
-                        <input type="submit" value="Save" class="btn_profile_save">
-                        <a class="btn_profile_cancel experience-toggle" >Cancel</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form><!--end .experienceForm-->
-            </div><!--end .experienceEdit-->
-            <div class="experienceAdd pAdd experience-toggle">
-              工作经历最能体现自己的工作能力，<br>
-              且完善后才可投递简历哦！
-              <span>添加工作经历</span>
-            </div>
-            <!--end .experienceAdd-->
-          </div><!--end #workExperience-->
-
-          <div class="profile_box" id="projectExperience">
-            <h2>项目经验</h2>
-            <span class="c_add project-toggle"></span>
-            <div class="projectShow">
-              <ul class="slist clearfix">
-                @foreach ($projects as $project)
-                <li>{{ $project->project }} | {{ $project->title }} | {{ $project->start_date }} | {{ $project->end_date }} | {{ $project->description }} |
-                  <a data-toggle="modal" data-target="#project-{{ $project->id }}-edit">
-                    <i class="fas fa-pen"></i>
-                  </a> |
-                  <form id="delete-form-{{ $project->id }}" method="post" action="{{ route('experience.destroy',$project->id) }}" style="display: none">
-                    {{ csrf_field() }} {{ method_field('DELETE') }}
-                  </form>
-                  <a href="" onclick="
-                  if(confirm('Are you sure want to delete?'))
-                  {
-                    event.preventDefault();
-                    document.getElementById('delete-form-{{ $project->id }}').submit();
-                  }
-                  else
-                  {
-                    event.preventDefault();
-                  }" >
-                  <i class="fas fa-trash"></i></a>
-                </li>
-                <div class="modal" id="project-{{ $project->id }}-edit" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <form role="form" action="{{ route('experience.update', $project->id) }}" method="post">
-                        <div class="modal-body">
-                          {{ csrf_field() }} {{ method_field('PUT') }}
-                          <div class="form-group">
-                            <input type="text" class="form-control" name="projectName" value="{{ $project->project }}">
-                            <input type="text" class="form-control" name="title" value="{{ $project->title }}">
-                            <input type="date" class="form-control" name="startDate" value="{{ $project->start_date }}">
-                            <input type="date" class="form-control" name="endDate" value="{{ $project->end_date }}">
-                            <textarea type="text" class="form-control" name="description">{{ $project->description }}</textarea>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" class="btn">Submit</button>
-                          <a type="button" href="" data-toggle="modal" data-target="#project-{{ $project->id }}-edit" class="btn">Back</a>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </ul>
-            </div><!--end .projectShow-->
-            <div class="projectEdit dn">
-              <form class="projectForm" method="POST" action="{{ route('experience.store') }}">
-                {{ csrf_field() }}
-                <table>
-                  <tbody>
-                    <tr>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <input type="text" placeholder="Project name" name="projectName" class="projectName">
-                      </td>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <input type="text" placeholder="Your role" name="title" class="projectTitle">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <div class="fl">
-                          <input type="date" placeholder="start_date" class="projectStartDate" value="" name="startDate">
-                        </div>
-                        <div class="clear"></div>
-                      </td>
-                      <td valign="top">
-                        <span class="redstar">*</span>
-                      </td>
-                      <td>
-                        <div class="fl">
-                          <input type="date" placeholder="end_date" class="projectEndDate" value="" name="endDate">
-                        </div>
-                        <div class="clear"></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top"></td>
-                      <td colspan="3">
-                        <textarea class="projectDescription s_textarea" name="description" placeholder="Project description"></textarea>
-                        <div class="word_count">你还可以输入 <span>500</span> 字</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top"></td>
-                      <td colspan="3">
-                        <input type="submit" value="Save" class="btn_profile_save">
-                        <a class="btn_profile_cancel project-toggle" >Cancel</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form><!--end .projectForm-->
-            </div><!--end .projectEdit-->
-            <div class="projectAdd pAdd project-toggle">
-              项目经验是用人单位衡量人才能力的重要指标哦！<br>
-              来说说让你难忘的项目吧！
-              <span>添加项目经验</span>
-            </div><!--end .projectAdd-->
-          </div><!--end #projectExperience-->
-
-          <div class="profile_box" id="worksShow">
-            <h2>作品展示</h2>
-            <span class="c_add showcase-toggle"></span>
-            <div class="workShow">
-              <ul class="slist clearfix">
-                @foreach ($showcases as $showcase)
-                <li>
-                  <a href="{{ $showcase->link }}" text-decoration="none"> {{ $showcase->link }}</a> | {{ $showcase->description }} |
-                  <a data-toggle="modal" data-target="#showcase-{{ $showcase->id }}-edit" text-decoration="none">
-                    <i class="fas fa-pen"></i>
-                  </a> |
-                  <form id="delet e-form-{{ $showcase->id }}" method="post" action="{{ route('showcase.destroy',$showcase->id) }}" style="display: none">
-                    {{ csrf_field() }} {{ method_field('DELETE') }}
-                  </form>
-                  <a href="" onclick="
-                  if(confirm('Are you sure want to delete?'))
-                  {
-                    event.preventDefault();
-                    document.getElementById('delete-form-{{ $showcase->id }}').submit();
-                  }
-                  else
-                  {
-                    event.preventDefault();
-                  }" >
-                  <i class="fas fa-trash"></i></a>
-                </li>
-                <div class="modal" id="showcase-{{ $showcase->id }}-edit" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <form role="form" action="{{ route('showcase.update', $showcase->id) }}" method="post">
-                        <div class="modal-body">
-                          {{ csrf_field() }} {{ method_field('PUT') }}
-                          <div class="form-group">
-                            <input type="url" class="form-control" name="link" value="{{ $showcase->link }}">
-                            <textarea type="text" class="form-control" name="description">{{ $showcase->description }}</textarea>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" class="btn">Submit</button>
-                          <a type="button" href="" data-toggle="modal" data-target="#showcase-{{ $showcase->id }}-edit" class="btn">Back</a>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </ul>
-            </div><!--end .workShow-->
-            <div class="workEdit dn">
-              <form class="workForm" method="POST" action="{{ route('showcase.store') }}">
-                {{ csrf_field() }}
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input type="text" placeholder="Enter full link to your work" name="link" class="showcase-link">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <textarea maxlength="100" class="showcaseDescription s_textarea" name="description" placeholder="Enter description of the work"></textarea>
-                        <div class="word_count">你还可以输入 <span>100</span> 字</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="submit" value="Save" class="btn_profile_save">
-                        <a class="btn_profile_cancel showcase-toggle">Cancel</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <input type="hidden" class="showId" value="">
-              </form><!--end .workForm-->
-            </div><!--end .workEdit-->
-            <div class="workAdd pAdd showcase-toggle">
-              好作品会说话！<br>
-              快来秀出你的作品打动企业吧！
-              <span>添加作品展示</span>
-            </div>
-            <!--end .workAdd-->
-          </div><!--end #worksShow-->
-
-
-
-        </div><!--end .content_l-->
-
-
-        <div class="content_r">
-          <div class="mycenterR" id="myInfo">
-            <h2>我的信息</h2>
-            <a target="_blank" href="collections001.html">我收藏的职位</a>
-            <br>
-            <a target="_blank" href="subscribe001.html">我订阅的职位</a>
-          </div><!--end #myInfo-->
-
-          <div class="mycenterR" id="myResume">
-            <h2>My Resume</h2><br />
-            @if ($profile->resume)
-            <form action="{{ route('download_resume') }}" method="POST">
-              {{ csrf_field() }}
-              <label for="download-resume">
-                <a>{{ $profile->resume }}</a>
-              </label>
-              <input type="text" name="filename" value="{{ $profile->resume }}" class="dn"/>
-              <input id="download-resume" type="submit" class="dn"/>
-            </form>
-            <label for="upload-resume">
-              <a>Choose another resume</a>
-            </label>
-            @else
-            <label for="upload-resume">
-              <a>Upload resume</a>
-            </label>
-            @endif
-            <div class="dn">
-              <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <input id="upload-resume" type="file" name="resume" onchange="this.form.submit();" required>
-              </form>
-            </div>
-          </div><!--end #myResume-->
-
-          <div class="mycenterR" id="myApplications">
-            <h2>My Applications</h2><br />
-            <ul>
-              @foreach ($applications->sortBy('review') as $application)
-              <li>
-                <span>
-                  <div>
-                    <b><i>Status: {{ $application->review }}</i></b>
-                  </div>
-                  Company: {{ $application->job->company }} | Position: {{ $application->job->position }}
-                </span>
-                <div>
-                  Files:
-                  <a href = "{{route('host')}}/uploads/{{ $application->resume_path}}"> Resume</a>
-                  <a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif > Coverletter</a>
-                  <a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif > Transcript</a>
-                </div>
-              </li>
-              @endforeach
-            </ul>
-          </div><!--end #myApplications-->
-        </div>
-
-
-        <input type="hidden" id="userid" name="userid" value="314873">
-
-
-        <div style="display:none;">
-          <!-- 上传简历 -->
-          <div class="popup" id="uploadFile">
-            <table width="100%">
-              <tbody><tr>
-                <td align="center">
-                  <form>
-                    <a class="btn_addPic">
-                      <span>选择上传文件</span>
-                      <input type="file" onchange="file_check(this,'h/nearBy/updateMyResume.json','resumeUpload')" class="filePrew" id="resumeUpload" name="newResume" size="3" title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M" tabindex="3">
-                    </a>
-                  </form>
-                </td>
-              </tr>
-              <tr>
-                <td align="left">支持word、pdf格式文件<br>文件大小需小于10M</td>
-              </tr>
-              <tr>
-                <!--	<td align="left" style="color:#dd4a38; padding-top:10px;">注：若从其它网站下载的word简历，请将文件另存为.docx格式后上传</td>-->
-              </tr>
-              <tr>
-                <td align="center"><img width="55" height="16" alt="loading" style="visibility: hidden;" id="loadingImg" src="style/images/loading.gif"></td>
-              </tr>
-            </tbody></table>
-          </div><!--/#uploadFile-->
-
-          <!-- 简历上传成功 -->
-          <div class="popup" id="uploadFileSuccess">
-            <h4>简历上传成功！</h4>
-            <table width="100%">
-              <tbody><tr>
-                <td align="center"><p>你可以将简历投给你中意的公司了。</p></td>
-              </tr>
-              <tr>
-                <td align="center"><a class="btn_s">确&nbsp;定</a></td>
-              </tr>
-            </tbody></table>
-          </div><!--/#uploadFileSuccess-->
-
-          <!-- 没有简历请上传 -->
-          <div class="popup" id="deliverResumesNo">
-            <table width="100%">
-              <tbody><tr>
-                <td align="center"><p class="font_16">你在拉勾还没有简历，请先上传一份</p></td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <form>
-                    <a class="btn_addPic" >
-                      <span>选择上传文件</span>
-                      <input type="file" onchange="file_check(this,'h/nearBy/updateMyResume.json','resumeUpload1')" class="filePrew" id="resumeUpload1" name="newResume" size="3" title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M">
-                    </a>
-                  </form>
-                </td>
-              </tr>
-              <tr>
-                <td align="center">支持word、pdf、ppt、txt、wps格式文件，大小不超过10M</td>
-              </tr>
-            </tbody></table>
-          </div><!--/#deliverResumesNo-->
-
-          <!-- 上传附件简历操作说明-重新上传 -->
-          <div class="popup" id="fileResumeUpload">
-            <table width="100%">
-              <tbody><tr>
-                <td>
-                  <div class="f18 mb10">请上传标准格式的word简历</div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="f16">
-                    操作说明：<br>
-                    打开需要上传的文件 - 点击文件另存为 - 选择.docx - 保存
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a title="上传附件简历" href="#uploadFile" class="inline btn cboxElement">重新上传</a>
-                </td>
-              </tr>
-            </tbody></table>
-          </div><!--/#fileResumeUpload-->
-        </div>
-
-
-        <div class="" id="qr_cloud_resume" style="display: none;">
-          <div class="cloud">
-            <img width="134" height="134" src="">
-            <a class="close"></a>
           </div>
         </div>
+      </div>
 
-        <div class="clear"></div>
-        <input type="hidden" value="97fd449bcb294153a671f8fe6f4ba655" id="resubmitToken">
-        <a rel="nofollow" title="回到顶部" id="backtop" style="display: none;"></a>
+      <div id="application" class="container tab-pane {{($tab == 'application') ? 'active' : '' }}">
+        <div class="col-12 bg-white" style="height: 100%;">
+          <div class="card-body text-primary">
+            <div class="row">
+              <div class="col-1">
+                <p class="card-text">Status:</p>
+              </div>
+              <div class="col-2">
+                <p class="card-text">Company:</p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">Position:</p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">Files:</p>
+              </div>
+              <div class="col-2">
+                <p class="card-text">Review:</p>
+              </div>
+            </div>
+            <hr/>
+            @foreach ($applications->sortBy('status') as $application)
+            <div class="row">
+              <div class="col-1">
+                <p class="card-text">
+                  {{ $application->status }}
+                </p>
+              </div>
+              <div class="col-2">
+                <p class="card-text">
+                  {{ $application->job->company }}
+                </p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">
+                  {{ $application->job->position }}
+                </p>
+              </div>
+              <div class="col-3">
+                <a href = "{{route('host')}}/uploads/{{ $application->resume_path}}">Resume</a>
+                <a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif >Coverletter</a>
+                <a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif >Transcript</a>
+              </div>
+              <div class="col-2">
+                <p class="card-text">
+                  {{ $application->review }}
+                </p>
+              </div>
+            </div>
+            @if (!$loop->last) <hr /> @endif
+            @endforeach
+          </div>
+        </div>
+      </div>
+
+      <div id="job" class="container tab-pane {{($tab == 'job') ? 'active' : '' }}">
+        <br>
+        <!-- <div class="row col-12">
+          <div class="info-board left-panel col-8 bg-white ">
+            <div id="expect">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Target Jobs</span>
+                <i class="clickable resume-icon fa fa-plus fa-lg experience-toggle"></i>
+                <i class="hidden clickable resume-icon fa fa-lg fa-minus experience-toggle"></i>
+              </div>
+              <div class="card-body">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card mb-3 card-border" style="margin-left: 20px;">
+              <div class="card-header bg-transparent border-info">Saved Jobs</div>
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div id="notification" class="container tab-pane {{($tab == 'notification') ? 'active' : '' }}">
+        <div class="col-12 bg-white">
+          <div class="card-body text-primary">
+            <h6 class="card-title">
+              <a href="" onclick="markNotificationsAsRead()">
+                Mark all as read
+              </a>
+            </h6>
+            <div class="row">
+              <div class="col-3">
+                <p class="card-text">Title:</p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">Opened:</p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">Sent:</p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">Message:</p>
+              </div>
+            </div>
+            <hr/>
+            @forelse (auth()->user()->notifications as $note)
+            <?php $types = explode("\\", $note->type); $type = end($types) ?>
+            <div class="row">
+              <div class="col-3">
+                <p class="card-text">
+                  {{ $type }}
+                </p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">
+                  {{ $note->read_at }}
+                </p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">
+                  {{ $note->created_at }}
+                </p>
+              </div>
+              <div class="col-3">
+                <p class="card-text">
+                  @if ($type == 'ApplicationStatus')
+                  <a>Your application to {{ $note->data['company'] }} is {{ $note->data['review'] }}</a>
+                  @elseif ($type == 'JobsRecommend')
+                  <a href='{{ $note->data['link'] }}'>Some jobs were recommended for you to check out!</a>
+                  @endif
+                </p>
+              </div>
+            </div>
+            @if (!$loop->last) <hr /> @endif
+            @empty
+            <a>No unread notifications</a>
+            @endforelse
+          </div>
+        </div>
+      </div>
+
+      <div id="account" class="container tab-pane {{($tab == 'account') ? 'active' : '' }}">
+        <div class="col-12 bg-white" style="height: 100%">
+          <br>
+          <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+            <span style="font-size: 18px">Email Preferences</span>
+          </div>
+          <div class="card-body">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">
+                Subscribe to promotional emails from 51 Careers
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">
+                Receive notification emails from 51 Careers
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
+    <br>
+  </div>
 
-    <!-- <script src="{{ asset('admin/plugins/countrystatecity.js') }}"></script> -->
-    <script src="{{ asset('admin/plugins/location.js') }}"></script>
-    <script src="user/profile/style/js/profile.js"/></script>
-    <!-- <script src="user/profile/style/js/profile.min.js"></script>
-    <script async="" src="user/profile/style/js/conversion.js"></script>
-    <script src="user/profile/style/js/jquery.1.10.1.min.js"></script>
-    <script src="user/profile/style/js/jquery.lib.min.js" ></script>
-    <script  src="user/profile/style/js/ajaxfileupload.js"></script>
-    <script src="user/profile/style/js/additional-methods.js" ></script>
-    <script type="text/javascript" src="user/profile/style/js/excanvas.js"></script>
-    <script src="user/profile/style/js/conv.js"></script>
-    <script src="user/profile/style/js/ajaxCross.json" charset="UTF-8"></script>
-    <script src="user/profile/style/js/Chart.min.js"></script>
-    <script src="user/profile/style/js/core.min.js"></script>
-    <script src="user/profile/style/js/popup.min.js"></script> -->
+  <footer>
+    @include('user/layouts/footer')
+  </footer>
 
-</div>
-
+  <!-- Backstage Chatbox -->
+  <script>
+      (function(d, w, c) {
+          w.ChatraID = 'TjSQeyfYP6ipurbem';
+          var s = d.createElement('script');
+          w[c] = w[c] || function() {
+              (w[c].q = w[c].q || []).push(arguments);
+          };
+          s.async = true;
+          s.src = 'https://call.chatra.io/chatra.js';
+          if (d.head) d.head.appendChild(s);
+      })(document, window, 'Chatra');
+  </script>
+  @include('user/layouts/vendorjsfiles')
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+  <script src="{{ asset('user/profile/style/js/profile.js') }}"/></script>
 </body>
-<footer>
-  @include('user/layouts/footer')
-</footer>
 </html>

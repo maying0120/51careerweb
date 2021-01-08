@@ -3,12 +3,12 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Http\Request;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\BroadcastMessage;
 
-class ApplicationStatus extends Notification
+class JobsRecommend extends Notification
 {
     use Queueable;
 
@@ -17,9 +17,9 @@ class ApplicationStatus extends Notification
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct($link)
     {
-        $this->request = $request;
+      $this->link = $link;
     }
 
     /**
@@ -30,7 +30,7 @@ class ApplicationStatus extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'database'];
+        return ['database'];
     }
 
     /**
@@ -42,25 +42,9 @@ class ApplicationStatus extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->from('mail@example.com', '51Careers')
-                    ->subject('Job Application Status Change')
-                    ->line('Your application to ' . $this->request->input('company') . ' is now ' . $this->request->input('status'))
-                    ->action('View notification', url('/profile/application'))
-                    ->line('Thank you for using 51Career');
-    }
-
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toDatabase($notifiable)
-    {
-        return [
-            'company' => $this->request->input('company'),
-            'review' => $this->request->input('review'),
-        ];
+                    ->line('The introduction to the notification.')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using our application!');
     }
 
     /**
@@ -72,7 +56,7 @@ class ApplicationStatus extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+          'link' => $this->link
         ];
     }
 }

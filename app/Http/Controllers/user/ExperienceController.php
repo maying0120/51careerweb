@@ -67,7 +67,7 @@ class ExperienceController extends Controller
       $experience->description = $request->description;
       $experience->save();
 
-      return redirect('profile');
+      return redirect(route('profile', ['tab' => 'profile']));
   }
 
   /**

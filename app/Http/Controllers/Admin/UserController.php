@@ -4,8 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\admin\user;
+use App\Model\user\User;
 use App\Model\user\Profile;
+use App\Notifications\JobsRecommend;
 
 
 class UserController extends Controller
@@ -17,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = user::all();
+        $users = User::all();
         return view('admin/user/user',compact('users'));
     }
 
@@ -29,7 +30,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = user::where('id',$id)->first();
+        $user = User::where('id',$id)->first();
         return view('admin/user/edit',compact('user'));
     }
 
@@ -42,7 +43,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = user::find($id);
+        $user = User::find($id);
         $user->status = $request->status;
         $user->save();
 
@@ -57,7 +58,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        user::where('id',$id)->delete();
+        User::where('id',$id)->delete();
         return redirect()->back();
     }
 

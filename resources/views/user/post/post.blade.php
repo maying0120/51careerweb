@@ -124,7 +124,7 @@
                 </form>
                 <!-- search option end -->
               </div>
-              <div class="single-blog-page">
+              {{-- <div class="single-blog-page">
                 <!-- recent start -->
                 <div class="left-blog">
                   <h4>recent post</h4>
@@ -180,7 +180,7 @@
                   </div>
                 </div>
                 <!-- recent end -->
-              </div>
+              </div> --}}
               <div class="single-blog-page">
                 <div class="left-blog">
                   <h4>categories</h4>
@@ -212,22 +212,20 @@
               <div class="single-blog-page">
                 <div class="left-blog">
                   <h4>archive</h4>
+
+
                   <ul>
+                   @foreach($archives as $stats)
                     <li>
-                      <a href="#">07 July 2016</a>
+                      <a href="/post/?month={{ $stats['month'] }}&year={{  $stats['year'] }}">
+
+                       {{ $stats['month'].' '. $stats['year'] }} </a>
                     </li>
+                   @endforeach
+
                     <li>
-                      <a href="#">29 June 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">13 May 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">20 March 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">09 Fabruary 2016</a>
-                    </li>
+                                       <h5 > <a href="/post">See All Articles</a> </h5>
+                                        </li>
                   </ul>
                 </div>
               </div>

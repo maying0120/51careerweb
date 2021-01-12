@@ -77,9 +77,8 @@ class JobController extends Controller
          $jobs = $jobs->Where('position','like','%'.$request->input('position').'%');
       }
 
-      
-      // dump($jobs->get());
-      return response()->json(array('jobs'=> $jobs->get()), 200);
+      $jobs = $jobs->orderByDesc('updated_at');
+      return response()->json(array('jobs'=> $jobs->get() ), 200);
    }
 
 

@@ -195,8 +195,8 @@
                      <td>{{ $application->job->company}}</td>
                      <td>{{ $application->job->position}}</td>
                      <td><a href = "{{route('host')}}/uploads/{{ $application->resume_path}}"> Resume</a> </td>
-                     <td><a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif > Coverletter</a> </td>
-                     <td><a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif > Transcript</a> </td>
+                     <td><a @if($application->coverletter_path == null)  href=# >@else   href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" ><i class="fa fa-check"></i> @endif  Coverletter</a></td>
+                     <td><a  @if($application->transcript_path == null)  href=# >@else   href = "{{route('host')}}/uploads/{{ $application->transcript_path}}"><i class="fa fa-check"></i> @endif Transcript</a> </td>
 
 
 
@@ -232,8 +232,6 @@
                       }" >   <i class="fas fa-trash"></i></a>
                       </td> --}}
                   </tr>
-
-
                    <!-- 模态框（Modal） -->
  <div class="modal fade" id="myModal{{ $application->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

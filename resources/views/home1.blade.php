@@ -291,7 +291,7 @@ font-family:'Lora';
                   <h3 style="font-size:20px;text-align:left;  font-weight:normal">  A top career consulting firm that tailors clients' needs and helps candidates chase career dreams. </h3>
 
                  <div style="text-align:left;">
-                 <a class="ready-btn right-btn page-scroll" href="#services" style="background-color:#FFCC33; color:black; border-radius:0px;" >Learn More</a>
+                 <a class="ready-btn right-btn page-scroll" href="/aboutus" style="background-color:#FFCC33; color:black; border-radius:0px;" >Learn More</a>
                  </div>
 
                 </div>
@@ -458,7 +458,7 @@ font-family:'Lora';
 
 
 
-        <a class="ready-btn right-btn page-scroll" href="#services" style="background-color:white; color:black; border-radius:0px; float: right; " >Learn More</a>
+        <a class="ready-btn right-btn page-scroll" href="/ourstory" style="background-color:white; color:black; border-radius:0px; float: right; " >Learn More</a>
 
 
 </div>

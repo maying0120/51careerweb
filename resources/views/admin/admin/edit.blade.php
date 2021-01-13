@@ -101,53 +101,61 @@
                 <!-- /.card-header -->
                 <!-- form start -->
 
-
               @if (count($errors)>0)
-                 @foreach($errors->all() as $error)
+                @foreach($errors->all() as $error)
                   <p class="alert alert-danger">{{ $error }}</p>
-                 @endforeach
+                @endforeach
               @endif
 
-                <form role="form" action="{{ route('user.store') }}" method="post">
+                <form role="form" action="{{ route('admin.update',$user->id) }}" method="post">
                 {{ csrf_field() }}
-
+                {{ method_field('PUT') }}
                   <div class="card-body">
                     <div class="form-group">
                       <label for="name">user name</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="name">
+                      <input type="text" class="form-control" id="name" name="name" placeholder="name"
+                       value="{{ $user->name }}">
+
+        <div class="form-group">
+                      <label for="name">user email</label>
+                      <input type="text" class="form-control" id="email" name="email" placeholder="email"
+                       value="{{ $user->email }}">
+
+                       </div>
+
+    <div class="form-group">
+                            <label for="password">user phone</label>
+                           <input type="phone" class="form-control" id="phone" name="phone" placeholder="phone" value="{{ old('phone') }}">
+                               </div>
 
 
 
-                       <div class="form-group">
-                         <label for="email">user email</label>
-                           <input type="text" class="form-control" id="email" name="email" placeholder="email">
 
 
-                            <div class="form-group">
+ <div class="form-group">
                                 <label for="password">user password</label>
-                             <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                             <input type="password" class="form-control" id="password" name="password"
+                              placeholder="password" >
+                                                            </div>
 
-
-                         <div class="form-group">
-                       <label for="confirm_password">confirm_password</label>
-                      <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="confirm_password">
-
-
-
-
-
-                  <!-- /.card-body -->
-
-
-                </form>
-              </div>
-              </div>
+    <div class="form-group">
+                  <label for="confirm_passowrd">Status</label>
+                  <div class="checkbox">
+                    <label ><input type="checkbox" name="status" @if (old('status') == 1)
+                      checked
+                    @endif value="1">Status</label>
+                  </div>
                 </div>
+
+
+
+
+
 
     <!-- Main content -->
 
                   <button type="submit" class="btn btn-primary">Submit</button>
-                   <a type="button" href='{{ route('user.index') }}' class="btn btn-warning">Back</a>
+                  <a type="button" href='{{ route('admin.index') }}' class="btn btn-warning">Back</a>
             </div>
           </div>
         </div>

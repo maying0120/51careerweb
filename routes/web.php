@@ -60,9 +60,12 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
 
     Route::get('post/search','PostController@search');
    Route::get('post/{post}','PostController@post')->name('post');
+
    Route::get('post/tag/{tag}','PostController@tag')->name('tag');
    Route::get('post/category/{category}','PostController@category')->name('category');
-
+   //新增
+   Route::get('posts/{category}','PostController@searchbycat');
+    Route::get('post/cats/{category}','PostController@catsearch');
 
    // Job
    Route::get('job/{id?}','JobController@index')->name('user_job');

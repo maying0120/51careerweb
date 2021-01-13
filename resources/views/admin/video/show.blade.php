@@ -118,7 +118,7 @@
 
                       <td><a href="{{ route('video.edit',$video->id) }}">  <i class="fas fa-pen"> </a></td>
                       <td>
-                      <form id="delete-form-{{ $video->id }}" method="video" action="{{ route('video.destroy',$video->id) }}" style="display: none">
+                      <form id="delete-form-{{ $video->id }}" method="post" action="{{ route('video.destroy',$video->id) }}" style="display: none">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
                       </form>

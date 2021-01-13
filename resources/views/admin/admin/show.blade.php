@@ -88,7 +88,15 @@
         <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
-                  <a class='col-lg-offset-20 btn btn-success' href="{{ route('user.create') }} " > Add new user </a>
+
+
+         @if ( Auth::guard('admin')->user()->id == 1)
+
+
+            <td> <a class='col-lg-offset-20 btn btn-success' href="{{ route('admin.create') }} " > Add new user </a></td>
+
+@endif
+
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -109,11 +117,16 @@
                      <td>{{ $user->name }}</td>
                      <td>{{ $user->email }}</td>
 
-                      <td><a href="{{ route('user.edit',$user->id) }}">  <i class="fas fa-pen"> </a></td>
+
+   @if ( Auth::guard('admin')->user()->id == 1)
+
+                      <td><a href="{{ route('admin.edit',$user->id) }}">  <i class="fas fa-pen"> </a></td>
                        <td>
-                       <form id="delete-form-{{ $user->id }}" method="post" action="{{ route('user.destroy',$user->id) }}" style="display: none">
+                       <form id="delete-form-{{ $user->id }}" method="post" action="{{ route('admin.destroy',$user->id) }}" style="display: none">
                        {{ csrf_field() }}
                        {{ method_field('DELETE') }}
+
+
                        </form>
                        <a href="" onclick="
                         if(confirm('Are you sure want to delete?'))
@@ -126,7 +139,7 @@
                             event.preventDefault();
                             }" >   <i class="fas fa-trash"></i></a>
                         </td>
-
+  @endif
 
 
                   </tr>

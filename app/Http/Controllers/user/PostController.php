@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
 
-   public function index()
+   public function index(category $category = null)
       {
      // $posts = post::where('status',1)->paginate(4);
       $posts = Post::latest()
@@ -41,8 +41,10 @@ class PostController extends Controller
         ->get()
         ->toArray();
 
+          $categories = category::all();
 
-      return view('user.post.post',compact('posts','archives'));
+
+      return view('user.post.post',compact('posts','archives','categories'));
       }
 
 
@@ -70,6 +72,30 @@ class PostController extends Controller
          #$posts = $category->posts();
          #return view('user/post/post',compact('posts'));
       }
+
+
+     public function catsearch(category $category = null)
+     {
+      $posts = $category->posts;
+      }
+
+
+
+
+    public function searchbycat($category){
+      $posts = post::where('category','like','%'.$category.'%')->get();
+      $archives =  post::selectRaw('year(created_At) year, monthname(created_at) month,count(*) published')
+        ->groupBy('year','month')
+        ->orderByRaw('min(created_at) desc')
+        ->get()
+        ->toArray();
+
+      $categories = category::all();
+
+      return view('user.post.post',compact('posts','archives','categories'));
+    }
+
+
 
 
  public function search(Request $request)

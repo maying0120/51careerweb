@@ -20,7 +20,7 @@ use App\Notifications\ApplicationStatus;
 class ApplicationController extends Controller
 {
     public function index(Request $request){
-        $applications = Application::all();
+        $applications = Application::orderByDesc('created_at')->get();
         $majors = Major::all();
         // dump($request);
 

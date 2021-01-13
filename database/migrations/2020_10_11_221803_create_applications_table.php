@@ -18,8 +18,8 @@ class CreateApplicationsTable extends Migration
             $table->integer('user_id');
             $table->integer('job_id');
             $table->string('review')->nullable();
-            $table->string('resume_path');
-            $table->string('coverletter_path');
+            $table->string('resume_path')->nullable();
+            $table->string('coverletter_path')->nullable();
             $table->string('transcript_path');
             $table->timestamps();
             $table->string('status');

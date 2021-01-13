@@ -6,40 +6,74 @@
 
 </head>
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v7.0" nonce="XE4x448g"></script>
-
-
-
 <body data-spy="scroll" data-target="#navbar-example">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    @include('user/layouts/header')
+ <div class="container d-flex">
+   <div class="mr-auto">
+     <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
+   </div>
+   <nav class="nav-menu d-none d-lg-block">
+     <ul>
+       <li ><a href="/home1">Home</a></li>
+       <li><a href="/ourservice">Service</a></li>
+       <li><a href="/ourstory">Success Stories</a></li>
+       <li><a href="/job">Job Board</a></li>
+       <li class="active"><a href="/post">Blog</a></li>
+       <li class="drop-down">
+         <a href="aboutus">Our Company</a>
+         <ul>
+           <li><a href="/aboutus">About Us</a></li>
+           <li><a href="/joinus">Join Us</a></li>
+           <li><a href="/contactus">Contact Us</a></li>
+         </ul>
+       </li>
+       @if (Auth::guard('web')->check())
+       <li style="margin-left: 10px; padding-left: 10px;">
+         <a href="{{ route('profile', ['tab' => 'notification']) }}">
+           <i class="fa fa-bell"></i>
+           @if (count(auth()->user()->unreadNotifications) > 0)
+           <span class="badge badge-pill badge-info">
+             &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
+           </span>
+           @endif
+         </a>
+       </li>
+       @endif
+       <li class="drop-down">
+         <a href="#" class="logo">
+           <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
+         </a>
+         <ul>
+             @if (Auth::guest())
+             <li><a href="{{ route('login') }}">Login</a></li>
+             <li><a href="{{ route('register') }}">Sign up</a></li>
+             @elseif (Auth::guard('web')->check())
+             <li><a href="">My Reviews</a></li>
+             <li><a href="">My Subscription</a></li>
+             <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
+             <li>
+               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
+                 {{ csrf_field() }}
+               </form>
+             </li>
+             @endif
+           </li>
+         </ul>
+       </li>
+     </ul>
+   </nav><!-- .nav-menu -->
+ </div>
+ <script>
+   function markNotificationsAsRead() {
+     $.get('/unreadNotificationsMarkAsRead');
+   };
+ </script>
   </header><!-- End Header -->
 
   <main id="main">
-
-    <!-- ======= Blog Header ======= -->
-   {{--  <div class="header-bg page-area">
-      <div class="home-overly"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="slider-content text-center">
-              <div class="header-bottom">
-                <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
-                  <h1 class="title2">Blog Details </h1>
-                </div>
-                <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
-                  <h2 class="title3">profesional Blog Page</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Blog Header -->--}}
 
 
      <div>
@@ -47,175 +81,38 @@
               <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
                 <div class="text-center">
 
-             <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">Post</h2>
+             <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">{{$post->title}}</h2>
 
                                                     </div>
+</br></br></br></br></br></br>
 
-    <!-- ======= Blog Page ======= -->
-    <div class="blog-page area-padding" style="margin-top:200px;">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="page-head-blog">
-              <div class="single-blog-page">
-                <!-- search option start -->
-                <form action="#">
-                  <div class="search-option">
-                    <input type="text" placeholder="Search...">
-                    <button class="button" type="submit">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </div>
-                </form>
-                <!-- search option end -->
-              </div>
-              <div class="single-blog-page">
-                <!-- recent start -->
-                <div class="left-blog">
-                  <h4>recent post</h4>
-                  <div class="recent-post">
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/1.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/2.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/3.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/4.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                  </div>
-                </div>
-                <!-- recent end -->
-              </div>
-              <div class="single-blog-page">
-                <div class="left-blog">
-                  <h4>categories</h4>
-                  <ul>
-                    <li>
-                      <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                      <a href="#">Project</a>
-                    </li>
-                    <li>
-                      <a href="#">Design</a>
-                    </li>
-                    <li>
-                      <a href="#">wordpress</a>
-                    </li>
-                    <li>
-                      <a href="#">Joomla</a>
-                    </li>
-                    <li>
-                      <a href="#">Html</a>
-                    </li>
-                    <li>
-                      <a href="#">Website</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="single-blog-page">
-                <div class="left-blog">
-                  <h4>archive</h4>
-                  <ul>
-                    <li>
-                      <a href="#">07 July 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">29 June 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">13 May 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">20 March 2016</a>
-                    </li>
-                    <li>
-                      <a href="#">09 Fabruary 2016</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="single-blog-page">
-                <div class="left-tags blog-tags">
-                  <div class="popular-tag left-side-tags left-blog">
-                    <h4>popular tags</h4>
-                    <ul>
-                      <li>
-                        <a href="#">Portfolio</a>
-                      </li>
-                      <li>
-                        <a href="#">Project</a>
-                      </li>
-                      <li>
-                        <a href="#">Design</a>
-                      </li>
-                      <li>
-                        <a href="#">wordpress</a>
-                      </li>
-                      <li>
-                        <a href="#">Joomla</a>
-                      </li>
-                      <li>
-                        <a href="#">Html</a>
-                      </li>
-                      <li>
-                        <a href="#">Masonry</a>
-                      </li>
-                      <li>
-                        <a href="#">Website</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+  <div class="container" >
+
+        <div class="row" >
+          <div class="col-lg-12" >
+  <nav class="nav-menu ">
+        <ul>
+
+          <li class="active"><a href="/post" style="font-family:'Lora';font-size:26px;padding-right:30px;"> <i class="fa fa-arrow-left"></i> Return to all posts</a></li>
+          {{-- <li><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>--}}
+
+        </ul>
+      </nav><!-- .nav-menu -->
+</div>
+
+</div></div>
+  <div style="border:1px solid black;"></div>
+   <!-- ======= Blog Page ======= -->
+      <div class="blog-page area-padding">
+        <div class="container">
+          <div class="row">
+          <div class="col-md-2 col-sm-2 col-xs-2">
           </div>
-          <!-- End left sidebar -->
-          <!-- Start single blog -->
-          <div class="col-md-8 col-sm-8 col-xs-12">
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+
                 <!-- single-blog start -->
                 <article class="blog-post-wrapper">
                   <div class="post-thumbnail">
@@ -226,124 +123,52 @@
 
 
                     <div class="entry-meta">
-                      <span class="author-meta"><i class="fa fa-user"></i> <a href="#">admin</a></span>
-                      <span><i class="fa fa-clock-o"></i> {{$post->created_at}}</span>
-                      <span class="tag-meta">
-                        <i class="fa fa-folder-o"></i>
+                     <td> <span class="author-meta"><i class="fa fa-user"></i> <a href="#">admin</a></span> </td>
+                       <td> <span><i class="fa fa-clock-o"></i> {{$post->created_at}}</span></td>
 
-                                @foreach ($post->categories as $category)
-                                 <a href="">{{ $category->name }}</a>
-                                @endforeach
-                      </span>
-                      <span>
-                        <i class="fa fa-tags"></i>
 
-                        @foreach ($post->tags as $tag)
-                         <a href="">{{ $tag->name }}</a>
-                        @endforeach
 
-                      </span>
-                      <span><i class="fa fa-comments-o"></i> <a href="#">6 comments</a></span>
-                    </div>
+
+
+
+<div style="display:inline">
+           <div class="addthis_inline_share_toolbox_wd2n"></div>
+
+
+                                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f98e5eaf5c2658d"></script>
+
+
+                                          </div>   </div>
+
+
+
+           </div>
+
+
+           </div>
+
+
+
+
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="entry-content">
-                      {!! htmlspecialchars_decode($post->body) !!}
+                    &nbsp; &nbsp;&nbsp;    {!! htmlspecialchars_decode($post->body) !!}
                     </div>
- <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="1" data-width=""></div>
-
-
-                   </div>
-                </article>
-                <div class="clear"></div>
-                <div class="single-post-comments">
-                  <div class="comments-area">
-                    <div class="comments-heading">
-                      <h3>6 comments</h3>
-                    </div>
-                    <div class="comments-list">
-                      <ul>
-                        <li class="threaded-comments">
-                          <div class="comments-details">
-                            <div class="comments-list-img">
-                              <img src="assets/img/blog/b02.jpg" alt="post-author">
-                            </div>
-                            <div class="comments-content-wrap">
-                              <span>
-                                <b><a href="#">demo</a></b>
-                                Post author
-                                <span class="post-time">October 6, 2014 at 4:25 pm</span>
-                                <a href="#">Reply</a>
-                              </span>
-                              <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="comments-details">
-                            <div class="comments-list-img">
-                              <img src="assets/img/blog/b02.jpg" alt="post-author">
-                            </div>
-                            <div class="comments-content-wrap">
-                              <span>
-                                <b><a href="#">admin</a></b>
-                                Post author
-                                <span class="post-time">October 6, 2014 at 6:18 pm </span>
-                                <a href="#">Reply</a>
-                              </span>
-                              <p>Quisque orci nibh, porta vitae sagittis sit amet, vehicula vel mauris. Aenean at justo dolor. Fusce ac sapien bibendum, scelerisque libero nec</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="threaded-comments">
-                          <div class="comments-details">
-                            <div class="comments-list-img">
-                              <img src="assets/img/blog/b02.jpg" alt="post-author">
-                            </div>
-                            <div class="comments-content-wrap">
-                              <span>
-                                <b><a href="#">demo</a></b>
-                                Post author
-                                <span class="post-time">October 6, 2014 at 7:25 pm</span>
-                                <a href="#">Reply</a>
-                              </span>
-                              <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur</p>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="comment-respond">
-                    <h3 class="comment-reply-title">Leave a Reply </h3>
-                    <span class="email-notes">Your email address will not be published. Required fields are marked *</span>
-                    <form action="#">
-                      <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                          <p>Name *</p>
-                          <input type="text" />
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                          <p>Email *</p>
-                          <input type="email" />
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                          <p>Website</p>
-                          <input type="text" />
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 comment-form-comment">
-                          <p>Website</p>
-                          <textarea id="message-box" cols="30" rows="10"></textarea>
-                          <input type="submit" value="Post Comment" />
-                        </div>
-                      </div>
-                    </form>
-                  </div>
                 </div>
+
+                </article>
+
+     </div>
+<hr>
+
+
                 <!-- single-blog end -->
               </div>
             </div>
           </div>
         </div>
-      </div>
+
     </div><!-- End Blog Page -->
 
   </main><!-- End #main -->

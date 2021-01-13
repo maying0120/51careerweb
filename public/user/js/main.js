@@ -197,24 +197,6 @@
   /*---------------------
    Testimonial carousel
   ---------------------*/
-  // var test_carousel = $('.testimonial-carousel');
-  // test_carousel.owlCarousel({
-  //   loop: true,
-  //   nav: false,
-  //   dots: true,
-  //   autoplay: true,
-  //   responsive: {
-  //     0: {
-  //       items: 1
-  //     },
-  //     768: {
-  //       items: 1
-  //     },
-  //     1000: {
-  //       items: 1
-  //     }
-  //   }
-  // });
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
     dots: true,

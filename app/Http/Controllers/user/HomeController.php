@@ -27,17 +27,17 @@ class HomeController extends Controller
     }
 
 
-     public function home1()
-           {
-               return view('home1');
-           }
+    public function home1()
+    {
+      return view('home1');
+    }
 
 
 
-       public function aboutus()
-        {
-            return view('aboutus');
-        }
+    public function aboutus()
+    {
+      return view('aboutus');
+    }
 
 
     public function contactus()
@@ -46,29 +46,29 @@ class HomeController extends Controller
      }
 
 
-          public function ourstory()
-            {
-              return view('ourstory');
-           }
+     public function ourstory()
+     {
+       return view('ourstory');
+     }
 
-              public function joinus()
-                {
-                  return view('joinus');
-               }
-              public function ourservice()
-                {
-                  return view('ourservice');
-               }
+     public function joinus()
+     {
+       return view('joinus');
+     }
+     public function ourservice()
+     {
+       return view('ourservice');
+     }
 
-                        public function jobtest()
-                          {
-                            return view('jobtest');
-                         }
+     public function jobtest()
+     {
+       return view('jobtest');
+     }
 
-           public function jobreq()
-                          {
-                            return view('jobreq');
-                         }
+     public function jobreq()
+     {
+       return view('jobreq');
+     }
 
 
 

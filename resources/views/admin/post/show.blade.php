@@ -99,8 +99,9 @@
                     <th>title</th>
                     <th>subtitle</th>
                     <th>slug</th>
-                    <th>body</th>
+
                     <th>created_at</th>
+                    <th>visit_count</th>
                      <th>Edit</th>
                      <th>Delete</th>
                   </tr>
@@ -112,8 +113,9 @@
                      <td>{{ $post->title }}</td>
                      <td>{{ $post->subtitle }}</td>
                      <td>{{ $post->slug }}</td>
-                     <td>{{ $post->body }}</td>
+
                       <td>{{ $post->created_at}}</td>
+                      <td>{{ $post->visit_count}}</td>
                       <td><a href="{{ route('post.edit',$post->id) }}">  <i class="fas fa-pen"> </a></td>
                       <td>
                       <form id="delete-form-{{ $post->id }}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
@@ -145,8 +147,9 @@
              <th>title</th>
               <th>subtitle</th>
               <th>slug</th>
-              <th>body</th>
+
                <th>created_at</th>
+               <th>visit_count</th>
                  <th>Edit</th>
                <th>Delete</th>
                  </tr>

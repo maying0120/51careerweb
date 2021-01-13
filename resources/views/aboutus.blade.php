@@ -219,7 +219,7 @@ font-family:'Lora';
         <div class="row">
           <div class="col-md-7 col-sm-7 col-xs-12">
                       <div class="well-left">
-                 
+
                       </br>
                            <div class="text-left section-headline">
 

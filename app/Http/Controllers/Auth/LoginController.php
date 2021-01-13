@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home1';
 
     /**
      * Create a new controller instance.
@@ -45,7 +45,7 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->forget($this->guard()->getName());
         $request->session()->regenerate();
-        return view('/home');
+        return view('/home1');
     }
 
 }

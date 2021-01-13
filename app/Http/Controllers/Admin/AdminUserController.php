@@ -26,7 +26,7 @@ class AdminUserController extends Controller
     public function index()
     {
         $users = admin::all();
-        return view('admin.user.show',compact('users'));
+        return view('admin.admin.show',compact('users'));
     }
 
     /**
@@ -37,8 +37,8 @@ class AdminUserController extends Controller
 
     public function create()
     {
-        $roles = role::all();
-        return view('admin.user.create',compact('roles'));
+       // $roles = role::all();
+        return view('admin.admin.create');
     }
 
     /**
@@ -57,8 +57,8 @@ class AdminUserController extends Controller
         ]);
         $request['password'] = bcrypt($request->password);
         $user = admin::create($request->all());
-        $user->roles()->sync($request->role);
-        return redirect(route('user1.index'));
+      //  $user->roles()->sync($request->role);
+        return redirect(route('admin.index'));
     }
 
     /**
@@ -81,8 +81,8 @@ class AdminUserController extends Controller
     public function edit($id)
     {
         $user = admin::find($id);
-        $roles = role::all();
-        return view('admin.user.edit',compact('user','roles'));
+        //$roles = role::all();
+        return view('admin.admin.edit',compact('user'));
     }
 
     /**
@@ -97,12 +97,12 @@ class AdminUserController extends Controller
         $this->validate($request,[
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
-           // 'phone' => 'required|numeric',
+             'phone' => 'required|numeric',
         ]);
         $request->status? : $request['status']=0;
-        $user = admin::where('id',$id)->update($request->except('_token','_method','role'));
-        admin::find($id)->roles()->sync($request->role);
-        return redirect(route('user.index'))->with('message','User updated successfully');
+        $user = admin::where('id',$id)->update($request->except('_token','_method'));
+        //admin::find($id)->roles()->sync($request->role);
+        return redirect(route('admin.index'))->with('message','User updated successfully');
     }
 
     /**

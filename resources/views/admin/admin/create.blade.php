@@ -96,33 +96,84 @@
 
    <div class="card card-primary">
               <div class="card-header">
-                  <h3 class="card-title">status management</h3>
+                  <h3 class="card-title">user management</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
 
+
               @if (count($errors)>0)
-                @foreach($errors->all() as $error)
+                 @foreach($errors->all() as $error)
                   <p class="alert alert-danger">{{ $error }}</p>
-                @endforeach
+                 @endforeach
               @endif
 
-                <form role="form" action="{{ route('user.update',$user->id) }}" method="post">
+                <form role="form" action="{{ route('admin.store') }}" method="post">
                 {{ csrf_field() }}
-                {{ method_field('PUT') }}
+
                   <div class="card-body">
+
                     <div class="form-group">
-                      <label for="status">user status</label>
-                      <input type="text" class="form-control" id="status" name="status" placeholder="status"
-                       value="{{ $user->status }}">
+                      <label for="name">user name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="name">
+                    </div>
+
+
+
+
+
+                       <div class="form-group">
+                         <label for="email">user email</label>
+                           <input type="text" class="form-control" id="email" name="email" placeholder="email">
+                     </div>
+
+                              <div class="form-group">
+                                                   <label for="role">Assign Role</label>
+                                                   <select name="role" id="" class="form-control">
+                                                   <option value="2">Publisher</option>
+                                                     <option value="1">Writer</option>
+                                         </div>
+
+
+
+                         <div class="form-group">
+                          <label for="password">user phone</label>
+                         <input type="phone" class="form-control" id="phone" name="phone" placeholder="phone">
+                             </div>
+
+                            <div class="form-group">
+                                <label for="password">user password</label>
+                             <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                           </div>
+
+                      <div class="form-group">
+                       <label for="password_confirmation">password_confirmation</label>
+                      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="password_confirmation">
+                    </div>
+
+
+         <div class="form-group">
+                  <label for="confirm_passowrd">Status</label>
+                  <div class="checkbox">
+                    <label ><input type="checkbox" name="status" @if (old('status') == 1)
+                      checked
+                    @endif value="1">Status</label>
+                  </div>
+                </div>
+
+
 
                 </form>
-              </div>
 
-    <!-- Main content -->
 
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <a type="button" href='{{ route('user.index') }}' class="btn btn-warning">Back</a>
+
+
+
+
+     <div class="form-group">
+
+                  <button type="submit" class="btn btn-primary">Submit</button>   &nbsp; &nbsp; &nbsp; &nbsp;
+                   <a type="button" href='{{ route('admin.index') }}' class="btn btn-warning">Back</a>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div style="text-align: center; padding-top: 15px">
-      <p>Search database by user
+      <p>Search database by user id:
         <input type="text" class="filter" data-column="1"/>
       </p>
     </div>
@@ -243,40 +243,51 @@
     tables[0] = $("#education-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "sDom": 'l<"edu-table-title">frtip'
+      "sDom": 'l<"edu-table-title">frtip',
+      language: {
+        searchPlaceholder: "Search by phrase"
+      }
     }), tables[1] = $("#project-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "sDom": 'l<"proj-table-title">frtip'
+      "sDom": 'l<"proj-table-title">frtip',
+      language: {
+        searchPlaceholder: "Search by phrase"
+      }
     }), tables[2] = $("#company-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "sDom": 'l<"comp-table-title">frtip'
-    }), tables[3] = $("#showcase-table").DataTable({
+      "sDom": 'l<"comp-table-title">frtip',
+      language: {
+        searchPlaceholder: "Search by phrase"
+      }
+    }), tables[3] = $("#profile-table").DataTable({
       "responsive": true,
       "autoWidth": false,
-      "sDom": 'l<"show-table-title">frtip'
-    }), tables[4] = $("#profile-table").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-      "sDom": 'l<"prof-table-title">frtip'
+      "sDom": 'l<"prof-table-title">frtip',
+      language: {
+        searchPlaceholder: "Search by phrase"
+      }
     });
     // Assign titles
-    $(".prof-table-title").html('<h4><b><i>Profile</i></b></h4>').css('float','left');
-    $(".edu-table-title").html('<h4><b><i>Education</i></b></h4>').css('float','left');
-    $(".proj-table-title").html('<h4><b><i>Project</i></b></h4>').css('float','left');
-    $(".comp-table-title").html('<h4><b><i>Company</i></b></h4>').css('float','left');
-    $(".show-table-title").html('<h4><b><i>Showcase</i></b></h4>').css('float','left');
+    $(".prof-table-title").html('<h4><b>Profile</b></h4>').css('float','left');
+    $(".edu-table-title").html('<h4><b>Education</b></h4>').css('float','left');
+    $(".proj-table-title").html('<h4><b>Project</b></h4>').css('float','left');
+    $(".comp-table-title").html('<h4><b>Experience</b></h4>').css('float','left');
     // Filter database according to user id
     $('.filter').keyup(function() {
       for (var i=0; i<tables.length; ++i) {
-        tables[i].column($(this).data('column')).search($(this).val()).draw();
+        if ($(this).val() == "" || $(this).val() == " ") {
+          tables[i].column($(this).data('column')).search("").draw();
+        } else {
+          tables[i].column($(this).data('column')).search("^" + $(this).val() + "$", true, false, true).draw();
+        }
       };
     });
     // Display user-specific database based on user '$id' passed through laravel route
     if ({{ $id }} != 0){
       for (var i=0; i<tables.length; ++i) {
-        tables[i].column(1).search({{ $id }}).draw();
+        tables[i].column(1).search("^" + {{ $id }} + "$", true, false, true).draw();
       };
     }
   });

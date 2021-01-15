@@ -48,6 +48,21 @@
     firebase.analytics();
   </script>
 <!-- Finish Firebase import -->
+<style>
+  #container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  .container-fluid{
+    max-width: 33%;
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  #registration-box {
+    margin: 25px auto;
+  }
+</style>
 
 </head>
 
@@ -63,122 +78,114 @@
 </br>
 </br>
 
+<div class="container entrance">
+  <div class="row">
+    <div class="col-4" style="display: flex;">
+      <div class="centered">
 
-<!-- Phone number verification module -->
-<!-- Show before phone is verified -->
-  <div id="phone-not-verified">
-    <div id="container">
-      <div id="main">
-        <div>
-          <div id="firebaseui-spa">
-            <div id="firebaseui-container"></div>
+        <!-- Phone number verification module -->
+        <!-- Show before phone is verified -->
+        <div id="phone-not-verified">
+          <div id="container">
+            <div id="main">
+              <div>
+                <div id="firebaseui-spa">
+                  <div id="firebaseui-container"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- Phone verification complete -->
+
+        <!-- Show when phone verified -->
+        <div id="phone-verified" style="display: none">
+          <div id="registration-box">
+            <form  class="form-horizontal" method="POST" action="{{ route('register') }}" text-align="center">
+              {{ csrf_field() }}
+
+              <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                <label for="phone">Phone Number</label>
+                <div>
+                  <input id="phone" type="phone" class="form-control" name="phone" readonly="readonly" required>
+
+                  @if ($errors->has('phone'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('phone') }}</strong>
+                  </span>
+                  @endif
+                </div>
+              </div>
+
+              <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                <label for="name" class=" control-label">Name</label>
+                <div>
+                  <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                  @if ($errors->has('name'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('name') }}</strong>
+                  </span>
+                  @endif
+                </div>
+              </div>
+
+              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <label for="email" class="control-label">E-Mail Address</label>
+                <div>
+                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                  @if ($errors->has('email'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+                  @endif
+                </div>
+              </div>
+
+              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                <label for="password" class=" control-label">Password</label>
+                <div>
+                  <input id="password" type="password" class="form-control" name="password" required>
+                  @if ($errors->has('password'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                  </span>
+                  @endif
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password-confirm" class="control-label">Confirm Password</label>
+                <div>
+                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  <button type="submit" class="btn btn-primary">
+                    注册
+                  </button>
+                  <a href={{ route('login') }} class="btn btn-primary">
+                    返回登陆
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+        </div>
       </div>
+
+    </div>
+    <div class="col-1"></div>
+    <div class="col-7">
+      <div class="entrance-right-panel">
+        <img id="entrance-pic" src="{{ asset('user/img/51loginsignup.jpg') }}"/>
+      </div>
+
     </div>
   </div>
-<!-- Phone verification complete -->
-
-
-</br>
-</br>
-
-
-<!-- Show when phone verified -->
-<div id="phone-verified" display="none">
-  <div class="container-fluid">
-    <div class="card">
-      <div class="card-body">
-
-
-                  <div id="registration-box">
-                      <form  class="form-horizontal" method="POST" action="{{ route('register') }}" text-align="center">
-                          {{ csrf_field() }}
-
-                          <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-
-                              <label for="phone">Phone Number</label>
-
-                              <div class="col-md-6">
-                                  <input id="phone" type="phone" class="form-control" name="phone" readonly="readonly" required>
-
-                                  @if ($errors->has('phone'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('phone') }}</strong>
-                                      </span>
-                                  @endif
-                              </div>
-                          </div>
-
-                          <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                              <label for="name" class="col-md-4 control-label">Name</label>
-
-                              <div class="col-md-6">
-                                  <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                  @if ($errors->has('name'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('name') }}</strong>
-                                      </span>
-                                  @endif
-                              </div>
-                          </div>
-
-                          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                              <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                              <div class="col-md-6">
-                                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                  @if ($errors->has('email'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('email') }}</strong>
-                                      </span>
-                                  @endif
-                              </div>
-                          </div>
-
-                          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                              <label for="password" class="col-md-4 control-label">Password</label>
-
-                              <div class="col-md-6">
-                                  <input id="password" type="password" class="form-control" name="password" required>
-
-                                  @if ($errors->has('password'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('password') }}</strong>
-                                      </span>
-                                  @endif
-                              </div>
-                          </div>
-
-                          <div class="form-group">
-                              <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                              <div class="col-md-6">
-                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                              </div>
-                          </div>
-
-                          <div class="form-group">
-                              <div class="col-md-6 col-md-offset-4">
-                                  <button type="submit" class="btn btn-primary">
-                                      注册
-                                  </button>
-
-                                    <a href={{route('login') }} class="btn btn-primary">
-                                        返回登陆
-                                    </a>
-
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-
-      </div>
-  </div>
-  </div>
-
 </div>
 
   <footer>
@@ -189,22 +196,3 @@
 <script src="user/js/signup.js"></script>
 </body>
 </html>
-<style>
-
-  #container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
-  }
-
-  .container-fluid{
-    max-width: 33%;
-    max-width: 500px;
-    margin: 50px auto;
-  }
-
-  #registration-box {
-    margin: 25px auto;
-  }
-
-</style>

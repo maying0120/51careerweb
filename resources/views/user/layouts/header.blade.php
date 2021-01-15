@@ -42,8 +42,8 @@
             @elseif (Auth::guard('web')->check())
             <li><a href="">My Reviews</a></li>
             <li><a href="">My Subscription</a></li>
+            <li><a href="/profile/profile">My Profile</a ></li>
            {{--  <li><a href="{{ route('/profile/notification', ['tab' => 'profile']) }}">My Profile</a></li>--}}
-               <li><a href="/profile/profile">My Profile</a ></li>
 
             <li>
               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>

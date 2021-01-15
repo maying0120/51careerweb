@@ -194,9 +194,16 @@
                      <td>{{ $application->job->company}}</td>
                      <td>{{ $application->job->position}}</td>
                      <td><a href = "{{route('host')}}/uploads/{{ $application->resume_path}}"> Resume</a> </td>
-                     <td><a  @if($application->coverletter_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->coverletter_path}}" @endif > Coverletter</a> </td>
-                     <td><a  @if($application->transcript_path == null) href=# @else href = "{{route('host')}}/uploads/{{ $application->transcript_path}}" @endif > Transcript</a> </td>
-
+                     @if($application->coverletter_path != null)
+                     <td><a href="{{route('host')}}/uploads/{{ $application->coverletter_path}}"> Coverletter</a> </td>
+                     @else
+                     <td></td>
+                     @endif
+                     @if($application->transcript_path != null)
+                     <td><a href="{{route('host')}}/uploads/{{ $application->transcript_path}}"> Transcript</a> </td>
+                     @else
+                     <td></td>
+                     @endif 
 
 
                      <td>{{ $application->review}}</td>

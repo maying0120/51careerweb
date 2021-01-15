@@ -9,15 +9,7 @@
 /*--------------------------------------------------------------
 # 51Careers Specific
 --------------------------------------------------------------*/
-footer {
-  margin-top: auto;
-}
-
-.centered {
-  margin: auto;
-  position: relative;
-}
-
+/* General */
 html, body {
   height: 100%;
   display: flex;
@@ -25,17 +17,36 @@ html, body {
   font-family: 'Roboto', Helvetica;
   font-weight: 300;
 }
-
+footer {
+  margin-top: auto;
+}
+.centered {
+  margin: auto;
+  position: relative;
+}
 .title-font {
   font-family: 'Lora', Helvetica, Arial, sans-serif;
 }
-
 .hidden {
   display: none;
 }
-
 .clickable {
   cursor: pointer;
+}
+/* login/signup/reset pages */
+.entrance {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+.entrance-right-panel {
+  width: 100%;
+}
+#entrance-pic {
+  margin-right: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 640px;
+  width: 640px;
 }
 /*--------------------------------------------------------------
 # General
@@ -200,12 +211,12 @@ div#preloader {
 }
 
 ::-moz-selection {
-  background: #3EC1D5;
+  background: #ddd;
   text-shadow: none;
 }
 
 ::selection {
-  background: #3EC1D5;
+  background: #ddd;
   text-shadow: none;
 }
 

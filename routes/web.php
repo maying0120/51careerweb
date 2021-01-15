@@ -41,7 +41,10 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
         Route::get('/joinus', 'HomeController@joinus');
         //our service
         Route::get('/ourservice', 'HomeController@ourservice');
-
+        // our video
+         Route::get('/ourvideo', 'HomeController@ourvideo');
+        // our offer
+         Route::get('/ouroffer', 'HomeController@ouroffer');
   Route::get('/jobreq', 'HomeController@jobreq');
    // Video
    Route::get('videos/{vcategory}','VideoController@searchbycat');
@@ -58,9 +61,12 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
 
     Route::get('post/search','PostController@search');
    Route::get('post/{post}','PostController@post')->name('post');
+
    Route::get('post/tag/{tag}','PostController@tag')->name('tag');
    Route::get('post/category/{category}','PostController@category')->name('category');
-
+   //新增
+   Route::get('posts/{category}','PostController@searchbycat');
+    Route::get('post/cats/{category}','PostController@catsearch');
 
    // Job
    Route::get('job/{id?}','JobController@index')->name('user_job');
@@ -73,7 +79,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
    Route::post('profile/profile/avatar', 'ProfileController@uploadAvatar');
    Route::post('profile/profile/description', 'ProfileController@updateDescription');
    Route::post('profile/profile/expect', 'ProfileController@updateExpect');
-   Route::post('profile/profile', 'ProfileController@updateSkill');
+   Route::post('profile/profile/skill', 'ProfileController@updateSkill');
    Route::post('profile/profile/uploadResume', 'ProfileController@uploadResume')->name('upload_resume');
    Route::post('profile/profile/downloadResume', 'ProfileController@downloadResume')->name('download_resume');
    Route::post('profile/profile/uploadTranscript', 'ProfileController@uploadTranscript')->name('upload_transcript');

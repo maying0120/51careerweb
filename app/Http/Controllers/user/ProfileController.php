@@ -77,6 +77,7 @@ class ProfileController extends Controller
       $profile->skills = $request->skills;
 
       $profile->save();
+      return back();
     }
 
     public function updateDescription(Request $request)

@@ -5,16 +5,16 @@
   <nav class="nav-menu d-none d-lg-block">
     <ul>
       <li class="active"><a href="/home1">Home</a></li>
-      <li><a href="ourservice">Service</a></li>
-      <li><a href="ourstory">Success Stories</a></li>
+      <li><a href="/ourservice">Service</a></li>
+      <li><a href="/ouroffer">Success Stories</a></li>
       <li><a href="/job">Job Board</a></li>
       <li><a href="/post">Blog</a></li>
       <li class="drop-down">
         <a href="">Our Company</a>
         <ul>
-          <li><a href="aboutus">About Us</a></li>
-          <li><a href="joinus">Join Us</a></li>
-          <li><a href="contactus">Contact Us</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/joinus">Join Us</a></li>
+          <li><a href="/contactus">Contact Us</a></li>
         </ul>
       </li>
       @if (Auth::guard('web')->check())
@@ -42,7 +42,9 @@
             @elseif (Auth::guard('web')->check())
             <li><a href="">My Reviews</a></li>
             <li><a href="">My Subscription</a></li>
-            <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
+           {{--  <li><a href="{{ route('/profile/notification', ['tab' => 'profile']) }}">My Profile</a></li>--}}
+               <li><a href="/profile/profile">My Profile</a ></li>
+
             <li>
               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">

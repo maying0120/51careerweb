@@ -30,9 +30,9 @@ class video extends Model
 
 
     public function vcategory()
-    {
-       return $this->belongsToMany('App\Model\user\vcategory','video_vcategory')->withTimestamps();
-    }
+         {
+            return $this->belongsToMany('App\Model\user\vcategory','video_vcategory')->withTimestamps();
+         }
 
 
      public function scopeFilter($query,$filters)

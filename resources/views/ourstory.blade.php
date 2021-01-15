@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,15 +65,15 @@ text-decoration:none;
     <ul>
       <li ><a href="/home1">Home</a></li>
       <li><a href="ourservice">Service</a></li>
-      <li class="active"><a href="ourstory">Success Stories</a></li>
+      <li class="active"><a href="/ouroffer">Success Stories</a></li>
       <li><a href="/job">Job Board</a></li>
       <li><a href="/post">Blog</a></li>
       <li class="drop-down">
         <a href="aboutus">Our Company</a>
         <ul>
-          <li ><a href="aboutus">About Us</a></li>
-          <li><a href="joinus">Join Us</a></li>
-          <li><a href="contactus">Contact Us</a></li>
+          <li ><a href="/aboutus">About Us</a></li>
+          <li><a href="/joinus">Join Us</a></li>
+          <li><a href="/contactus">Contact Us</a></li>
         </ul>
       </li>
       @if (Auth::guard('web')->check())
@@ -139,30 +142,30 @@ text-decoration:none;
     </div><!-- End Slider -->
 
 
- <section class="portfolio" >
-      <div class="container" >
-
-        <div class="row" >
-          <div class="col-lg-12" >
-
-            <ul id="portfolio-flters" style="text-align:left; margin-top:-40px; margin-left:-30px; ">
-  <li ><h2 style="font-family:'Lora'; font-size:20px; font-weight:bold; ">OUR STORIES </h2></li>
-
-                <li ><a1 href="#"  onclick="show1()"><h2 style="font-family:'Lora'; font-size:20px; ">Offers</h2> </a1></li>
-                 <li ><a1 href="#"  onclick="show2()"> <h2 style="font-family:'Lora'; font-size:20px; ">Stories</h2></a1></li>
-                  <li ><a1 href="#" onclick="show3()"> <h2 style="font-family:'Lora'; font-size:20px;">Videos</h2></a1></li>
-
-            </ul>
-
-          </div>
-
-  </div>
-</section>
-
  </div>
 
+        <div class="container" >
+
+              <div class="row" >
+                <div class="col-lg-12" >
+        <nav class="nav-menu ">
+              <ul>
+              <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Success Stories  |</a></li>
+                <li ><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
+                <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Our Story</a></li>
+                <li ><a href="/video" style="font-family:'Lora';font-size:26px;padding-right:30px;">Video</a></li>
+
+              </ul>
+            </nav><!-- .nav-menu -->
+      </div>
+
+      </div></div>
+
+        <div style="border:1px solid black;"></div>
 
    <div style="border:1px solid black; margin-top:-100px;"></div>
+
+   </br> </br>
   <main id="main">
 
 
@@ -170,134 +173,7 @@ text-decoration:none;
 
 
     <!-- ======= Portfolio Section ======= -->
-    <section class="portfolio">
-      <div class="container">
 
-
-       {{--  <div class="row">
-           <div class="col-lg-12">
-            <ul id="portfolio-flters">
-
-
-                <li ><a href="#"  onclick="show1()"><h2>Offers</h2> </a></li>
-                 <li ><a href="#"  onclick="show2()"> <h2>Stories</h2></a></li>
-                  <li ><a href="#" onclick="show3()"> <h2>Videos</h2></a></li>
-
-
-
-            </ul>
-
-          </div>
-        </div>--}}
-
-
-
-
-
-
-
-
-
-        <div style="display:block" id="div1">
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-          <div class="col-lg-4 col-md-6 filter-app">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/offtest111.jpg') }}"class="img-fluid" alt="" >
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 1">off 1</a></h3>
-               <a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}" style="height:100px;" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-plus"></i></a>
-                           </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-web">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/off611.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}"data-gall="portfolioGallery" class="venobox" title="Web 3">off 2</a></h3>
-                <a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}"data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-app">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/off511.jpg') }}"class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href"{{ asset('user/story/assets/img/offer/off5.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 2">off 3</a></h3>
-                <a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-card">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/off211.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('user/story/assets/img/offer/off2.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 2">>off 2</a></h3>
-                <a href="{{ asset('user/story/assets/img/offer/off2.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-web">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/off311.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('user/story/assets/img/offer/off3.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Web 2">>off 2</a></h3>
-                <a href="{{ asset('user/story/assets/img/offer/off3.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-app">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/off611.jpg') }}"  class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 3">>off 2</a></h3>
-                <a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}"  data-gall="portfolioGallery" class="venobox" title="App 3"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-card">
-            <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/off711.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('user/story/assets/img/offer/off7.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 1">>off 2</a></h3>
-                <a href="{{ asset('user/story/assets/img/offer/off7.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-      {{--    <div class="col-lg-4 col-md-6 filter-card">
-            <div class="portfolio-item">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3">>off 2</a></h3>
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 filter-web">
-            <div class="portfolio-item">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 1">>off 2</a></h3>
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 1"><i class="icofont-plus"></i></a>
-              </div>
-            </div>
-          </div> --}}
-
-        </div>
-
-          </div>
-
-
-<div style="display:none" id="div2">
 <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
       <div class="container">
 
@@ -431,149 +307,6 @@ text-decoration:none;
       </div>
     </section><!-- End Team Section -->
 
-</div>
-
-
-{{--
-<div style="display:none" id="div3">
-
-  <section class="service-details">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" alt="...">
-
-              </div>
-
-                <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Our Mission</a></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Our Plan</a></h5>
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Our Vision</a></h5>
-                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Our Care</a></h5>
-                <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam laudantium voluptatem. In molestiae earum ab sit esse voluptatem. Eos ipsam cumque ipsum officiis qui nihil aut incidunt aut</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Service Details Section -->
-
-
-
-
-</div>--}}
-
-
-<div style="display:none" id="div3">
-
-
-
-
-    <!-- ======= Why Us Section ======= -->
-    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6 video-box">
-             <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" class="img-fluid" alt="">
-            <a href="https://youtu.be/C4g4p-fyXfQ" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-          </div>
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Introduce</a></h4>
-              <p class="description">Our company </p>
-            </div>
-
-
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Why Us Section -->
-
-
-      <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-
-                                         <div class="icon-box">
-                                           <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                                           <h4 class="title"><a href="">Introduce</a></h4>
-                                           <p class="description">Our company </p>
-                                         </div>
-
-
-
-                                       </div>
-            <div class="col-lg-6 video-box">
-               <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" class="img-fluid" alt="">
-              <a href="https://youtu.be/C4g4p-fyXfQ" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-            </div>
-
-
-          </div>
-
-        </div>
-      </section><!-- End Why Us Section -->
-
-
-
-
-</div>
-
-
-
-
-      </div>
-    </section><!-- End Portfolio Section -->
 
 
 
@@ -595,30 +328,6 @@ text-decoration:none;
 
 
 
-  <script>
-  function show1(){
-  document.getElementById("div1").style.display="block";
-  document.getElementById("div2").style.display="none";
-  document.getElementById("div3").style.display="none";
-  };
-  function show2()
-  {
-  document.getElementById("div2").style.display="block";
-  document.getElementById("div1").style.display="none";
-  document.getElementById("div3").style.display="none";
-  }
-
-    function show3()
-    {
-    document.getElementById("div3").style.display="block";
-    document.getElementById("div1").style.display="none";
-    document.getElementById("div2").style.display="none";
-    }
-
-
-  </script>
-
-
   <!-- Vendor JS Files -->
   <script src="{{ asset('user/story/assets/vendor/jquery/jquery.min.js') }}" ></script>
   <script src="{{ asset('user/story/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
@@ -637,3 +346,9 @@ text-decoration:none;
 </body>
 
 </html>
+
+
+
+
+
+

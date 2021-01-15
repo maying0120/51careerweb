@@ -226,29 +226,29 @@ text-decoration:underline;
                              </br>
                                          <h5 style="text-align:left;">Primary Responsibilities :</h5>
 
-                                          <p> ●	Assist with the preparation and delivery of marketing materials</p>
-                                          <p> ●	Assist in marketing and advertising activities</p>
-                                          <p> ●	Prepare detailed marketing presentations</p>
-                                          <p> ●	Assist with the planning and hosting of marketing events</p>
-                                          <p> ●	Collect quantitative and qualitative data from marketing campaigns</p>
-                                          <p> ●	Perform analysis of marketing and sales data</p>
-                                          <p> ●	Monitor all social media platforms for trending news, ideas, and feedback </p>
-                                          <p> ●	Research and evaluate competitor marketing and digital content</p>
-                                          <p> ●	Support the marketing team in daily administrative tasks</p>
+                                          <p> ·	Assist with the preparation and delivery of marketing materials</p>
+                                          <p> ·	Assist in marketing and advertising activities</p>
+                                          <p> ·	Prepare detailed marketing presentations</p>
+                                          <p> ·	Assist with the planning and hosting of marketing events</p>
+                                          <p> ·	Collect quantitative and qualitative data from marketing campaigns</p>
+                                          <p> ·	Perform analysis of marketing and sales data</p>
+                                          <p> ·	Monitor all social media platforms for trending news, ideas, and feedback </p>
+                                          <p> ·	Research and evaluate competitor marketing and digital content</p>
+                                          <p> ·	Support the marketing team in daily administrative tasks</p>
                                           </br>
                                                                        <h5 style="text-align:left;">Qualifications: </h5>
 
 
 
-                                          <p> ●	Undergraduate or graduate student majoring in marketing, business, or a related field</p>
-                                          <p> ●	A basic understanding of business and marketing strategy</p>
-                                          <p> ●	Advanced proficiency with MS Office, including Word, Excel, and PowerPoint</p>
-                                          <p> ●	Accurate, detail-oriented, organized, and self-motivated</p>
-                                          <p> ●	Strong critical thinking and problem-solving skills</p>
-                                          <p> ●	Previous experience with marketing computer software a plus</p>
-                                          <p> ●	Ability to multitask effectively and take initiative</p>
-                                          <p> ●	Excellent verbal and written communication skill</p>
-                                          <p> ●	Must have a passion for marketing</p>
+                                          <p> ·	Undergraduate or graduate student majoring in marketing, business, or a related field</p>
+                                          <p> ·	A basic understanding of business and marketing strategy</p>
+                                          <p> ·	Advanced proficiency with MS Office, including Word, Excel, and PowerPoint</p>
+                                          <p> ·	Accurate, detail-oriented, organized, and self-motivated</p>
+                                          <p> ·	Strong critical thinking and problem-solving skills</p>
+                                          <p> ·	Previous experience with marketing computer software a plus</p>
+                                          <p> ·	Ability to multitask effectively and take initiative</p>
+                                          <p> ·	Excellent verbal and written communication skill</p>
+                                          <p> ·	Must have a passion for marketing</p>
 
 
 

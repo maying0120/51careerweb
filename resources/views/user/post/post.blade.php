@@ -17,16 +17,16 @@
    <nav class="nav-menu d-none d-lg-block">
      <ul>
        <li ><a href="/home1">Home</a></li>
-       <li><a href="ourservice">Service</a></li>
-       <li><a href="ourstory">Success Stories</a></li>
+       <li><a href="/ourservice">Service</a></li>
+       <li><a href="/ourstory">Success Stories</a></li>
        <li><a href="/job">Job Board</a></li>
        <li class="active"><a href="/post">Blog</a></li>
        <li class="drop-down">
          <a href="aboutus">Our Company</a>
          <ul>
-           <li><a href="aboutus">About Us</a></li>
-           <li><a href="joinus">Join Us</a></li>
-           <li><a href="contactus">Contact Us</a></li>
+           <li><a href="/aboutus">About Us</a></li>
+           <li><a href="/joinus">Join Us</a></li>
+           <li><a href="/contactus">Contact Us</a></li>
          </ul>
        </li>
        @if (Auth::guard('web')->check())

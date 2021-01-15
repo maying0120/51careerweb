@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,9 +68,9 @@ text-decoration:none;
       <li class="drop-down">
         <a href="aboutus">Our Company</a>
         <ul>
-          <li ><a href="/aboutus">About Us</a></li>
-          <li><a href="/joinus">Join Us</a></li>
-          <li><a href="/contactus">Contact Us</a></li>
+          <li ><a href="aboutus">About Us</a></li>
+          <li><a href="joinus">Join Us</a></li>
+          <li><a href="contactus">Contact Us</a></li>
         </ul>
       </li>
       @if (Auth::guard('web')->check())
@@ -151,8 +148,8 @@ text-decoration:none;
         <nav class="nav-menu ">
               <ul>
               <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Success Stories  |</a></li>
-                <li ><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
-                <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Our Story</a></li>
+                <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
+                <li><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Our Story</a></li>
                 <li ><a href="/video" style="font-family:'Lora';font-size:26px;padding-right:30px;">Video</a></li>
 
               </ul>
@@ -173,140 +170,99 @@ text-decoration:none;
 
 
     <!-- ======= Portfolio Section ======= -->
-
-<section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <section class="portfolio">
       <div class="container">
 
-        <div class="row">
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
 
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-              {{-- <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-                <h4>person A </h4>
-                <span>** Offer</span>
-                <p>This is the test A Reputable Career Consulting Brand.</p>
+
+
+
+
+
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+          <div class="col-lg-4 col-md-6 filter-app">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/offtest111.jpg') }}"class="img-fluid" alt="" >
+              <div class="portfolio-info">
+                <h3><a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 1">off 1</a></h3>
+               <a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}" style="height:100px;" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-plus"></i></a>
+                           </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-web">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/off611.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}"data-gall="portfolioGallery" class="venobox" title="Web 3">off 2</a></h3>
+                <a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}"data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-plus"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-              {{--   <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div> --}}
-              </div>
-              <div class="member-info">
-                <h4>person A </h4>
-                <span>** Offer</span>
-                <p>This is the test A Reputable Career Consulting Brand.</p>
+          <div class="col-lg-4 col-md-6 filter-app">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/off511.jpg') }}"class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href"{{ asset('user/story/assets/img/offer/off5.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 2">off 3</a></h3>
+                <a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="icofont-plus"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-            {{--   <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
+          <div class="col-lg-4 col-md-6 filter-card">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/off211.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="{{ asset('user/story/assets/img/offer/off2.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 2">>off 2</a></h3>
+                <a href="{{ asset('user/story/assets/img/offer/off2.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="icofont-plus"></i></a>
               </div>
-              <div class="member-info">
-                <h4>person A </h4>
-                <span>** Offer</span>
-                <p>This is the test A Reputable Career Consulting Brand.</p>
-
-            </div>
-          </div> </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-             {{-- <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-
-
-              <h4>person A </h4>
-                             <span>** Offer</span>
-                             <p>This is the test A Reputable Career Consulting Brand.</p>
-
-                        </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-              {{-- <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
+          <div class="col-lg-4 col-md-6 filter-web">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/off311.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="{{ asset('user/story/assets/img/offer/off3.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Web 2">>off 2</a></h3>
+                <a href="{{ asset('user/story/assets/img/offer/off3.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="icofont-plus"></i></a>
               </div>
-              <div class="member-info">
-
-
-               <h4>person A </h4>
-                              <span>** Offer</span>
-                              <p>This is the test A Reputable Career Consulting Brand.</p>
-
-                       </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}"class="img-fluid" alt="">
-             {{--   <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
+          <div class="col-lg-4 col-md-6 filter-app">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/off611.jpg') }}"  class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 3">>off 2</a></h3>
+                <a href="{{ asset('user/story/assets/img/offer/off6.jpg') }}"  data-gall="portfolioGallery" class="venobox" title="App 3"><i class="icofont-plus"></i></a>
               </div>
-              <div class="member-info">
-
-        <h4>person A </h4>
-                       <span>** Offer</span>
-                       <p>This is the test A Reputable Career Consulting Brand.</p>
-
-                     </div>
             </div>
           </div>
 
-        </div>
+          <div class="col-lg-4 col-md-6 filter-card">
+            <div class="portfolio-item">
+              <img src="{{ asset('user/story/assets/img/offer/off711.jpg') }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="{{ asset('user/story/assets/img/offer/off7.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 1">>off 2</a></h3>
+                <a href="{{ asset('user/story/assets/img/offer/off7.jpg') }}" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+
+          </div>
+
+
+
+
 
       </div>
-    </section><!-- End Team Section -->
-
+    </section><!-- End Portfolio Section -->
 
 
 
@@ -346,9 +302,3 @@ text-decoration:none;
 </body>
 
 </html>
-
-
-
-
-
-

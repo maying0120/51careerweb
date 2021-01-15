@@ -91,7 +91,7 @@
   </header>
   <!-- End Header -->
 
-  <div id="body" style="background-image: url({{ asset('user/img/51profilebackground.jpg') }}); background-position: center bottom;">
+  <div id="body" style="background-image: url({{ asset('user/img/51profilebackground.jpg') }}); background-position: center bottom; background-repeat: repeat-y;">
     <div class="container">
       <div class="row">
         <div class="col-2" style="text-align: center;">

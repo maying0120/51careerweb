@@ -89,4 +89,5 @@ class UserController extends Controller
     $user = user::find($id);
     $user->recommend_job = $link;
     $user->save();
+    $user->notify(new JobsRecommend($link));
 }

@@ -38,8 +38,15 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 			data: filter,
 
 			success: function (data) {
-				dataset.jobs = data.jobs;
-				dataset.jobdetail = dataset.jobs[0]
+				if (data.jobs.length == 0) {
+                    dataset.jobs = []
+                    dataset.jobdetail = {id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''}
+
+                } else {
+                    dataset.jobs = data.jobs;
+                    dataset.jobdetail = dataset.jobs[0]
+                }
+
 			}
 		});
 	}

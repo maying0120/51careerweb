@@ -78,8 +78,8 @@ class JobController extends Controller
       }
 
 
-      // dump($jobs->get());
-      return response()->json(array('jobs'=> $jobs->get()), 200);
+      $jobs = $jobs->orderByDesc('updated_at');
+      return response()->json(array('jobs'=> $jobs->get() ), 200);
    }
 
 

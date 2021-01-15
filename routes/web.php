@@ -117,7 +117,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::get('admin/user/allrec', 'UserController@recommendall')->name("admin_recommendall");
   Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
-  Route::resource('admin/user', 'UserController');
+  Route::resource('/admin/user', 'UserController');
   // Application
   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");

@@ -678,6 +678,140 @@
               </div>
             </div>
 
+            <div id="expect">
+              <div class="card-header bg-transparent border-info d-flex justify-content-between" >
+                <span class="title-font" style="font-size: 19px">Job Preferences</span>
+                <i class="clickable resume-icon far fa-edit expect-toggle"></i>
+              </div>
+              <div class="card-body">
+                <form id="expect-form" method="POST" action="profile/expect">
+                  {{ csrf_field() }}
+                  <table>
+                    <tbody id="expect-new-add-city">
+                      <tr>
+                        <td>
+                          <select class="form-control" class="profile_select_287 profile_select_normal" name="type" required>
+                            @if ($profile->expected_type)
+                            <option value="{{ $profile->expected_type }}" selected>{{ $profile->expected_type }}</option>
+                            @else
+                            <option value="" selected>Job Type</option>
+                            @endif
+                            @if ($profile->expected_type != "intern")
+                            <option value="intern">Intern</option>
+                            @endif
+                            @if ($profile->expected_type != "part-time")
+                            <option value="part-time">Part time</option>
+                            @endif
+                            @if ($profile->expected_type != "full-time")
+                            <option value="full-time">Full time</option>
+                            @endif
+                            @if ($profile->expected_type != "all")
+                            <option value="all">Any type</option>
+                            @endif
+                          </select>
+                        </td>
+                        <td>
+                          <select class="form-control" class="profile_select_287 profile_select_normal" name="salary" required>
+                            @if ($profile->expected_salary)
+                            <option value="{{ $profile->expected_salary }}" selected>{{ $profile->expected_salary }}</option>
+                            @else
+                            <option value="" selected>Salary</option>
+                            @endif
+                            @if ($profile->expected_salary != "below-60k")
+                            <option value="below-60k">Below 60k</option>
+                            @endif
+                            @if ($profile->expected_salary != "60k-to-100k")
+                            <option value="60k-to-100k">60k to 100k</option>
+                            @endif
+                            @if ($profile->expected_salary != "100k-to-150k")
+                            <option value="100k-to-150k">100k to 150k</option>
+                            @endif
+                            @if ($profile->expected_salary != "above-150k")
+                            <option value="above-150k">Above 150k</option>
+                            @endif
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="text" name="title" class="form-control" placeholder="Title" @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
+                        </td>
+                        <td>
+                        </td>
+                      </tr>
+
+                      @if (!$profile->expected_cities)
+                      <tr>
+                        <td>
+                          <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
+                            <option id = "selecountry" selected = "selected" ></option>
+                            <option v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id></option>
+                          </select>
+                        </td>
+                        <td>
+                          <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
+                            <option id = "selestate"  selected = "selected" ></option>
+                            <option v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal" id="cityId">
+                            <option id = "selecity"  selected="selected" ></option>
+                            <option v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
+                          </select>
+                        </td>
+                        <td>
+                          <a id="expect-new-add">Add another city</a>
+                        </td>
+                      </tr>
+                      @else
+                      @foreach ($profile->expected_cities as $city)
+                      <tr>
+                        <td>
+                          <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
+                            <option id = "selecountry" selected="selected" value="{{ $profile->expected_countries[$loop->index] }}">{{ $profile->expected_countries[$loop->index] }}</option>
+                            <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>{{ $profile->expected_countries[$loop->index] }}</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
+                            <option id = "selestate"  selected>{{ $profile->expected_states[$loop->index] }}</option>
+                            <option  v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal"  id="cityId">
+                            <option id = "selecity"  selected>{{ $city }}</option>
+                            <option  v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
+                          </select>
+                        </td>
+                        <td>
+                          @if ($loop->last) <a id="expect-new-add">Add another city</a> @endif
+                        </td>
+                      </tr>
+                      @endforeach
+                      @endif
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="2">
+                          <div class="button-row">
+                            <input class="btn btn-info" type="submit" value="Save">
+                            <a class="hidden project-toggle btn btn-outline-secondary">Cancel</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <input type="hidden" id="expect-city-num" value="1"/>
+                    </tfoot>
+                  </table>
+                </form><!--end #expectForm-->
+
+              </div>
+            </div>
           </div>
 
           <!-- Right Panel -->

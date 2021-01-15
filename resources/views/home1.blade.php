@@ -458,7 +458,7 @@ font-family:'Lora';
 
 
 
-        <a class="ready-btn right-btn page-scroll" href="/ourstory" style="background-color:white; color:black; border-radius:0px; float: right; " >Learn More</a>
+        <a class="ready-btn right-btn page-scroll" href="/ouroffer" style="background-color:white; color:black; border-radius:0px; float: right; " >Learn More</a>
 
 
 </div>

@@ -70,6 +70,16 @@ class HomeController extends Controller
        return view('jobreq');
      }
 
+     public function ourvideo()
+     {
+        return view('ourvideo');
+     }
 
+
+
+     public function ouroffer()
+     {
+        return view('ouroffer');
+     }
 
 }

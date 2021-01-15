@@ -43,7 +43,10 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
         Route::get('/joinus', 'HomeController@joinus');
         //our service
         Route::get('/ourservice', 'HomeController@ourservice');
-
+        // our video
+         Route::get('/ourvideo', 'HomeController@ourvideo');
+        // our offer
+         Route::get('/ouroffer', 'HomeController@ouroffer');
   Route::get('/jobreq', 'HomeController@jobreq');
    // Video
    Route::get('videos/{vcategory}','VideoController@searchbycat');

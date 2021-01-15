@@ -8,7 +8,7 @@
   <style>
   #body {
     line-height: 1.6;
-    margin-top: 100px;
+    padding-top: 100px;
   }
   #avatar {
     border-radius: 50%;
@@ -91,7 +91,7 @@
   </header>
   <!-- End Header -->
 
-  <div id="body">
+  <div id="body" style="background-image: url({{ asset('user/img/51profilebackground.jpg') }}); background-position: center bottom;">
     <div class="container">
       <div class="row">
         <div class="col-2" style="text-align: center;">
@@ -117,37 +117,39 @@
       <br>
     </div>
     <!-- Nav tabs -->
-    <div class="container">
-      <ul id="nav-tab" class="nav nav-tabs" role="tablist">
-        <li class="nav-item" style="margin-left: rem">
-          <a class="nav-link {{($tab != 'account' && $tab != 'notification' && $tab != 'application' && $tab != 'job') ? 'active' : '' }}" data-toggle="tab" href="#profile">
-            Profile
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{($tab == 'application') ? 'active' : '' }}" data-toggle="tab" href="#application">
-            Application
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{($tab == 'job') ? 'active' : '' }}" data-toggle="tab" href="#job">
-            Job
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{($tab == 'notification') ? 'active' : '' }}" data-toggle="tab" href="#notification">
-            Notification
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{($tab == 'account') ? 'active' : '' }}" data-toggle="tab" href="#account">
-            Account
-          </a>
-        </li>
-      </ul>
+    <div class="bg-white" style="width: 100%">
+      <div class="container">
+        <ul id="nav-tab" class="nav nav-tabs" role="tablist">
+          <li class="nav-item" style="margin-left: rem">
+            <a class="nav-link {{($tab != 'account' && $tab != 'notification' && $tab != 'application' && $tab != 'job') ? 'active' : '' }}" data-toggle="tab" href="#profile">
+              Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{($tab == 'application') ? 'active' : '' }}" data-toggle="tab" href="#application">
+              Application
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{($tab == 'job') ? 'active' : '' }}" data-toggle="tab" href="#job">
+              Job
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{($tab == 'notification') ? 'active' : '' }}" data-toggle="tab" href="#notification">
+              Notification
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{($tab == 'account') ? 'active' : '' }}" data-toggle="tab" href="#account">
+              Account
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Tab panes -->
-    <div class="tab-content bg-light" style="height: 100%;">
+    <div class="tab-content bg-white" style="height: 100%;">
       <div id="profile" class="container tab-pane {{($tab != 'account' && $tab != 'notification' && $tab != 'application') ? 'active' : ''}}">
         <br>
         <div class="row col-12">

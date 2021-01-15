@@ -19,10 +19,10 @@
     width: 540px;
     height: 100px;
     overflow: visible;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
   .welcome-text {
-    color: #666;
+    color: #3078be;
   }
   .login-box-msg {
     text-align: center;
@@ -54,7 +54,7 @@
         <div class="login-box centered">
           <div class="card-body login-card-body">
             <div class="welcome">
-              <h1 class="welcome-text title-font">Welcome to your professional community</h1>
+              <h1 class="welcome-text title-font" style="line-height: 1.3">Welcome to your professional community</h1>
             </div>
             <div class="panel-body">
               <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -98,7 +98,7 @@
                 <div style="margin-top: 10px">
                   <button type="submit" class="btn btn-sm btn-block btn-outline-primary" style="border-radius: 20px;">Log in</button>
                   <hr>
-                  <a class="btn btn-sm btn-block btn-outline-info" href="{{route('register') }}" style="border-radius: 20px;">Sign up now</a>
+                  <a class="btn btn-sm btn-block btn-outline-secondary" href="{{route('register') }}" style="border-radius: 20px;">Sign up now</a>
                 </div>
               </form>
             </div>

@@ -722,7 +722,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 <div style="padding-top:20px; ">
 
-                   <input type="search" name="search" placeholder="Search..." id="default-search">
+                   <input type="search" name="search" placeholder="search job title" id="default-search">
                     <button class="button" type="button" onclick="feedfilter()">
                       <i class="fa fa-search"></i>
                     </button>

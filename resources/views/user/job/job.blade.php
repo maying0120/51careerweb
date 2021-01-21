@@ -803,11 +803,12 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
             <h11> Industry: ${jobdetail.industry}</h11>
             </br>
 
-            <h11>Location: ${jobdetail.city}  ${jobdetail.state}</h11>
+			<h11>Location: ${jobdetail.city}  ${jobdetail.state}</h11>
+			
 
             <div>
                 <hr noshade color="#F2F3F4">
-                <h4 style="display:inline;"> Job: </h4>
+                <h4 style="display:inline;"> Level: </h4>
                 <h11>${jobdetail.exp_level}</h11>   &nbsp;
                 <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
                     company size: </h4>
@@ -816,7 +817,17 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
                 <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
                     Employment Type: </h4>
 
-                <h11> ${jobdetail.job_type}</h11>
+				<h11> ${jobdetail.job_type}</h11>
+				
+				<br>
+				<h4 style="display:inline;">  Deadline: </h4>
+
+				<h11> ${jobdetail.expire_time}</h11>
+				
+				<h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
+                    Visa: </h4>
+
+				<h11> ${jobdetail.visa_status}</h11>
 
 
 

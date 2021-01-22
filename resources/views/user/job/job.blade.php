@@ -792,7 +792,9 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <tr>
 							@if (auth()->user()->status != "0")
-							<td><button class="blueb" data-toggle="modal" data-target="#myModal" v-on:click="setjobid(jobdetail.id)">Apply Now </button></td>
+							<td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-if="jobdetail.applied==false" v-on:click="setjobid(jobdetail.id)">Apply Now </button>
+								<button class="btn btn-danger" data-toggle="modal" data-target="#myModal" v-else v-on:click="setjobid(jobdetail.id)" disabled>Applied </button>
+							</td>
 							@endif
 							<td><button class="blueb1">  <i class="fa fa-heart-o" style="z-index: 999;"></i> </button></td>
             </tr>

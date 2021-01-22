@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Model\job\Job;
 use Illuminate\Support\Facades\DB;
 use App\Model\user\profile;
+use Illuminate\Support\Facades\Auth;
+use App\Model\application\Application;
+
+
 
 class JobController extends Controller
 {
@@ -78,8 +82,25 @@ class JobController extends Controller
       }
 
 
-      $jobs = $jobs->orderByDesc('updated_at');
-      return response()->json(array('jobs'=> $jobs->get() ), 200);
+      $jobs = $jobs->orderByDesc('updated_at')->get();
+
+      $userid =Auth::user()->id;
+      
+      
+
+      for ($i = 0; $i < count($jobs); $i++) {
+         if (Application::where([['job_id',$jobs[$i]->id],['user_id',$userid]])->exists()) {
+            $jobs[$i]->applied = true;
+         } else {
+            $jobs[$i]->applied = false;
+         }
+      }
+
+
+ 
+
+
+      return response()->json(array('jobs'=> $jobs ), 200);
    }
 
 

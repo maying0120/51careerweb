@@ -685,7 +685,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
-<div style=" float: left; ">
+<div style=" float: left; " >
 
 
 	<select class="my-select" onchange="feedfilter()" id="default-selects">
@@ -743,8 +743,11 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
           <li class="nav-divider" ></li>
 
 
-		<div v-for="(job, index) in jobs">
-			<li mid="tab2" funurl="html.html" ><a href="#"  v-on:click="display">
+		<div >
+
+			<li mid="tab2" funurl="html.html" v-for="(job, index) in jobs" >
+
+			<a href="#"  v-on:click="display">
 
 				<h3 v-bind:id=index>
 				${ job.position }</h3>
@@ -756,10 +759,12 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 				Job id: ${ job.id }</h11>
 
 
-			</a></li>
+			</a>
+			</li>
 
 
 		</div>
+
 
 
         </ul>
@@ -768,24 +773,16 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
     <div class="col-md-8" id="mainFrameTabs" style="padding : 0px;">
 
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
+      <ul class="nav nav-tabs" role="tablist" >
         <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">Job Details </a></li>
       </ul>
 
-      <!-- Tab panes
-      <div class="tab-content">
-        <div class="tab-pane active" id="bTabs_navTabsMainPage">
-          <div class="page-header">
-            <h2 style="font-size: 31.5px;text-align: center;font-weight: normal;">Welcome to use</h2>
-          </div>
-          <div style="text-align: center;font-size: 20px;line-height: 20px;"> Welcome to use bTabs plugin! </div>
-        </div>
-      </div> -->
 
 
+    <div class="col-md-11" id="mainFrameTabs" style="padding : 16px; margin-top:-50px;">
         <div class="page-header" style="display:block" id="divmain">
 
-    		<span style="font-size: 30px; font-weight: bold;" >
+    		<span style="font-size: 30px; font-weight: bold;"   >
 
 			${jobdetail.position}
 			</span >
@@ -807,10 +804,10 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
             <div>
                 <hr noshade color="#F2F3F4">
-                <h4 style="display:inline;"> Job: </h4>
+                <h4 style="display:inline;"> Exp Level: </h4>
                 <h11>${jobdetail.exp_level}</h11>   &nbsp;
                 <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
-                    company size: </h4>
+                    Company Size: </h4>
 
                 <h11> ${jobdetail.company_size}</h11>  &nbsp;
                 <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
@@ -832,6 +829,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
         </div>
 
+</div>
 
 
 
@@ -847,7 +845,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 		   <!-- 模态框主体 -->
-<div class="zhezhao" id='zhezhao'>
+<div class="zhezhao" id='zhezhao' style="height:20px;">
 	<div class="tankuang" >
 		<div id="header">
 		   <div class="modal-body">
@@ -863,7 +861,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 								<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value=""
 									   >
 
-								<h5> 1: Upload your Resume</h5>
+								<h5>* 1: Upload your Resume</h5>
 
 								<div class="col-md-12">
 
@@ -878,9 +876,9 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 									<div class="input-group">
 
+                                            <p>accept .pdf, .doc, .docx </p>
 										<div class="custom-file">
-											<label> <input name="resume" id="resume" type="file"
-														   accept=".pdf, .doc, .docx"   /> accept .pdf, .doc, .docx </label>
+											<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
 										</div>
 
 									</div>
@@ -893,9 +891,10 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 								<div class="col-md-12">
 									<div class="input-group">
+									 <p>accept .pdf, .doc, .docx </p>
 										<div class="custom-file">
 											<label> <input name="coverletter" id="coverletter" type="file"
-														   accept=".pdf, .doc, .docx"/>accept .pdf, .doc, .docx </label>
+														   accept=".pdf, .doc, .docx"/> </label>
 										</div>
 
 									</div>
@@ -906,9 +905,10 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 								<div class="col-md-12">
 									<div class="input-group">
+									 <p>accept .pdf, .doc, .docx </p>
 										<div class="custom-file">
 											<label> <input name="transcript" id="transcript" type="file"
-														   accept=".pdf, .doc, .docx"/>accept .pdf, .doc, .docx </label>
+														   accept=".pdf, .doc, .docx"/> </label>
 										</div>
 
 									</div>

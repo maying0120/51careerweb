@@ -116,7 +116,7 @@
                   <!-- search option start -->
                   <form action="/post/search" method="get">
                     <div class="search-option">
-                      <input type="search" name="search" placeholder="Search...">
+                      <input type="search" name="search" placeholder="search post title...">
                       <button class="button" type="submit">
                         <i class="fa fa-search"></i>
                       </button>
@@ -233,7 +233,7 @@
 
 
 
-
+{{--
                 <div class="single-blog-page">
                               <div class="left-blog">
                                 <h4>Categories</h4>
@@ -253,7 +253,7 @@
                                                       </li>
                                 </ul>
                               </div>
-                            </div>
+                            </div>--}}
 
 
 
@@ -276,13 +276,7 @@
                       </a>
                     </div>
                     <div class="blog-meta">
-                      <span class="comments-type">
-                        <i class="fa fa-comment-o"></i>
-                        <a href="#">11 comments</a>
 
-
-
-                      </span>
                       <span class="date-type">
                         <i class="fa fa-calendar"></i>{{$post->created_at }}
                       </span>
@@ -339,16 +333,16 @@
                   <div class="footer-icons">
                     <ul>
                       <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="fa fa-google"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
                       </li>
                     </ul>
                   </div>

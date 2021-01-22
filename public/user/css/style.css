@@ -1073,7 +1073,7 @@ preview-2
 }
 
 .team1 .team_member{
-  background: #FDFDDF;
+  background: #FFF;
   margin: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -2881,11 +2881,11 @@ ul.team-socil-w3pvts li span:hover {
 }
 
 .ab-content img {
-  border-radius: 50%;
+  /*border-radius: 50%;
   -webkit-border-radius: 50%;
   -o-border-radius: 50%;
   -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
+  -ms-border-radius: 50%;*/
 }
 
 .ab-content-inner {

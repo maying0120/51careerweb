@@ -14,6 +14,7 @@
   <link href="{{ asset('user/story/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->
+    <link href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ asset('user/story/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('user/story/assets/vendor/animate.css/animate.min.css') }}"  rel="stylesheet">
   <link href="{{ asset('user/story/assets/vendor/icofont/icofont.min.css') }}"  rel="stylesheet">
@@ -149,8 +150,15 @@ text-decoration:none;
               <ul>
               <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Success Stories  |</a></li>
                 <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
-                <li><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Our Story</a></li>
+                <li><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Candidates Story</a></li>
                 <li ><a href="/video" style="font-family:'Lora';font-size:26px;padding-right:30px;">Video</a></li>
+
+
+                <li ><a href="/clientstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Employer Stories</a></li>
+
+
+
+
 
               </ul>
             </nav><!-- .nav-menu -->

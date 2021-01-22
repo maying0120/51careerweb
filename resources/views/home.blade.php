@@ -18,7 +18,7 @@ font-family:'Lora';
 
           h1 { margin:150px auto 30px auto; text-align:center; color:#fff;}
 
-                .hi-slide { position: relative; width: 800px; height: 292px; margin: 10px auto 0; }
+ .hi-slide { position: relative; width: 800px; height: 292px; margin: 10px auto 0; }
 
   .hi-slide .hi-next,
   .hi-slide .hi-prev
@@ -112,7 +112,7 @@ font-family:'Lora';
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
-        <img src="{{ asset('user/img/slider/baner1.png') }}"  alt="" title="#slider-direction-1" />
+        <img src="{{ asset('user/img/slider/baner1.png') }}" alt="" title="#slider-direction-1" />
 
          <img src="{{ asset('user/img/slider/baner2.png') }}" alt=""  title="#slider-direction-2" />
 
@@ -128,7 +128,7 @@ font-family:'Lora';
               <div class="slider-content">
                 <!-- layer 1 -->
                 <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1" style="font-size:60px; color:black; margin-top:-50px;">A Leading Career</h2>
+                  <h2 class="title1" style="font-size:78px; color:black; margin-top:-50px;">A Leading Career</h2>
                   </br> </br>
                     <h2 class="title1"  style="font-size:60px; color:black">Consulting Firm</h2>
                 </div>
@@ -161,7 +161,7 @@ font-family:'Lora';
                 <!-- layer 1 -->
                 </br></br></br></br>
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1" style="font-size:60px; color:black; margin-top:-80px;">Make <span style="color:yellow">Dreams</span> Happen </h2>
+                  <h2 class="title1" style="font-size:60px; color:black; margin-top:-80px;">Make <span style="color:#F5BB2A">Dreams</span> Happen </h2>
                 </div>
                 <!-- layer 2 -->
              <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
@@ -330,73 +330,86 @@ font-family:'Lora';
                                 <div class="team_img">
                                    <i class="fa fa-calendar fa-5x  rounded-circle"></i>
                                 </div>
-                                <h3>Career Plan</h3>
+                                <h3 style="font-weight:200;">​Career</h3>
+                                <h3 style="margin-top:-20px; font-weight:bold;"> Discovery</h3>
                               <!--  <p class="role">UI developer</p> -->
-                                <p> find a teacher</p>
+                                <p>Profile Aseessment</p>
                                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                <p> find a teacher</p>
+                                <p> Career Options Exploration</p>
                                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                <p> find a teacher</p>
+                                <p> Goal Identification</p>
                                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                <p> find a teacher</p>
+                                <p> Personalized Job Serach Strategy</p>
                               </div>
 
-
+<div style="float:left;margin-top: 30px;width: 1px;height: 450px; background: darkgray;"></div>
                               <div class="team_member">
                                 <div class="team_img">
                                   <i class="fa fa-laptop fa-5x"></i>
                                 </div>
-                            <h3>Career Plan</h3>
+                            <h3>Brand Establishment</h3>
                                                      <!--  <p class="role">UI developer</p> -->
-                                                       <p> find a teacher</p>
+                                                       <p> Recruitment Timeline & Strategy</p>
                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                       <p> find a teacher</p>
+                                                       <p> Resume Makeover</p>
                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                       <p> find a teacher</p>
+                                                       <p>Cover Letter, LinkedIn Profile Upgrades</p>
                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                       <p> find a teacher</p>
+                                                       <p>
+
+                                                          Networking Techniques</p>
                                 </div>
 
                               <div class="team_member">
                                 <div class="team_img">
                                     <i class="fa fa-bell fa-5x"></i>
                                 </div>
-                             <h3>Career Plan</h3>
+                             <h3>Interview Preparation</h3>
                                                       <!--  <p class="role">UI developer</p> -->
-                                                        <p> find a teacher</p>
+                                                        <p> Referral Opportunities</p>
                                                         <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                        <p> find a teacher</p>
+                                                        <p> （Behavior & Technical）Mock Interviews</p>
                                                         <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                        <p> find a teacher</p>
+                                                        <p> Online Test Simulations</p>
                                                         <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                        <p> find a teacher</p>   </div>
+                                                        <p> ​Specific Skills Development</p>   </div>
 
 
                                               <div class="team_member">
                                                               <div class="team_img">
                                                                 <i class="fa fa-users fa-5x"></i>
                                                               </div>
-                                           <h3>Career Plan</h3>
+                                           <h3>​Offer </h3>
+
+                                             <h3 style="margin-top:-20px;"> Finalization </h3>
+
                                                                     <!--  <p class="role">UI developer</p> -->
-                                                                      <p> find a teacher</p>
+                                                                      <p>Offer Selection</p>
+
+                                                                       <p style="margin-top:-12px;">   Advice</p>
                                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                                      <p> find a teacher</p>
+
+
+                                                                      <p>Salary Negotiation </p>
+
+                                                                      <p style="margin-top:-12px;"> Tips</p>
                                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                                      <p> find a teacher</p>
-                                                                      <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                                      <p> Future Professional </p>
 
-                                                                      <p> find a teacher</p>          </div>
+
+                                                                        <p style="margin-top:-12px;">   Plans</p>
+                                                                        </div>
 
 
                             </div>
@@ -437,7 +450,7 @@ font-family:'Lora';
               <h2  style="font-size:40px; color:black;">Our Offers</h2>
             </div>
 
-    <div id="about" class="about-area area-padding" style="z-index:-1;height:520px;background-image: url('user/img/slider/blue11.PNG') ; background-size:100% 520px;">
+    <div id="about" class="about-area area-padding" style="z-index:-1;height:820px;background-image: url('user/img/slider/blue11.PNG') ; background-size:100% 820px;">
       <div class="container">
 
 
@@ -446,7 +459,7 @@ font-family:'Lora';
     		  <div class="hi-prev "></div>
     			<div class="hi-next "></div>
     			<ul>
-    				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
+    				<li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
     				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
     				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
     				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
@@ -1225,7 +1238,7 @@ font-family:'Lora';
 
             </div>
 
-            <img src="{{ asset('user/img/slider/part.png') }}" alt="" style="width:100%">
+            <img src="{{ asset('user/img/slider/com1.png') }}" alt="" style="width:100%">
      </div>
 
 

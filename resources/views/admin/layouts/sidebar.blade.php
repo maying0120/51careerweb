@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="/admin/home" class="brand-link" style="padding-left: 25px;">
       <i class="nav-icon fas fa-tachometer-alt"></i>
-      <span class="brand-text font-weight-light" style="margin-left: 3px;">管理后台</span>
+      <span class="brand-text font-weight-light" style="margin-left: 3px;">51 Careers</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar" style="height: 100%;">
@@ -30,19 +30,19 @@
           <li class="nav-item has-treeview menu-open">
             <a href="#user" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>用户</p>
+              <p>Users</p>
             </a>
             <ul>
               <li class="nav-item">
                 <a href="{{ route('user.index') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>注册信息</p>
+                  <p>Basic registration Info</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/admin/profile/0" class="nav-link">
                   <i class="far"></i>
-                  <p>求职信息</p>
+                  <p>User Profile Info</p>
                 </a>
               </li>
             </ul>
@@ -55,46 +55,49 @@
           <li class="nav-item has-treeview menu-open">
             <a href="#job" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>求职</p>
+              <p>Jobs</p>
             </a>
             <ul>
               <li class="nav-item">
                 <a href="{{ route('job_create') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>发布职位</p>
+                  <p>Post Jobs</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('job_view') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>管理职位</p>
+                  <p>Job Management</p>
                 </a>
               </li>
+
+                  <li class="nav-item">
+                              <a href="{{ route('application_view') }}" class="nav-link">
+                                <i class="far"></i>
+                                <p>Application Management</p>
+                              </a>
+                            </li>
+
               <li class="nav-item">
                 <a href="{{ route('skill_view') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>管理技能</p>
+                  <p>Skill Management</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('industry_view') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>管理行业</p>
+                  <p>Industry Management</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="{{ route('major_view') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>管理专业</p>
+                  <p>Major Management</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ route('application_view') }}" class="nav-link">
-                  <i class="far"></i>
-                  <p>管理申请</p>
-                </a>
-              </li>
+
             </ul>
           </li>
         </ul>
@@ -105,33 +108,69 @@
           <li class="nav-item has-treeview menu-open">
             <a href="#post" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>文章</p>
+              <p>Posts</p>
             </a>
             <ul>
+
+                 <li class="nav-item">
+                            <a href="{{ route('post.create') }}" class="nav-link">
+                              <i class="far"></i>
+                              <p>Post Articles</p>
+                            </a>
+                          </li>
+
               <li class="nav-item">
                 <a href="{{ route('post.index') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>发布文章</p>
+                  <p>Article Management </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('category.index') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>文章分类</p>
+                  <p>Category Management</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('tag.index') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>tag管理</p>
+                  <p>Tag Management</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+
+
+        <ul id="video" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+          with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#video" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Videos</p>
+            </a>
+            <ul>
+              <li class="nav-item">
+                <a href="{{ route('video.create') }}" class="nav-link">
+                  <i class="far"></i>
+                  <p>Post Videos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ route('video.index') }}" class="nav-link">
                   <i class="far"></i>
-                  <p>评论管理</p>
+                  <p>Video Management</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('vcategory.index') }}" class="nav-link">
+                  <i class="far"></i>
+                  <p>Category Management</p>
+                </a>
+              </li>
+
             </ul>
           </li>
         </ul>
@@ -155,42 +194,6 @@
           </li>
         </ul>
 
-        <ul id="video" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-          with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#video" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>视频</p>
-            </a>
-            <ul>
-              <li class="nav-item">
-                <a href="{{ route('video.create') }}" class="nav-link">
-                  <i class="far"></i>
-                  <p>发布视频</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('video.index') }}" class="nav-link">
-                  <i class="far"></i>
-                  <p>视频管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('vcategory.index') }}" class="nav-link">
-                  <i class="far"></i>
-                  <p>视频分类</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far"></i>
-                  <p>评论管理</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
 
       </nav><!-- /.sidebar-menu -->
     </div><!-- /.sidebar -->

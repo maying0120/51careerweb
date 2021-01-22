@@ -160,7 +160,7 @@ font-family:'Lora';
 
  <div>
 
-          <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
+          <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:80px;" />
             <div class="text-center">
 
          <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">ABOUT  &nbsp; US</h2>
@@ -184,7 +184,7 @@ font-family:'Lora';
           <div class="col-lg-12" >
   <nav class="nav-menu ">
         <ul>
-        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
+        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> OUR COMPANY &nbsp; &nbsp; |</a></li>
           <li class="active"><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
           <li><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
           <li><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
@@ -214,7 +214,7 @@ font-family:'Lora';
 
 
     <!-- ======= About Section ======= -->
-      <div id="portfolio" class="portfolio-area area-padding fix">
+      <div id="portfolio" class="portfolio-area area-padding fix" style="margin-left:25px;">
       <div class="container">
         <div class="row">
           <div class="col-md-7 col-sm-7 col-xs-12">
@@ -242,7 +242,7 @@ font-family:'Lora';
             <div class="well-middle">
               <div class="single-well">
 
-          <img src="{{ asset('user/img/about/aboutusjpg.jpg') }}" alt="" style="height:300px;">
+          <img src="{{ asset('user/img/about/aboutusjpg.jpg') }}" alt="" style="height:300px; ">
                       </div>
             </div>
           </div>
@@ -310,10 +310,10 @@ font-family:'Lora';
         						<div class="ab-info-con" style="margin:-9px;">
      <img src="{{ asset('user/img/about/growth-icon.jpg') }}" alt="" style="height:50px; margin-bottom:-20px;">
     <h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px; ">Growth</h4>
-<hr>
+<hr style="margin-top:-20px;">
 
-        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:16px;"> We’re here to discover our members’ potential, professionally and personally. We challenge our members to step out of their comfort zone, enhancing competitiveness and creating extraordinary results.
-
+        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px;"> We’re here to discover our members’ potential, professionally and personally. We challenge our members to step out of their comfort zone, enhancing competitiveness and creating extraordinary results.
+                                    &nbsp;&nbsp;&nbsp;
         							  </p>
 
         						</div>
@@ -322,15 +322,15 @@ font-family:'Lora';
         				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
         					<div class="ab-content-inner">
 
-        						<div class="ab-info-con" style="margin:-9px;">
-       <img src="{{ asset('user/img/about/result-icon.png') }}" alt="" style="height:50px; margin-bottom:-20px;">
+        						<div style="margin:-9px;">
+       <img src="{{ asset('user/img/about/resulticon.png') }}" alt="" style="height:50px; margin-bottom:-20px;">
 
         							<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px;">Results</h4>
 
 
-<hr>
+<hr style="margin-top:-20px;">
 
-        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:16px;"> We’re a solution driven and outcome-oriented consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
+        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px;"> We’re a solution driven and outcome-oriented consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
 				</p>
 
         						</div>
@@ -343,11 +343,11 @@ font-family:'Lora';
         						 <img src="{{ asset('user/img/about/people-icon.png') }}" alt=""  style="height:50px; margin-bottom:-20px;">
         						<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px;">People</h4>
 
-                        <hr>
+                        <hr style="margin-top:-20px;">
 
 
-        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:16px;">
-        							People are our strongest assets. We care about people, both our staff and members. The talent and diversity of our community built our success and will continue to shape our future. We have a passion for what we do, as such our work environment is open and collaborative.
+        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px;">
+        							People are strongest assets.  The talent and diversity of our community built our success and will continue to shape our future. We have a passion for what we do, as such our work environment is open and collaborative.
         								 </p>
 
         						</div>

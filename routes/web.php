@@ -34,6 +34,8 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
     Route::get('/aboutus', 'HomeController@aboutus');
     //contact
     Route::get('/contactus', 'HomeController@contactus');
+    // client Story
+      Route::get('/clientstory', 'HomeController@clientstory');
 
      //our story
         Route::get('/ourstory', 'HomeController@ourstory');

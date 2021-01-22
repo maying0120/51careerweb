@@ -48,6 +48,7 @@ h3
 {
 font-family:'Lora';
 color:black;
+
 }
 
 
@@ -287,7 +288,7 @@ font-size:13px;
 
       <div style="border: 0.5px solid black; width:80px; height:0;margin-left:45%;"></div>
                                  </br>
-                          <h2 style="font-size:46px;">Current  Openings</h2>
+                          <h2  style="font-family:'Lora',serif;  font-weight:700; font-size:50px; "> CURRENT  OPENINGS</h2>
 
 
 
@@ -320,9 +321,9 @@ font-size:13px;
                 <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
                   <h4>ADMINISTRATION </h4>
-                  <h3 style="color:black;">Senior Director, Human Resource & Administration </h3>
+                  <h3 style="color:black;">Marketing Intern </h3>
                   <p style="color:black;">New York, NY</p>
-                    <h3 style="color:black;">Marketing Intern</h3>
+
                     <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
                 </div>
               </div>
@@ -330,12 +331,12 @@ font-size:13px;
             <div class="col-md-4">
                            <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
-                             <h4>FIANCE </h4>
-                             <h3 style="color:black;">Controller </h3>
-                             <p style="color:black;">New York, NY</p>
-                               <h3 style="color:black;">Business Development Intern</h3>
+                             <h4>SALES </h4>
+                             <h3 style="color:black; font-size:22px;">Business Development Intern </h3>
+                             <p style="color:black; font-size:16px;">New York, NY</p>
 
-                                </br> </br>
+
+                                </br> </br> </br> </br>
                                <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
 
                            </div>

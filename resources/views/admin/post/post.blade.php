@@ -127,7 +127,7 @@
 
 
                     <div class="form-group">
-                        <label for="slug">slug</label>
+                        <label for="slug">slug(post link slug)</label>
                         <input type="text" class="form-control" id="slug" name="slug" placeholder="slug">
 
                     <div class="form-group">

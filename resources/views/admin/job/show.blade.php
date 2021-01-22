@@ -218,7 +218,7 @@
 <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-{{-- <script>
+<script>
   $(function () {
     $("#example1").DataTable({
       "responsive": true,
@@ -234,7 +234,7 @@
       "responsive": true,
     });
   });
-</script> --}}
+</script>
 
 </body>
 </html>

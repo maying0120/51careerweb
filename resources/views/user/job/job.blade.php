@@ -722,7 +722,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 <div style="padding-top:20px; ">
 
-                   <input type="search" name="search" placeholder="Search..." id="default-search">
+                   <input type="search" name="search" placeholder="search job title" id="default-search">
                     <button class="button" type="button" onclick="feedfilter()">
                       <i class="fa fa-search"></i>
                     </button>
@@ -792,7 +792,9 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <tr>
 							@if (auth()->user()->status != "0")
-							<td><button class="blueb" data-toggle="modal" data-target="#myModal" v-on:click="setjobid(jobdetail.id)">Apply Now </button></td>
+							<td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-if="jobdetail.applied==false" v-on:click="setjobid(jobdetail.id)">Apply Now </button>
+								<button class="btn btn-danger" data-toggle="modal" data-target="#myModal" v-else v-on:click="setjobid(jobdetail.id)" disabled>Applied </button>
+							</td>
 							@endif
 							<td><button class="blueb1">  <i class="fa fa-heart-o" style="z-index: 999;"></i> </button></td>
             </tr>
@@ -803,11 +805,12 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
             <h11> Industry: ${jobdetail.industry}</h11>
             </br>
 
-            <h11>Location: ${jobdetail.city}  ${jobdetail.state}</h11>
+			<h11>Location: ${jobdetail.city}  ${jobdetail.state}</h11>
+			
 
             <div>
                 <hr noshade color="#F2F3F4">
-                <h4 style="display:inline;"> Job: </h4>
+                <h4 style="display:inline;"> Level: </h4>
                 <h11>${jobdetail.exp_level}</h11>   &nbsp;
                 <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
                     company size: </h4>
@@ -816,7 +819,17 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
                 <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
                     Employment Type: </h4>
 
-                <h11> ${jobdetail.job_type}</h11>
+				<h11> ${jobdetail.job_type}</h11>
+				
+				<br>
+				<h4 style="display:inline;">  Deadline: </h4>
+
+				<h11> ${jobdetail.expire_time}</h11>
+				
+				<h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
+                    Visa: </h4>
+
+				<h11> ${jobdetail.visa_status}</h11>
 
 
 

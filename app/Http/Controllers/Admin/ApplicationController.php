@@ -200,7 +200,7 @@ class ApplicationController extends Controller
         $applied= Application::where('user_id',$application->user_id)->where('job_id',$application->job_id)->get();
         if($applied->isNotEmpty())
         {
-            Session::flash('message', "You have applied this job");
+            #Session::flash('message', "You have applied this job");
             return redirect()->route('user_job');
         };
 
@@ -213,7 +213,7 @@ class ApplicationController extends Controller
 
         #$sss = route('host').'/uploads/'.$application->resume_path;
 
-        Session::flash('message', "Application created");
+        #Session::flash('message', "Application created");
         return redirect()->route('user_job');
     }
 

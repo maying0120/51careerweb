@@ -599,7 +599,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
       </div>
       <nav class="nav-menu d-none d-lg-block" style="float:right; ">
         <ul>
-          <li ><a href="/home1">Home</a></li>
+          <li ><a href="/home">Home</a></li>
           <li><a href="/ourservice">Service</a></li>
           <li><a href="/ouroffer">Success Stories</a></li>
           <li class="active"><a href="/job">Job Board</a></li>

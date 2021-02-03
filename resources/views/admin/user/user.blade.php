@@ -88,7 +88,7 @@
                         <i class="fas fa-share"></i>
                       </a>
                      </td>
-                     <td><a href="{{ route('user.edit',$user->id) }}">
+                     <td><a href="{{ route('user.edit', $user->id) }}">
                        <i class="fas fa-pen"></i>
                      </a></td>
                      <td>

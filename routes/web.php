@@ -17,9 +17,14 @@ Route::get('/', 'user\HomeController@index')->name('host');
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin/login', 'Admin\Auth\LoginController@login');
 Route::post('admin-logout', 'Admin\Auth\LoginController@logout')->name('admin.logout');
-// Auth Custom Logout
+// Auth
 Route::post('/', 'Auth\LoginController@logout')->name('user.logout');
-
+Route::get('/register/phone', function() {
+  return view('auth/register_phone');
+});
+Route::get('/register/redirect', function() {
+  return view('auth/register_redirect');
+});
 
 
 
@@ -27,69 +32,72 @@ Route::post('/', 'Auth\LoginController@logout')->name('user.logout');
 
 // Protected against Non-Users
 Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
-   Route::get('/home', 'HomeController@index');
+  Route::get('/home', 'HomeController@index');
+  // Auth
+  Route::get('/register/redirect', function() {
+    return view('auth/register_redirect');
+  });
 
+  //about
+  Route::get('/aboutus', 'HomeController@aboutus');
+  //contact
+  Route::get('/contactus', 'HomeController@contactus');
 
-   //about
-    Route::get('/aboutus', 'HomeController@aboutus');
-    //contact
-    Route::get('/contactus', 'HomeController@contactus');
-
-     //our story
-        Route::get('/ourstory', 'HomeController@ourstory');
-        //join us
-        Route::get('/joinus', 'HomeController@joinus');
-        //our service
-        Route::get('/ourservice', 'HomeController@ourservice');
-        // our video
-         Route::get('/ourvideo', 'HomeController@ourvideo');
-        // our offer
-         Route::get('/ouroffer', 'HomeController@ouroffer');
+  //our story
+  Route::get('/ourstory', 'HomeController@ourstory');
+  //join us
+  Route::get('/joinus', 'HomeController@joinus');
+  //our service
+  Route::get('/ourservice', 'HomeController@ourservice');
+  // our video
+  Route::get('/ourvideo', 'HomeController@ourvideo');
+  // our offer
+  Route::get('/ouroffer', 'HomeController@ouroffer');
   Route::get('/jobreq', 'HomeController@jobreq');
-   // Video
-   Route::get('videos/{vcategory}','VideoController@searchbycat');
-   Route::get('video','VideoController@index')->name('video');
-   Route::get('video/search','VideoController@search');
-   //
-   Route::get('video/vcats/{vcategory}','VideoController@catsearch');
+  // Video
+  Route::get('videos/{vcategory}','VideoController@searchbycat');
+  Route::get('video','VideoController@index')->name('video');
+  Route::get('video/search','VideoController@search');
+  //
+  Route::get('video/vcats/{vcategory}','VideoController@catsearch');
   // Route::get('video/vcat/test','VideoController@vcategory');
-     Route::get('video/search','VideoController@search');
-   Route::get('video/vcat/{vcategory}','VideoController@vcategory')->name('vcategory');
+  Route::get('video/search','VideoController@search');
+  Route::get('video/vcat/{vcategory}','VideoController@vcategory')->name('vcategory');
 
-   // Post
-   Route::get('post','PostController@index');
+  // Post
+  Route::get('post','PostController@index');
 
-    Route::get('post/search','PostController@search');
-   Route::get('post/{post}','PostController@post')->name('post');
+  Route::get('post/search','PostController@search');
+  Route::get('post/{post}','PostController@post')->name('post');
 
-   Route::get('post/tag/{tag}','PostController@tag')->name('tag');
-   Route::get('post/category/{category}','PostController@category')->name('category');
-   //新增
-   Route::get('posts/{category}','PostController@searchbycat');
-    Route::get('post/cats/{category}','PostController@catsearch');
+  Route::get('post/tag/{tag}','PostController@tag')->name('tag');
+  Route::get('post/category/{category}','PostController@category')->name('category');
+  //新增
+  Route::get('posts/{category}','PostController@searchbycat');
+  Route::get('post/cats/{category}','PostController@catsearch');
 
-   // Job
-   Route::get('job/{id?}','JobController@index')->name('user_job');
-   Route::get('job/detail','JobController@detail');
-   // Profile
-   Route::get('profile/{tab?}', 'ProfileController@index')->name('profile');
-   Route::resource('education', 'EducationController');
-   Route::resource('experience', 'ExperienceController');
-   Route::resource('showcase', 'ShowcaseController');
-   Route::post('profile/profile/avatar', 'ProfileController@uploadAvatar');
-   Route::post('profile/profile/description', 'ProfileController@updateDescription');
-   Route::post('profile/profile/expect', 'ProfileController@updateExpect');
-   Route::post('profile/profile/skill', 'ProfileController@updateSkill');
-   Route::post('profile/profile/uploadResume', 'ProfileController@uploadResume')->name('upload_resume');
-   Route::post('profile/profile/downloadResume', 'ProfileController@downloadResume')->name('download_resume');
-   Route::post('profile/profile/uploadTranscript', 'ProfileController@uploadTranscript')->name('upload_transcript');
-   Route::post('profile/profile/downloadTranscript', 'ProfileController@downloadTranscript')->name('download_transcript');
-   // Notifications
-   Route::get('/unreadNotificationsMarkAsRead', function () {
-     auth()->user()->unreadNotifications->markAsRead();
-   });
-   // Appendix
-   Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
+  // Job
+  Route::get('job/{id?}','JobController@index')->name('user_job');
+  Route::get('job/detail','JobController@detail');
+  // Profile
+  Route::get('profile/{tab?}', 'ProfileController@index')->name('profile');
+  Route::resource('education', 'EducationController');
+  Route::resource('experience', 'ExperienceController');
+  Route::resource('showcase', 'ShowcaseController');
+  Route::post('profile/profile/avatar', 'ProfileController@uploadAvatar');
+  Route::post('profile/profile/description', 'ProfileController@updateDescription');
+  Route::post('profile/profile/expect', 'ProfileController@updateExpect');
+  Route::post('profile/profile/skill', 'ProfileController@updateSkill');
+  Route::post('profile/profile/uploadResume', 'ProfileController@uploadResume')->name('upload_resume');
+  Route::post('profile/profile/downloadResume', 'ProfileController@downloadResume')->name('download_resume');
+  Route::post('profile/profile/uploadTranscript', 'ProfileController@uploadTranscript')->name('upload_transcript');
+  Route::post('profile/profile/downloadTranscript', 'ProfileController@downloadTranscript')->name('download_transcript');
+  // Notifications
+  Route::get('/unreadNotificationsMarkAsRead', function () {
+    auth()->user()->unreadNotifications->markAsRead();
+  });
+  // Appendix
+  Route::get('/getmsg','JobController@ajaxtest')->name('ajax');
 });
 
 
@@ -117,7 +125,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function(
   Route::get('admin/user/allrec', 'UserController@recommendall')->name("admin_recommendall");
   Route::resource('adminprofile', 'ProfileController');
   Route::get('admin/profile/{id}', 'ProfileController@index');
-  Route::resource('admin/user', 'UserController');
+  Route::resource('/admin/user', 'UserController');
   // Application
   Route::get('/admin/application/application','ApplicationController@index')->name('application_view');
   Route::get('/admin/application/delete/{applicationid}', 'ApplicationController@delete')->name("application_delete");

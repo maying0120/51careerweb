@@ -13,8 +13,9 @@
   <link href="{{ asset('user/vendor/venobox/venobox.css') }}" rel="stylesheet">
   <link href="{{ asset('user/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Lora:300,400,500,700,900">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto:300,400,500,700,900">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <!-- JQuery Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

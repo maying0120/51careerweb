@@ -56,7 +56,7 @@ font-family:'Lora';
           </div>
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li ><a href="/home1">Home</a></li>
+              <li ><a href="/home">Home</a></li>
               <li><a href="/ourservice">Service</a></li>
               <li><a href="/ouroffer">Success Stories</a></li>
               <li><a href="/job">Job Board</a></li>

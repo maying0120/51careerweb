@@ -18,6 +18,7 @@ class CreateExperiencesTable extends Migration
         $table->integer('user');
         $table->string('project')->nullable();
         $table->string('company')->nullable();
+        $table->boolean('present')->nullable();
         $table->string('title');
         $table->date('start_date');
         $table->date('end_date');

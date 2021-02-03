@@ -4,11 +4,11 @@
   </div>
   <nav class="nav-menu d-none d-lg-block">
     <ul>
-      <li class="active"><a href="/home1">Home</a></li>
+      <li><a href="/home">Home</a></li>
       <li><a href="/ourservice">Service</a></li>
       <li><a href="/ouroffer">Success Stories</a></li>
       <li><a href="/job">Job Board</a></li>
-      <li><a href="/post">Blog</a></li>
+      <li><a href="/post">Feed</a></li>
       <li class="drop-down">
         <a href="">Our Company</a>
         <ul>
@@ -22,11 +22,11 @@
         <a href="{{ route('profile', ['tab' => 'notification']) }}">
           @if (count(auth()->user()->unreadNotifications) > 0)
           <i class="fa fa-bell" style="transform: translateY(1px);"></i>
-          <span class="badge badge-pill badge-info">
+          <span class="badge badge-pill badge-secondary">
             {{ count(auth()->user()->unreadNotifications) }}
           </span>
           @else
-          <i class="far fa-bell" style="padding: 5px;"></i>
+          <i class="far fa-bell" style="padding: 4px; transform: translateY(-2px);"></i>
           @endif
         </a>
       </li>
@@ -40,11 +40,7 @@
             <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('register') }}">Sign up</a></li>
             @elseif (Auth::guard('web')->check())
-            <li><a href="">My Reviews</a></li>
-            <li><a href="">My Subscription</a></li>
-            <li><a href="/profile/profile">My Profile</a ></li>
-           {{--  <li><a href="{{ route('/profile/notification', ['tab' => 'profile']) }}">My Profile</a></li>--}}
-
+            <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a ></li>
             <li>
               <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
               <form id="logout-form" action="{{ route('user.logout') }}" method="POST">

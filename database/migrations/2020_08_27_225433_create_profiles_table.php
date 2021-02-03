@@ -31,6 +31,7 @@ class CreateProfilesTable extends Migration
           $table->string('avatar')->nullable();
           $table->string('resume')->nullable();
           $table->string('transcript')->nullable();
+          $table->string('visa')->nullable();
 
           $table->timestamps();
       });

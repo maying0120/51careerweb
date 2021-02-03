@@ -57,7 +57,29 @@ firebase.auth().onAuthStateChanged(function(user) {
 * Initializes the app.
 */
 var initApp = function() {
-    firebase.auth().signOut();
 };
 
 window.addEventListener('load', initApp);
+
+$(document).ready(function () {
+   $('#password').add($('#password-confirm')).keyup(function (){
+     var sucs = document.getElementsByClassName('password-confirm-success');
+     console.log(sucs);
+     var fails = document.getElementsByClassName('password-confirm-fail');
+     if (document.getElementById('password').value === document.getElementById('password-confirm').value) {
+       Array.from(sucs).forEach((suc, i) => {
+         suc.style.display = 'block';
+       });
+       Array.from(fails).forEach((fail, i) => {
+         fail.style.display = 'none';
+       });
+     } else {
+       Array.from(sucs).forEach((suc, i) => {
+         suc.style.display = 'none';
+       });
+       Array.from(fails).forEach((fail, i) => {
+         fail.style.display = 'block';
+       });
+     }
+   });
+});

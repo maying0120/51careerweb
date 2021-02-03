@@ -8,13 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
-  <!-- summernote -->
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
@@ -54,13 +48,23 @@
     margin: 50px auto;
     text-align: center;
   }
+  #registration-box {
+    margin: 25px auto;
+  }
   .container-fluid{
     max-width: 33%;
     max-width: 500px;
     margin: 50px auto;
   }
-  #registration-box {
-    margin: 25px auto;
+  .password-confirm-success {
+    margin-left: 3px;
+    color: green;
+    display: none;
+  }
+  .password-confirm-fail {
+    margin-left: 3px;
+    color: red;
+    display: none;
   }
 </style>
 
@@ -78,115 +82,117 @@
 </br>
 </br>
 
-<div class="container entrance">
-  <div class="row">
-    <div class="col-4" style="display: flex;">
-      <div class="centered">
+<div class="entrance" style="width:100%;">
+  <img id="signup-background" src="{{ asset('user/img/51signup.jpg') }}" alt="">
+  <div class="centered" style="padding: 10vh;">
 
-        <!-- Phone number verification module -->
-        <!-- Show before phone is verified -->
-        <div id="phone-not-verified">
-          <div id="container">
-            <div id="main">
-              <div>
-                <div id="firebaseui-spa">
-                  <div id="firebaseui-container"></div>
-                </div>
-              </div>
+    <!-- Phone number verification module -->
+    <!-- Show before phone is verified -->
+    <div id="phone-not-verified" style="transform: scale(1.2);">
+      <div class="alert alert-info alert-dismissible fade show centered" role="alert" style="width: 20%;">
+        <strong>Sign up for free!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="container">
+        <div id="main">
+          <div id="firebaseui-spa">
+            <div id="firebaseui-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Phone verification complete -->
+
+    <!-- Show when phone verified -->
+    <div id="phone-verified" class="card centered" style="display: none; width: 50rem;">
+      <div id="registration-box" class="card-body">
+        <form  class="form-horizontal" method="POST" action="{{ route('register') }}" text-align="center">
+          {{ csrf_field() }}
+
+          <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+            <label for="phone">Phone Number</label>
+            <div>
+              <input id="phone" type="phone" class="form-control" name="phone" readonly="readonly" required>
+
+              @if ($errors->has('phone'))
+              <span class="help-block">
+                <strong>{{ $errors->first('phone') }}</strong>
+              </span>
+              @endif
             </div>
           </div>
-        </div>
-        <!-- Phone verification complete -->
 
-        <!-- Show when phone verified -->
-        <div id="phone-verified" style="display: none">
-          <div id="registration-box">
-            <form  class="form-horizontal" method="POST" action="{{ route('register') }}" text-align="center">
-              {{ csrf_field() }}
-
-              <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                <label for="phone">Phone Number</label>
-                <div>
-                  <input id="phone" type="phone" class="form-control" name="phone" readonly="readonly" required>
-
-                  @if ($errors->has('phone'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('phone') }}</strong>
-                  </span>
-                  @endif
-                </div>
-              </div>
-
-              <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                <label for="name" class=" control-label">Name</label>
-                <div>
-                  <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-                  @if ($errors->has('name'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('name') }}</strong>
-                  </span>
-                  @endif
-                </div>
-              </div>
-
-              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="email" class="control-label">E-Mail Address</label>
-                <div>
-                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-                  @if ($errors->has('email'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                  </span>
-                  @endif
-                </div>
-              </div>
-
-              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class=" control-label">Password</label>
-                <div>
-                  <input id="password" type="password" class="form-control" name="password" required>
-                  @if ($errors->has('password'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                  </span>
-                  @endif
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="password-confirm" class="control-label">Confirm Password</label>
-                <div>
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div>
-                  <button type="submit" class="btn btn-primary">
-                    注册
-                  </button>
-                  <a href={{ route('login') }} class="btn btn-primary">
-                    返回登陆
-                  </a>
-                </div>
-              </div>
-            </form>
+          <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+            <label for="name" class=" control-label">Name</label>
+            <div>
+              <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+              @if ($errors->has('name'))
+              <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+              </span>
+              @endif
+            </div>
           </div>
 
+          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label for="email" class="control-label">E-Mail Address</label>
+            <div>
+              <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+              @if ($errors->has('email'))
+              <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+              </span>
+              @endif
+            </div>
+          </div>
 
-        </div>
+          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <div class="row col-12">
+              <label for="password" class="control-label">Password</label>
+              <i class="far fa-times-circle password-confirm-fail"></i>
+              <i class="far fa-check-circle password-confirm-success"></i>
+            </div>
+            <div>
+              <input id="password" type="password" class="form-control" name="password" required>
+              @if ($errors->has('password'))
+              <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+              </span>
+              @endif
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row col-12">
+              <label for="password-confirm" class="control-label">Confirm Password</label>
+              <i class="far fa-times-circle password-confirm-fail"></i>
+              <i class="far fa-check-circle password-confirm-success"></i>
+            </div>
+            <div>
+              <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row col-12 justify-content-end">
+              <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                Submit
+              </button>
+              <a onclick="firebase.auth().signOut();" class="btn btn-secondary">
+                Cancel
+              </a>
+            </div>
+          </div>
+        </form>
       </div>
 
-    </div>
-    <div class="col-1"></div>
-    <div class="col-7">
-      <div class="entrance-right-panel">
-        <img id="entrance-pic" src="{{ asset('user/img/51loginsignup.jpg') }}"/>
-      </div>
 
     </div>
   </div>
 </div>
+
 
   <footer>
    @include('user/layouts/footer')

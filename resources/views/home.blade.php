@@ -4,8 +4,15 @@
   @include('user/layouts/head')
 
 
+  <style>
+
+  h2,h3.h4.h5,p
+  {
+    font-family:'Lora';
+  }
 
 
+  h1 { margin:150px auto 30px auto; text-align:center; color:#fff;}
 
 
   		<style>
@@ -20,67 +27,69 @@ font-family:lora,serif;
 
  .hi-slide { position: relative; width: 800px; height: 292px; margin: 10px auto 0; }
 
+
   .hi-slide .hi-next,
   .hi-slide .hi-prev
-              { position: absolute;
-                top: 50%;
-                width: 40px;
-                height: 40px;
-                margin-top: -20px;
-                  border-radius: 50px;
+  { position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 50px;
 
 
-                line-height: 40px;
-                text-align: center;
-                cursor: pointer;
-                background-color: #fff;
-                color: black;
-                transition: all 0.6s;
-                font-size: 20px;
-                  font-weight: bold;
-              }
-             .hi-slide .hi-next:hover,
-              .hi-slide .hi-prev:hover
-              {
-              opacity: 1;
-              background-color: #fff;
-              }
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+    transition: all 0.6s;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .hi-slide .hi-next:hover,
+  .hi-slide .hi-prev:hover
+  {
+    opacity: 1;
+    background-color: #fff;
+  }
 
-             .hi-slide .hi-prev { left: -60px; }
+  .hi-slide .hi-prev { left: -60px; }
 
-      .hi-slide .hi-prev::before { content: '<'; }
-      .hi-slide .hi-next { right: -60px; }
-      .hi-slide .hi-next::before { content: '>'; }
+  .hi-slide .hi-prev::before { content: '<'; }
+  .hi-slide .hi-next { right: -60px; }
+  .hi-slide .hi-next::before { content: '>'; }
 
-       .hi-slide > ul
-                    {
-                        list-style: none;
-                        position: relative;
-                        width: 754px;
-                        height: 292px;
-                        margin: 0;
-                        padding: 0;
-            }
+  .hi-slide > ul
+  {
+    list-style: none;
+    position: relative;
+    width: 754px;
+    height: 292px;
+    margin: 0;
+    padding: 0;
+  }
 
-          .hi-slide > ul > li {
-              overflow: hidden;
-              position: absolute;
-              z-index: 0;
-              left: 377px;
-              top: 146px;
-              width: 0;
-              height: 0;
-              margin: 0;
-              padding: 0;
-              border: 3px solid #fff;
-              background-color: #333;
-              cursor: pointer; }
+  .hi-slide > ul > li {
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    left: 377px;
+    top: 146px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 3px solid #fff;
+    background-color: #333;
+    cursor: pointer; }
 
-          .hi-slide > ul > li > img { width: 100%; height: 100%; background-position: center;}
+    .hi-slide > ul > li > img { width: 100%; height: 100%; background-position: center;}
 
 
 
-  		</style>
+  </style>
+
 
 
 
@@ -210,40 +219,41 @@ font-family:lora,serif;
   <main id="main">
 
     <!-- ======= About Section ======= -->
-     <div id="services" class="services-area area-padding">
+    <div id="services" class="services-area area-padding">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
 
 
-          {{--      <div class="col-md-4 col-sm-4 col-xs-4">
-                          <div class=" text-center">
-                     <h2  style="font-size:60px; text-align:left;">10,000 + </h2>
-                     </div></div>
+            {{--      <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class=" text-center">
+                <h2  style="font-size:60px; text-align:left;">10,000 + </h2>
+              </div></div>
 
-                         <div class="col-md-4 col-sm-4 col-xs-4">
-                           <div class=" text-center">
-                             <h2  style="font-size:60px; text-align:left;">2,000 +</h2>
-                                </div> </div>
-
-
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class=" text-center">
+                  <h2  style="font-size:60px; text-align:left;">2,000 +</h2>
+                </div> </div>
 
 
 
 
 
-                         <div class="col-md-4 col-sm-4 col-xs-4">
-                           <div class=" text-center">
-                              <h2  style="font-size:60px; text-align:left;">99%+ </h2>
-                                </div> </div>--}}
+
+
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <div class=" text-center">
+                    <h2  style="font-size:60px; text-align:left;">99%+ </h2>
+                  </div> </div>--}}
 
      <div class=" text-center" style="margin-top:-20px;">
 
 
               <h2 style="font-family:'lora',serif; font-size:48px;">A Reputable Career Consulting Brand</h2> </br> </br>
 
-            </div>
-          </div>
+
+                  </div>
+                </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                 <div class=" text-center" style="font-style: italic; ">
@@ -258,7 +268,7 @@ font-family:lora,serif;
                        <h2 style="font-family:Roboto,Helvetica,Arial,sans-serif; font-weight:400; font-size:36px;margin-top:-10px; ">​Offers</h2>
 
 
-                      </div> </div>
+                  </div> </div>
 
 
                <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
@@ -268,12 +278,12 @@ font-family:lora,serif;
                         <h2 style="font-family:Roboto,Helvetica,Arial,sans-serif; font-weight:400; font-size:36px; margin-top:-10px;">Praise</h2>
                       </div>
 
-                      </div>
-        </div>
+                  </div>
+                </div>
 
 
-      </div>
-    </div><!-- End About Section -->
+              </div>
+            </div><!-- End About Section -->
 
     <!-- ======= Services Section ======= -->
       <div id="about" class="about-area area-padding" style="margin-top:-60px;">

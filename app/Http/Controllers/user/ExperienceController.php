@@ -23,7 +23,10 @@ class ExperienceController extends Controller
     $user = auth()->user();
 
     $experience->user = $user->id;
-    if ($request->companyName) $experience->company = $request->companyName;
+    if ($request->companyName) {
+      $experience->company = $request->companyName;
+      if ($request->present == 'on') $experience->present = 1;
+    }
     if ($request->projectName) $experience->project = $request->projectName;
     $experience->title = $request->title;
     $experience->start_date = $request->startDate;

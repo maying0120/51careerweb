@@ -3,8 +3,7 @@
 @include('user/layouts/head')
 <style>
 #reset-box {
-  min-width: 30%;
-  max-width: 50%;
+  width: 420px;
   padding-bottom: 5px;
 }
 </style>
@@ -13,9 +12,17 @@
     @include('user/layouts/header')
   </header>
 
-  <div id="reset-box" class="card centered">
-    <h4 class="card-header">Reset Password</h4>
-    <div class="card-body">
+  <div class="container entrance" style="background-image: url({{ asset('user/img/51loginsignup.jpg') }})">
+    <div class="row">
+      <div class="col-7">
+        <div class="entrance-right-panel">
+          <img id="entrance-pic" src="{{ asset('user/img/51loginsignup.jpg') }}"/>
+        </div>
+      </div>
+      <div class="col-5" style="display: flex;">
+        <div id="reset-box" class="card centered">
+          <h4 class="card-header">Reset Password</h4>
+          <div class="card-body">
 
 
             <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
@@ -73,6 +80,11 @@
               </div>
             </form>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </div>
 

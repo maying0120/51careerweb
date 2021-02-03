@@ -15,7 +15,6 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', Helvetica;
-  font-weight: 300;
 }
 footer {
   margin-top: auto;
@@ -25,28 +24,73 @@ footer {
   position: relative;
 }
 .title-font {
-  font-family: 'Lora', Helvetica, Arial, sans-serif;
+  font-family: 'Lora', serif;
 }
+.theme-color {
+  color: #3078be;
+}
+a {
+  color: #3078be;
+}
+
 .hidden {
   display: none;
 }
 .clickable {
   cursor: pointer;
 }
+.container {
+  max-width: 1200px;
+}
+/* Tweaking Bootstrap default style */
+.border-primary {
+  border-color: #3078be !important;
+  border-top-color: #3078be;
+  border-right-color: #3078be;
+  border-bottom-color: #3078be;
+  border-left-color: #3078be;
+}
+.btn-link {
+  color: #3078be;
+}
+.btn-link:hover {
+  color: #01497C;
+}
+.btn-primary {
+  background-color: #3078be;
+  border-color: #3078be;
+}
+.btn-primary:hover {
+  background-color: #01497C;
+  border-color: #01497C;
+}
+.btn-primary:active {
+  background-color: #3078be;
+  border-color: #3078be;
+}
+.btn-outline-primary {
+  color: #3078be;
+  border-color: #3078be;
+}
+.btn-outline-primary:hover {
+  background-color: #01497C;
+  border-color: #01497C;
+}
+.btn-outline-primary:active {
+  background-color: #3078be;
+  border-color: #3078be;
+}
 /* login/signup/reset pages */
 .entrance {
-  margin-top: 100px;
-  margin-bottom: 30px;
+  margin-top: 80px;
 }
-.entrance-right-panel {
+#signup-background {
+  position: absolute;
+  height: 90vh;
   width: 100%;
-}
-#entrance-pic {
-  margin-right: 0;
-  border-radius: 50%;
   object-fit: cover;
-  height: 640px;
-  width: 640px;
+  z-index: -100;
+  opacity: 0.2;
 }
 /*--------------------------------------------------------------
 # General
@@ -136,7 +180,7 @@ a {
 }
 
 a:hover {
-  color: #3EC1D5;
+  color: #01497C;
   text-decoration: none;
 }
 
@@ -157,7 +201,7 @@ body {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #3EC1D5;
+  background: #3078be;
   color: #fff;
   padding: 6px 12px 9px 12px;
   font-size: 16px;
@@ -174,7 +218,7 @@ body {
 }
 
 .back-to-top:focus {
-  background: #3EC1D5;
+  background: #3078be;
   color: #fff;
   outline: none;
 }
@@ -290,17 +334,20 @@ div#preloader {
 --------------------------------------------------------------*/
 #header {
   font-family: 'Lora', Helvetica, Arial, sans-serif;
+  font-weight: bold;
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
-  background: rgba(240, 255, 255, 0.8);
+  background: #FFF;
+  border: 1px solid #CCC;
 }
 
 #header.header-scrolled {
-  background: rgba(240, 255, 255, 0.8);
+  background: #FFF;
   height: 60px;
   padding: 10px 0;
+  border: 1px solid #CCC;
 }
 
 #header .logo h1 {
@@ -312,18 +359,18 @@ div#preloader {
 }
 
 #header .logo h1 span {
-  color: #3ec1d5;
+  color: #3078be;
 }
 
 #header a:hover {
-  color: #3ec1d5;
+  color: #3078be;
   text-decoration: none;
 }
 
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 20px;
+  max-height: 22px;
   border-radius: 50%;
 }
 
@@ -387,7 +434,7 @@ div#preloader {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #3ec1d5;
+  color: #3078be;
   text-decoration: none;
 }
 
@@ -418,13 +465,12 @@ div#preloader {
 .nav-menu .drop-down ul a {
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: 500;
   text-transform: none;
-  color: #165a64;
+  color: black;
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-  color: #3ec1d5;
+  color: #3078be;
 }
 
 .nav-menu .drop-down-with-arrow > a:after {
@@ -519,7 +565,7 @@ div#preloader {
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #3ec1d5;
+  color: #3078be;
   text-decoration: none;
 }
 
@@ -638,13 +684,13 @@ div#preloader {
 
 .layer-1-3 a.ready-btn:hover {
   color: #fff;
-  background: #3EC1D5;
+  background: #3078be;
   text-decoration: none;
 }
 
 .ready-btn.right-btn {
   margin-right: 15px;
-  background: #3EC1D5;
+  background: #3078be;
 
 }
 
@@ -682,7 +728,7 @@ div#preloader {
 
 .nivo-controlNav a:hover, .nivo-controlNav a.active {
   background: #fff none repeat scroll 0 0;
-  border-color: #3EC1D5;
+  border-color: #3078be;
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -o-transform: rotate(180deg);
@@ -928,9 +974,9 @@ preview-2
 }
 
 .preview-2 .nivo-directionNav a.nivo-nextNav:hover:before, .preview-2 .nivo-directionNav a.nivo-prevNav:hover:before {
-  border-color: #3EC1D5;
+  border-color: #3078be;
   color: #fff;
-  background: #3EC1D5;
+  background: #3078be;
 }
 
 .preview-2 .nivo-directionNav a.nivo-nextNav::before {
@@ -975,7 +1021,7 @@ preview-2
 }
 
 .single-well ul li i {
-  color: #3EC1D5;
+  color: #3078be;
   padding-right: 10px;
   font-size: 12px;
 }
@@ -1005,7 +1051,7 @@ preview-2
 }
 
 .services-details:hover h4, .services-details:hover .services-icon {
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .row.second-row {
@@ -1197,7 +1243,7 @@ preview-2
 }
 
 .email-news .email_button > button:hover {
-  background: #3EC1D5;
+  background: #3078be;
   border: 1px solid #fff;
   color: #fff;
 }
@@ -1207,7 +1253,7 @@ preview-2
 }
 
 .team-left-icon ul li a:hover {
-  color: #3EC1D5;
+  color: #3078be;
   background: #fff;
   border: 2px solid #fff;
 }
@@ -1284,8 +1330,8 @@ preview-2
 
 .team-social-icon ul li a:hover {
   color: #fff;
-  border: 1px solid #3EC1D5;
-  background: #3EC1D5;
+  border: 1px solid #3078be;
+  background: #3078be;
 }
 
 .team-content {
@@ -1329,7 +1375,7 @@ preview-2
 }
 
 .work-left-text {
-  background: #3EC1D5 none repeat scroll 0 0;
+  background: #3078be none repeat scroll 0 0;
 }
 
 .work-left-text {
@@ -1410,8 +1456,8 @@ preview-2
 }
 
 .project-menu li a.active, .project-menu li a:hover {
-  border-color: #3EC1D5;
-  background: #3EC1D5;
+  border-color: #3078be;
+  background: #3078be;
   color: #fff;
   text-decoration: none;
 }
@@ -1578,7 +1624,7 @@ preview-2
   position: absolute;
   right: 50px;
   top: 12px;
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .pri_table_list button {
@@ -1615,7 +1661,7 @@ preview-2
 }
 
 .saleon {
-  background: #3EC1D5 none repeat scroll 0 0;
+  background: #3078be none repeat scroll 0 0;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -1644,8 +1690,8 @@ preview-2
 }
 
 .active > button {
-  background: #3EC1D5 none repeat scroll 0 0;
-  border: 1px solid #3EC1D5;
+  background: #3078be none repeat scroll 0 0;
+  border: 1px solid #3078be;
   color: #fff;
   transition: 0.4s;
 }
@@ -1748,7 +1794,7 @@ preview-2
 }
 
 .testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot.active span {
-  background: #3EC1D5;
+  background: #3078be;
 }
 
 .testimonial-carousel .owl-nav,
@@ -1767,7 +1813,7 @@ preview-2
 }
 
 .testimonial-carousel .owl-dot.active {
-  background-color: #3ec1d5 !important;
+  background-color: #3078be !important;
 }
 
 .testi-text.text-center > h6 {
@@ -1783,7 +1829,7 @@ preview-2
 }
 
 .guest-rev > a {
-  color: #3EC1D5;
+  color: #3078be;
   font-size: 14px;
 }
 
@@ -1791,7 +1837,7 @@ preview-2
 # Quote
 --------------------------------------------------------------*/
 .suscribe-area {
-  background: #3EC1D5 none repeat scroll 0 0;
+  background: #3078be none repeat scroll 0 0;
   padding: 30px 0;
 }
 
@@ -1813,7 +1859,7 @@ preview-2
 .sus-btn {
   background: #fff none repeat scroll 0 0;
   border: 2px solid #fff;
-  color: #3EC1D5;
+  color: #3078be;
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
@@ -1825,7 +1871,7 @@ preview-2
 }
 
 .sus-btn:hover {
-  background: #3EC1D5 none repeat scroll 0 0;
+  background: #3078be none repeat scroll 0 0;
   border: 2px solid #fff;
   color: #fff;
 }
@@ -1924,7 +1970,7 @@ preview-2
 }
 
 .php-email-form input::focus, .php-email-form textarea::focus {
-  background-color: #3ec1d5;
+  background-color: #3078be;
 }
 
 .php-email-form input {
@@ -2073,7 +2119,7 @@ preview-2
 }
 
 .single-blog .ready-btn:hover {
-  border: 1px solid #3EC1D5;
+  border: 1px solid #3078be;
   color: #fff;
 }
 
@@ -2108,7 +2154,7 @@ preview-2
 }
 
 .search-option button:hover {
-  color: #3ec1d5;
+  color: #3078be;
 }
 
 .left-blog h4 {
@@ -2166,8 +2212,8 @@ preview-2
 
 .ready-btn:hover {
   color: #fff;
-  background: #3EC1D5;
-  border: 1px solid #3EC1D5;
+  background: #3078be;
+  border: 1px solid #3078be;
   text-decoration: none;
 }
 
@@ -2185,7 +2231,7 @@ preview-2
 }
 
 .pst-content p a:hover, .left-blog ul li a:hover {
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .blog-page .single-blog {
@@ -2254,7 +2300,7 @@ preview-2
 }
 
 .entry-meta span a:hover {
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .post-information .entry-meta {
@@ -2276,7 +2322,7 @@ preview-2
 
 .entry-content blockquote {
   background: #fff none repeat scroll 0 0;
-  border-left: 5px solid #3EC1D5;
+  border-left: 5px solid #3078be;
   font-size: 17.5px;
   font-style: italic;
   margin: 0 0 20px 40px;
@@ -2284,8 +2330,8 @@ preview-2
 }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-  background-color: #3EC1D5;
-  border-color: #3EC1D5;
+  background-color: #3078be;
+  border-color: #3078be;
   color: #fff;
   cursor: default;
   z-index: 3;
@@ -2325,8 +2371,8 @@ preview-2
 }
 
 .sharing-icon a:hover {
-  color: #3EC1D5;
-  border: 1px solid #3EC1D5;
+  color: #3078be;
+  border: 1px solid #3078be;
 }
 
 .single-blog .author-avatar {
@@ -2451,7 +2497,7 @@ span.email-notes {
 
 .comment-respond input[type="submit"] {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: 1px solid #3ec1d5;
+  border: 1px solid #3078be;
   border-radius: 20px;
   box-shadow: none;
   color: #444;
@@ -2473,13 +2519,13 @@ span.email-notes {
 }
 
 .comments-content-wrap span a:hover {
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .comment-respond input[type=submit]:hover {
-  border: 1px solid #3EC1D5;
+  border: 1px solid #3078be;
   color: #fff;
-  background: #3EC1D5;
+  background: #3078be;
 }
 
 .single-blog .blog-pagination {
@@ -2492,8 +2538,8 @@ span.email-notes {
 # Footer
 --------------------------------------------------------------*/
 .footer-area {
-  padding: 20px 0;
-  background: #f9f9f9;
+  padding: 30px 0;
+  background: #EAEAEA;
 }
 
 .footer-head p {
@@ -2525,7 +2571,7 @@ span.email-notes {
 }
 
 .footer-logo h2 span {
-  color: #3ec1d5;
+  color: #3078be;
 }
 
 .footer-icons ul li {
@@ -2556,7 +2602,7 @@ span.email-notes {
 }
 
 .footer-contacts p span {
-  color: #3EC1D5;
+  color: #3078be;
   font-weight: 700;
 }
 
@@ -2570,8 +2616,8 @@ span.email-notes {
 }
 
 .popular-tag ul li a:hover, .footer-icons ul li a:hover {
-  background: #3EC1D5;
-  border: 1px solid #3EC1D5;
+  background: #3078be;
+  border: 1px solid #3078be;
   color: #fff;
 }
 
@@ -2599,7 +2645,7 @@ span.email-notes {
 
 .copyright-text a:hover {
   text-decoration: underline;
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .copyright-text a {
@@ -2612,7 +2658,7 @@ span.email-notes {
 }
 
 .copyright a, .credits a {
-  color: #3EC1D5;
+  color: #3078be;
 }
 
 .credits {

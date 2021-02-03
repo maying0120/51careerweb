@@ -98,7 +98,10 @@ class VideoController extends Controller
            ->get()
            ->toArray();
 
-       return view('user.video.video',compact('videos','archives'));
+
+     $vcategories = vcategory::all();
+
+       return view('user.video.video',compact('videos','archives','vcategories'));
 
      }
 

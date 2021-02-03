@@ -3,6 +3,7 @@
 
 <head>
  @include('user.layouts.head')
+
    <link href="{{ asset('user/vedio/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
    <link href="{{ asset('user/vedio/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
    <link href="{{ asset('user/vedio/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
@@ -12,9 +13,14 @@
    <link href="{{ asset('user/vedio/vendor/aos/aos.css') }}" rel="stylesheet">
 
    <!-- Template Main CSS File -->
+     <link href="{{ asset('user/story/assets/vendor/icofont/icofont.min.css') }}"  rel="stylesheet">
+     <link rel="stylesheet" type="text/css"href="{{ asset('user/newjob/css/font-awesome.min.css') }}" >
+     <link href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+
    <link href="{{ asset('user/vedio/css/style.css') }}" rel="stylesheet">
    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
    <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/fontawesome.css') }}">
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
@@ -126,7 +132,7 @@
                 <!-- search option start -->
                        <form action="/video/search" method="get">
                                <div class="search-option">
-                                 <input type="search" name="search" placeholder="Search...">
+                                 <input type="search" name="search" placeholder="search video title...">
                                  <button class="button" type="submit">
                                    <i class="fa fa-search"></i>
                                  </button>
@@ -382,16 +388,16 @@
                 <div class="footer-icons">
                   <ul>
                     <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
+                      <a href="#"><i class="fab fa-google"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                      <a href="#"><i class="fab fa-pinterest"></i></a>
                     </li>
                   </ul>
                 </div>

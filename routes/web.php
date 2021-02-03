@@ -33,16 +33,17 @@ Route::get('/register/redirect', function() {
 // Protected against Non-Users
 Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
   Route::get('/home', 'HomeController@index');
+
   // Auth
   Route::get('/register/redirect', function() {
     return view('auth/register_redirect');
   });
-
   //about
   Route::get('/aboutus', 'HomeController@aboutus');
   //contact
   Route::get('/contactus', 'HomeController@contactus');
-
+  // client Story
+  Route::get('/clientstory', 'HomeController@clientstory');
   //our story
   Route::get('/ourstory', 'HomeController@ourstory');
   //join us
@@ -53,6 +54,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
   Route::get('/ourvideo', 'HomeController@ourvideo');
   // our offer
   Route::get('/ouroffer', 'HomeController@ouroffer');
+
   Route::get('/jobreq', 'HomeController@jobreq');
   // Video
   Route::get('videos/{vcategory}','VideoController@searchbycat');

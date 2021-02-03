@@ -127,13 +127,13 @@
                            <input type="text" class="form-control" id="email" name="email" placeholder="email">
                      </div>
 
-                              <div class="form-group">
+                         {{--     <div class="form-group">
                                                    <label for="role">Assign Role</label>
                                                    <select name="role" id="" class="form-control">
                                                    <option value="2">Publisher</option>
                                                      <option value="1">Writer</option>
                                          </div>
-
+--}}
 
 
                          <div class="form-group">

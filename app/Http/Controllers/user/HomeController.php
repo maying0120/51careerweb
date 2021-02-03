@@ -75,4 +75,9 @@ class HomeController extends Controller
         return view('ouroffer');
      }
 
+     public function clientstory()
+      {
+         return view('clientstory');
+      }
+
 }

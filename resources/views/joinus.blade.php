@@ -48,6 +48,7 @@ h3
 {
 font-family:'Lora';
 color:black;
+
 }
 
 
@@ -55,6 +56,29 @@ h4
 {
 font-family:'Lora';
 font-size:13px;
+}
+
+
+
+.section-headline h2 {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 70px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.section-headline h2::after {
+  border: 1px solid #333;
+  top: -30px;
+  content: "";
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  margin-left:0px ;
+  width: 70%;
 }
 
 </style>
@@ -177,11 +201,10 @@ font-size:13px;
           <div class="col-lg-12" >
   <nav class="nav-menu ">
         <ul>
-        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
-          <li ><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
-          <li class="active"><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
-          <li><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
-
+         <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;">  OUR COMPANY &nbsp; &nbsp; |</a></li>
+                      <li ><a href="/aboutus" style="font-family:'Lora';font-size:18px;padding-right:15px;">About Us</a></li>
+                      <li class="active"><a href="/joinus" style="font-family:'Lora';font-size:18px;padding-right:15px;">Join Us</a></li>
+                      <li ><a href="/contactus" style="font-family:'Lora';font-size:18px;padding-right:15px;">Contact Us</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 </div>
@@ -190,8 +213,8 @@ font-size:13px;
 
   <div style="border:1px solid black;"></div>
 
+</br></br></br>
 
-</br></br></br>  </br></br></br>
       <div id="portfolio" class="portfolio-area area-padding fix">
       <div class="container">
         <div class="row">
@@ -199,17 +222,16 @@ font-size:13px;
 
 
                       <div class="well-left">
-                           <div class=" text-center">
+                           <div class=" text-left">
+
+     <div class="section-headline" >
+
+
+                          <h2 style="font-family:'Lora',serif;  font-weight:700; font-size:50px; ">JOIN US</h2>
 
 
 
-      <div style="border: 0.5px solid black; width:80px; height:0;margin-left:45%;"></div>
-                                 </br>
-                          <h2 style="font-size:46px;" >Join Us</h2>
-
-
-
-
+  </div>
                       </div>
                     </div>
 
@@ -218,59 +240,10 @@ font-size:13px;
         </div>
       </div>
     </div>
- </br></br></br> </br>
+
    <img src="{{ asset('user/img/about/jpinus.png') }}"  style="width:100%" alt="">
 
-{{--
-    <!-- ======= About Section ======= -->
-      <div id="portfolio" class="portfolio-area area-padding fix">
-      <div class="container">
-        <div class="row">
 
- <div class="col-md-1 col-sm-1 col-xs-1">
-
-</div>
-
-
-          <div class="col-md-5 col-sm-5 col-xs-5">
-
-
-                      <div class="well-left">
-                           <div class=" text-left">
-
-                                  <h3 style="font-size:20px;text-align:left; font-weight:normal;line-height:30px;">
-
-                                     51 Careers is run by a dedicated, passionate team of people who challenge you, support you, and inspire you to be extraordinary. Join our team today!
-                                     </h3>
-                                 </div>
-
-
-
-                      </div>
-                    </div>
-
- <div class="col-md-1 col-sm-1 col-xs-1">
-
-</div>
-
-                    <div class="col-md-5 col-sm-5 col-xs-5">
-
-
-                                      <div class="well-left">
-
-                 <img src="{{ asset('user/img/service/b1.png') }}" style=" height:300px; margin-top:-30px;" />
-
-                                      </div>
-                                    </div>
-
-
-
-
-          <!-- End col-->
-        </div>
-      </div>
-    </div><!-- End About Section -->
---}}
 
  </br></br></br> </br>
 
@@ -281,15 +254,15 @@ font-size:13px;
 
 
                       <div class="well-left">
-                           <div class=" text-center">
 
 
 
-      <div style="border: 0.5px solid black; width:80px; height:0;margin-left:45%;"></div>
-                                 </br>
-                          <h2 style="font-size:46px;">Current  Openings</h2>
+                           <div class=" text-left">
 
+     <div class="section-headline text-left" >
+                         <h2 style="font-family:'Lora',serif;  font-weight:700; font-size:50px; "> CURRENT  OPENINGS</h2>
 
+  </div>
 
 
                       </div>
@@ -320,9 +293,9 @@ font-size:13px;
                 <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
                   <h4>ADMINISTRATION </h4>
-                  <h3 style="color:black;">Senior Director, Human Resource & Administration </h3>
+                  <h3 style="color:black;">Marketing Intern </h3>
                   <p style="color:black;">New York, NY</p>
-                    <h3 style="color:black;">Marketing Intern</h3>
+
                     <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
                 </div>
               </div>
@@ -330,12 +303,12 @@ font-size:13px;
             <div class="col-md-4">
                            <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
-                             <h4>FIANCE </h4>
-                             <h3 style="color:black;">Controller </h3>
-                             <p style="color:black;">New York, NY</p>
-                               <h3 style="color:black;">Business Development Intern</h3>
+                             <h4>SALES </h4>
+                             <h3 style="color:black; font-size:22px;">Business Development Intern </h3>
+                             <p style="color:black; font-size:16px;">New York, NY</p>
 
-                                </br> </br>
+
+                                </br> </br> </br> </br>
                                <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
 
                            </div>

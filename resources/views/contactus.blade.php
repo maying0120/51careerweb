@@ -144,11 +144,10 @@ font-family:'Lora';
           <div class="col-lg-12" >
   <nav class="nav-menu ">
         <ul>
-        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Our Company   |</a></li>
-          <li ><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
-          <li ><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
-          <li class="active"><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
-
+       <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;">  OUR COMPANY &nbsp; &nbsp; |</a></li>
+                <li ><a href="/aboutus" style="font-family:'Lora';font-size:18px;padding-right:15px;">About Us</a></li>
+                <li><a href="/joinus" style="font-family:'Lora';font-size:18px;padding-right:15px;">Join Us</a></li>
+                <li class="active"><a href="/contactus" style="font-family:'Lora';font-size:18px;padding-right:15px;">Contact Us</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 </div>

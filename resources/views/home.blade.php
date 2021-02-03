@@ -12,7 +12,7 @@
 
 h2,h3.h4.h5,p
 {
-font-family:'Lora';
+font-family:lora,serif;
 }
 
 
@@ -237,35 +237,35 @@ font-family:'Lora';
                               <h2  style="font-size:60px; text-align:left;">99%+ </h2>
                                 </div> </div>--}}
 
-     <div class=" text-center">
+     <div class=" text-center" style="margin-top:-20px;">
 
 
-              <h2 style="font-family:'libre baskerville',serif; font-size:42px;">A Reputable Career Consulting Brand</h2> </br> </br>
+              <h2 style="font-family:'lora',serif; font-size:48px;">A Reputable Career Consulting Brand</h2> </br> </br>
 
             </div>
           </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                 <div class=" text-center" style="font-style: italic; ">
-                 <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">10,000 + </h2>
+                 <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">10,000 + </h2>
                  </br>
-             <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">​Partners</h2>
+             <h2 style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:36px; margin-top:-10px;">​Partners</h2>
            </div></div>
 
-               <div class="col-md-4 col-sm-4 col-xs-4">
+               <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                  <div class=" text-center">
-            <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px; font-style:italic;">2,000 +</h2> </br>
-                       <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">​Offers</h2>
+            <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px; font-style:italic;">2,000 +</h2> </br>
+                       <h2 style="font-family:Roboto,Helvetica,Arial,sans-serif; font-weight:400; font-size:36px;margin-top:-10px; ">​Offers</h2>
 
 
                       </div> </div>
 
 
-               <div class="col-md-4 col-sm-4 col-xs-4">
+               <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                  <div class=" text-center">
 
-                  <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">99% + </h2> </br>
-                        <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">Recommend</h2>
+                  <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">99% + </h2> </br>
+                        <h2 style="font-family:Roboto,Helvetica,Arial,sans-serif; font-weight:400; font-size:36px; margin-top:-10px;">Praise</h2>
                       </div>
 
                       </div>
@@ -276,19 +276,20 @@ font-family:'Lora';
     </div><!-- End About Section -->
 
     <!-- ======= Services Section ======= -->
-      <div id="about" class="about-area area-padding">
-      <div class="container">
+      <div id="about" class="about-area area-padding" style="margin-top:-60px;">
+      <div class="container" style="margin-top:-20px; margin-bottom:-20px;">
 
         <div class="row text-center">
           <!-- Start Left services -->
-          <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="col-md-5 col-sm-5 col-xs-12">
             <div class="about-move">
               <div class="services-details">
                 <div class="single-services">
 
                   <h2  style="font-size:60px; text-align:left;">51 Careers </h2>
                   </br> </br>
-                  <h3 style="font-size:20px;text-align:left;  font-weight:normal">  A top career consulting firm that tailors clients' needs and helps candidates chase career dreams. </h3>
+                  <h3 style=" font-family:Roboto,Helvetica,Arial,sans-serif; font-size:30px;text-align:left; line-height:36px;
+                    font-weight:normal"> We are a top career consulting firm that tailors members' needs to achieve career ambitions. </h3>
 
                  <div style="text-align:left;">
                  <a class="ready-btn right-btn page-scroll" href="/aboutus" style="background-color:#FFCC33; color:black; border-radius:0px;" >Learn More</a>
@@ -299,9 +300,11 @@ font-family:'Lora';
               <!-- end about-details -->
             </div>
           </div>
-
+             <div class="col-md-1 col-sm-1 col-xs-12">
+ </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
-                <img src="{{ asset('user/img/slider/51adv.PNG') }}" alt="">
+                {{-- <img src="{{ asset('user/img/slider/51adv.PNG') }}" alt="">--}}
+                 <img src="{{ asset('user/img/slider/homepageyuan1.png') }}" alt="" style="height:400px; width:400px;">
           </div>
 
 
@@ -318,97 +321,139 @@ font-family:'Lora';
                <div class="col-md-12 col-sm-12 col-xs-12">
 
                          <div class=" text-center">
-                           <h2  style="font-size:40px; margin-bottom:-30px;">Our Service System</h2>
+                           <h2  style="font-family:'Lora',serif;font-size:48px; margin-bottom:-30px; font-weight:700;">Our Service System </h2>
+
                          </div>
 
 
-                          <div class="wrapper">
+                          <div class="wrapper" style="margin-top:80px;">
 
                               <div class="team1">
 
-                              <div class="team_member">
+                              <div class="team_member" >
                                 <div class="team_img">
-                                   <i class="fa fa-calendar fa-5x  rounded-circle"></i>
+                                {{--    <i class="fa fa-calendar fa-5x  rounded-circle"></i>--}}
+
+                                     <img src="{{ asset('user/img/slider/1.png') }}" alt="">
                                 </div>
-                                <h3 style="font-weight:200;">​Career</h3>
-                                <h3 style="margin-top:-20px; font-weight:bold;"> Discovery</h3>
+
+                                <h3 style="font-family:roboto,sans-serif; font-weight:500; padding-top:1px;">​Career</h3>
+                                <h3 style="font-family:roboto,sans-serif;margin-top:-15px; font-weight:500;"> Discovery</h3>
                               <!--  <p class="role">UI developer</p> -->
-                                <p>Profile Aseessment</p>
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                <p style="font-family:roboto,sans-serif;">Profile Aseessment</p>
+                                <div style="margin-top:-5px">
+                                <i class="fa fa-arrow-down" aria-hidden="true" ></i> </div>
 
-                                <p> Career Options Exploration</p>
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                <p> Goal Identification</p>
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                <div style="margin-top:5px">
 
-                                <p> Personalized Job Serach Strategy</p>
+                                <p style="font-family:roboto,sans-serif;">  Career Options </p></div>
+                                   <div style="margin-top:-15px">
+                              <p  style="font-family:roboto,sans-serif;">  Exploration</p></div>
+                                    <div style="margin-top:-5px">
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                                  <div style="margin-top:5px">
+                                <p style="font-family:roboto,sans-serif;"> Goal Identification</p></div>
+                                   <div style="margin-top:-5px">
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+  <div style="margin-top:5px">
+                                <p style="font-family:roboto,sans-serif;"> Personalized Job Serach Strategy</p></div>
                               </div>
 
-<div style="float:left;margin-top: 30px;width: 1px;height: 450px; background: darkgray;"></div>
-                              <div class="team_member">
+<div style="float:left;margin-top:80px;width: 1px;height: 300px; background: darkgray;"></div>
+
+
+
+
+                                 <div class="team_member" >
                                 <div class="team_img">
-                                  <i class="fa fa-laptop fa-5x"></i>
+                                 {{--  <i class="fa fa-laptop fa-5x"></i>--}}
+
+                                    <img src="{{ asset('user/img/slider/2.png') }}" alt="">
+
                                 </div>
-                            <h3>Brand Establishment</h3>
+
+
+                              <h3 style="font-family:roboto,sans-serif; font-weight:500; ">​Brand Establishment</h3>
                                                      <!--  <p class="role">UI developer</p> -->
-                                                       <p> Recruitment Timeline & Strategy</p>
-                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                        <p style="font-family:roboto,sans-serif;">  Recruitment Timeline & Strategy</p>
 
-                                                       <p> Resume Makeover</p>
-                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                           <div style="margin-top:-5px">
+                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
 
-                                                       <p>Cover Letter, LinkedIn Profile Upgrades</p>
-                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
-                                                       <p>
+                                                           <div style="margin-top:5px">
+                                                        <p style="font-family:roboto,sans-serif;">  Resume Makeover</p></div>
+                                                           <div style="margin-top:-5px">
+                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
 
-                                                          Networking Techniques</p>
+                                                         <div style="margin-top:5px">
+                                                        <p style="font-family:roboto,sans-serif;"> Cover Letter, LinkedIn Profile Upgrades</p></div>
+                                                           <div style="margin-top:-5px">
+                                                       <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+ <div style="margin-top:5px">
+                                                         <p style="font-family:roboto,sans-serif;">
+
+                                                          Networking Techniques</p></div>
                                 </div>
+<div style="float:left;margin-top:80px;width: 1px;height: 300px; background: darkgray;"></div>
 
-                              <div class="team_member">
+
+                                   <div class="team_member" >
                                 <div class="team_img">
-                                    <i class="fa fa-bell fa-5x"></i>
+                                  {{--   <i class="fa fa-bell fa-5x"></i>--}}
+                                     <img src="{{ asset('user/img/slider/3.png') }}" alt="">
                                 </div>
-                             <h3>Interview Preparation</h3>
+                              <h3 style="font-family:roboto,sans-serif; font-weight:500; ">​Interview Preparation</h3>
                                                       <!--  <p class="role">UI developer</p> -->
-                                                        <p> Referral Opportunities</p>
-                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                     <p style="font-family:roboto,sans-serif;">  Referral Opportunities</p>
+                                                      <div style="margin-top:-5px">
+                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                                                           <div style="margin-top:5px">
 
-                                                        <p> （Behavior & Technical）Mock Interviews</p>
-                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                      <p style="font-family:roboto,sans-serif;"> （Behavior & Technical）Mock Interviews</p></div>
+                                                       <div style="margin-top:-5px">
+                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                                                         <div style="margin-top:5px">
+                                                        <p style="font-family:roboto,sans-serif;">  Online Test Simulations</p></div>
+                                                        <div style="margin-top:-5px">
+                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
 
-                                                        <p> Online Test Simulations</p>
-                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                          <div style="margin-top:5px"> <p style="font-family:roboto,sans-serif;">  ​Specific Skills Development</p>   </div>
+      </div>
+<div style="float:left;margin-top:80px;width: 1px;height: 300px; background: darkgray;"></div>
 
-                                                        <p> ​Specific Skills Development</p>   </div>
-
-
-                                              <div class="team_member">
+                                                  <div class="team_member" >
                                                               <div class="team_img">
-                                                                <i class="fa fa-users fa-5x"></i>
-                                                              </div>
-                                           <h3>​Offer </h3>
+                                                                {{-- <i class="fa fa-users fa-5x"></i>--}}
+                                                                <img src="{{ asset('user/img/slider/4.png') }}" alt="">
 
-                                             <h3 style="margin-top:-20px;"> Finalization </h3>
+                                                              </div>
+                                             <h3 style="font-family:roboto,sans-serif; font-weight:500; ">​​Offer </h3>
+
+                                           <h3 style="font-family:roboto,sans-serif; font-weight:500; margin-top:-15px;">​ Finalization </h3>
 
                                                                     <!--  <p class="role">UI developer</p> -->
-                                                                      <p>Offer Selection</p>
+                                                                      <p style="font-family:roboto,sans-serif;">  Offer Selection</p>
 
-                                                                       <p style="margin-top:-12px;">   Advice</p>
-                                                                      <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                               <p style="font-family:roboto,sans-serif;margin-top:-15px;">            Advice</p>
 
-
-
-                                                                      <p>Salary Negotiation </p>
-
-                                                                      <p style="margin-top:-12px;"> Tips</p>
-                                                                      <i class="fa fa-arrow-down" aria-hidden="true"></i>
-
-                                                                      <p> Future Professional </p>
+                                                                  <div style="margin-top:-5px">
+                                                                      <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
 
 
-                                                                        <p style="margin-top:-12px;">   Plans</p>
+                                                                         <div style="margin-top:5px">
+                                                                        <p style="font-family:roboto,sans-serif;">Salary Negotiation </p>
+
+                                                                       <p style="font-family:roboto,sans-serif;margin-top:-15px;">    Tips</p></div>
+                                                                          <div style="margin-top:5px">
+                                                                      <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+
+                                                                     <div style="margin-top:5px">
+                                                                       <p style="font-family:roboto,sans-serif;">Future Professional </p>
+
+
+                                                                         <p style="font-family:roboto,sans-serif;margin-top:-15px;">   Plans</p></div>
                                                                         </div>
 
 
@@ -418,114 +463,75 @@ font-family:'Lora';
 
 
 
+{{--
+ <div id="team" class="our-team-area area-padding" style="z-index:100;">
+          <div class="container" style="z-index:100;">
 
- <div id="team" class="our-team-area area-padding">
-          <div class="container">
 
+                <div class=" text-center" style="z-index:100;">
+                 <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100;">
 
-                <div class=" text-center">
-                       <h2  style="font-size:40px;">Our Specialized ​Industries</h2>
+                       Our Specialized ​Industries</h2>
 
               </div>
 
             </div>
 
-            <img src="{{ asset('user/img/slider/hangye.PNG') }}" alt="" style="width:100%">
+            <img src="{{ asset('user/img/slider/industryupdated.png') }}" alt="" style="width:100%; z-index:-100;">
      </div>
 
 
 
+  <img src="{{ asset('user/img/slider/industryupdated.png') }}" alt="" style="width:100%; z-index:-100;">--}}
 
+  <img src="{{ asset('user/img/slider/test11.png') }}" alt="" style="width:100%; z-index:-100;">
 
+ <img src="{{ asset('user/img/slider/tttest.png') }}" alt="" style="width:100%; z-index:-100;">
+    <div id="about" class="about-area area-padding" style="z-index:-1;height:790px;background-image: url('user/img/slider/industryupdated.png') ; background-size: 100% 790px; ">
+      <div class="container text-center" >
+              <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-25px; z-index:100;"> Our Specialized ​Industries</h2>
+      </div></div>
 
-
-
-
-
-
-
-
-
- <div class=" text-center">
-              <h2  style="font-size:40px; color:black;">Our Offers</h2>
-            </div>
-
-    <div id="about" class="about-area area-padding" style="z-index:-1;height:820px;background-image: url('user/img/slider/blue11.PNG') ; background-size:100% 820px;">
-      <div class="container">
 
 
 </br></br>
-    <div class="slide hi-slide" >
-    		  <div class="hi-prev "></div>
-    			<div class="hi-next "></div>
-    			<ul>
-    				<li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
-    				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
-    				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
-    				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
-    				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
-    				<li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
-                    <li><img src="{{ asset('user/img/slider/offer.jpg') }}"   alt=""></li>
-    			</ul>
-    		</div>
+</br>
 
 
 
-        <a class="ready-btn right-btn page-scroll" href="/ouroffer" style="background-color:white; color:black; border-radius:0px; float: right; " >Learn More</a>
+                           {{--  user/img/slider/blue11.PNG--}}
+    <div id="about" class="about-area area-padding" style=" margin-top:-70px;z-index:-1;height:790px;background-image: url('user/img/slider/offerbgupdated.jpeg') ; background-size:100% 790px;">
+      <div class="container text-center">
+      </br>
+ <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100; color:white;">
+Our Offers</h2>
+</br>
+    <div class="box">
+        <ul id="list1" >
+           <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+           <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+        </ul>
+        <ol id="list2" style="padding-top:110px;">
+        </ol>
+        <div id="btn">
+            <div class="btnLeft btn">&lt;</div>
+            <div class="btnRight btn">&gt;</div>
+        </div>
+    </div>
+
+            <a class="ready-btn right-btn page-scroll" href="/ouroffer" style="background-color:white; color:black; border-radius:0px; float: right; font-family:Roboto,Helvetica,Arial,sans-serif; " >Learn More</a>
+ </div> </div>
 
 
-</div>
-</div>
 
 
 
 
 
 
-{{--
-
- <div class="col-md-12 col-sm-12 col-xs-12">
- <div class=" text-center">
-              <h2  style="font-size:40px;">Our Offers</h2>
-            </div>
-
-
-
-<div class="thumbnail-slider">
-	<div class="thumbnail-container">
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-			 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-		<div class="item">
-		 <img src="{{ asset('user/img/slider/offer.jpg') }}"   alt="">
-		</div>
-	</div>
-
---}}
 
 
 
@@ -678,7 +684,7 @@ font-family:'Lora';
           <div class="col-md-12 col-sm-12 col-xs-12">
 
             <div class=" text-center">
-              <h2  style="font-size:40px;">Our Service System</h2>
+              <h2  style="font-size:40px; margin-top:40px;">Our Service System</h2>
             </div>
           </div>
         </div>
@@ -1211,42 +1217,29 @@ font-family:'Lora';
 
 
 
-    <!-- ======= Suscribe Section ======= -->
-<!--    <div class="suscribe-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
-            <div class="suscribe-text text-center">
-              <h3>Welcome to our eBusiness company</h3>
-              <a class="sus-btn" href="#">Get A quate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
--->
 
 
- <div id="team" class="our-team-area area-padding">
+ <div id="team" class="our-team-area area-padding"  style="margin-top:-30px;">
           <div class="container">
 
-
+</br></br>
                 <div class=" text-center">
-                       <h2  style="font-size:40px;">​Our Partners</h2>
+                       <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100;">Our Partners</h2>
 
               </div>
 
             </div>
-
-            <img src="{{ asset('user/img/slider/com1.png') }}" alt="" style="width:100%">
-     </div>
+<div style="margin-top:0px;">
+ <div class="container">
+            <img src="{{ asset('user/img/slider/comlogo.png') }}" alt="" >
+     </div> </div></div>
 
 
 
   </main><!-- End #main -->
 
    <!-- ======= Footer ======= -->
-  <footer>
+  <footer style="margin-top:-60px;">
 
  @include('user/layouts/footer')
   </footer><!-- End  Footer -->
@@ -1349,8 +1342,143 @@ window.onload=load();
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 		<script src="{{ asset('user/vendor/js/jquery.hislide.js') }}"></script>
+		   <script src="{{ asset('user/vendor/js/jquery-3.4.1.min.js') }}"></script>
 
 
+    <script>
+        $(function () {
+            const $box = $(".box"),
+                $ul = $box.children("ul"),
+                $li = $ul.children(),
+                $ol = $ul.next("ol"),
+                $btn = $ol.next("#btn"),
+                $btnLeft = $btn.children(".btnLeft"),
+                $btnRight = $btn.children(".btnRight")
+
+            // 获取图片张数和每张图片的宽度
+            let num = $li.length
+            let width = $li.eq(0).outerWidth()
+
+            // 把第0张图片追加到最后
+            $ul.append($li.eq(0).clone())
+
+            // 给ul添加宽度
+            $ul.width((num + 1) * width)
+
+            // 自动轮播
+            auto()
+
+            /*------------------------小圆点-----------------------------*/
+            //创建小圆点
+            for (let i = 0; i < num; i++) {
+                $("<li>").addClass(i === 0 ? "active" : "").appendTo($ol)
+            }
+
+            // 定义当前和上一张图片的索引
+            let index = 0
+            let lastIndex = 0
+
+            // ul的运动状态，默认为静止
+            let isMove = false
+
+            // 点击小圆点切换图片
+            // ol下的li
+            let olis = $ol.children()
+            olis.on("click", function () {
+                if (isMove) {
+                    return
+                }
+                isMove = true
+                // 该this指向当前点击的小圆点，是原生，要转为jQuery
+                // 先记录上一个索引
+                lastIndex = index
+                index = $(this).index()
+                // 移除所有li的active
+                olis.eq(lastIndex).removeClass("active")
+                olis.eq(index).addClass("active")
+
+
+                // 图片跟着小圆点一起切换
+                $ul.animate({
+                    left: -index * width
+                }, 1000, function () {
+                    isMove = false
+                })
+
+            })
+
+            /*-----------------------右箭头-----------------------*/
+            $btnRight.on("click", function () {
+                if (isMove) {
+                    return
+                }
+                isMove = true
+                // 判断是否到最后一张图片
+                lastIndex = index
+                index++
+                if (index > num - 1) {
+                    $ul.animate({
+                        left: -index * width
+                    }, 1000, function () {
+                        index = 0
+                        $ul.css("left", 0)
+                        isMove = false
+                    })
+                } else {
+                    $ul.animate({
+                        left: -index * width
+                    }, 1000, function () {
+                        isMove = false
+                    })
+                }
+                olis.eq(lastIndex).removeClass("active")
+                olis.eq(index).addClass("active")
+            })
+
+            /*----------------------------左箭头---------------------*/
+            $btnLeft.on("click", function () {
+                // 判断是否到第一张图片
+                if (isMove) {
+                    return
+                }
+                isMove = true
+                lastIndex = index
+                index--
+                // 这时的index是一个负数
+                if (index < 0) {
+                    index = num - 1
+                    $ul.css("left", -num * width).animate({
+                        left: -index * width
+                    }, 1000, function () {
+                        isMove = false
+                    })
+                } else {
+                    $ul.animate({
+                        left: -index * width
+                    }, 1000, function () {
+                        isMove = false
+                    })
+                }
+                olis.eq(lastIndex).removeClass("active")
+                olis.eq(index).addClass("active")
+            })
+
+            /*--------------------------自动轮播-----------------------*/
+            function auto() {
+                $box.timer = setInterval(() => {
+                    $btnRight.trigger("click")
+                }, 1000)
+            }
+
+            /*--------------------------移入移出事件--------------------*/
+            $box.hover(function () {
+                clearInterval($box.timer)
+                console.log(index)
+            }, function () {
+                auto()
+            })
+        })
+    </script>
 		<script>
 			$('.slide').hiSlide();
 		</script>

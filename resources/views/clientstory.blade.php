@@ -128,7 +128,7 @@ text-decoration:none;
    <!-- ======= Slider Section ======= -->
     <div>
 
-          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px;" />
+          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px; width:100%;" />
 
         </div>
 
@@ -148,11 +148,11 @@ text-decoration:none;
                 <div class="col-lg-12" >
         <nav class="nav-menu ">
               <ul>
-              <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Success Stories  |</a></li>
-                <li ><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
-                <li ><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Candidate Stories</a></li>
-                <li ><a href="/video" style="font-family:'Lora';font-size:26px;padding-right:30px;">Video</a></li>
-                <li class="active"><a href="/clientstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Employer Stories</a></li>
+              <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;"> SUCCESS STORIES  |</a></li>
+                <li ><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
+                <li ><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidate stories</a></li>
+                <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
+                <li class="active"><a href="/clientstory" style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:18px; padding-right:15px;">Employer stories</a></li>
 
 
               </ul>
@@ -195,13 +195,13 @@ text-decoration:none;
       <div class="col-lg-6 col-md-6" style="margin-top:30px;">
       <div style="float:left;">
  <img src="{{ asset('user/story/assets/img/offer/yinhao1.png') }}" style="height:20px; margin-top:-15px;"></div>
-    <p >We love 51 Careers! We have a long relationship with 51 Careers. We have first a very good relationship because it’s really been a win-win. 51 Careers invests in first understanding what our needs are and then trying to deliver on those needs. Of course, let us make all final decisions. We’ve been very happy with the results</p>
-    <p style="font-weight:bold;">  J.M  ·  Investment Banking  · New York, NY</p>
+    <p style="font-size:18px;" >We love 51 Careers! We have a long relationship with 51 Careers. We have first a very good relationship because it’s really been a win-win. 51 Careers invests in first understanding what our needs are and then trying to deliver on those needs. Of course, let us make all final decisions. We’ve been very happy with the results</p>
+    <p style="font-weight:bold; font-size:18px;">  J.M  ·  Investment Banking  · New York, NY</p>
 
   <div style="float:left;">
  <img src="{{ asset('user/story/assets/img/offer/yinhao1.png') }}" style="height:20px;margin-top:9px;"></div>
-       <p style="margin-top:30px;"> I have a lot of services that I rely on and work with. 51 Career’s been great. They worked with me right from the beginning and helped with me overcome any kind of objectives I may have had. They are just amazing to work with. So I will continue using them and I have no problem referring 51 Careers.  </p>
-        <p style="font-weight:bold;">  R.B  ·  Financial Services ·  New York, NY</p>
+       <p style="margin-top:30px; font-size:18px;"> I have a lot of services that I rely on and work with. 51 Career’s been great. They worked with me right from the beginning and helped with me overcome any kind of objectives I may have had. They are just amazing to work with. So I will continue using them and I have no problem referring 51 Careers.  </p>
+        <p style="font-weight:bold; font-size:18px;">  R.B  ·  Financial Services ·  New York, NY</p>
 </div>
 </div>
 
@@ -217,16 +217,17 @@ text-decoration:none;
 
         <div class="row">
           <div class="col-lg-6 video-box">
-             <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" class="img-fluid" alt="">
+             <img src="{{ asset('user/story/assets/img/51bicon.png') }}" class="img-fluid" alt="">
             <a href="https://youtu.be/C4g4p-fyXfQ" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
 
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Introduce</a></h4>
-              <p class="description">Our company </p>
+
+              <h4  style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:24px; color:black; font-color:black; ">Employer insights in the financial service industry and our service experience</a></h4>
+
+              <p  style="font-size:16px; padding-top:10px;"> Learn more about the employer, financial service industry, employer satisfaction and advice for young professionals.  </p>
             </div>
 
 
@@ -245,17 +246,17 @@ text-decoration:none;
 
             <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
 
-                                         <div class="icon-box">
-                                           <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                                           <h4 class="title"><a href="">Introduce</a></h4>
-                                           <p class="description">Our company </p>
+                                      <div class="icon-box">
+                                           {{--    <div class="icon"><i class="bx bx-fingerprint"></i></div>--}}
+                                           <h4  style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:24px; color:black; font-color:black; ">Employer insights in the investment banking industry and our service experience </a></h4>
+                                          <p  style="font-size:16px; padding-top:10px;"> Learn more about the employer, investment banking industry, employer satisfaction and advice for young professionals. </p>
                                          </div>
 
 
 
                                        </div>
             <div class="col-lg-6 video-box">
-               <img src="{{ asset('user/story/assets/img/service-details-3.jpg') }}" class="img-fluid" alt="">
+               <img src="{{ asset('user/story/assets/img/51bicon.png') }}" class="img-fluid" alt="">
               <a href="https://youtu.be/C4g4p-fyXfQ" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
             </div>
 

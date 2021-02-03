@@ -48,6 +48,14 @@ a1:active {
 color:#2557A7;
 text-decoration:none;
 }
+
+
+h2
+{
+
+font-family:Roboto,Helvetica,Arial,sans-serif;
+font-size:20px;
+}
 </style>
 
 
@@ -128,7 +136,7 @@ text-decoration:none;
    <!-- ======= Slider Section ======= -->
     <div>
 
-          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px;" />
+          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px; width:100%;" />
 
         </div>
 
@@ -148,13 +156,13 @@ text-decoration:none;
                 <div class="col-lg-12" >
         <nav class="nav-menu ">
               <ul>
-              <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Success Stories  |</a></li>
-                <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
-                <li><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Candidates Story</a></li>
-                <li ><a href="/video" style="font-family:'Lora';font-size:26px;padding-right:30px;">Video</a></li>
+              <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  Success Stories  |</a></li>
+                <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
+                <li><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
+                <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
 
 
-                <li ><a href="/clientstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Employer Stories</a></li>
+                <li ><a href="/clientstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Employer Stories</a></li>
 
 
 
@@ -175,8 +183,9 @@ text-decoration:none;
 
 
 
+    {{--  <div id="about" class="about-area area-padding" style=" margin-top:-70px;z-index:-1;height:790px;background-image: url('user/img/slider/offerbgupdated.jpeg') ; background-size:100% 790px;">
 
-
+--}}
     <!-- ======= Portfolio Section ======= -->
     <section class="portfolio">
       <div class="container">
@@ -189,17 +198,51 @@ text-decoration:none;
 
 
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500" style="margin-top:-20px; " >
 
-          <div class="col-lg-4 col-md-6 filter-app">
+          <div class="col-lg-5 col-md-5 filter-app">
             <div class="portfolio-item">
-              <img src="{{ asset('user/story/assets/img/offer/offtest111.jpg') }}"class="img-fluid" alt="" >
+              <img src="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}"class="img-fluid" alt="" >
               <div class="portfolio-info">
                 <h3><a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}" data-gall="portfolioGallery" class="venobox" title="App 1">off 1</a></h3>
                <a href="{{ asset('user/story/assets/img/offer/offtest1.jpg') }}" style="height:100px;" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-plus"></i></a>
                            </div>
             </div>
           </div>
+
+
+
+        <div class="col-lg-7 col-md-7 filter-app"  style="padding-top:30px; ">   <div style="background-color:#7FB3D5 ;height:100%;">
+
+        <img src="{{ asset('user/story/assets/img/offer/kpmg.png') }}" style="padding-left:20%;" alt="" >
+
+                      <div class="text-left"style="margin-top:20px; color:white;">
+
+                      <h2 > <strong>Member Background:</strong> University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+                       <h2 > <strong>Weakness:</strong> University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+            <h2 ><strong> Our Program:</strong> University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+
+ <h2 ><strong> Result: </strong>University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+
+
+                      </div>
+                    </div>
+</div>
+
+                <div class="col-lg-8 col-md-6 filter-app" style="padding-top:30px;">
+                                <div class="text-left">
+                                  <h2 > <strong>Member Background:</strong> University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+                                                      <h2 > <strong>Weakness:</strong> University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+                                           <h2 ><strong> Our Program:</strong> University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+
+                                <h2 ><strong> Result: </strong>University of Bufflao dadsjh sdjf hajksdhf akjsdhf akjsdhjf alkdsjhf alkjdshf aljdshf lajdk fhlaj </h2>
+
+
+
+                                </div>
+                              </div>
+
+
 
           <div class="col-lg-4 col-md-6 filter-web">
             <div class="portfolio-item">
@@ -211,6 +254,15 @@ text-decoration:none;
             </div>
           </div>
 
+
+                   <div class="col-lg-12 col-md-12 filter-web">
+
+                        <img src="{{ asset('user/img/slider/Homepageoffer1.png') }}" class="img-fluid" alt="">
+
+                    </div>
+
+
+{{--
           <div class="col-lg-4 col-md-6 filter-app">
             <div class="portfolio-item">
               <img src="{{ asset('user/story/assets/img/offer/off511.jpg') }}"class="img-fluid" alt="">
@@ -261,7 +313,7 @@ text-decoration:none;
             </div>
           </div>
 
-
+--}}
 
           </div>
 

@@ -131,7 +131,7 @@ text-decoration:none;
    <!-- ======= Slider Section ======= -->
     <div>
 
-          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px;" />
+          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px; width:100%;" />
 
         </div>
 
@@ -151,11 +151,13 @@ text-decoration:none;
                 <div class="col-lg-12" >
         <nav class="nav-menu ">
               <ul>
-              <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> Success Stories  |</a></li>
-                <li ><a href="/ouroffer" style="font-family:'Lora';font-size:26px;padding-right:30px;">Offer</a></li>
-                <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Client Stories</a></li>
-                <li ><a href="/video" style="font-family:'Lora';font-size:26px;padding-right:30px;">Video</a></li>
-                   <li ><a href="/clientstory" style="font-family:'Lora';font-size:26px;padding-right:30px;">Employer Stories</a></li>
+            <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  Success Stories  |</a></li>
+                <li ><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
+                <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
+                <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
+
+
+                <li ><a href="/clientstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Employer Stories</a></li>
 
               </ul>
             </nav><!-- .nav-menu -->
@@ -203,7 +205,7 @@ text-decoration:none;
   <div style="float:left;">
  <img src="{{ asset('user/story/assets/img/offer/yinhao1.png') }}" style="height:20px;margin-top:9px;"></div>
        <p style="margin-top:30px;"> 51 Careers has a premium all-in-one service package, from resume revision, mock interviews and job referral. It provides really high quality of service and instant service feedback, thereby optimizing their service system. If you are unclear about your career future and you have faith in yourself, 51 Careers is a perfect choice. </p>
-        <p style="font-weight:bold;">  Q. L · Data A  ·  New York, NY</p>
+        <p style="font-weight:bold;">  Q. L · Data Analyst  ·  New York, NY</p>
 </div>
 </div>
 

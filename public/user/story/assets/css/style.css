@@ -570,7 +570,7 @@ section1 {
   transition: all 0.3s ease-in-out;
   text-align: center;
   border: 1px solid #fff;
-  height:650px;
+  height:710px;
 }
 
 .services .icon1 {
@@ -590,6 +590,144 @@ section1 {
 
 
 
+.ready-btn.right-btn {
+  margin-right: 15px;
+  background: #3EC1D5;
+
+}
+.layer-1-3 a.ready-btn {
+  border: 1px solid #fff;
+
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 10px 20px;
+  text-align: center;
+
+  transition: all 0.4s ease 0s;
+  z-index: 222;
+}
+
+.layer-1-3 a.ready-btn:hover {
+  color: #fff;
+  background: #3EC1D5;
+  text-decoration: none;
+}
+
+.ready-btn.right-btn {
+  margin-right: 15px;
+  background: #3EC1D5;
+
+}
+
+.ready-btn.right-btn:hover {
+  background: transparent !important;
+
+}
+a.ready-btn {
+
+
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 10px 20px;
+  text-align: center;
+
+  transition: all 0.4s ease 0s;
+  z-index: 222;
+}
+
+a.ready-btn:hover {
+  color: #fff;
+  background: #3EC1D5;
+  text-decoration: none;
+}
+
+.ready-btn.right-btn {
+  margin-right: 15px;
+  background: #3EC1D5;
+
+}
+
+.ready-btn.right-btn:hover {
+  background: transparent !important;
+
+}
+a.ready-btn {
+
+
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 10px 20px;
+  text-align: center;
+
+  transition: all 0.4s ease 0s;
+  z-index: 222;
+}
+
+a.ready-btn:hover {
+  color: #fff;
+  background: #3EC1D5;
+  text-decoration: none;
+}
+
+.ready-btn.right-btn {
+  margin-right: 15px;
+  background: #3EC1D5;
+
+}
+
+.ready-btn.right-btn:hover {
+  background: transparent !important;
+
+}
+.layer-1-3 a.ready-btn {
+  border: 1px solid #fff;
+
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+  z-index: 222;
+}
+
+.layer-1-3 a.ready-btn:hover {
+  color: #fff;
+  background: #3EC1D5;
+  text-decoration: none;
+}
+
+.ready-btn.right-btn {
+  margin-right: 15px;
+  background: #3EC1D5;
+
+}
+
+.ready-btn.right-btn:hover {
+  background: transparent !important;
+
+}
+
+.ready-btn.right-btn:hover {
+  background: transparent !important;
+
+}
 
 
 
@@ -725,7 +863,7 @@ section1 {
 }
 
 .why-us .icon-box .icon i {
-  color: #68A4C4;
+  color: black;
   font-size: 32px;
 }
 
@@ -1289,6 +1427,7 @@ section1 {
 
 .portfolio .portfolio-item img {
   transition: all 0.3s ease-in-out;
+  padding-left:0%;
 }
 
 .portfolio .portfolio-item .portfolio-info {
@@ -1537,6 +1676,16 @@ section1 {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Map

@@ -133,9 +133,9 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="well-left">
-                      <div style="border: 0.5px solid gray;width:100px;height:0; margin-left:0%;"></div>
+                      <div style="border: 0.5px solid gray;width:70px;height:0; margin-left:0%;"></div>
                       </br>
-                           <div class="text-left">
+                           <div class="text-left" style="margin-top:10px;">
 
                                    <h2 style="font-family:'Lora',serif;  font-weight:700; font-size:50px; ">OUR PROGRAMS</h2>
 
@@ -148,6 +148,7 @@
         </div>
       </div>
     </div><!-- End About Section -->
+
 
 
 <section class="services" style="margin-top:-40px;">
@@ -178,13 +179,26 @@
                             <li >Personalized 1-on-1 coaching session</li>
                             <li >One session is 60 minutes</li>
                         </ul>
-</br></br></br></br>
+</br></br></br>
                 <h8 style="text-align:left;font-weight:bold;">​​Membership：</h8>
+                </br>
+
 
              </div>
+             <div style="margin-top:30px;">
+                  <a href="{{ asset('user/img/service/IMG_1826.PNG') }}"   data-gall="portfolioGallery" class=" venobox" title="App 1">Learn More -></a>
 
+  </div>
             </div>
+
+
           </div>
+
+
+
+
+
+
 
 
 
@@ -215,10 +229,11 @@
                                <li >Job Referral</li>
                                 <li >Guaranteed internship interview at large companies</li>
                            </ul>
-</br>
+
                    <h8 style="text-align:left;font-weight:bold;">​​Membership：3 months​ </h8>
 
                 </div>
+        <a href="{{ asset('user/img/service/haobao1.png') }}"  data-gall="portfolioGallery" class=" ready-btn right-btn  venobox" title="App 1">Learn More<i class="icofont-plus"></i></a>
 
                </div>
              </div>
@@ -382,7 +397,7 @@
 
 
 
-<div style="z-index:-1;height:100%;background-image: url('user/img/service/serviceadbg.png') ; height:600px; background-size:100% 100%;">>
+<div style="z-index:-1;height:100%;background-image: url('user/img/service/serviceadbg.png') ; height:100%; background-size:100% 100%;">>
 <div class="text-center">
   <h4 class="text-center" style="font-family:lora,serif; font-weight:bold; font-size:58px; color:white; margin-top:50px;">Our Strengths</h4>
 </div>
@@ -392,19 +407,19 @@
         				<div class="col-lg-4 col-sm-4 ab-content  mt-lg-0 mt-4" style="padding-right:30px;">
         					<div class="ab-content-inner" >
 
-        						<div class="ab-info-con" style="margin:-9px;">
+        						<div class="ab-info-con" >
         						<div class="text-center">
      <img src="{{ asset('user/img/service/star1.png') }}" alt="" style="height:80px; margin-left:-50px;" >
      </div>
-    <h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:40px;color:white; ">Personalized Service</h4>
+    <h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px;color:white; ">Personalized Service</h4>
  </br>
 
-        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px; color:white;">
-        							<strong style="font-size:24px;"> Identify </strong> jobs and career characteristics that align with your values, interests, skills and personality
+        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:17px; line-height:26px; color:white;">
+        							<strong style="font-size:20px;"> Identify </strong> jobs and career characteristics that align with your values, interests, skills and personality
                                     	  </p>
 
-<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px; color:white;">
-                                    <strong style="font-size:24px;">Set </strong>  clear career goals and define a path for achievement
+<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:17px; line-height:26px; color:white;">
+                                    <strong style="font-size:20px;">Set </strong>  clear career goals and define a path for achievement
         							  </p>
 
         						</div>
@@ -413,23 +428,23 @@
         		    				<div class="col-lg-4 col-sm-4 ab-content  mt-lg-0 mt-4" style="padding-right:30px;">
                         					<div class="ab-content-inner" >
 
-                        						<div class="ab-info-con" style="margin:-9px;">
+                        						<div class="ab-info-con" >
                         						<div class="text-center">
                      <img src="{{ asset('user/img/service/star1.png') }}" alt="" style="height:80px;margin-left:-50px;" >
                      </div>
 
-        						<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:40px;color:white; ">Company Resources</h4>
+        						<h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px;color:white; ">Company Resources</h4>
                                  </br>
 
-                                        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px; color:white;">
-                                        							<strong style="font-size:24px;">  Provide </strong>                     thousands of company resources to match with your job search strategies 	    </p>
+                                        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:17px; line-height:26px; color:white;">
+                                        							<strong style="font-size:20px;">  Provide </strong>                     thousands of company resources to match with your job search strategies 	    </p>
 
 
 
 
 
-                                <p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px; color:white;">
-                                                                    <strong style="font-size:24px;">Save </strong>  your time and energy on the career process
+                                <p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:17px; line-height:26px; color:white;">
+                                                                    <strong style="font-size:20px;">Save </strong>  your time and energy on the career process
                                         							  </p>
         						</div>
         					</div>
@@ -438,22 +453,23 @@
      				<div class="col-lg-4 col-sm-4 ab-content  mt-lg-0 mt-4" style="padding-right:30px;">
          					<div class="ab-content-inner" >
 
-         						<div class="ab-info-con" style="margin:-9px;">
+         						<div class="ab-info-con" >
          						<div class="text-center">
-      <img src="{{ asset('user/img/service/star1.png') }}" alt="" style="height:80px; margin-left:-50px;" >
+      <img src="{{ asset('user/img/service/iconnew.png') }}" alt="" style="height:50px; margin-left:-50px;" >
       </div>
+      </br>
 
-               						<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:40px;color:white; ">Results-Driven Service </h4>
+               						<h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif';  font-weight:bold; font-size:30px;color:white; ">Results-Driven Service </h4>
                                         </br>
 
-                                               							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px; color:white;">
-                                               							<strong style="font-size:24px;">    Develop </strong> interpersonal skills and industry specific knowledge </p>
+                                               							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:17px; line-height:26px; color:white;">
+                                               							<strong style="font-size:20px;">    Develop </strong> interpersonal skills and industry specific knowledge </p>
+
+</br>
 
 
-
-
-                                       <p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px; color:white;">
-                                                                           <strong style="font-size:24px;">Implement </strong>  an action plan to achieve your career goals
+                                       <p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:17px; line-height:26px; color:white;">
+                                                                           <strong style="font-size:20px;">Implement </strong>  an action plan to achieve your career goals
                                                							  </p>
                						</div>
                					</div>​
@@ -469,9 +485,29 @@
         		</div>
 
 
+<div style="z-index:-1; height:100% ; background-image: url('user/img/service/serviceconnect.jpg') ;  height:100% ; background-size:100% 100%; ">
+<div class="container">
+    <div class="row">
 
 
 
+<div class="col-lg-9 col-md-9 col-sm-9"><h2 class="text-left" style="font-family:'roboto-thin,sans-serif';font-weight:bold; font-size:23px; color:white; padding-top:40px;">Transformation starts here. Let us help you reach your career goals.</h4>
+
+<h2 class="text-left" style="font-family:'roboto-thin,sans-serif'font-family:lora,serif;  font-size:20px; color:white;  padding-top:-1px;">Schedule a free consultation to learn more about our programs. </h2>
+</div>
+
+
+   <div class="col-lg-3 col-md-3 col-sm-3" style="margin-top:15px; ">
+
+                 <a class="ready-btn right-btn" href="/aboutus" style="background-color:#3078BE; color:white; border-radius:0px; font-size:23px;" > Let's connect</a>
+                 </div>
+
+ </div>
+ </br>
+
+ </div></div>
+
+</div>
 
    <!-- ======= Footer ======= -->
   <footer>

@@ -184,10 +184,10 @@ font-family:'Lora';
           <div class="col-lg-12" >
   <nav class="nav-menu ">
         <ul>
-        <li> <a style="font-family:'Lora';font-size:26px;padding-right:30px;"> OUR COMPANY &nbsp; &nbsp; |</a></li>
-          <li class="active"><a href="/aboutus" style="font-family:'Lora';font-size:26px;padding-right:30px;">About Us</a></li>
-          <li><a href="/joinus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Join Us</a></li>
-          <li><a href="/contactus" style="font-family:'Lora';font-size:26px;padding-right:30px;">Contact Us</a></li>
+        <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;">  OUR COMPANY &nbsp; &nbsp; |</a></li>
+          <li class="active"><a href="/aboutus" style="font-family:'Lora';font-size:18px;padding-right:15px;">About Us</a></li>
+          <li><a href="/joinus" style="font-family:'Lora';font-size:18px;padding-right:15px;">Join Us</a></li>
+          <li><a href="/contactus" style="font-family:'Lora';font-size:18px;padding-right:15px;">Contact Us</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -225,10 +225,10 @@ font-family:'Lora';
 
                                    <h2 style="font-family:'Lora';font-size:46px; line-height:1.5em;">About Us</h2>
 
- <h4  style="font-family:'roboto-thin,sans-serif'; font-size:32px;line-height:1.5em;">We're passionate about transforming clients into professionals they want to become.</h4>
+ <h4  style="font-family:'roboto-thin,sans-serif'; font-size:28px;line-height:1.5em;">We're passionate about transforming clients into professionals they want to become.</h4>
 
 </br>
-                <p style="font-family:'roboto-thin,sans-serif';font-size:24px;line-height:1.5em;">
+                <p style="font-family:'roboto-thin,sans-serif';font-size:20px;line-height:1.5em;">
               We've been a pioneer in the career consulting industry globally since 2016. Inspired by the obstacles and challenges international students face in the United States job market, we aspired to help them transition into the American workplace and achieve their career goals. We have a global network of employers looking for qualified candidates. We combine the needs of employers and future employees to achieve the perfect fit.     </p>
 
                                  </div>
@@ -238,7 +238,7 @@ font-family:'Lora';
 
 
           <div class="col-md-5 col-sm-5 col-xs-12">
-          </br> </br>  </br> </br>  </br> </br></br> </br>  </br> </br>
+          </br> </br>  </br> </br>  </br> </br></br> </br>
             <div class="well-middle">
               <div class="single-well">
 
@@ -287,32 +287,30 @@ font-family:'Lora';
 
 
 
-     <section>
-        <section class="team bg-li py-5" id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 col-sm-7 col-xs-12">
-                      <div class="well-left">
 
 
-      <div class="section-headline text-left" >
-                  <h2 style="font-family:'Lora';font-size:46px;">Our Philosophy </h2>
-               </div>
-  </div>  </div>  </div>  </div>
 
+
+  </section>
+   <section>
    <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
-        		<div class="container py-xl-5 py-lg-3" >
+       <div class="section-headline text-left" >
+                     <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;margin-left:110px;">Our Philosophy </h2>
+                  </div>
+        		<div class="container py-xl-5 py-lg-3" style="margin-top:-30px;">
 
         			<div class="row ab-info second pt-lg-4">
         				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
         					<div class="ab-content-inner" >
 
-        						<div class="ab-info-con" style="margin:-9px;">
+        						<div class="ab-info-con" style="margin:-1px;">
      <img src="{{ asset('user/img/about/growth-icon.jpg') }}" alt="" style="height:50px; margin-bottom:-20px;">
-    <h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px; ">Growth</h4>
+    <h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">Growth</h4>
 <hr style="margin-top:-20px;">
 
-        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px;"> We’re here to discover our members’ potential, professionally and personally. We challenge our members to step out of their comfort zone, enhancing competitiveness and creating extraordinary results.
+        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;">
+
+        						We have a commitment of unlocking potential and a passion for results aligned with our members’ success. We challenge ourselves and step out of our comfort zone, creating extraordinary result.
                                     &nbsp;&nbsp;&nbsp;
         							  </p>
 
@@ -325,12 +323,12 @@ font-family:'Lora';
         						<div style="margin:-9px;">
        <img src="{{ asset('user/img/about/resulticon.png') }}" alt="" style="height:50px; margin-bottom:-20px;">
 
-        							<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px;">Results</h4>
+        							<h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">Results</h4>
 
 
 <hr style="margin-top:-20px;">
 
-        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px;"> We’re a solution driven and outcome-oriented consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
+        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;"> We’re a solution-driven and outcome-oriented career consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
 				</p>
 
         						</div>
@@ -341,12 +339,12 @@ font-family:'Lora';
 
         						<div class="ab-info-con" style="margin:-9px;">
         						 <img src="{{ asset('user/img/about/people-icon.png') }}" alt=""  style="height:50px; margin-bottom:-20px;">
-        						<h4 class="text-team-w3" style="font-family:lora,serif; font-weight:bold; font-size:32px;">People</h4>
+        						<h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">People</h4>
 
                         <hr style="margin-top:-20px;">
 
 
-        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:20px; line-height:26px;">
+        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;">
         							People are strongest assets.  The talent and diversity of our community built our success and will continue to shape our future. We have a passion for what we do, as such our work environment is open and collaborative.
         								 </p>
 
@@ -357,187 +355,9 @@ font-family:'Lora';
         		</div>
         		</div>
         	</section>
-	</section>
 
 
-      {{--
-    <!-- ======= Testimonials Section ======= -->
-    <div class="testimonials-area">
-      <div class="testi-inner area-padding">
-        <div class="testi-overly"></div>
-        <div class="container ">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <!-- Start testimonials Start -->
-              <div class="testimonial-content text-center">
-                <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
-                <!-- start testimonial carousel -->
-                <div class="owl-carousel testimonial-carousel">
-                  <div class="single-testi">
-                    <div class="testi-text">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                      </p>
-                      <h6>Boby</h6>
-                    </div>
-                  </div>
-                  <!-- End single item -->
-                  <div class="single-testi">
-                    <div class="testi-text">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                      </p>
-                      <h6>Jhon</h6>
-                    </div>
-                  </div>
-                  <!-- End single item -->
-                  <div class="single-testi">
-                    <div class="testi-text">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                      </p>
-                      <h6>Fleming</h6>
-                    </div>
-                  </div>
-                  <!-- End single item -->
-                </div>
-              </div>
-              <!-- End testimonials end -->
-            </div>
-            <!-- End Right Feature -->
-          </div>
-        </div>
-      </div>
-    </div><!-- End Testimonials Section -->
 
-    <!-- ======= Blog Section ======= -->
-    <div id="blog" class="blog-area">
-      <div class="blog-inner area-padding">
-        <div class="blog-overly"></div>
-        <div class="container ">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="section-headline text-center">
-                <h2>Latest News</h2>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Start Left Blog -->
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="single-blog">
-                <div class="single-blog-img">
-                  <a href="blog.html">
-                    <img src="{{ asset('user/img/blog/1.jpg') }}" alt="">
-                  </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="comments-type">
-                    <i class="fa fa-comment-o"></i>
-                    <a href="#">13 comments</a>
-                  </span>
-                  <span class="date-type">
-                    <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                  </span>
-                </div>
-                <div class="blog-text">
-                  <h4>
-                    <a href="blog.html">Assumenda repud eum veniam</a>
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                  </p>
-                </div>
-                <span>
-                  <a href="blog.html" class="ready-btn">Read more</a>
-                </span>
-              </div>
-              <!-- Start single blog -->
-            </div>
-            <!-- End Left Blog-->
-            <!-- Start Left Blog -->
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="single-blog">
-                <div class="single-blog-img">
-                  <a href="blog.html">
-                    <img src="{{ asset('user/img/blog/2.jpg') }}" alt="">
-                  </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="comments-type">
-                    <i class="fa fa-comment-o"></i>
-                    <a href="#">130 comments</a>
-                  </span>
-                  <span class="date-type">
-                    <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                  </span>
-                </div>
-                <div class="blog-text">
-                  <h4>
-                    <a href="blog.html">Explicabo magnam quibusdam.</a>
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                  </p>
-                </div>
-                <span>
-                  <a href="blog.html" class="ready-btn">Read more</a>
-                </span>
-              </div>
-              <!-- Start single blog -->
-            </div>
-            <!-- End Left Blog-->
-            <!-- Start Right Blog-->
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="single-blog">
-                <div class="single-blog-img">
-                  <a href="blog.html">
-                    <img src="{{ asset('user/img/blog/3.jpg') }}" alt="">
-                  </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="comments-type">
-                    <i class="fa fa-comment-o"></i>
-                    <a href="#">10 comments</a>
-                  </span>
-                  <span class="date-type">
-                    <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                  </span>
-                </div>
-                <div class="blog-text">
-                  <h4>
-                    <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                  </p>
-                </div>
-                <span>
-                  <a href="blog.html" class="ready-btn">Read more</a>
-                </span>
-              </div>
-            </div>
-            <!-- End Right Blog-->
-          </div>
-        </div>
-      </div>
-    </div><!-- End Blog Section -->
-
-    <!-- ======= Suscribe Section ======= -->
-<!--    <div class="suscribe-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
-            <div class="suscribe-text text-center">
-              <h3>Welcome to our eBusiness company</h3>
-              <a class="sus-btn" href="#">Get A quate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
--->
---}}
 
   </main><!-- End #main -->
 

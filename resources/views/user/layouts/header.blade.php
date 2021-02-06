@@ -13,12 +13,12 @@
         <li class="{{ $current == 'ouroffer' ? 'active' : ''}}"><a href="/ouroffer">Success Stories</a></li>
         <li class="{{ $current == 'job' ? 'active' : ''}}"><a href="/job">Job Board</a></li>
         <li class="{{ $current == 'post' ? 'active' : ''}}"><a href="/post">Resources</a></li>
-        <li class="drop-down">
+        <li class="drop-down {{ (in_array($current, array('aboutus', 'joinus', 'contactus'))) ? 'active' : ''}}">
           <a href="">Our Company</a>
           <ul>
-            <li><a href="/aboutus">About Us</a></li>
-            <li><a href="/joinus">Join Us</a></li>
-            <li><a href="/contactus">Contact Us</a></li>
+            <li class="{{ $current == 'aboutus' ? 'active' : ''}}"><a href="/aboutus">About Us</a></li>
+            <li class="{{ $current == 'joinus' ? 'active' : ''}}"><a href="/joinus">Join Us</a></li>
+            <li class="{{ $current == 'contactus' ? 'active' : ''}}"><a href="/contactus">Contact Us</a></li>
           </ul>
         </li>
         @if (Auth::guard('web')->check())

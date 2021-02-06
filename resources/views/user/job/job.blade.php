@@ -597,7 +597,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
-<div style=" float: left; margin-top:-40px;" >
+<div style=" float: left; margin-top:-60px;" >
 
 
 	<select class="my-select" onchange="feedfilter()" id="default-selects">
@@ -632,7 +632,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 </div>
 
-<div style="margin-top:-20px;">
+<div style="margin-top:-40px; float:right;">
 
                    <input type="search" name="search" placeholder="Search..." id="default-search">
                     <button class="button" type="button" onclick="feedfilter()">
@@ -644,7 +644,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
-<div id="jobdetails">
+<div id="jobdetails" style="margin-top:-30px;">
 <h3 class="page-header"></h3>
 <div class="">
   <div class="row-fluid">

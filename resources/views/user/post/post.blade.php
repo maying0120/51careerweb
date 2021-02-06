@@ -36,7 +36,7 @@
 
      <div>
 
-              <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
+              <img src="{{ asset('user/img/background/joinusbg.jpg') }}" />
                 <div class="text-center">
 
              <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">POST</h2>

@@ -220,16 +220,21 @@ font-size:13px;
 
             <div class="row">
 
-              <div class="col-md-4">
-                <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
+             <div class="col-md-4">
+                                       <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
-                  <h4>ADMINISTRATION </h4>
-                  <h3 style="color:black;">Marketing Intern </h3>
-                  <p style="color:black;">New York, NY</p>
+                                         <h4>ADMINISTRATION </h4>
+                                         <h3 style="color:black; font-size:22px;">Marketing Intern </h3>
+                                         <p style="color:black; font-size:16px;">New York, NY</p>
 
-                    <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
-                </div>
-              </div>
+
+                                            </br> </br> </br> </br>
+                                           <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
+
+                                       </div>
+                                     </div>
+
+
 
             <div class="col-md-4">
                            <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
@@ -245,16 +250,19 @@ font-size:13px;
                            </div>
                          </div>
 
-            <div class="col-md-4">
-                           <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
+             <div class="col-md-4">
+                                     <div class="info-box" style="text-align:left; padding-left:20px;padding-right:10px;">
 
-                             <h4>DEVELOPMENT </h4>
-                             <h3 style="color:black;">Senior Director, Human Resource & Administration </h3>
-                             <p style="color:black;">New York, NY</p>
-                               <h3 style="color:black;">Major Gifts Officer</h3>
-                               <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
-                           </div>
-                         </div>
+                                       <h4>TECHNOLOGY </h4>
+                                       <h3 style="color:black; font-size:22px;">IT Intern </h3>
+                                       <p style="color:black; font-size:16px;">New York, NY</p>
+
+
+                                          </br> </br> </br> </br>
+                                         <a  href="/jobreq"  style="text-align:left; color:#2557A7;">Learn More -></a>
+
+                                     </div>
+                                   </div>
 
 
             </div>

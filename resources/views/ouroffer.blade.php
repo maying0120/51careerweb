@@ -85,14 +85,15 @@ h2
 
 <div class="container" >
 
-  <div class="row" >
-    <div class="col-lg-12" >
-      <nav class="nav-menu ">
-        <ul>
-          <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  Success Stories  |</a></li>
-          <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
-          <li><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
-          <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
+              <div class="row" >
+                <div class="col-lg-12" >
+        <nav class="nav-menu ">
+              <ul>
+              <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
+                <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
+                <li><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
+                <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
+
 
 
           <li ><a href="/clientstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Employer Stories</a></li>

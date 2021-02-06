@@ -219,16 +219,16 @@ font-family:'Lora';
   </section>
    <section>
    <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
-       <div class="section-headline text-left" >
-                     <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;margin-left:110px;">Our Philosophy </h2>
-                  </div>
-        		<div class="container py-xl-5 py-lg-3" style="margin-top:-30px;">
 
+        		<div class="container py-xl-5 py-lg-3" style="margin-top:-30px;">
+  <div class="section-headline text-left" >
+                     <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;">Our Philosophy </h2>
+                  </div>
         			<div class="row ab-info second pt-lg-4">
         				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
         					<div class="ab-content-inner" >
 
-        						<div class="ab-info-con" style="margin:-1px;">
+        						<div class="ab-info-con" style="margin:-9px;">
      <img src="{{ asset('user/img/about/growth-icon.jpg') }}" alt="" style="height:50px; margin-bottom:-20px;">
     <h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">Growth</h4>
 <hr style="margin-top:-20px;">

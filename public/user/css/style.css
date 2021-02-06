@@ -769,6 +769,7 @@ div#preloader {
 
 .layer-1-3 a.ready-btn {
   border: 1px solid #fff;
+  font-family:'Lora',serif;
 
   color: #fff;
   cursor: pointer;
@@ -790,8 +791,11 @@ div#preloader {
 }
 
 .ready-btn.right-btn {
+  font-family:Roboto,Helvetica,Arial,sans-serif;
+  font-weight:400;
   margin-right: 15px;
   background: #3078be;
+
 
 }
 

@@ -156,7 +156,7 @@ font-size:20px;
                 <div class="col-lg-12" >
         <nav class="nav-menu ">
               <ul>
-              <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  Success Stories  |</a></li>
+              <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
                 <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
                 <li><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
                 <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>

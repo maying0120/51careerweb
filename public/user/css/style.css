@@ -32,7 +32,6 @@ footer {
 a {
   color: #3078be;
 }
-
 .hidden {
   display: none;
 }
@@ -223,11 +222,6 @@ a {
 
 a:focus {
   outline: 0px solid;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .fix {
@@ -435,7 +429,7 @@ div#preloader {
 --------------------------------------------------------------*/
 #header {
   font-family: 'Lora', Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 500;
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
@@ -531,7 +525,7 @@ div#preloader {
   color: #000000;
   padding: 8px 8px 8px 8px;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -565,7 +559,7 @@ div#preloader {
 
 .nav-menu .drop-down ul a {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 17px;
   text-transform: none;
   color: black;
 }
@@ -2701,7 +2695,7 @@ span.email-notes {
 }
 
 .footer-icons {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .footer-contacts p span {
@@ -3035,14 +3029,6 @@ ul.team-socil-w3pvts li span:hover {
   -o-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;*/
-}
-
-.ab-content-inner {
-  padding: 3em;
-  background: #fff;
-  -webkit-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
-  -moz-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
-  box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
 }
 
 

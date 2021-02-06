@@ -40,11 +40,12 @@
     width: 70px;
     height: 70px;
   }
-  #login-right-panel-pic {
+  #bg-loop-video {
+    height: 750px;
     width: 100%;
-    height: 100%;
+    position: fixed;
+    z-index: -100;
     object-fit: cover;
-    margin-right: 0;
   }
   #career-consulting {
     text-align: center;
@@ -61,18 +62,12 @@
   </style>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    @include('user/layouts/header')
-  </header>
-  <!-- End Header -->
+  <!-- Header -->
+  @include('user/layouts/header')
   <div id="login" style="margin-top: 60px;">
-    <div style="position: fixed; z-index: -100; width: 100%;">
-      <!-- <img id="login-right-panel-pic" src="{{ asset('user/img/51login.gif') }}"/> -->
-      <video autoplay muted loop id="login-right-panel-pic">
-        <source src="{{ asset('user/img/51login.mp4') }}" type="video/mp4">
-      </video>
-    </div>
+    <video autoplay muted loop id="bg-loop-video">
+      <source src="{{ asset('user/img/51login.mp4') }}" type="video/mp4" />
+    </video>
     <div class="container">
       <div class="row centered">
         <div class="col-6" style="display: flex; padding-left: 0;">

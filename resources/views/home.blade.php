@@ -113,9 +113,7 @@ font-family:lora,serif;
 
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    @include('user/layouts/header')
-  </header><!-- End Header -->
+  @include('user/layouts/header')
 
   <!-- ======= Slider Section ======= -->
   <div id="home" class="slider-area">

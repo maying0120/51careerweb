@@ -194,22 +194,6 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 }
-#header{
-	height: 40px;
-}
-#header-right{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	border-radius: 5px;
-	background: red;
-	color: #fff;
-	right: 5px;
-	top: 5px;
-	text-align: center;
-}
-
-
 
 .job_details_area {
 	background: #F5F7FA;
@@ -597,84 +581,12 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 </script>
 
 
-  <header id="header" class="fixed-top" style="height:80px;">
-
-
-    <div class="container d-flex" >
-      <div class="mr-auto" style="float:left; ">
-        <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
-      </div>
-      <nav class="nav-menu d-none d-lg-block" style="float:right; ">
-        <ul>
-          <li ><a href="/home">Home</a></li>
-          <li><a href="/ourservice">Service</a></li>
-          <li><a href="/ouroffer">Success Stories</a></li>
-          <li class="active"><a href="/job">Job Board</a></li>
-          <li><a href="/post">Blog</a></li>
-          <li class="drop-down">
-            <a href="aboutus">Our Company</a>
-            <ul>
-              <li><a href="/aboutus">About Us</a></li>
-              <li><a href="/joinus">Join Us</a></li>
-              <li><a href="/contactus">Contact Us</a></li>
-            </ul>
-          </li>
-          @if (Auth::guard('web')->check())
-          <li style="margin-left: 10px; padding-left: 10px;">
-            <a href="{{ route('profile', ['tab' => 'notification']) }}">
-              <i class="fa fa-bell"></i>
-              @if (count(auth()->user()->unreadNotifications) > 0)
-              <span class="badge badge-pill badge-info">
-                &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
-              </span>
-              @endif
-            </a>
-          </li>
-          @endif
-          <li class="drop-down">
-            <a href="#" class="logo">
-              <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
-            </a>
-            <ul>
-                @if (Auth::guest())
-                <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}">Sign up</a></li>
-                @elseif (Auth::guard('web')->check())
-                <li><a href="">My Reviews</a></li>
-                <li><a href="">My Subscription</a></li>
-                <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
-                <li>
-                  <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
-                  <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
-                    {{ csrf_field() }}
-                  </form>
-                </li>
-                @endif
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-    <script>
-      function markNotificationsAsRead() {
-        $.get('/unreadNotificationsMarkAsRead');
-      };
-    </script>
 
 
 
-
-
-
-
-  </header><!-- End Header -->
-
-
-
-
-
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
+	<!-- Header -->
+	@include('user/layouts/header')
 	@if (Session::has('message'))
 		<div class="alert alert-info">{{ Session::get('message') }}</div>
  	@endif
@@ -1002,68 +914,11 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 				document.getElementById('zhezhao').style.display="none";
 			}
 </script>
-  <footer>
 
-<div id='footer' class="footer-area" style="height:300px; float:bottom;">
-  <div class="container">
-    <div class="row">
-      <div class="col-4">
-        <div class="footer-content">
-          <div class="footer-head">
-            <div class="footer-logo">
-              <h2><span>51</span>Careers</h2>
-            </div>
-            <p style="font-size: 19px;">We are a top career consulting firm <br>
-              that tailors clients' needs <br>
-              to achieve career ambitions.
-            </p>
-            <div class="footer-icons">
-              <ul>
-                <li>
-                  <a href="#"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fab fa-google"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fab fa-pinterest"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end single footer -->
-
-      <div class="col-4" style="display: flex; justify-content: center; transform: translateY(1px);">
-        <div class="footer-content">
-          <div class="footer-head">
-            <h4>Contact</h4>
-            <div class="footer-contacts">
-              <p><span>Tel:</span> (+1)212-918-4477</p>
-              <p><span>Email:</span> info@51careers.com</p>
-              <p><span>Working Hours:</span> 9am-5pm</p>
-              <p><span>Addr:</span> 48 Wall St, 11th Fl, New York, NY 10005</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end single footer -->
-      <div class="col-4">
-        <div class="footer-content">
-          <div class="footer-head" style="text-align: center;">
-            <h4>Official Wechat:</h4>
-            <img src="{{ asset('user/img/Mia二维码.jpg') }}" style="width: 130px; height: 130px;"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </footer><!-- End  Footer -->
+<!-- ======= Footer ======= -->
+<footer>
+	@include('user/layouts/footer')
+</footer>
+<!-- End  Footer -->
 </body>
 </html>

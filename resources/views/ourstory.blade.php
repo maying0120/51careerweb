@@ -151,7 +151,7 @@ text-decoration:none;
                 <div class="col-lg-12" >
         <nav class="nav-menu ">
               <ul>
-            <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  Success Stories  |</a></li>
+            <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
                 <li ><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
                 <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
                 <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
@@ -214,142 +214,60 @@ text-decoration:none;
 </div></div>
 </section>
 
-    <!-- ======= Portfolio Section ======= -->
 
-<section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+<section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
       <div class="container">
 
         <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-              {{-- <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-                <h4>person A </h4>
-                <span>** Offer</span>
-                <p>This is the test A Reputable Career Consulting Brand.</p>
-              </div>
-            </div>
+          <div class="col-lg-6 video-box">
+             <img src="{{ asset('user/story/assets/img/51bicon.png') }}" class="img-fluid" alt="">
+            <a href="https://youtu.be/C4g4p-fyXfQ" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-              {{--   <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div> --}}
-              </div>
-              <div class="member-info">
-                <h4>person A </h4>
-                <span>** Offer</span>
-                <p>This is the test A Reputable Career Consulting Brand.</p>
-              </div>
+          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+            <div class="icon-box">
+
+              <h4  style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:24px; color:black; font-color:black; ">Employer insights in the financial service industry and our service experience</a></h4>
+
+              <p  style="font-size:16px; padding-top:10px;"> Learn more about the employer, financial service industry, employer satisfaction and advice for young professionals.  </p>
             </div>
+
+
+
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-            {{--   <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-                <h4>person A </h4>
-                <span>** Offer</span>
-                <p>This is the test A Reputable Career Consulting Brand.</p>
-
-            </div>
-          </div> </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-             {{-- <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-
-
-              <h4>person A </h4>
-                             <span>** Offer</span>
-                             <p>This is the test A Reputable Career Consulting Brand.</p>
-
-                        </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}" class="img-fluid" alt="">
-              {{-- <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-
-
-               <h4>person A </h4>
-                              <span>** Offer</span>
-                              <p>This is the test A Reputable Career Consulting Brand.</p>
-
-                       </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="{{ asset('user/story/assets/img/offer/example1.png') }}"class="img-fluid" alt="">
-             {{--   <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>--}}
-              </div>
-              <div class="member-info">
-
-        <h4>person A </h4>
-                       <span>** Offer</span>
-                       <p>This is the test A Reputable Career Consulting Brand.</p>
-
-                     </div>
-            </div>
-          </div>
-
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Why Us Section -->
 
 
+      <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+                                      <div class="icon-box">
+                                           {{--    <div class="icon"><i class="bx bx-fingerprint"></i></div>--}}
+                                           <h4  style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:24px; color:black; font-color:black; ">Employer insights in the investment banking industry and our service experience </a></h4>
+                                          <p  style="font-size:16px; padding-top:10px;"> Learn more about the employer, investment banking industry, employer satisfaction and advice for young professionals. </p>
+                                         </div>
+
+
+
+                                       </div>
+            <div class="col-lg-6 video-box">
+               <img src="{{ asset('user/story/assets/img/51bicon.png') }}" class="img-fluid" alt="">
+              <a href="https://youtu.be/C4g4p-fyXfQ" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            </div>
+
+
+          </div>
+
+        </div>
 
 
 

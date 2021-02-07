@@ -179,80 +179,125 @@
 
 
 
+  <!-- ======= About Section ======= -->
   <div id="services" class="services-area area-padding bg-white">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class=" text-center">
-            <h2 style="font-family:'libre baskerville',serif; font-size:42px;">A Reputable Career Consulting Brand</h2> </br> </br>
-          </div>
-        </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-4">
-          <div class=" text-center" style="font-style: italic; ">
-            <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">10,000 + </h2>
-          </br>
-          <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">​Partners</h2>
-        </div></div>
 
-        <div class="col-md-4 col-sm-4 col-xs-4">
-          <div class=" text-center">
-            <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px; font-style:italic;">2,000 +</h2> </br>
-            <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">​Offers</h2>
-          </div> </div>
-          <div class="col-md-4 col-sm-4 col-xs-4">
+          {{--      <div class="col-md-4 col-sm-4 col-xs-4">
             <div class=" text-center">
-              <h2  style="font-size:64px; color:#2557A7; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">99% + </h2> </br>
-              <h2 style="font-family:'helvetica-w01-roman',sans-serif; font-weight:400; font-size:36px; ">Recommend</h2>
-            </div>
-        </div>
-        </div>
+              <h2  style="font-size:60px; text-align:left;">10,000 + </h2>
+            </div></div>
+
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class=" text-center">
+                <h2  style="font-size:60px; text-align:left;">2,000 +</h2>
+              </div> </div>
 
 
-      </div>
-    </div><!-- End About Section -->
-    <!-- ======= Services Section ======= -->
-    <div id="about" class="about-area area-padding">
-      <div class="container">
 
-        <div class="row text-center">
-          <!-- Start Left services -->
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
 
-                  <h2  style="font-size:60px; text-align:left;">51 Careers </h2>
-                </br> </br>
-                <h3 style="font-size:20px;text-align:left;  font-weight:normal">  A top career consulting firm that tailors clients' needs and helps candidates chase career dreams. </h3>
 
-                <div style="text-align:left;">
-                  <a class="ready-btn right-btn page-scroll" href="/aboutus" style="background-color:#FFCC33; color:black; border-radius:0px;" >Learn More</a>
+
+
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class=" text-center">
+                  <h2  style="font-size:60px; text-align:left;">99%+ </h2>
+                </div> </div>--}}
+
+                <div class=" text-center" style="margin-top:-20px;">
+
+
+                  <h2 style="font-family:'lora',serif; font-size:48px;">A Reputable Career Consulting Brand</h2> </br> </br>
+
+
                 </div>
-
               </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
+                <div class=" text-center" style="font-style: italic; ">
+                  <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">10,000 + </h2>
+                </br>
+                <h2 style="font-family:'Lora',serif;font-weight:400; font-size:36px; margin-top:-10px;">​Partners</h2>
+              </div></div>
+
+              <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
+                <div class=" text-center">
+                  <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px; font-style:italic;">2,000 +</h2> </br>
+                  <h2 style="font-family:'Lora',serif; font-weight:400; font-size:36px;margin-top:-10px; ">​Offers</h2>
+
+
+                </div> </div>
+
+
+                <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
+                  <div class=" text-center">
+
+                    <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">99% + </h2> </br>
+                    <h2 style="ffont-family:'Lora',serif; font-weight:400; font-size:36px; margin-top:-10px;">Praise</h2>
+                  </div>
+
+                </div>
+              </div>
+
+
             </div>
-            <!-- end about-details -->
+          </div><!-- End About Section -->
+          <!-- ======= Services Section ======= -->
+          <div id="about" class="about-area area-padding" style="margin-top:-60px;">
+            <div class="container" style="margin-top:-20px; margin-bottom:-20px;">
+
+              <div class="row text-center">
+                <!-- Start Left services -->
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                  <div class="about-move">
+                    <div class="services-details">
+                      <div class="single-services">
+
+                        <h2  style="font-size:60px; text-align:left;">51 Careers </h2>
+                      </br> </br>
+                      <h3 style=" font-family:Roboto,Helvetica,Arial,sans-serif; font-size:30px;text-align:left; line-height:36px;
+                      font-weight:normal"> We are a top career consulting firm that tailors members' needs to achieve career ambitions. </h3>
+
+                      <div style="text-align:left;">
+                        <a class="ready-btn right-btn page-scroll" href="/aboutus" style="background-color:#3078be; color:white; border-radius:0px;" >Learn More</a>
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- end about-details -->
+                </div>
+              </div>
+              <div class="col-md-1 col-sm-1 col-xs-12">
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                {{-- <img src="{{ asset('user/img/slider/51adv.PNG') }}" alt="">--}}
+                <img src="{{ asset('user/img/slider/homepageyuan1.png') }}" alt="" style="height:400px; width:400px;">
+              </div>
+
+
+
+            </div>
+          </div>
+        </div><!-- End Services Section -->
+        <div id="team" class="our-team-area area-padding bg-white"  style="margin-top:-30px;">
+          <div class="container">
+
+          </br></br>
+          <div class=" text-center">
+            <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100;">Our Partners</h2>
+
+          </div>
+
+        </div>
+        <div style="margin-top:0px;">
+          <div class="container">
+            <img src="{{ asset('user/img/slider/comlog1.png') }}" alt="" style="width: 100%;" />
           </div>
         </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <img src="{{ asset('user/img/slider/51adv.PNG') }}" alt="">
-        </div>
-
-
-
       </div>
-    </div>
-  </div><!-- End Services Section -->
-  <div class="our-team-area area-padding bg-white">
-    <div class="container">
-      <div class=" text-center">
-        <h2  style="font-size:40px;">​Our Partners</h2>
-      </div>
-    </div>
-    <img src="{{ asset('user/img/slider/part.png') }}" alt="" style="width:100%">
-  </div>
 
   <footer>
     @include('user/layouts/footer')

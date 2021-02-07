@@ -12,7 +12,13 @@
         <li class="{{ $current == 'ourservice' ? 'active' : ''}}"><a href="/ourservice">Service</a></li>
         <li class="{{ $current == 'ouroffer' ? 'active' : ''}}"><a href="/ouroffer">Success Stories</a></li>
         <li class="{{ $current == 'job' ? 'active' : ''}}"><a href="/job">Job Board</a></li>
-        <li class="{{ $current == 'post' ? 'active' : ''}}"><a href="/post">Resources</a></li>
+        <li class="drop-down {{ (in_array($current, array('video', 'post'))) ? 'active' : ''}}">
+          <a href="">Resources</a>
+          <ul>
+            <li class="{{ $current == 'post' ? 'active' : ''}}"><a href="/post">Blog</a></li>
+            <li class="{{ $current == 'video' ? 'active' : ''}}"><a href="/video">Video</a></li>
+          </ul>
+        </li>
         <li class="drop-down {{ (in_array($current, array('aboutus', 'joinus', 'contactus'))) ? 'active' : ''}}">
           <a href="">Our Company</a>
           <ul>

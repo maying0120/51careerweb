@@ -28,71 +28,18 @@
   <link href="{{ asset('user/story/assets/css/style.css') }}"  rel="stylesheet">
 
 
+
+
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
 
 
 
-<div class="container d-flex">
-  <div class="mr-auto">
-    <img src="{{ asset('user/img/51careerlogo1.png') }}" alt="" style="max-height: 50px; transform: translateY(-6px);"/>
-  </div>
-  <nav class="nav-menu d-none d-lg-block">
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li class="active"><a href="ourservice">Service</a></li>
-      <li><a href="ourstory">Success Stories</a></li>
-      <li><a href="/job">Job Board</a></li>
-      <li><a href="/post">Blog</a></li>
-      <li class="drop-down">
-        <a href="aboutus">Our Company</a>
-        <ul>
-          <li><a href="aboutus">About Us</a></li>
-          <li><a href="joinus">Join Us</a></li>
-          <li><a href="contactus">Contact Us</a></li>
-        </ul>
-      </li>
-      @if (Auth::guard('web')->check())
-      <li style="margin-left: 10px; padding-left: 10px;">
-        <a href="{{ route('profile', ['tab' => 'notification']) }}">
-          <i class="fa fa-bell"></i>
-          @if (count(auth()->user()->unreadNotifications) > 0)
-          <span class="badge badge-pill badge-info">
-            &nbsp;{{ count(auth()->user()->unreadNotifications) }}&nbsp;
-          </span>
-          @endif
-        </a>
-      </li>
-      @endif
-      <li class="drop-down">
-        <a href="#" class="logo">
-          <img src="{{ asset('user/img/51careerlogo1.png') }}"/>
-        </a>
-        <ul>
-            @if (Auth::guest())
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Sign up</a></li>
-            @elseif (Auth::guard('web')->check())
-            <li><a href="">My Reviews</a></li>
-            <li><a href="">My Subscription</a></li>
-            <li><a href="{{ route('profile', ['tab' => 'profile']) }}">My Profile</a></li>
-            <li>
-              <a href="{{ route('user.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
-              <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
-                {{ csrf_field() }}
-              </form>
-            </li>
-            @endif
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav><!-- .nav-menu -->
-</div>
+
+  @include('user/layouts/header')
 <script>
   function markNotificationsAsRead() {
     $.get('/unreadNotificationsMarkAsRead');
@@ -102,8 +49,6 @@
 
 
 
-  </header><!-- End Header -->
-
 
 
 
@@ -111,7 +56,7 @@
   <!-- ======= Slider Section ======= -->
     <div>
 
-          <img src="{{ asset('user/img/service/blueservice.jpg') }}" style=" margin-top:-130px; height:600px; width:100%;" />
+          <img src="{{ asset('user/img/service/blueservice.jpg') }}" style="  height:500px; width:100%;" />
            <div class="text-center">
 
     <h2 style="font-family:'Lora',serif; font-weight:700; font-size:82px;  z-index:999; color:white; margin-top:-180px; ">OUR  &nbsp; SERVICE</h2>
@@ -185,7 +130,7 @@
 
 
              </div>
-             <div style="margin-top:30px;">
+             <div style="margin-top:50px;">
                   <a href="{{ asset('user/img/service/IMG_1826.PNG') }}"   data-gall="portfolioGallery" class=" venobox" title="App 1">Learn More -></a>
 
   </div>
@@ -233,14 +178,11 @@
                    <h8 style="text-align:left;font-weight:bold;">​​Membership：3 months​ </h8>
 
                 </div>
-            <div style="margin-top:30px;">
+            <div style="margin-top:55px;">
                          <a href="{{ asset('user/img/service/IMG_1826.PNG') }}"   data-gall="portfolioGallery" class=" venobox" title="App 1">Learn More -></a>
 
          </div>
-                <div style="margin-top:30px;">
-                           <a href="{{ asset('user/img/service/IMG_1826.PNG') }}"   data-gall="portfolioGallery" class=" venobox" title="App 1">Learn More -></a>
 
-           </div>
                </div>
              </div>
 
@@ -513,7 +455,7 @@
 
    <div class="col-lg-3 col-md-3 col-sm-3" style="margin-top:15px; ">
 
-                 <a class="ready-btn right-btn" href="/aboutus" style="background-color:#3078BE; color:white; border-radius:0px; font-size:23px;" > Let's connect</a>
+                 <a class="ready-btn right-btn" href="/contactus" style="background-color:#3078BE; color:white; border-radius:0px; font-size:23px;" > Let's connect</a>
                  </div>
 
  </div>

@@ -293,8 +293,9 @@
 
         </div>
         <div style="margin-top:0px;">
-
-          <img src="{{ asset('user/img/slider/comlog1.png') }}" alt="" style="object-fit: contain; margin: auto;">
+          <div class="container">
+            <img src="{{ asset('user/img/slider/comlog1.png') }}" alt="" style="width: 100%;" />
+          </div>
         </div>
       </div>
 

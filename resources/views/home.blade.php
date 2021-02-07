@@ -1475,7 +1475,7 @@ Our Offers</h2>
             </div>
 <div style="margin-top:0px;">
  <div class="container">
-            <img src="{{ asset('user/img/slider/comlog1.png') }}" alt="" >
+            <img src="{{ asset('user/img/slider/comlog1.png') }}" alt="" style="width: 100%;">
      </div> </div></div>
 
 

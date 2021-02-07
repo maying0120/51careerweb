@@ -169,10 +169,7 @@
                     <h8 style="text-align:left;font-weight:bold;">​​Membership：3 months​ </h8>
 
                  </div>
-             <div style="margin-top:30px;">
-                          <a href="{{ asset('user/img/service/IMG_1826.PNG') }}"   data-gall="portfolioGallery" class=" venobox" title="App 1">Learn More -></a>
 
-          </div>
                  <div style="margin-top:30px;">
                             <a href="{{ asset('user/img/service/IMG_1826.PNG') }}"   data-gall="portfolioGallery" class=" venobox" title="App 1">Learn More -></a>
 
@@ -354,7 +351,7 @@
 
          			<div class="row ab-info second pt-lg-4">
          				<div class="col-lg-4 col-sm-4 ab-content  mt-lg-0 mt-4" style="padding-right:30px;">
-         					<div class="ab-content-inner" >
+         					<div class="" >
 
          						<div class="ab-info-con" >
          						<div class="text-center">
@@ -376,7 +373,7 @@
          					</div>
          				</div>
          		    				<div class="col-lg-4 col-sm-4 ab-content  mt-lg-0 mt-4" style="padding-right:30px;">
-                         					<div class="ab-content-inner" >
+                         					<div class="" >
 
                          						<div class="ab-info-con" >
                          						<div class="text-center">
@@ -401,7 +398,7 @@
          				</div>
 
       				<div class="col-lg-4 col-sm-4 ab-content  mt-lg-0 mt-4" style="padding-right:30px;">
-          					<div class="ab-content-inner" >
+          					<div class="" >
 
           						<div class="ab-info-con" >
           						<div class="text-center">

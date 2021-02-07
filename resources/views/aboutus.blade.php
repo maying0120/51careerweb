@@ -218,43 +218,45 @@ font-family:'Lora';
 
   </section>
    <section>
-   <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
+     <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
 
-        		<div class="container py-xl-5 py-lg-3" style="margin-top:-30px;">
-  <div class="section-headline text-left" >
-                     <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;">Our Philosophy </h2>
-                  </div>
-        			<div class="row ab-info second pt-lg-4">
-        				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
-        					<div class="ab-content-inner" >
+       <div class="container py-xl-5 py-lg-3" style="margin-top:-30px;">
+         <div class="section-headline text-left" >
+           <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;">Our Philosophy </h2>
+         </div>
+         <div class="row ab-info second pt-lg-4">
+           <div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
+             <div class="ab-content-inner" >
 
-        						<div class="ab-info-con" style="margin:-9px;">
-     <img src="{{ asset('user/img/about/growth-icon.jpg') }}" alt="" style="height:50px; margin-bottom:-20px;">
-    <h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">Growth</h4>
-<hr style="margin-top:-20px;">
+               <div class="ab-info-con" style="margin:-9px;">
+                 <img src="{{ asset('user/img/about/growth-icon.jpg') }}" alt="" style="height:50px; margin-bottom:-20px;">
+                 <h4 class="text-team-w3" style="font-family:'Roboto, sans-serif'; font-size:30px; ">Growth</h4>
 
-        							<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;">
+                 <hr style="margin-top:-20px; color: black;">
 
-        						We have a commitment of unlocking potential and a passion for results aligned with our members’ success. We challenge ourselves and step out of our comfort zone, creating extraordinary result.
-                                    &nbsp;&nbsp;&nbsp;
-        							  </p>
+                 <p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;">
 
-        						</div>
-        					</div>
-        				</div>
-        				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
-        					<div class="ab-content-inner">
-
-        						<div style="margin:-9px;">
-       <img src="{{ asset('user/img/about/resulticon.png') }}" alt="" style="height:50px; margin-bottom:-20px;">
-
-        							<h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">Results</h4>
+                   We have a commitment of unlocking potential and a passion for results aligned with our members’ success. We challenge ourselves and step out of our comfort zone, creating extraordinary result.
+                   &nbsp;&nbsp;&nbsp;
+                 </p>
 
 
-<hr style="margin-top:-20px;">
+               </div>
+             </div>
+           </div>
+           <div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
+             <div class="ab-content-inner">
 
-        								<p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;"> We’re a solution-driven and outcome-oriented career consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
-				</p>
+               <div style="margin:-9px;">
+                 <img src="{{ asset('user/img/about/resulticon.png') }}" alt="" style="height:50px; margin-bottom:-20px;">
+
+                 <h4 class="text-team-w3" style="font-family:'roboto-thin,sans-serif'; font-weight:bold; font-size:30px; ">Results</h4>
+
+
+                 <hr style="margin-top:-20px;">
+
+                 <p  align='left' style="font-family:'roboto-thin,sans-serif'; font-size:18px; line-height:26px;"> We’re a solution-driven and outcome-oriented career consulting team. We tailor members’ career plans after understanding the expectations, goals and needs of each member. At heart, we’re problem solvers.
+                 </p>
 
         						</div>
         					</div>

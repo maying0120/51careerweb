@@ -3035,6 +3035,13 @@ ul.team-socil-w3pvts li span:hover {
   -ms-border-radius: 50%;*/
 }
 
+.ab-content-inner {
+  padding: 3em;
+  background: #fff;
+  -webkit-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
+  -moz-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
+  box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
+}
 
 
 

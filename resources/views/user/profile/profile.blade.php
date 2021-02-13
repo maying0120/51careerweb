@@ -354,7 +354,14 @@
                           </div>
                         </div>
                         <div>{{ $company->company }}</div>
-                        <div class="resume-date">{{ $company->start_date }} to {{ $company->end_date }}</div>
+                        <div class="resume-date">
+                          {{ $company->start_date }} to
+                          @if ($company->present == 1)
+                          Present
+                          @else
+                          {{ $company->end_date }}
+                          @endif
+                        </div>
                         <p>{{ $company->description }}</p>
                       </li>
                       <div class="modal" id="company-{{ $company->id }}-edit" tabindex="-1" role="dialog">
@@ -1028,9 +1035,9 @@
         </div>
       </div>
 
-      <div id="job" class="container tab-pane {{($tab == 'job') ? 'active' : '' }}">
+      <!-- <div id="job" class="container tab-pane {{($tab == 'job') ? 'active' : '' }}">
         <br>
-        <!-- <div class="row col-12">
+        <div class="row col-12">
           <div class="info-board left-panel col-8 bg-white ">
             <div id="expect">
               <div class="card-header bg-transparent border-primary d-flex justify-content-between" >
@@ -1051,8 +1058,8 @@
               </div>
             </div>
           </div>
-        </div> -->
-      </div>
+        </div>
+      </div> -->
 
       <div id="notification" class="container tab-pane {{($tab == 'notification') ? 'active' : '' }}">
         <div class="col-12">

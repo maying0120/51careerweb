@@ -26,11 +26,11 @@ class ExperienceController extends Controller
     if ($request->companyName) {
       $experience->company = $request->companyName;
       if ($request->present == 'on') $experience->present = 1;
+      else $experience->end_date = $request->endDate;
     }
     if ($request->projectName) $experience->project = $request->projectName;
     $experience->title = $request->title;
     $experience->start_date = $request->startDate;
-    $experience->end_date = $request->endDate;
     $experience->description = $request->description;
 
     $experience->save();

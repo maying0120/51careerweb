@@ -76,17 +76,22 @@
   <main id="main">
 
 
-     <div>
-
-              <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
-                <div class="text-center">
-
-             <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">{{$post->title}}</h2>
-
-                                                    </div>
-</br></br></br></br></br></br>
+  <div id="home" class="slider-area">
+      <div class="bend niceties preview-2">
 
 
+     <img src="{{ asset('user/img/background/joinusbg.jpg')}}" alt="" title="#slider-direction-1"  width="100%;"/>
+   {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
+
+     <div class="text-center" >
+
+         <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">POST </h2>
+
+                                             </div>
+  </div>
+  </div>
+<br>
+<br><br><br><br><br>
   <div class="container" >
 
         <div class="row" >

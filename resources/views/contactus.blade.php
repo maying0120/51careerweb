@@ -53,17 +53,38 @@
 
 
 
-<main id="main">
+  <main id="main">
 
 
-  <div>
+{{--
+ <div>
 
-    <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
-    <div class="text-center">
+          <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:80px;" />
+            <div class="text-center">
 
-      <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">CONTACT  &nbsp; US</h2>
+         <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">ABOUT  &nbsp; US</h2>
 
-    </div>
+                                                </div>
+
+        </div>--}}
+
+<div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
+
+
+   <img src="{{ asset('user/img/background/joinusbg.jpg')}}" alt="" title="#slider-direction-1"  width="100%;"/>
+ {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
+
+   <div class="text-center" >
+
+       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">CONTACT  &nbsp; US</h2>
+
+                                           </div>
+</div>
+</div>
+
+</div></div>
+
 
 
   </br></br></br></br></br></br>
@@ -76,7 +97,7 @@
 
     <div class="row" >
       <div class="col-lg-12" >
-        <nav class="nav-menu ">
+        <nav class="nav-menu1 ">
           <ul>
             <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;">  OUR COMPANY &nbsp; &nbsp; |</a></li>
             <li ><a href="/aboutus" style="font-family:'Lora';font-size:18px;padding-right:15px;">About Us</a></li>

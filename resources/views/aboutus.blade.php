@@ -62,18 +62,7 @@ font-family:'Lora';
 
 
 
-<script>
-    (function(d, w, c) {
-        w.ChatraID = 'TjSQeyfYP6ipurbem';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
+
 <!-- Header -->
 @include('user/layouts/header')
 
@@ -82,7 +71,7 @@ font-family:'Lora';
   <main id="main">
 
 
-
+{{--
  <div>
 
           <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:80px;" />
@@ -92,7 +81,25 @@ font-family:'Lora';
 
                                                 </div>
 
-        </div>
+        </div>--}}
+
+<div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
+
+
+   <img src="{{ asset('user/img/service/ren1.png')}}" alt="" title="#slider-direction-1"  width="100%;"/>
+ {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
+
+   <div class="text-center" >
+
+       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">ABOUT  &nbsp; US</h2>
+
+                                           </div>
+</div>
+</div>
+
+</div></div>
+
 
 
 
@@ -107,7 +114,7 @@ font-family:'Lora';
 
         <div class="row" >
           <div class="col-lg-12" >
-  <nav class="nav-menu ">
+  <nav class="nav-menu1 " style="margin-top:10px;">
         <ul>
         <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;">  OUR COMPANY &nbsp; &nbsp; |</a></li>
           <li class="active"><a href="/aboutus" style="font-family:'Lora';font-size:18px;padding-right:15px;">About Us</a></li>
@@ -120,7 +127,7 @@ font-family:'Lora';
 
 </div></div>
 
-  <div style="border:1px solid black;"></div>
+  <div style="margin-top:10px;border:1px solid black;"></div>
 {{--
 
       <div class="container" >
@@ -139,16 +146,16 @@ font-family:'Lora';
 
 
     <!-- ======= About Section ======= -->
-      <div id="portfolio" class="portfolio-area area-padding fix" style="margin-left:25px;">
+      <div id="portfolio" class="portfolio-area area-padding fix" style="margin-left:25px; margin-top:-70px;">
       <div class="container">
         <div class="row">
           <div class="col-md-7 col-sm-7 col-xs-12">
                       <div class="well-left">
 
                       </br>
-                           <div class="text-left section-headline">
 
-                                   <h2 style="font-family:'Lora';font-size:46px; line-height:1.5em;">About Us</h2>
+
+                                   <h2 style="font-family:'Lora';font-size:46px; line-height:1.5em;">ABOUT  US </h2>
 
  <h4  style="font-family:'roboto-thin,sans-serif'; font-size:28px;line-height:1.5em;">We're passionate about transforming clients into professionals they want to become.</h4>
 
@@ -157,7 +164,7 @@ font-family:'Lora';
               We've been a pioneer in the career consulting industry globally since 2016. Inspired by the obstacles and challenges international students face in the United States job market, we aspired to help them transition into the American workplace and achieve their career goals. We have a global network of employers looking for qualified candidates. We combine the needs of employers and future employees to achieve the perfect fit.     </p>
 
                                  </div>
-                      </div>
+
                     </div>
 
 
@@ -218,14 +225,17 @@ font-family:'Lora';
 
   </section>
    <section>
-     <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">
+ {{--     <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">--}}
 
-       <div class="container py-xl-5 py-lg-3" style="margin-top:-30px;">
-         <div class="section-headline text-left" >
-           <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;">Our Philosophy </h2>
+      <div style="z-index:-1;height:100%;background-image: url('user/img/slider/pht.jpg') ; background-size:100% 100%;">
+
+       <div class="container py-xl-5 py-lg-3" >
+         <div class=" text-left" >
+           <h2 style="font-family:'Lora';font-size:48px; z-index:10; margin-top:110px;">OUR PHILOSOPHY</h2>
          </div>
+         </br> </br> </br>
          <div class="row ab-info second pt-lg-4">
-           <div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
+           <div class="col-lg-4 col-sm-12 ab-content text-center mt-lg-0 mt-4">
              <div class="ab-content-inner" >
 
                <div class="ab-info-con" style="margin:-9px;">
@@ -244,7 +254,7 @@ font-family:'Lora';
                </div>
              </div>
            </div>
-           <div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
+           <div class="col-lg-4 col-sm-12 ab-content text-center mt-lg-0 mt-4">
              <div class="ab-content-inner">
 
                <div style="margin:-9px;">
@@ -261,7 +271,7 @@ font-family:'Lora';
         						</div>
         					</div>
         				</div>
-        				<div class="col-lg-4 col-sm-4 ab-content text-center mt-lg-0 mt-4">
+        				<div class="col-lg-4 col-sm-12 ab-content text-center mt-lg-0 mt-4">
         					<div class="ab-content-inner">
 
         						<div class="ab-info-con" style="margin:-9px;">

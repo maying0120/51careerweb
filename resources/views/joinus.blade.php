@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -10,10 +10,11 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-    <link href="{{ asset('user/img/51careerlogo1.png') }}" rel="icon">
+  <link href="{{ asset('user/img/51careerlogo1.png') }}" rel="icon">
   <link href="{{ asset('user/story/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->
+  <link href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ asset('user/story/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('user/story/assets/vendor/animate.css/animate.min.css') }}"  rel="stylesheet">
   <link href="{{ asset('user/story/assets/vendor/icofont/icofont.min.css') }}"  rel="stylesheet">
@@ -24,103 +25,41 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('user/story/assets/css/style.css') }}"  rel="stylesheet">
-
-
   @include('user/layouts/head')
 
-<body data-spy="scroll" data-target="#navbar-example">
+
+</head>
 
 
-<style>
-hr{
-background-color: black;
-border:none;
-height: 0.5px;
-}
-
-h2
-{
-font-family:'Lora';
-}
-
-
-h3
-{
-font-family:'Lora';
-color:black;
-
-}
-
-
-h4
-{
-font-family:'Lora';
-font-size:13px;
-}
+<body>
 
 
 
-.section-headline h2 {
-  display: inline-block;
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 70px;
-  position: relative;
-  text-transform: capitalize;
-}
 
-.section-headline h2::after {
-  border: 1px solid #333;
-  top: -30px;
-  content: "";
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  margin-left:0px ;
-  width: 70%;
-}
-
-</style>
-
-
-  <script src='https://www.google.com/recaptcha/api.js'></script>
-
-
-
-    <script data-cfasync="false" type="text/javascript" src="{{ asset('user/js/form-submission-handler.js') }}"></script>
-
-  <script src="{{ asset('user/vendor/aos/aos.js') }}"></script>
-
-<script>
-    (function(d, w, c) {
-        w.ChatraID = 'TjSQeyfYP6ipurbem';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
 <!-- Header -->
 @include('user/layouts/header')
 
   <!-- ======= Slider Section ======= -->
 
-  <main id="main">
+   <main id="main">
 
- <div>
 
-          <img src="{{ asset('user/img/background/joinusbg.jpg') }}" style=" margin-top:-80px;" />
-            <div class="text-center">
+ <div id="home" class="slider-area">
+     <div class="bend niceties preview-2">
 
-         <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">JOIN  &nbsp; US</h2>
 
-                                                </div>
+    <img src="{{ asset('user/img/background/joinusbg.jpg')}}" alt="" title="#slider-direction-1"  width="100%;"/>
+  {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
 
-        </div>
+    <div class="text-center" >
+
+        <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">JOIN  &nbsp; US</h2>
+
+                                            </div>
+ </div>
+ </div>
+
+ </div></div>
 
 
 
@@ -130,7 +69,7 @@ font-size:13px;
 
         <div class="row" >
           <div class="col-lg-12" >
-  <nav class="nav-menu ">
+  <nav class="nav-menu1 ">
         <ul>
          <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;">  OUR COMPANY &nbsp; &nbsp; |</a></li>
                       <li ><a href="/aboutus" style="font-family:'Lora';font-size:18px;padding-right:15px;">About Us</a></li>
@@ -311,13 +250,15 @@ font-size:13px;
 
   </main><!-- End #main -->
 
-   <!-- ======= Footer ======= -->
-  <footer>
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
- @include('user/layouts/footer')
-  </footer><!-- End  Footer -->
+    @include('user/layouts/footer')
+  </footer><!-- End Footer -->
 
- @include('user/layouts/vendorjsfiles')
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
 
 
   <!-- Vendor JS Files -->
@@ -333,7 +274,8 @@ font-size:13px;
   <script src="{{ asset('user/story/assets/vendor/aos/aos.js') }}" ></script>
 
   <!-- Template Main JS File -->
-  <script src="{{ asset('user/story/assets/js/main.js') }}" ></script
+  <script src="{{ asset('user/story/assets/js/main.js') }}" ></script>
+
 </body>
 
 </html>

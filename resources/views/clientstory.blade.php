@@ -60,46 +60,47 @@ text-decoration:none;
 
 
 
-   <!-- ======= Slider Section ======= -->
-    <div>
+<div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
+      <div id="ensign-nivoslider" class="slides">
 
-          <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" margin-top:-30px; width:100%;" />
+   <img src="{{ asset('user/story/assets/img/offer/700.png') }}" alt="" title="#slider-direction-1"  width="100%; 60%;"/>
+ {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
+  <div>
+   <div class="text-center" >
 
-        </div>
+       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">OUR  &nbsp; OFFER</h2>
 
+                                           </div>
+</div>
+</div>
 
+</div></div>
 
+<br><br><br><br><br><br>
+<div class="container" >
 
-
-
-    </div><!-- End Slider -->
-
-
- </div>
-
-        <div class="container" >
 
               <div class="row" >
                 <div class="col-lg-12" >
-        <nav class="nav-menu ">
+        <nav class="nav-menu1 ">
               <ul>
-              <li> <a style="font-family:'Lora';font-size:18px;padding-right:1px;"> SUCCESS STORIES  |</a></li>
+            <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
                 <li ><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
-                <li ><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidate stories</a></li>
-                <li ><a href="/video" style="font-family:'Lora';font-size:18px;padding-right:15px;">Video</a></li>
-                <li class="active"><a href="/clientstory" style="font-family:Roboto,Helvetica,Arial,sans-serif;  font-weight:400; font-size:18px; padding-right:15px;">Employer stories</a></li>
+                <li ><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
 
 
-              </ul>
-            </nav><!-- .nav-menu -->
-      </div>
 
-      </div></div>
 
-        <div style="border:1px solid black;"></div>
+          <li class="active"><a href="/clientstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Employer Stories</a></li>
 
-   <div style="border:1px solid black; margin-top:-100px;"></div>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
 
+  </div></div>
+
+  <div style="border:1px solid black;"></div>
    </br> </br>
 
 

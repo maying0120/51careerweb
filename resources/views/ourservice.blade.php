@@ -45,32 +45,47 @@
 
 
   <!-- ======= Slider Section ======= -->
-     <div>
+   {{--   <div>
 
-           <img src="{{ asset('user/img/service/blueservice.jpg') }}" style=" margin-top:-130px; height:600px; width:100%;" />
-            <div class="text-center">
+           <img src="{{ asset('user/img/service/640.png') }}" style="height:600px; width:100%;" />
+            <div class="bahead text-center">
 
-     <h2 style="font-family:'Lora',serif; font-weight:700; font-size:82px;  z-index:999; color:white; margin-top:-180px; ">OUR  &nbsp; SERVICE</h2>
+     <h2 style="font-family:'Lora',serif; font-weight:700; z-index:999; color:white;  ">OUR  &nbsp; SERVICE</h2>
 
                                             </div>
 
          </div>
- </br></br></br>
+ </br></br></br>--}}
 
    <main id="main">
 
+<div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
+      <div class="slides">
+
+   <img src="{{asset('user/img/service/lou1.png') }}" alt="" title="#slider-direction-1"  width="100%;"/>
+ {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
+  <div>
+   <div class="text-center bahead" >
+
+       <h2 style="font-family:'Lora'; font-weight:bold; FONT-SIZE:72PX;  z-index:999; color:white; margin-top:-180px;background:#black; ">OUR  &nbsp; SERVICES</h2>
+
+                                           </div>
+</div>
+</div>
+
+</div></div>
 
 
 
- </br></br></br>
+ </br></br></br> </br></br></br>
      <!-- ======= About Section ======= -->
-       <div id="portfolio" class="portfolio-area area-padding fix" style="margin-top:-90px;">
+       <div id="portfolio" class="portfolio-area area-padding fix" >
        <div class="container">
          <div class="row">
            <div class="col-md-12 col-sm-12 col-xs-12">
                        <div class="well-left">
-                       <div style="border: 0.5px solid gray;width:70px;height:0; margin-left:0%;"></div>
-                       </br>
+
                             <div class="text-left" style="margin-top:10px;">
 
                                     <h2 style="font-family:'Lora',serif;  font-weight:700; font-size:50px; ">OUR PROGRAMS</h2>
@@ -456,32 +471,34 @@
 
  </div>
 
-    <!-- ======= Footer ======= -->
-   <footer>
+  </main><!-- End #main -->
 
-  @include('user/layouts/footer')
-   </footer><!-- End  Footer -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-  @include('user/layouts/vendorjsfiles')
+    @include('user/layouts/footer')
+  </footer><!-- End Footer -->
 
-   </script>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 
-   <!-- Vendor JS Files -->
-   <script src="{{ asset('user/story/assets/vendor/jquery/jquery.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/jquery.easing/jquery.easing.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/php-email-form/validate.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/venobox/venobox.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/waypoints/jquery.waypoints.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/counterup/counterup.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/owl.carousel/owl.carousel.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}" ></script>
-   <script src="{{ asset('user/story/assets/vendor/aos/aos.js') }}" ></script>
 
-   <!-- Template Main JS File -->
-   <script src="{{ asset('user/story/assets/js/main.js') }}" ></script>
 
- </body>
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('user/story/assets/vendor/jquery/jquery.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/jquery.easing/jquery.easing.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/php-email-form/validate.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/venobox/venobox.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/waypoints/jquery.waypoints.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/counterup/counterup.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/owl.carousel/owl.carousel.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}" ></script>
+  <script src="{{ asset('user/story/assets/vendor/aos/aos.js') }}" ></script>
 
- </html>
+  <!-- Template Main JS File -->
+  <script src="{{ asset('user/story/assets/js/main.js') }}" ></script>
+
+</body>
+
+</html>

@@ -199,14 +199,14 @@ font-family:lora,serif;
 
   <!-- ======= Header ======= -->
   @include('user/layouts/header')
-
+  <main id="main">
   <!-- ======= Slider Section ======= -->
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
-        <img src="{{ asset('user/img/slider/banner1.png') }}" alt="" title="#slider-direction-1" />
+        <img src="{{ asset('user/img/slider/test6.png') }}" alt="" title="#slider-direction-1" />
 
-         <img src="{{ asset('user/img/slider/baner2.png') }}" alt=""  title="#slider-direction-2" />
+         <img src="{{ asset('user/img/slider/test7.png') }}" alt=""  title="#slider-direction-2" />
 
      <!--  <img src="{{ asset('user/img/slider/slider2.jpg') }}" alt="" title="#slider-direction-2" />
         <img src="{{ asset('user/img/slider/slider3.jpg') }}" alt="" title="#slider-direction-3" />-->
@@ -219,20 +219,20 @@ font-family:lora,serif;
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="slider-content">
                 <!-- layer 1 -->
-                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1" style="font-size:72px; color:black; margin-top:-50px;">A Leading Career</h2>
-                  </br> </br>
-                    <h2 class="title1"  style="font-size:72px; color:black">Consulting Firm</h2>
+                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s" >
+                  <h2 class="title1" style="font-size:72px; color:black; ">A Leading Career <br>
+
+                 Consulting Firm</h2>
                 </div>
 
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2" style="font-family:lora,serif;font-size:30px; color:black; margin-top:4px; font-weight:400; " > Helping candidates find dream jobs</h1>
+                  <h1 class="title2" style="font-family:lora,serif;font-size:30px; color:black; margin-top:20px; font-weight:400; " > Helping candidates find dream jobs</h1>
                     </div>
              {{--   <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                   <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                  <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                  <a class="ready-btn page-scroll" href="#about">Learn More  s</a>
                 </div>
                 --}}
 
@@ -253,7 +253,7 @@ font-family:lora,serif;
                 <!-- layer 1 -->
                 </br></br></br></br>
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1" style="font-size:72px; color:black; margin-top:-80px;">Make <span style="color:#F5BB2A">Dreams</span> Happen </h2>
+                  <h2 class="title1" style="font-size:72px; color:black; ">Make <span style="color:#F5BB2A">Dreams</span> Happen </h2>
                 </div>
                 <!-- layer 2 -->
              <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
@@ -299,7 +299,7 @@ font-family:lora,serif;
     </div>
   </div><!-- End Slider -->
 
-  <main id="main">
+
 
     <!-- ======= About Section ======= -->
     <div id="services" class="services-area area-padding">
@@ -447,7 +447,7 @@ font-family:lora,serif;
                                 <div class="team_img">
                                 {{--    <i class="fa fa-calendar fa-5x  rounded-circle"></i>--}}
 
-                                     <img src="{{ asset('user/img/slider/1.png') }}" alt="">
+                                     <img src="{{ asset('user/img/slider/ic-1.png') }}" alt="">
                                 </div>
 
                                 <h3 style="font-family:roboto,sans-serif; font-weight:500; padding-top:1px;">​Career</h3>
@@ -482,7 +482,7 @@ font-family:lora,serif;
                                 <div class="team_img">
                                  {{--  <i class="fa fa-laptop fa-5x"></i>--}}
 
-                                    <img src="{{ asset('user/img/slider/2.png') }}" alt="">
+                                    <img src="{{ asset('user/img/slider/ic-2.png') }}" alt="">
 
                                 </div>
 
@@ -515,7 +515,7 @@ font-family:lora,serif;
                                    <div class="team_member" >
                                 <div class="team_img">
                                   {{--   <i class="fa fa-bell fa-5x"></i>--}}
-                                     <img src="{{ asset('user/img/slider/3.png') }}" alt="">
+                                     <img src="{{ asset('user/img/slider/ic-3.png') }}" alt="">
                                 </div>
                               <h3 style="font-family:roboto,sans-serif; font-weight:500; ">​Interview Preparation</h3>
                                                       <!--  <p class="role">UI developer</p> -->
@@ -539,7 +539,7 @@ font-family:lora,serif;
                                                   <div class="team_member" >
                                                               <div class="team_img">
                                                                 {{-- <i class="fa fa-users fa-5x"></i>--}}
-                                                                <img src="{{ asset('user/img/slider/4.png') }}" alt="">
+                                                                <img src="{{ asset('user/img/slider/ic-4.png') }}" alt="">
 
                                                               </div>
                                              <h3 style="font-family:roboto,sans-serif; font-weight:500; ">​​Offer </h3>
@@ -624,101 +624,103 @@ font-family:lora,serif;
 
 
     <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-           <img src="{{ asset('user/img/slider/industry/i1.png') }}" alt="" >
+            <div class="col-md-2 col-sm-2 col-xs-2 ">
+           <img src="{{ asset('user/img/slider/industry/i1.png') }}" alt=""  class="newimg">
        <h2  style="font-family:roboto,sans-serif;font-size:22px;">Financial Services </h2>
 
             </div>
 
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                  <img src="{{ asset('user/img/slider/industry/i2.png') }}" alt="" >
- <h2  style="font-family:roboto,sans-serif;font-size:22px;">Banking </h2>
-              </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-2 ">
+           <img src="{{ asset('user/img/slider/industry/i2.png') }}" alt=""  class="newimg">
+       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Banking </h2>
+
+            </div>
 
              <div class="col-md-2 col-sm-2 col-xs-2">
-                     <img src="{{ asset('user/img/slider/industry/i3.png') }}" alt="" >
+                     <img src="{{ asset('user/img/slider/industry/i3.png') }}" alt=""  class="newimg">
  <h2  style="font-family:roboto,sans-serif;font-size:22px;">Consulting </h2>
               </div>
 
              <div class="col-md-2 col-sm-2 col-xs-2">
 
-                     <img src="{{ asset('user/img/slider/industry/i4.png') }}" alt="" >
+                     <img src="{{ asset('user/img/slider/industry/i4.png') }}" alt=""  class="newimg" >
                       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Technology </h2>
               </div>
 
              <div class="col-md-2 col-sm-2 col-xs-2">
-                    <img src="{{ asset('user/img/slider/industry/i5.png') }}" alt="" >
+                    <img src="{{ asset('user/img/slider/industry/i5.png') }}" alt=""  class="newimg">
                          <h2  style="font-family:roboto,sans-serif;font-size:22px;">Accounting </h2>
               </div>
 
              <div class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="{{ asset('user/img/slider/industry/i6.png') }}" alt="" >
+                        <img src="{{ asset('user/img/slider/industry/i6.png') }}" alt=""  class="newimg">
                             <h2  style="font-family:roboto,sans-serif;font-size:22px;">Investment Management </h2>
 
               </div>
 
             <div class="col-md-2 col-sm-2 col-xs-2">
-           <img src="{{ asset('user/img/slider/industry/i21.png') }}" alt="" >
+           <img src="{{ asset('user/img/slider/industry/i21.png') }}" alt=""  class="newimg">
        <h2  style="font-family:roboto,sans-serif;font-size:22px;">Fashion </h2>
 
             </div>
 
               <div class="col-md-2 col-sm-2 col-xs-2">
-                  <img src="{{ asset('user/img/slider/industry/i22.png') }}" alt="" >
+                  <img src="{{ asset('user/img/slider/industry/i22.png') }}" alt=""  class="newimg">
                   <h2  style="font-family:roboto,sans-serif;font-size:22px;">Internet </h2>
 
               </div>
 
              <div class="col-md-2 col-sm-2 col-xs-2">
-                     <img src="{{ asset('user/img/slider/industry/i23.png') }}" alt="" >
+                     <img src="{{ asset('user/img/slider/industry/i23.png') }}" alt=""  class="newimg">
                     <h2  style="font-family:roboto,sans-serif;font-size:22px;">Automotive </h2>
               </div>
 
              <div class="col-md-2 col-sm-2 col-xs-2">
 
-                     <img src="{{ asset('user/img/slider/industry/i24.png') }}" alt="" >
+                     <img src="{{ asset('user/img/slider/industry/i24.png') }}" alt=""  class="newimg">
                      <h2  style="font-family:roboto,sans-serif;font-size:22px;">Retail </h2>
               </div>
 
-             <div class="col-md-2 col-sm-2 col-xs-2">
-                    <img src="{{ asset('user/img/slider/industry/i25.png') }}" alt="" >
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                    <img src="{{ asset('user/img/slider/industry/i25.png') }}" alt=""  class="newimg">
                       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Nonprofit </h2>
               </div>
 
-             <div class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="{{ asset('user/img/slider/industry/i26.png') }}" alt="" >
+             <div class="col-md-2 col-sm-2 col-xs-2  ">
+                        <img src="{{ asset('user/img/slider/industry/i26.png') }}" alt=""  class="newimg">
                   <h2  style="font-family:roboto,sans-serif;font-size:22px;">Marketing & Adverting </h2>
               </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-           <img src="{{ asset('user/img/slider/industry/i31.png') }}" alt="" >
+            <div class="col-md-2 col-sm-2 col-xs-2 ">
+           <img src="{{ asset('user/img/slider/industry/i31.png') }}" alt=""  class="newimg">
             <h2  style="font-family:roboto,sans-serif;font-size:22px;">Mechanical Engineering </h2>
 
 
             </div>
 
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                  <img src="{{ asset('user/img/slider/industry/i32.png') }}" alt="" >
+              <div class="col-md-2 col-sm-2 col-xs-2 ">
+                  <img src="{{ asset('user/img/slider/industry/i32.png') }}" alt=""  class="newimg">
                 <h2  style="font-family:roboto,sans-serif;font-size:22px;"> Airline </h2>
               </div>
 
-             <div class="col-md-2 col-sm-2 col-xs-2">
-                     <img src="{{ asset('user/img/slider/industry/i33.png') }}" alt="" >
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                     <img src="{{ asset('user/img/slider/industry/i33.png') }}" alt=""  class="newimg">
                  <h2  style="font-family:roboto,sans-serif;font-size:22px;">Real Estate</h2>
               </div>
 
-             <div class="col-md-2 col-sm-2 col-xs-2">
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
 
-                     <img src="{{ asset('user/img/slider/industry/i34.png') }}" alt="" >
+                     <img src="{{ asset('user/img/slider/industry/i34.png') }}" alt=""  class="newimg">
                       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Insurance </h2>
               </div>
 
-             <div class="col-md-2 col-sm-2 col-xs-2">
-                    <img src="{{ asset('user/img/slider/industry/i35.png') }}" alt="" >
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                    <img src="{{ asset('user/img/slider/industry/i35.png') }}" alt=""  class="newimg">
                 <h2  style="font-family:roboto,sans-serif;font-size:22px;">Manufacturing </h2>
               </div>
 
-             <div class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="{{ asset('user/img/slider/industry/i36.png') }}" alt="" >
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                        <img src="{{ asset('user/img/slider/industry/i36.png') }}" alt=""  class="newimg">
                         <h2  style="font-family:roboto,sans-serif;font-size:22px;">More </h2>
               </div>
 
@@ -744,14 +746,14 @@ font-family:lora,serif;
 
 
                            {{--  user/img/slider/blue11.PNG--}}
-    <div id="about" class="about-area area-padding" style="z-index:-1;height:790px;background-image: url('user/img/slider/offerbg111.png') ; background-size:100% 790px;">
+    <div id="hotTags" class="about-area area-padding" style="z-index:-1;height:790px;background-image: url('user/img/slider/offerbg111.png') ; background-size:100% 790px;">
       <div class="container text-center">
       </br>
  <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100; color:white;">
 Our Offers</h2>
 </br>
     <div class="box">
-        <ul id="list1" >
+        <ul id="list" >
            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
             <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
             <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
@@ -1491,241 +1493,12 @@ Our Offers</h2>
  @include('user/layouts/vendorjsfiles')
 
 
-<script>
 
-const controls=document.querySelector(".controls");
-  const container=document.querySelector(".thumbnail-container");
-  const allBox=container.children;
-  const containerWidth=container.offsetWidth;
-  const margin=30;
-   var items=0;
-   var totalItems=0;
-   var jumpSlideWidth=0;
-
-
-  // item setup per slide
-
- responsive=[
-  {breakPoint:{width:0,item:1}}, //if width greater than 0 (1 item will show)
-  {breakPoint:{width:600,item:2}}, //if width greater than 600 (2  item will show)
-  {breakPoint:{width:1000,item:4}} //if width greater than 1000 (4 item will show)
- ]
-
- function load(){
-     for(let i=0; i<responsive.length;i++){
-     	if(window.innerWidth>responsive[i].breakPoint.width){
-     		items=responsive[i].breakPoint.item
-     	}
-     }
-     start();
- }
-
- function start(){
- 	 var totalItemsWidth=0
- 	for(let i=0;i<allBox.length;i++){
- 		 // width and margin setup of items
- 		allBox[i].style.width=(containerWidth/items)-margin + "px";
- 		allBox[i].style.margin=(margin/2)+ "px";
-        totalItemsWidth+=containerWidth/items;
-        totalItems++;
- 	}
-
- 	// thumbnail-container width set up
- 	container.style.width=totalItemsWidth + "px";
-
- 	// slides controls number set up
- 	 const allSlides=Math.ceil(totalItems/items);
-     const ul=document.createElement("ul");
-        for(let i=1;i<=allSlides;i++){
-          const li=document.createElement("li");
-               li.id=i;
-               li.innerHTML=i;
-               li.setAttribute("onclick","controlSlides(this)");
-               ul.appendChild(li);
-               if(i==1){
-               	li.className="active";
-               }
-        }
-        controls.appendChild(ul);
- }
-
-    // when click on numbers slide to next slide
- function controlSlides(ele){
-       // select controls children  'ul' element
-       const ul=controls.children;
-
-       // select ul children 'li' elements;
-      const li=ul[0].children
-
-
-       var active;
-
-       for(let i=0;i<li.length;i++){
-       	if(li[i].className=="active"){
-       		// find who is now active
-       		active=i;
-       		// remove active class from all 'li' elements
-       		li[i].className="";
-       	}
-       }
-       // add active class to current slide
-       ele.className="active";
-
-       var numb=(ele.id-1)-active;
-          jumpSlideWidth=jumpSlideWidth+(containerWidth*numb);
-       container.style.marginLeft=-jumpSlideWidth + "px";
- }
-
-window.onload=load();
+ <script src="{{ asset('user/js/offertest.js') }}"></script>
 
 
 
-</script>
 
-
-
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-		<script src="{{ asset('user/vendor/js/jquery.hislide.js') }}"></script>
-		   <script src="{{ asset('user/vendor/js/jquery-3.4.1.min.js') }}"></script>
-
-
-    <script>
-        $(function () {
-            const $box = $(".box"),
-                $ul = $box.children("ul"),
-                $li = $ul.children(),
-                $ol = $ul.next("ol"),
-                $btn = $ol.next("#btn"),
-                $btnLeft = $btn.children(".btnLeft"),
-                $btnRight = $btn.children(".btnRight")
-
-            // 获取图片张数和每张图片的宽度
-            let num = $li.length
-            let width = $li.eq(0).outerWidth()
-
-            // 把第0张图片追加到最后
-            $ul.append($li.eq(0).clone())
-
-            // 给ul添加宽度
-            $ul.width((num + 1) * width)
-
-            // 自动轮播
-            auto()
-
-            /*------------------------小圆点-----------------------------*/
-            //创建小圆点
-            for (let i = 0; i < num; i++) {
-                $("<li>").addClass(i === 0 ? "active" : "").appendTo($ol)
-            }
-
-            // 定义当前和上一张图片的索引
-            let index = 0
-            let lastIndex = 0
-
-            // ul的运动状态，默认为静止
-            let isMove = false
-
-            // 点击小圆点切换图片
-            // ol下的li
-            let olis = $ol.children()
-            olis.on("click", function () {
-                if (isMove) {
-                    return
-                }
-                isMove = true
-                // 该this指向当前点击的小圆点，是原生，要转为jQuery
-                // 先记录上一个索引
-                lastIndex = index
-                index = $(this).index()
-                // 移除所有li的active
-                olis.eq(lastIndex).removeClass("active")
-                olis.eq(index).addClass("active")
-
-
-                // 图片跟着小圆点一起切换
-                $ul.animate({
-                    left: -index * width
-                }, 1000, function () {
-                    isMove = false
-                })
-
-            })
-
-            /*-----------------------右箭头-----------------------*/
-            $btnRight.on("click", function () {
-                if (isMove) {
-                    return
-                }
-                isMove = true
-                // 判断是否到最后一张图片
-                lastIndex = index
-                index++
-                if (index > num - 1) {
-                    $ul.animate({
-                        left: -index * width
-                    }, 1000, function () {
-                        index = 0
-                        $ul.css("left", 0)
-                        isMove = false
-                    })
-                } else {
-                    $ul.animate({
-                        left: -index * width
-                    }, 1000, function () {
-                        isMove = false
-                    })
-                }
-                olis.eq(lastIndex).removeClass("active")
-                olis.eq(index).addClass("active")
-            })
-
-            /*----------------------------左箭头---------------------*/
-            $btnLeft.on("click", function () {
-                // 判断是否到第一张图片
-                if (isMove) {
-                    return
-                }
-                isMove = true
-                lastIndex = index
-                index--
-                // 这时的index是一个负数
-                if (index < 0) {
-                    index = num - 1
-                    $ul.css("left", -num * width).animate({
-                        left: -index * width
-                    }, 1000, function () {
-                        isMove = false
-                    })
-                } else {
-                    $ul.animate({
-                        left: -index * width
-                    }, 1000, function () {
-                        isMove = false
-                    })
-                }
-                olis.eq(lastIndex).removeClass("active")
-                olis.eq(index).addClass("active")
-            })
-
-            /*--------------------------自动轮播-----------------------*/
-            function auto() {
-                $box.timer = setInterval(() => {
-                    $btnRight.trigger("click")
-                }, 1000)
-            }
-
-            /*--------------------------移入移出事件--------------------*/
-            $box.hover(function () {
-                clearInterval($box.timer)
-                console.log(index)
-            }, function () {
-                auto()
-            })
-        })
-    </script>
-		<script>
-			$('.slide').hiSlide();
-		</script>
 
 
 </body>

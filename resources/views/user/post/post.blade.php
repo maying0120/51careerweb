@@ -10,38 +10,27 @@
 
   <!-- Header -->
   @include('user/layouts/header')
-  <main id="main">
 
     <!-- ======= Blog Header ======= -->
-    {{-- <div class="header-bg page-area">
-      <div class="home-overly"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="slider-content text-center">
-              <div class="header-bottom">
-                <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
-                  <h1 class="title2">My Blog</h1>
-                </div>
-                <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
-                  <h2 class="title3">Profesional Blog Page</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Blog Header -->--}}
+<main id="main">
 
 
-     <div>
+<div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
 
-              <img src="{{ asset('user/img/background/joinusbg.jpg') }}" />
-                <div class="text-center">
 
-             <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px; ">POST</h2>
+   <img src="{{ asset('user/img/service/diannao1.png') }}" alt="" title="#slider-direction-1"  width="100%;"/>
+ {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
 
-                                                    </div>
+   <div class="text-center" >
+
+       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">POST </h2>
+
+                                           </div>
+</div>
+</div>
+
+
 </br></br></br></br></br>
    <!-- ======= Blog Page ======= -->
       <div class="blog-page area-padding">

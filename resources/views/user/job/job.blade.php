@@ -11,59 +11,43 @@
 
 
 
+
 <script src="{{ asset('user/job/js/vendor/jquery-2.2.4.min.js') }}"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-
-
 <link rel="stylesheet" href="{{ asset('user/job/css/magnific-popup.css') }}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-
-
-
-
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
 <script>
-	function getMessage() {
-		$.ajax({
-			type: 'get',
-			url: '{{ route('ajax') }}',
-			data: filter,
-
-			success: function (data) {
-				if (data.jobs.length == 0) {
-                    dataset.jobs = []
-                    dataset.jobdetail = {id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''}
-
-                } else {
-                    dataset.jobs = data.jobs;
-                    dataset.jobdetail = dataset.jobs[0]
-                }
-
+function getMessage() {
+	$.ajax({
+		type: 'get',
+		url: '{{ route('ajax') }}',
+		data: filter,
+		success: function (data) {
+			if (data.jobs.length == 0) {
+				dataset.jobs = []
+				dataset.jobdetail = {id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''}
+			} else {
+				dataset.jobs = data.jobs;
+				dataset.jobdetail = dataset.jobs[0]
 			}
-		});
-	}
-
-
+		}
+	});
+}
 </script>
-
 <script>
 	function setjobid(id){
 		$("#jobid").val(id);
 		dianwo();
 	}
 </script>
-
-
-
 <script>
 	filter = {
 		location: '', industry: '', exp_level: '', position:''
 	}
 </script>
-
 <script>
 	function feedfilter() {
 		filter.location = $("#default-selects").val();
@@ -72,7 +56,6 @@
 		filter.position = $("#default-search").val();
 		getMessage();
 	}
-
 	function quicklocation(data){
 		filter.location = data;
 		getMessage();
@@ -861,291 +844,200 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 </style>
 
 
+
 <script type="text/javascript">
-
 	window.onload=function(){
-
 		var Button = document.getElementsByClassName("blue1");
-
 		for (i = 0; i < Button.length; i++) {
-
 			Button[i].onclick=function(){
-
 				for (i = 0; i < Button.length; i++) {
-
 					Button[i].style.backgroundColor = "";
-
 				}
-
 				this.style.backgroundColor = "#f00283";
-
 			}
-
 		}
-
 	}
-
-
-
 </script>
 
-
-
-
-   @include('user/layouts/header')
-
-
-
-
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
+	<!-- Header -->
+	@include('user/layouts/header')
 	@if (Session::has('message'))
-		<div class="alert alert-info">{{ Session::get('message') }}</div>
- 	@endif
-<div class="content" style="margin-top: 80px;">
-<div class="container">
-</br></br></br>
-
-
-
-
-<div style=" float: left; margin-top:-60px;" >
-
-
-	<select class="my-select" onchange="feedfilter()" id="default-selects">
-		<option value="Location">Location</option>
-		<option value="New York">New York</option>
-		<option value="Los Angeles">Los Angeles</option>
-		<option value="Dallas">Dallas</option>
-		<option value="Brooklyn">Brooklyn</option>
-		<option value="Houston">Houston</option>
-		<option value="Chicago">Chicago</option>
-	</select>
-
-	<select class="my-select" onchange="feedfilter()" id="default-selects2">
-			<option value="Industry">Industry</option>
-			<option value="Medical">Medical</option>
-			<option value="Technology">Technology</option>
-			<option value="Goverment">Goverment</option>
-			<option value="Development">Development</option>
-	</select>
-
-
-	<select class="my-select" onchange="feedfilter()" id="default-selects3">
-		<option value="Exp Level">Exp Level</option>
-		<option value="Internship">Internship</option>
-		<option value="Entry Level">Entry Level</option>
-		<option value="Associate">Associate</option>
-		<option value="Mid-senior level">Mid-senior level</option>
-	</select>
-
-
-
-
-</div>
-
-<div>
-
-                   <input type="search" name="search" placeholder="Search..." id="default-search" class="input1">
-                    <button class="button1" type="button" onclick="feedfilter()">
-                      <i class="fa fa-search" ></i>
-                    </button>
-
-
-</div>
-
-
-
-<div id="jobdetails" class="xianshi">
-<h3 class="page-header"></h3>
-
-  <div class="row-fluid">
-    <div class="col-md-4 col-sm-4 col-xs-5" style="padding-left: 0px;">
-      <div class="well menuSideBar" style="padding: 8px 0px;">
-        <ul class="nav nav-list" id="menuSideBar">
-        <div >
-          <li class="nav-header" style="margin-top:-50px;">All Jobs</li>
-    <h5>All Jobs  </h5>
-
-		<div >
-
-			<li mid="tab2" funurl="html.html" v-for="(job, index) in jobs" >
-
-			<a href="#"  v-on:click="display">
-
-				<h3 v-bind:id=index>
-				${ job.position }</h3>
-
-			  <h11>
-				${ job.city }</h11></br> <h11> ${ job.state }</h11>
-</br>
-
-			  <h11>
-				Job id: ${ job.id }</h11>
-<hr style="width:40%;">
-			</a>
-			</li>
-
-
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+	@endif
+	<div class="content" style="margin-top: 80px;">
+		<div class="container">
+		</br></br></br>
+		<div style=" float: left; margin-top:-60px;" >
+			<select class="my-select" onchange="feedfilter()" id="default-selects">
+				<option value="Location">Location</option>
+				<option value="New York">New York</option>
+				<option value="Los Angeles">Los Angeles</option>
+				<option value="Dallas">Dallas</option>
+				<option value="Brooklyn">Brooklyn</option>
+				<option value="Houston">Houston</option>
+				<option value="Chicago">Chicago</option>
+			</select>
+			<select class="my-select" onchange="feedfilter()" id="default-selects2">
+				<option value="Industry">Industry</option>
+				<option value="Medical">Medical</option>
+				<option value="Technology">Technology</option>
+				<option value="Goverment">Goverment</option>
+				<option value="Development">Development</option>
+			</select>
+			<select class="my-select" onchange="feedfilter()" id="default-selects3">
+				<option value="Exp Level">Exp Level</option>
+				<option value="Internship">Internship</option>
+				<option value="Entry Level">Entry Level</option>
+				<option value="Associate">Associate</option>
+				<option value="Mid-senior level">Mid-senior level</option>
+			</select>
 		</div>
-
-
-
-        </ul>
-      </div>
-    </div>
-
-    <div class="col-md-8 col-sm-8 col-xs-7" id="mainFrameTabs" style="padding : 0px;">
-
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist" >
-        <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">Job Details </a></li>
-      </ul>
-
-
-
-    <div class="col-md-11" id="mainFrameTabs" style="padding : 16px; margin-top:-50px;">
-        <div class="page-header" style="display:block" id="divmain">
-
-    		<h8>
-
-			${jobdetail.position}
-			</h8 >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <tr>
-							@if (auth()->user()->status != "0")
-							<td><button class="blueb" data-toggle="modal" data-target="#myModal" v-on:click="setjobid(jobdetail.id)">Apply Now </button></td>
-							@endif
-							<td><button class="blueb1">  <i class="fa fa-heart-o" style="z-index: 999;"></i> </button></td>
-            </tr>
-
-            </br>
-			<h11> Job id: ${jobdetail.id}</h11>
-			</br>
-            <h11> Industry: ${jobdetail.industry}</h11>
-            </br>
-
-            <h11>Location: ${jobdetail.city}  ${jobdetail.state}</h11>
-
-            <div>
-                <hr noshade color="#F2F3F4">
-                <h5 style="display:inline;"> Exp Level: </h5>
-                <h11>${jobdetail.exp_level}</h11>   &nbsp;
-                <h4 >
-                    Company Size: </h4>
-
-                <h11> ${jobdetail.company_size}</h11>  &nbsp;
-                <h4 >
-                    Employment Type: </h4>
-
-                <h11> ${jobdetail.job_type}</h11>
-
-
-
-                <hr noshade color="#F2F3F4">
-
-            </div>
-
-
-            <h5>Job Description:</h5>
-			<span v-html="jobdetail.detail">
-			</span>
-
-
-        </div>
-
-</div>
-
-
-
-
-
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-		   <!-- 模态框主体 -->
-<div class="zhezhao" id='zhezhao' style="height:20px;">
-	<div class="tankuang" style="margin-top:200px;">
-
-		   <div class="modal-body">
-			<div class="job_details_area">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="apply_job_form white-bg">
-							<h4>Quick Apply For The Job</h4>
-							<form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
-								{{ csrf_field() }}
-
-
-								<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value=""
-									   >
-
-								<h5>* 1.Upload Your Resume</h5>
-
-								<div class="col-md-12">
-
-									<div class="input-group">
-										<input type = checkbox name="useprev_resume" value ="1">
-
-										<td><a href = "{{route('host')}}/uploads/{{ Auth::guard('web')->user()->resume }}"> Use your previous resume</a> </td>
-
-
-									</div>
-
-
-									<div class="input-group">
-
-                                            <p>Accept .pdf, .doc, .docx </p>
-										<div class="custom-file">
-											<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
+		<div style="margin-top:-40px; float:right;">
+			<input type="search" name="search" placeholder="Search..." id="default-search">
+			<button class="button" type="button" onclick="feedfilter()">
+				<i class="fa fa-search"></i>
+			</button>
+		</div>
+		<div id="jobdetails" style="margin-top:-30px;">
+			<h3 class="page-header"></h3>
+			<div class="">
+				<div class="row-fluid">
+					<div class="col-md-4" style="padding-left: 0px;">
+						<div class="well menuSideBar" style="padding: 8px 0px;">
+							<ul class="nav nav-list" id="menuSideBar">
+								<li class="nav-header">All Jobs</li>
+								<li class="nav-divider" ></li>
+								<div >
+									<li mid="tab2" funurl="html.html" v-for="(job, index) in jobs" >
+										<a href="#"  v-on:click="display">
+											<h3 v-bind:id=index>
+												${ job.position }</h3>
+												<h11  class="page-header">
+													${ job.city }, ${ job.state }</h11>
+												</br>
+												<h11  class="page-header">
+													Job id: ${ job.id }</h11>
+												</a>
+											</li>
 										</div>
-
-									</div>
+									</ul>
 								</div>
 
-
-
-
-								<h5> 2. Upload Your Coverletter</h5>
-
-								<div class="col-md-12">
-									<div class="input-group">
-									 <p>Accept .pdf, .doc, .docx </p>
-										<div class="custom-file">
-											<label> <input name="coverletter" id="coverletter" type="file"
-														   accept=".pdf, .doc, .docx"/> </label>
-										</div>
-
+							</div>
+							<div class="col-md-8" id="mainFrameTabs" style="padding : 0px;">
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist" >
+									<li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">Job Details </a></li>
+								</ul>
+								<div class="col-md-11" id="mainFrameTabs" style="padding : 16px; margin-top:-50px;">
+									<div class="page-header" style="display:block" id="divmain">
+										<span style="font-size: 30px; font-weight: bold;"   >
+											${jobdetail.position}
+										</span >
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<tr>
+											@if (auth()->user()->status != "0")
+											<td><button class="blueb" data-toggle="modal" data-target="#myModal" v-on:click="setjobid(jobdetail.id)">Apply Now </button></td>
+											@endif
+											<td><button class="blueb1">  <i class="fa fa-heart-o" style="z-index: 999;"></i> </button></td>
+										</tr>
+									</br>
+									<h11> Job id: ${jobdetail.id}</h11>
+								</br>
+								<h11> Industry: ${jobdetail.industry}</h11>
+							</br>
+							<h11>Location: ${jobdetail.city}  ${jobdetail.state}</h11>
+							<div>
+								<hr noshade color="#F2F3F4">
+								<h4 style="display:inline;"> Exp Level: </h4>
+								<h11>${jobdetail.exp_level}</h11>   &nbsp;
+								<h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
+									Company Size: </h4>
+									<h11> ${jobdetail.company_size}</h11>  &nbsp;
+									<h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
+										Employment Type: </h4>
+										<h11> ${jobdetail.job_type}</h11>
+										<hr noshade color="#F2F3F4">
 									</div>
+									<h3>Job Description:</h3>
+									<span v-html="jobdetail.detail">
+									</span>
 								</div>
 
-
-								<h5> 3. Upload Your Transcript</h5>
-
-								<div class="col-md-12">
-									<div class="input-group">
-									 <p>Accept .pdf, .doc, .docx </p>
-										<div class="custom-file">
-											<label> <input name="transcript" id="transcript" type="file"
-														   accept=".pdf, .doc, .docx"/> </label>
-										</div>
-
-									</div>
-								</div>
-
-
-								<div class="col-md-12">
-									<div class="submit_btn">
-										<button class="boxed-btn3 w-100" type="submit">Apply Now</button>
-									</div>
-								</div>
-							</form>
+							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 模态框主体 -->
+	<div class="zhezhao" id='zhezhao' style="height:20px;">
+		<div class="tankuang" >
+			<div id="header">
+				<div class="modal-body">
+					<div class="job_details_area">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="apply_job_form white-bg">
+									<h4>Quick Apply For The Job</h4>
+									<form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
+										{{ csrf_field() }}
+										<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value="">
+										<h5>* 1: Upload your Resume</h5>
+										<div class="col-md-12">
+											<div class="input-group">
+												<input type="checkbox" name="useprev_resume" value ="1">
+												<td>
+													<a class="theme-color"> Use your uploaded resume</a>
+												</td>
+											</div>
+											<div class="input-group">
+												<p>accept .pdf, .doc, .docx </p>
+												<div class="custom-file">
+													<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
+												</div>
+											</div>
+										</div>
+										<h5> 2: Upload your Coverletter</h5>
+										<div class="col-md-12">
+											<div class="input-group">
+												<p>accept .pdf, .doc, .docx </p>
+												<div class="custom-file">
+													<label> <input name="coverletter" id="coverletter" type="file"
+														accept=".pdf, .doc, .docx"/> </label>
+													</div>
+												</div>
+											</div>
+											<h5> 3: Upload your Transcript</h5>
+											<div class="col-md-12">
+												<div class="input-group">
+													<p>accept .pdf, .doc, .docx </p>
+													<div class="custom-file">
+														<label> <input name="transcript" id="transcript" type="file"
+															accept=".pdf, .doc, .docx"/> </label>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="submit_btn">
+														<button class="boxed-btn3 w-100" type="submit">Apply Now</button>
+													</div>
+												</div>
+											</form>
 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="header-right" onclick="hidder()">x</div>
+						<!-- 模态框底部 -->
+						{{--                <div class="modal-footer">--}}
+							{{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>--}}
+							{{--                </div>--}}
+						</div>
 					</div>
 
 
@@ -1160,65 +1052,51 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 {{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>--}}
 {{--                </div>--}}
 
+
 	</div>
+	<!--
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/b.tabs.js" ></script>
+		<script type="text/javascript" src="js/demo.js" ></script>
+	-->
+	<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 	</div>
-</div>
-</div>
-</div>
-</div>
-<!--
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/b.tabs.js" ></script>
-<script type="text/javascript" src="js/demo.js" ></script>
--->
-
-
-
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-</div>
-
-
-<script>
-	dataset = {
-		jobs: [
-
-		],
-
-		jobdetail:
+	<script>
+		dataset = {
+			jobs: [
+			],
+			jobdetail:
 			{id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''},
-
-
-	}
-	$(document).ready(function () {
-	new Vue({
-		delimiters: ['${', '}'],
-		el: '#jobdetails',
-		data: dataset,
-		methods: {
-			display: function(event) {
-				if (event) {
-					dataset.jobdetail = dataset.jobs[event.target.id]
-      			}
-			}
 		}
-	})
-	})
-	@if ($rec_jobs == "null") {
-		getMessage();
-
-	} @else {
 		$(document).ready(function () {
-			dataset.jobs = {!! $rec_jobs !!};
-		});
-
-	}@endif
-
-
-
-</script>
-
-<script>
+			new Vue({
+				delimiters: ['${', '}'],
+				el: '#jobdetails',
+				data: dataset,
+				methods: {
+					display: function(event) {
+						if (event) {
+							dataset.jobdetail = dataset.jobs[event.target.id]
+						}
+					}
+				}
+			})
+		})
+		@if ($rec_jobs == "null") {
+			getMessage();
+		} @else {
+			$(document).ready(function () {
+				dataset.jobs = {!! $rec_jobs !!};
+			});
+		}@endif
+	</script>
+	<script>
+		document.getElementById('zhezhao').style.display="none";
+		function dianwo(){
+			document.getElementById('zhezhao').style.display="";
+		}
+		function hidder(){
 			document.getElementById('zhezhao').style.display="none";
 			function dianwo(){
 				document.getElementById('zhezhao').style.display="";
@@ -1232,5 +1110,6 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
  @include('user/layouts/footer')
  @include('user/layouts/vendorjsfiles')
   </footer><!-- End  Footer -->
+
 </body>
 </html>

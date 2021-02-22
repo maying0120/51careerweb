@@ -37,9 +37,8 @@ class JobController extends Controller
             $curtime = date('Y-m-d' , time());
             $jobs = Job::where('expire_time', '>=', $curtime );
             $user_profile = Profile::where('user', $id)->first();
-            $jobs = $jobs->where('city','like','%'.$user_profile->expect_city.'%')
-                         ->where('job_type','like','%'.$user_profile->expect_type.'%')
-                         ->where('position','like','%'.$user_profile->expect_position.'%')
+            $jobs = $jobs->where('job_type','like','%'.$user_profile->expect_type.'%')
+                         ->whereIn('position', $user_profile->expect_positions)
                          ->get();
          } else {
             $jobs = null;

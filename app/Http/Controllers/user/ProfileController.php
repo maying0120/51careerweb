@@ -35,11 +35,12 @@ class ProfileController extends Controller
       $educations = DB::select("SELECT * FROM educations WHERE user=$id");
       $showcases = DB::select("SELECT * FROM showcases WHERE user=$id");
       $locations = DB::select("SELECT country, state, city FROM jobs GROUP BY country, state, city");
+      $positions = DB::select("SELECT position FROM jobs GROUP BY position");
       $applications = Application::where('user_id', $id)->get();
       $skills = Skill::all();
 
       return view('user/profile/profile',compact('user', 'projects', 'companies',
-      'educations', 'showcases', 'applications', 'profile', 'skills', 'locations', 'tab'));
+      'educations', 'showcases', 'applications', 'profile', 'skills', 'locations', 'positions', 'tab'));
     }
 
     public function uploadAvatar(Request $request)
@@ -57,7 +58,7 @@ class ProfileController extends Controller
       $profile = Self::construct();
       $profile->expect_type = $request->type;
       $profile->expect_salary = $request->salary;
-      $profile->expect_title = $request->title;
+      $profile->expect_positions = $request->positions;
       $profile->expect_locations = $request->locations;
       $profile->visa = $request->visa;
 

@@ -13,6 +13,7 @@ class profile extends Model
    */
   protected $casts = [
       'expect_locations' => 'array',
+      'expect_positions' => 'array',
       'skills' => 'array'
   ];
 }

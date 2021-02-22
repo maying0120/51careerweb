@@ -33,6 +33,7 @@
               <th>id</th>
               <th>user</th>
               <th>resume</th>
+              <th>transcript</th>
               <th>delete</th>
             </tr>
             </thead>
@@ -44,8 +45,15 @@
               <td>
                 <form action="{{ route('download_resume') }}" method="POST">
                   {{ csrf_field() }}
-                  <input id="download-resume" type="submit" value="{{ $profile->resume }}"/>
-                  <input type="hidden" name="filename" value="{{ $profile->resume }}"/>
+                  <input type="hidden" name="path" value="{{ $profile->resume }}"/>
+                  <input type="submit" value="{{ ($profile->resume) ? 'resume' : '' }}"/>
+                </form>
+              </td>
+              <td>
+                <form action="{{ route('download_transcript') }}" method="POST">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="path" value="{{ $profile->transcript }}"/>
+                  <input type="submit" value="{{ ($profile->transcript) ? 'transcript' : '' }}"/>
                 </form>
               </td>
               <td>

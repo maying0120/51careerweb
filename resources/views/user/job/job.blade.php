@@ -2,393 +2,16 @@
 <html>
 <head>
 	@include('user/layouts/head')
-	<title></title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="{{ asset('user/newjob/css/bootstrap.css') }}" >
-	<link rel="stylesheet" type="text/css"href="{{ asset('user/newjob/css/font-awesome.min.css') }}" >
-	<link rel="stylesheet" href="{{ asset('user/newjob/b.tabs.css') }}"  type="text/css">
-	<style type="text/css">
-	input[type="checkbox"] {
-		-webkit-appearance: checkbox;
-	}
-	div.menuSideBar { }
-	div.menuSideBar li.nav-header { font-size: 10px; padding: 3px 15px; }
-	div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; border-radius: 0px; }
-	.button {
-		width:30px;
-		height:30px;
-		background: #3078be;
-		color: white;
-	}
-	.sel {
-		float: left;
-	}
-	.my-select
-	{
-		height:30px;
-		font-family: sans-serif;
-		font-size:18px;
-		background:#EBF5FB;
-		border-radius:10px;
-		margin-right:30px;
-		margin-top:20px;
-	}
-	.blueb
-	{
-		height:40px;
-		width:140px;
-		font-family: sans-serif;
-		font-size:18px;
-		margin-left:30px;
-		background:#3078be;
-		border-radius:10px;
-		color:white;
-	}
-	.blueb1
-	{   margin-top: 15px;
-		height:40px;
-		width:40px;
-		font-family: sans-serif;
-		font-size:20px;
-		margin-left:30px;
-		background:#3078be;
-		border-radius:10px;
-		color:white;
-		text-align: center;
-	}
-	.blueb1:focus{
-		outline: none;
-		background-color: #f00283;
-	}
-	.search-option
-	{
-		height:30px;
-		font-family: sans-serif;
-		font-size:18px;
-		padding-top:60px;
-		border-radius:10px;
-		margin-top: 60px;
-		margin-bottom: 30px;
-	}
-	.zhezhao{
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		background:#D0D3D4 ;
-		width: 100%;
-		height: 100%;
-		opacity: 0.95;
-	}
-	.tankuang{
-		position: relative;
-		background: #FDFEFE ;
-		width: 40%;
-		height: 50%;
-		border-radius: 5px;
-		margin: 5% auto;
-	}
-	.job_details_area {
-		background: #F5F7FA;
-		margin-left:0px;
-		margin-right:0px;
-		padding-top:0px;
-		padding-left:0px;
-		padding-right:0px;
-		padding-bottom: 0px;
-	}
-	/* line 5, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs {
-		padding: 30px;
-		border-bottom: 1px solid #EAEAEA;
-		-webkit-transition: 0.3s;
-		-moz-transition: 0.3s;
-		-o-transition: 0.3s;
-		transition: 0.3s;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-	}
-	@media (max-width: 800px) {
-		/* line 5, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs {
-			display: block !important;
-		}
-	}
-	@media (max-width: 800px) {
-		/* line 13, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs .jobs_left {
-			display: block !important;
-			overflow: hidden;
-		}
-	}
-	/* line 18, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .thumb {
-		float: left;
-		width: 82px;
-		height: 82px;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		padding: 15px;
-		background: #F5F7FA;
-		margin-right: 25px;
-		border: 1px solid #F0F0F0;
-	}
-	/* line 32, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .jobs_conetent {
-		float: left;
-	}
-	/* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
-		font-size: 24px;
-		margin-bottom: 10px;
-		font-weight: 400;
-		-webkit-transition: 0.3s;
-		-moz-transition: 0.3s;
-		-o-transition: 0.3s;
-		transition: 0.3s;
-	}
-	@media (max-width: 800px) {
-		/* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
-			margin-top: 15px;
-		}
-	}
-	/* line 42, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .jobs_conetent h4:hover {
-		color: #00D363;
-	}
-	@media (max-width: 800px) {
-		/* line 46, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat {
-			display: block !important;
-		}
-	}
-	/* line 50, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
-		margin-right: 10px;
-	}
-	@media (max-width: 800px) {
-		/* line 50, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
-			margin-right: 10px;
-		}
-	}
-	/* line 55, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p {
-		margin-bottom: 0;
-		font-size: 16px;
-		color: #AAB1B7;
-	}
-	/* line 59, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p i {
-		margin-right: 7px;
-	}
-	@media (max-width: 800px) {
-		/* line 68, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs .jobs_right .apply_now {
-			margin: 10px 0;
-		}
-	}
-	/* line 73, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_right .apply_now a.heart_mark {
-		width: 40px;
-		height: 40px;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		color: #00D363;
-		font-size: 14px;
-		line-height: 40px;
-		text-align: center;
-		display: inline-block;
-		background: #EFFDF5;
-	}
-	/* line 83, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_right .apply_now a.heart_mark:hover {
-		background: #00D363;
-		color: #fff;
-	}
-	/* line 88, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_right .apply_now a.boxed-btn3 {
-		padding: 9px 27px 9px 27px;
-		font-size: 14px;
-	}
-	/* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_right .date {
-		text-align: right;
-		margin-top: 10px;
-	}
-	@media (max-width: 800px) {
-		/* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .single_jobs .jobs_right .date {
-			text-align: left;
-		}
-	}
-	/* line 100, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .single_jobs .jobs_right .date p {
-		margin-bottom: 0;
-		font-size: 14px;
-		font-style: italic;
-		color: #7A838B;
-	}
-	/* line 110, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap {
-		padding: 40px;
-	}
-	/* line 112, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap .single_wrap {
-		margin-bottom: 30px;
-	}
-	/* line 114, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap .single_wrap:last-child {
-		margin-bottom: 0;
-	}
-	/* line 117, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap .single_wrap h4 {
-		font-size: 20px;
-		font-weight: 500;
-		color: #001D38;
-		margin-bottom: 25px;
-	}
-	/* line 123, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap .single_wrap p {
-		color: #7A838B;
-		font-size: 16px;
-		line-height: 28px;
-		font-weight: 400;
-	}
-	/* line 130, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap .single_wrap ul li {
-		font-size: 16px;
-		line-height: 32px;
-		color: #7A838B;
-		font-weight: 400;
-		position: relative;
-		padding-left: 25px;
-	}
-	/* line 137, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .descript_wrap .single_wrap ul li::before {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 7px;
-		height: 7px;
-		background: #7A838B;
-		content: '';
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
-		border-radius: 50%;
-		top: 12px;
-	}
-	/* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form {
-		margin-top: 0px;
-		padding: 20px;
-	}
-	@media (max-width:800px) {
-		/* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-		.job_details_area .apply_job_form {
-			padding: 0px;
-		}
-	}
-	/* line 158, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form h4 {
-		font-size: 24px;
-		font-weight: 500;
-		margin-bottom: 30px;
-	}
-	/* line 164, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input_field input, .job_details_area .apply_job_form .input_field textarea {
-		height: 60px;
-		border: 1px solid #E8E8E8;
-		width: 100%;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		padding-left: 20px;
-		margin-bottom: 20px;
-	}
-	/* line 171, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input_field input::placeholder, .job_details_area .apply_job_form .input_field textarea::placeholder {
-		color: #7A838B;
-		font-size: 16px;
-	}
-	/* line 175, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input_field input:focus, .job_details_area .apply_job_form .input_field textarea:focus {
-		outline: none;
-	}
-	/* line 179, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input_field textarea {
-		height: 188px;
-		padding: 20px;
-	}
-	/* line 184, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input_field.file_up input {
-		position: relative;
-	}
-	/* line 186, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input_field.file_up input:before {
-		position: absolute;
-		left: 0;
-		top: 0;
-		content: 'Upload CV';
-	}
-	/* line 195, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input-group {
-		width: 100%;
-		height: 60px;
-		border-radius: 5px !important;
-		margin-bottom: 20px;
-		border: 1px solid #ddd;
-	}
-	/* line 201, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input-group button {
-		background: transparent;
-		border: none;
-		font-size: 16px;
-		color: #7A838B;
-		padding-left: 20px;
-		margin-right: 5px;
-	}
-	/* line 209, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input-group .custom-file {
-		margin-bottom: 0;
-		height: 60px;
-		border: none;
-	}
-	/* line 228, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
-	.job_details_area .apply_job_form .input-group .custom-file-input {
-		height: 100%;
-	}
-	.form-select {
-		height: 40px;
-		width: 100%;
-	}
-	.boxed-btn3 {
-		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#F91842+0,fd8e5e+100 */
-		background: #00D363;
-		color: #fff;
-		display: inline-block;
-		padding: 13px 29px 13px 29px;
-		font-family: "Roboto", sans-serif;
-		font-size: 16px;
-		font-weight: 500;
-		border: 0;
-		border: 1px solid transparent;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		text-align: center;
-		color: #fff !important;
-		text-transform: capitalize;
-		-webkit-transition: 0.3s;
-		-moz-transition: 0.3s;
-		-o-transition: 0.3s;
-		transition: 0.3s;
-		cursor: pointer;
-	}
-</style>
+<title></title>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" href="{{ asset('user/newjob/css/bootstrap.css') }}" >
+<link rel="stylesheet" type="text/css"href="{{ asset('user/newjob/css/font-awesome.min.css') }}" >
+<link rel="stylesheet" href="{{ asset('user/newjob/b.tabs.css') }}"  type="text/css">
+
+
+
+
 <script src="{{ asset('user/job/js/vendor/jquery-2.2.4.min.js') }}"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
 <link rel="stylesheet" href="{{ asset('user/job/css/magnific-popup.css') }}">
@@ -438,7 +61,790 @@ function getMessage() {
 		getMessage();
 	}
 </script>
+
 </head>
+
+
+<style >
+
+
+
+@media (max-width: 500px) {
+
+.xianshi
+{
+
+
+margin-top:-30px;
+}
+
+
+
+ h3
+  {
+   font-size:15px;
+  }
+
+
+ h11
+  {
+   font-size:6px;
+  }
+
+ h4
+  {
+   font-size:9px;
+   font-weight:700;
+   display:inline;
+
+  }
+
+ h5
+  {
+   font-size:9px;
+   font-weight:700;
+
+  }
+
+
+
+ h8
+ {
+
+ font-size: 25px;
+ font-weight: bold;
+ }
+
+.blueb
+{
+	height:20px;
+	width:70px;
+	font-family: sans-serif;
+	font-size:12px;
+
+	background:#3078be;
+	border-radius:5px;
+	color:white;
+
+
+}
+
+
+.blueb1
+{   margin-top: 15px;
+	height:20px;
+	width:20px;
+	font-family: sans-serif;
+	font-size:12px;
+	margin-left:12px;
+	background:#3078be;
+	border-radius:5px;
+	color:white;
+	text-align: center;
+
+}
+
+
+.blueb1:focus{
+
+	outline: none;
+
+	background-color: #f00283;
+
+}
+
+
+.my-select
+{
+
+	height:20px;
+	font-family: sans-serif;
+	font-size:12px;
+	background:#EBF5FB;
+	border-radius:5px;
+	margin-right:15px;
+	margin-top:10px;
+}
+
+.button1 {
+	width:18px;
+	height:18px;
+	background: #3078be;
+	color: white;
+	margin-top:12px;
+    #float:right;
+    font-size:12px;
+    margin-left:18px;
+    padding-left:-2px;
+}
+
+
+.input1
+{
+	width:130px;
+	height:20px;
+
+	color: white;
+    margin-top:12px;
+    float:left;
+    font-size:12px;
+
+}
+
+
+
+
+}
+@media (min-width: 501px)
+{
+
+
+
+.input1
+{
+	width:200px;
+	height:25px;
+
+	color: white;
+	margin-top:1px;
+    float:left;
+    font-size:20px;
+
+}
+
+
+.my-select
+{
+
+	height:30px;
+	font-family: sans-serif;
+	font-size:18px;
+	background:#EBF5FB;
+	border-radius:10px;
+	margin-right:30px;
+	margin-top:20px;
+}
+
+
+
+h8
+{
+
+font-size: 30px;
+font-weight: bold;
+}
+
+
+.blueb
+{
+	height:40px;
+	width:140px;
+	font-family: sans-serif;
+	font-size:18px;
+	margin-left:30px;
+	background:#3078be;
+	border-radius:10px;
+	color:white;
+
+
+}
+
+
+.blueb1
+{   margin-top: 15px;
+	height:40px;
+	width:40px;
+	font-family: sans-serif;
+	font-size:20px;
+	margin-left:30px;
+	background:#3078be;
+	border-radius:10px;
+	color:white;
+	text-align: center;
+
+}
+
+
+.blueb1:focus{
+
+	outline: none;
+
+	background-color: #f00283;
+
+}
+
+
+ h4
+  {
+   font-size:18px;
+   font-weight:700;
+   display:inline;
+   height:10px;
+   width:1px;
+   border-left:1px #000 solid;
+   padding-left: 20px;
+
+  }
+
+
+ h5
+  {
+   font-size:18px;
+   font-weight:700;
+  }
+
+.button1 {
+	width:28px;
+	height:28px;
+	background: #3078be;
+	color: white;
+	//margin-top:-40px;
+	float:left;
+	margin-left:10px;
+}
+
+
+}
+
+
+div.menuSideBar { }
+div.menuSideBar li.nav-header { font-size: 10px; padding: 20px 30px; }
+div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; border-radius: 0px; }
+
+
+
+
+.sel {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search-option
+{
+
+	height:30px;
+	font-family: sans-serif;
+	font-size:18px;
+	padding-top:60px;
+
+	border-radius:10px;
+	margin-top: 60px;
+
+	margin-bottom: 30px;
+}
+
+
+
+
+.zhezhao{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background:#D0D3D4 ;
+	width: 100%;
+	height: 100%;
+	opacity: 0.95;
+}
+.tankuang{
+	position: relative;
+	background: #FDFEFE ;
+	width: 40%;
+	height: 50%;
+	border-radius: 5px;
+	margin: 5% auto;
+
+
+}
+#header{
+	height: 80px;
+}
+#header-right{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	background: red;
+	color: #fff;
+	right: 18px;
+	top: 15px;
+	text-align: center;
+}
+
+
+
+.job_details_area {
+	background: #F5F7FA;
+
+	margin-left:0px;
+	margin-right:0px;
+
+
+	padding-top:0px;
+	padding-left:0px;
+	padding-right:0px;
+	padding-bottom: 0px;
+}
+
+
+
+
+
+
+/* line 5, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs {
+	padding: 30px;
+	border-bottom: 1px solid #EAEAEA;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+	/* line 5, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs {
+		display: block !important;
+	}
+}
+
+@media (max-width: 800px) {
+	/* line 13, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs .jobs_left {
+		display: block !important;
+		overflow: hidden;
+	}
+}
+
+/* line 18, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .thumb {
+	float: left;
+	width: 82px;
+	height: 82px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 15px;
+	background: #F5F7FA;
+	margin-right: 25px;
+	border: 1px solid #F0F0F0;
+}
+
+/* line 32, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .jobs_conetent {
+	float: left;
+}
+
+/* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	font-weight: 400;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+@media (max-width: 800px) {
+	/* line 34, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
+		margin-top: 15px;
+	}
+
+
+}
+
+/* line 42, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .jobs_conetent h4:hover {
+	color: #00D363;
+}
+
+@media (max-width: 800px) {
+	/* line 46, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat {
+		display: block !important;
+	}
+}
+
+/* line 50, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
+	margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+	/* line 50, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
+		margin-right: 10px;
+	}
+}
+
+/* line 55, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p {
+	margin-bottom: 0;
+	font-size: 16px;
+	color: #AAB1B7;
+}
+
+/* line 59, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p i {
+	margin-right: 7px;
+}
+
+@media (max-width: 800px) {
+	/* line 68, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs .jobs_right .apply_now {
+		margin: 10px 0;
+	}
+}
+
+/* line 73, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_right .apply_now a.heart_mark {
+	width: 40px;
+	height: 40px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #00D363;
+	font-size: 14px;
+	line-height: 40px;
+	text-align: center;
+	display: inline-block;
+	background: #EFFDF5;
+}
+
+/* line 83, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_right .apply_now a.heart_mark:hover {
+	background: #00D363;
+	color: #fff;
+}
+
+/* line 88, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_right .apply_now a.boxed-btn3 {
+	padding: 9px 27px 9px 27px;
+	font-size: 14px;
+}
+
+/* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_right .date {
+	text-align: right;
+	margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+	/* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .single_jobs .jobs_right .date {
+		text-align: left;
+	}
+}
+
+/* line 100, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .single_jobs .jobs_right .date p {
+	margin-bottom: 0;
+	font-size: 14px;
+	font-style: italic;
+	color: #7A838B;
+}
+
+/* line 110, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap {
+	padding: 40px;
+}
+
+/* line 112, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap .single_wrap {
+	margin-bottom: 30px;
+}
+
+/* line 114, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap .single_wrap:last-child {
+	margin-bottom: 0;
+}
+
+/* line 117, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap .single_wrap h4 {
+	font-size: 20px;
+	font-weight: 500;
+	color: #001D38;
+	margin-bottom: 25px;
+}
+
+/* line 123, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap .single_wrap p {
+	color: #7A838B;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 400;
+}
+
+/* line 130, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap .single_wrap ul li {
+	font-size: 16px;
+	line-height: 32px;
+	color: #7A838B;
+	font-weight: 400;
+	position: relative;
+	padding-left: 25px;
+}
+
+/* line 137, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .descript_wrap .single_wrap ul li::before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 7px;
+	height: 7px;
+	background: #7A838B;
+	content: '';
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	top: 12px;
+}
+
+/* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form {
+	margin-top: 0px;
+	padding: 20px;
+}
+
+@media (max-width:800px) {
+	/* line 152, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+	.job_details_area .apply_job_form {
+		padding: 0px;
+	}
+}
+
+/* line 158, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form h4 {
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+
+/* line 164, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input_field input, .job_details_area .apply_job_form .input_field textarea {
+	height: 60px;
+	border: 1px solid #E8E8E8;
+	width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+/* line 171, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input_field input::placeholder, .job_details_area .apply_job_form .input_field textarea::placeholder {
+	color: #7A838B;
+	font-size: 16px;
+}
+
+/* line 175, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input_field input:focus, .job_details_area .apply_job_form .input_field textarea:focus {
+	outline: none;
+}
+
+/* line 179, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input_field textarea {
+	height: 188px;
+	padding: 20px;
+}
+
+/* line 184, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input_field.file_up input {
+	position: relative;
+}
+
+/* line 186, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input_field.file_up input:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	content: 'Upload CV';
+}
+
+/* line 195, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input-group {
+	width: 100%;
+	height: 60px;
+	border-radius: 5px !important;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+}
+
+/* line 201, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input-group button {
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	color: #7A838B;
+	padding-left: 20px;
+	margin-right: 5px;
+}
+
+/* line 209, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input-group .custom-file {
+	margin-bottom: 0;
+	height: 60px;
+	border: none;
+}
+
+/* line 228, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
+.job_details_area .apply_job_form .input-group .custom-file-input {
+	height: 100%;
+}
+.form-select {
+	height: 40px;
+	width: 100%;
+}
+
+.boxed-btn3 {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#F91842+0,fd8e5e+100 */
+	background: #00D363;
+	color: #fff;
+	display: inline-block;
+	padding: 13px 29px 13px 29px;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	border: 0;
+	border: 1px solid transparent;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	color: #fff !important;
+	text-transform: capitalize;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+
+
+//new add
+
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  height: 80px;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+  background: #FFF;
+  border: 1px solid #CCC;
+}
+
+#header.header-scrolled {
+  background: #FFF;
+  height: 60px;
+  padding: 10px 0;
+  border: 1px solid #CCC;
+}
+
+#header .logo h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: bold;
+}
+
+#header .logo h1 span {
+  color: #3078be;
+}
+
+#header a:hover {
+  color: #3078be;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 22px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  #header {
+    height: 60px;
+    padding: 10px 0;
+    background: #FFF;
+  }
+  #header .logo h1 {
+    font-size: 28px;
+    padding: 4px 0;
+  }
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 15px;
+    border-radius: 50%;
+  }
+
+
+
+
+}
+
+.header-bg {
+  background: url(../img/slider/slider1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+@media (min-width: 1025px) {
+  .header-bg {
+    background-attachment: fixed;
+  }
+}
+
+.home-overly {
+  background: rgba(240, 255, 255, 0.8);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
 <script type="text/javascript">
 	window.onload=function(){
 		var Button = document.getElementsByClassName("blue1");
@@ -452,6 +858,7 @@ function getMessage() {
 		}
 	}
 </script>
+
 <body data-spy="scroll" data-target="#navbar-example">
 	<!-- Header -->
 	@include('user/layouts/header')
@@ -516,6 +923,7 @@ function getMessage() {
 										</div>
 									</ul>
 								</div>
+
 							</div>
 							<div class="col-md-8" id="mainFrameTabs" style="padding : 0px;">
 								<!-- Nav tabs -->
@@ -556,6 +964,7 @@ function getMessage() {
 									<span v-html="jobdetail.detail">
 									</span>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -617,6 +1026,7 @@ function getMessage() {
 													</div>
 												</div>
 											</form>
+
 										</div>
 									</div>
 								</div>
@@ -629,9 +1039,20 @@ function getMessage() {
 							{{--                </div>--}}
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+
+
+
+				<div id="header-right" onclick="hidder()">x</div>
+		</div></div>
+
+
+
+		<!-- 模态框底部 -->
+{{--                <div class="modal-footer">--}}
+{{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>--}}
+{{--                </div>--}}
+
+
 	</div>
 	<!--
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -677,12 +1098,18 @@ function getMessage() {
 		}
 		function hidder(){
 			document.getElementById('zhezhao').style.display="none";
-		}
-	</script>
-	<!-- ======= Footer ======= -->
-	<footer>
-		@include('user/layouts/footer')
-	</footer>
-	<!-- End  Footer -->
+			function dianwo(){
+				document.getElementById('zhezhao').style.display="";
+			}
+			function hidder(){
+				document.getElementById('zhezhao').style.display="none";
+			}
+</script>
+  <footer>
+
+ @include('user/layouts/footer')
+ @include('user/layouts/vendorjsfiles')
+  </footer><!-- End  Footer -->
+
 </body>
 </html>

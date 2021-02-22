@@ -188,7 +188,7 @@ class ApplicationController extends Controller
 
     $file = $request->file('transcript');
     if ($file != null) {
-      $tpath = $this->savefile($file);
+      $tpath = $file->store('application/'. $application->id. '/transcript');
       $application->transcript_path = $tpath;
     }
 

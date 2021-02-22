@@ -211,12 +211,11 @@
           </td>
           <td>
             @if($application->transcript_path)
-            <a href="{{route('host')}}/uploads/{{ $application->transcript_path}}"> Transcript</a>
-            <!-- <form action="{{ route('download_application_file') }}" method="post">
+            <form action="{{ route('download_application_file') }}" method="post">
               {{ csrf_field() }}
-              <input type="hidden" name="path" value="{{ $application->coverletter_path }}" />
-              <input type="submit" value="coverletter" required>
-            </form> -->
+              <input type="hidden" name="path" value="{{ $application->transcript_path }}" />
+              <input type="submit" value="transcript" required>
+            </form>
             @endif
           </td>
           <td>{{ $application->review}}</td>

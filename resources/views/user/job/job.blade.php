@@ -10,11 +10,6 @@
 <link rel="stylesheet" href="{{ asset('user/newjob/b.tabs.css') }}"  type="text/css">
 
 
-<style type="text/css">
-div.menuSideBar { }
-div.menuSideBar li.nav-header { font-size: 10px; padding: 3px 15px; }
-div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; border-radius: 0px; }
-</style>
 
 <script src="{{ asset('user/job/js/vendor/jquery-2.2.4.min.js') }}"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
@@ -84,21 +79,156 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 	}
 </script>
 
-
 </head>
 
 
-<style>
+<style >
 
-.button {
-	width:30px;
-	height:30px;
+
+
+@media (max-width: 500px) {
+
+.xianshi
+{
+
+
+margin-top:-30px;
+}
+
+
+
+ h3
+  {
+   font-size:15px;
+  }
+
+
+ h11
+  {
+   font-size:6px;
+  }
+
+ h4
+  {
+   font-size:9px;
+   font-weight:700;
+   display:inline;
+
+  }
+
+ h5
+  {
+   font-size:9px;
+   font-weight:700;
+
+  }
+
+
+
+ h8
+ {
+
+ font-size: 25px;
+ font-weight: bold;
+ }
+
+.blueb
+{
+	height:20px;
+	width:70px;
+	font-family: sans-serif;
+	font-size:12px;
+
+	background:#3078be;
+	border-radius:5px;
+	color:white;
+
+
+}
+
+
+.blueb1
+{   margin-top: 15px;
+	height:20px;
+	width:20px;
+	font-family: sans-serif;
+	font-size:12px;
+	margin-left:12px;
+	background:#3078be;
+	border-radius:5px;
+	color:white;
+	text-align: center;
+
+}
+
+
+.blueb1:focus{
+
+	outline: none;
+
+	background-color: #f00283;
+
+}
+
+
+.my-select
+{
+
+	height:20px;
+	font-family: sans-serif;
+	font-size:12px;
+	background:#EBF5FB;
+	border-radius:5px;
+	margin-right:15px;
+	margin-top:10px;
+}
+
+.button1 {
+	width:18px;
+	height:18px;
 	background: #3078be;
 	color: white;
+	margin-top:12px;
+    #float:right;
+    font-size:12px;
+    margin-left:18px;
+    padding-left:-2px;
 }
-.sel {
-	float: left;
+
+
+.input1
+{
+	width:130px;
+	height:20px;
+
+	color: white;
+    margin-top:12px;
+    float:left;
+    font-size:12px;
+
 }
+
+
+
+
+}
+@media (min-width: 501px)
+{
+
+
+
+.input1
+{
+	width:200px;
+	height:25px;
+
+	color: white;
+	margin-top:1px;
+    float:left;
+    font-size:20px;
+
+}
+
 
 .my-select
 {
@@ -111,6 +241,16 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 	margin-right:30px;
 	margin-top:20px;
 }
+
+
+
+h8
+{
+
+font-size: 30px;
+font-weight: bold;
+}
+
 
 .blueb
 {
@@ -125,11 +265,6 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 }
-
-
-
-
-
 
 
 .blueb1
@@ -156,6 +291,61 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 }
 
 
+ h4
+  {
+   font-size:18px;
+   font-weight:700;
+   display:inline;
+   height:10px;
+   width:1px;
+   border-left:1px #000 solid;
+   padding-left: 20px;
+
+  }
+
+
+ h5
+  {
+   font-size:18px;
+   font-weight:700;
+  }
+
+.button1 {
+	width:28px;
+	height:28px;
+	background: #3078be;
+	color: white;
+	//margin-top:-40px;
+	float:left;
+	margin-left:10px;
+}
+
+
+}
+
+
+div.menuSideBar { }
+div.menuSideBar li.nav-header { font-size: 10px; padding: 20px 30px; }
+div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; border-radius: 0px; }
+
+
+
+
+.sel {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -177,7 +367,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 .zhezhao{
-	position: fixed;
+	position: absolute;
 	left: 0px;
 	top: 0px;
 	background:#D0D3D4 ;
@@ -195,6 +385,22 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 }
+#header{
+	height: 80px;
+}
+#header-right{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	background: red;
+	color: #fff;
+	right: 18px;
+	top: 15px;
+	text-align: center;
+}
+
+
 
 .job_details_area {
 	background: #F5F7FA;
@@ -277,6 +483,8 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 	.job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
 		margin-top: 15px;
 	}
+
+
 }
 
 /* line 42, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_details.scss */
@@ -549,6 +757,106 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
+//new add
+
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  font-family: 'Lora', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  height: 80px;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+  background: #FFF;
+  border: 1px solid #CCC;
+}
+
+#header.header-scrolled {
+  background: #FFF;
+  height: 60px;
+  padding: 10px 0;
+  border: 1px solid #CCC;
+}
+
+#header .logo h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: bold;
+}
+
+#header .logo h1 span {
+  color: #3078be;
+}
+
+#header a:hover {
+  color: #3078be;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 22px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  #header {
+    height: 60px;
+    padding: 10px 0;
+    background: #FFF;
+  }
+  #header .logo h1 {
+    font-size: 28px;
+    padding: 4px 0;
+  }
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 15px;
+    border-radius: 50%;
+  }
+
+
+
+
+}
+
+.header-bg {
+  background: url(../img/slider/slider1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+@media (min-width: 1025px) {
+  .header-bg {
+    background-attachment: fixed;
+  }
+}
+
+.home-overly {
+  background: rgba(240, 255, 255, 0.8);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
 
 </style>
 
@@ -584,10 +892,12 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
+   @include('user/layouts/header')
 
-<body data-spy="scroll" data-target="#navbar-example">
-	<!-- Header -->
-	@include('user/layouts/header')
+
+
+
+<body>
 	@if (Session::has('message'))
 		<div class="alert alert-info">{{ Session::get('message') }}</div>
  	@endif
@@ -633,11 +943,11 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 </div>
 
-<div style="margin-top:-40px; float:right;">
+<div>
 
-                   <input type="search" name="search" placeholder="Search..." id="default-search">
-                    <button class="button" type="button" onclick="feedfilter()">
-                      <i class="fa fa-search"></i>
+                   <input type="search" name="search" placeholder="Search..." id="default-search" class="input1">
+                    <button class="button1" type="button" onclick="feedfilter()">
+                      <i class="fa fa-search" ></i>
                     </button>
 
 
@@ -645,16 +955,16 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
-<div id="jobdetails" style="margin-top:-30px;">
+<div id="jobdetails" class="xianshi">
 <h3 class="page-header"></h3>
-<div class="">
+
   <div class="row-fluid">
-    <div class="col-md-4" style="padding-left: 0px;">
+    <div class="col-md-4 col-sm-4 col-xs-5" style="padding-left: 0px;">
       <div class="well menuSideBar" style="padding: 8px 0px;">
         <ul class="nav nav-list" id="menuSideBar">
-          <li class="nav-header">All Jobs</li>
-          <li class="nav-divider" ></li>
-
+        <div >
+          <li class="nav-header" style="margin-top:-50px;">All Jobs</li>
+    <h5>All Jobs  </h5>
 
 		<div >
 
@@ -665,13 +975,13 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 				<h3 v-bind:id=index>
 				${ job.position }</h3>
 
-			  <h11  class="page-header">
-				${ job.city }, ${ job.state }</h11>
-			  </br>
-			  <h11  class="page-header">
+			  <h11>
+				${ job.city }</h11></br> <h11> ${ job.state }</h11>
+</br>
+
+			  <h11>
 				Job id: ${ job.id }</h11>
-
-
+<hr style="width:40%;">
 			</a>
 			</li>
 
@@ -683,7 +993,8 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
         </ul>
       </div>
     </div>
-    <div class="col-md-8" id="mainFrameTabs" style="padding : 0px;">
+
+    <div class="col-md-8 col-sm-8 col-xs-7" id="mainFrameTabs" style="padding : 0px;">
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist" >
@@ -695,10 +1006,10 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
     <div class="col-md-11" id="mainFrameTabs" style="padding : 16px; margin-top:-50px;">
         <div class="page-header" style="display:block" id="divmain">
 
-    		<span style="font-size: 30px; font-weight: bold;"   >
+    		<h8>
 
 			${jobdetail.position}
-			</span >
+			</h8 >
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <tr>
 							@if (auth()->user()->status != "0")
@@ -717,13 +1028,13 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
             <div>
                 <hr noshade color="#F2F3F4">
-                <h4 style="display:inline;"> Exp Level: </h4>
+                <h5 style="display:inline;"> Exp Level: </h5>
                 <h11>${jobdetail.exp_level}</h11>   &nbsp;
-                <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
+                <h4 >
                     Company Size: </h4>
 
                 <h11> ${jobdetail.company_size}</h11>  &nbsp;
-                <h4 style="display:inline; height:10px; width:1px; border-left:1px #000 solid; padding-left: 20px;">
+                <h4 >
                     Employment Type: </h4>
 
                 <h11> ${jobdetail.job_type}</h11>
@@ -735,7 +1046,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
             </div>
 
 
-            <h3>Job Description:</h3>
+            <h5>Job Description:</h5>
 			<span v-html="jobdetail.detail">
 			</span>
 
@@ -753,14 +1064,13 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
   </div>
 </div>
 </div>
-</div>
-</div>
+
 
 
 		   <!-- 模态框主体 -->
 <div class="zhezhao" id='zhezhao' style="height:20px;">
-	<div class="tankuang" >
-		<div id="header">
+	<div class="tankuang" style="margin-top:200px;">
+
 		   <div class="modal-body">
 			<div class="job_details_area">
 				<div class="row">
@@ -774,7 +1084,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 								<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value=""
 									   >
 
-								<h5>* 1: Upload your Resume</h5>
+								<h5>* 1.Upload Your Resume</h5>
 
 								<div class="col-md-12">
 
@@ -789,7 +1099,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 									<div class="input-group">
 
-                                            <p>accept .pdf, .doc, .docx </p>
+                                            <p>Accept .pdf, .doc, .docx </p>
 										<div class="custom-file">
 											<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
 										</div>
@@ -800,11 +1110,11 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 
-								<h5> 2: Upload your Coverletter</h5>
+								<h5> 2. Upload Your Coverletter</h5>
 
 								<div class="col-md-12">
 									<div class="input-group">
-									 <p>accept .pdf, .doc, .docx </p>
+									 <p>Accept .pdf, .doc, .docx </p>
 										<div class="custom-file">
 											<label> <input name="coverletter" id="coverletter" type="file"
 														   accept=".pdf, .doc, .docx"/> </label>
@@ -814,11 +1124,11 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 								</div>
 
 
-								<h5> 3: Upload your Transcript</h5>
+								<h5> 3. Upload Your Transcript</h5>
 
 								<div class="col-md-12">
 									<div class="input-group">
-									 <p>accept .pdf, .doc, .docx </p>
+									 <p>Accept .pdf, .doc, .docx </p>
 										<div class="custom-file">
 											<label> <input name="transcript" id="transcript" type="file"
 														   accept=".pdf, .doc, .docx"/> </label>
@@ -837,11 +1147,13 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 						</div>
 
 					</div>
-				</div>
-			</div>
-		</div>
 
-		<div id="header-right" onclick="hidder()">x</div>
+
+
+				<div id="header-right" onclick="hidder()">x</div>
+		</div></div>
+
+
 
 		<!-- 模态框底部 -->
 {{--                <div class="modal-footer">--}}
@@ -915,11 +1227,10 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 				document.getElementById('zhezhao').style.display="none";
 			}
 </script>
+  <footer>
 
-<!-- ======= Footer ======= -->
-<footer>
-	@include('user/layouts/footer')
-</footer>
-<!-- End  Footer -->
+ @include('user/layouts/footer')
+ @include('user/layouts/vendorjsfiles')
+  </footer><!-- End  Footer -->
 </body>
 </html>

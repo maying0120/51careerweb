@@ -88,7 +88,7 @@ h2
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
 
-   <img src="{{ asset('user/story/assets/img/offer/700.png') }}" alt="" title="#slider-direction-1"  width="100%; 60%;"/>
+   <img src="{{ asset('user/img/slider/offerss.png') }}" alt="" title="#slider-direction-1"  width="100%; 60%;"/>
  {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
   <div>
    <div class="text-center" >
@@ -115,7 +115,7 @@ h2
               <ul>
               <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
                 <li class="active"><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
-                <li><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
+                <li><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Member Stories</a></li>
 
 
 

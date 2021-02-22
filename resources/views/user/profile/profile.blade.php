@@ -130,11 +130,11 @@
               Application
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="theme-color nav-link {{($tab == 'job') ? 'active' : '' }}" data-toggle="tab" href="#job">
               Job
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="theme-color nav-link {{($tab == 'notification') ? 'active' : '' }}" data-toggle="tab" href="#notification">
               Notification
@@ -151,7 +151,7 @@
     <!-- Tab panes -->
     <div class="tab-content" style="height: 100%; padding-bottom: 2rem; background: rgba(245, 245, 245);">
       <div id="profile" class="container tab-pane
-      {{($tab != 'account' && $tab != 'notification' && $tab != 'application' && $tab != 'job') ? 'active' : ''}}">
+      {{ !in_array($tab, array('account', 'notification', 'application', 'job')) ? 'active' : ''}}">
         <br>
         @if ($user->status == 0)
         <div class="col-12" style="padding: 0;">
@@ -227,7 +227,7 @@
                       <select class="select2" multiple="multiple" data-placeholder="Add Your Skills" name="skills[]"
                       data-dropdown-css-class="select2-blue" style="width: 100%">
                         @foreach ($skills as $skill)
-                        <option value="{{ $skill->name }}" @if ($skill->match == true) selected @endif)> {{ $skill->name }}</option>
+                        <option value="{{ $skill->name }}" @if ($profile->skills && in_array($skill->name, $profile->skills)) selected @endif)> {{ $skill->name }}</option>
                         @endforeach
                       </select>
                     </div>
@@ -725,11 +725,14 @@
                       <tbody id="expect-new-add-city">
                         <tr>
                           <td>
-                            <select class="form-control" class="profile_select_287 profile_select_normal" name="type" required>
+                            <label for="work-auth-type">Work Authorization Type:</label>
+                          </td>
+                          <td>
+                            <select id="work-auth-type" name="visa" class="form-control" class="profile_select_287 profile_select_normal" required>
                               @if ($profile->visa)
                               <option value="{{ $profile->visa }}" selected>{{ $profile->visa }}</option>
                               @else
-                              <option value="" selected>Visa Type</option>
+                              <option value="" selected>-- Select --</option>
                               @endif
                               @if ($profile->visa != "OPT")
                               <option value="OPT">OPT</option>
@@ -745,12 +748,17 @@
                               @endif
                             </select>
                           </td>
+                        </tr>
+                        <tr>
                           <td>
-                            <select class="form-control" class="profile_select_287 profile_select_normal" name="type" required>
+                            <label for="expect-type">Preferred Job Type:</label>
+                          </td>
+                          <td>
+                            <select id="expect-type" name="type" class="form-control" class="profile_select_287 profile_select_normal" required>
                               @if ($profile->expected_type)
                               <option value="{{ $profile->expected_type }}" selected>{{ $profile->expected_type }}</option>
                               @else
-                              <option value="" selected>Job Type</option>
+                              <option value="" selected>-- Select --</option>
                               @endif
                               @if ($profile->expected_type != "intern")
                               <option value="intern">Intern</option>
@@ -769,17 +777,10 @@
                         </tr>
                         <tr>
                           <td>
-                            <input type="text" name="title" class="form-control" placeholder="Title" @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
+                            <label for="expect-salary">Preferred Salary:</label>
                           </td>
-                        </tr>
-                        <tr>
                           <td>
-                            <br>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <select class="form-control" class="profile_select_287 profile_select_normal" name="salary" required>
+                            <select id="expect-salary" name="salary" class="form-control" class="profile_select_287 profile_select_normal" required>
                               @if ($profile->expected_salary)
                               <option value="{{ $profile->expected_salary }}" selected>{{ $profile->expected_salary }}</option>
                               @else
@@ -811,69 +812,34 @@
                         </tr>
                         <tr>
                           <td>
-                            <input type="number" name="minimum-salary" class="form-control" placeholder="min $" required>
+                            <label for="expect-title">Preferred Position:</label>
                           </td>
                           <td>
-                            <input type="number" name="maximum-salary" class="form-control" placeholder="max $" required>
-                          </td>
-                        </tr>
-
-                        <!-- <tr>
-                        @if (!$profile->expected_cities)
-                          <td>
-                            <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
-                              <option id = "selecountry" selected = "selected" ></option>
-                              <option v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id></option>
-                            </select>
-                          </td>
-                          <td>
-                            <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
-                              <option id = "selestate"  selected = "selected" ></option>
-                              <option v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
-                            </select>
+                            <input id="expect-title" name="title" type="text" class="form-control" placeholder="Title"
+                            @if ($profile->expected_title) value="{{ $profile->expected_title }}" @else value="" @endif required>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal" id="cityId">
-                              <option id = "selecity"  selected="selected" ></option>
-                              <option v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
-                            </select>
-                          </td>
-                          <td>
-                            <a id="expect-new-add">Add another city</a>
-                          </td>
-                        </tr>
-                        @else
-                        @foreach ($profile->expected_cities as $city)
-                        <tr>
-                          <td>
-                            <select name="countries[]" class="countries form-control profile_select_287 profile_select_normal" id="countryId">
-                              <option id = "selecountry" selected="selected" value="{{ $profile->expected_countries[$loop->index] }}">{{ $profile->expected_countries[$loop->index] }}</option>
-                              <option   v-for="country in location.country" id = "selectcountry"   v-bind:value=country.id>{{ $profile->expected_countries[$loop->index] }}</option>
-                            </select>
-                          </td>
-                          <td>
-                            <select name="states[]" class="states form-control profile_select_287 profile_select_normal" id="stateId">
-                              <option id = "selestate"  selected>{{ $profile->expected_states[$loop->index] }}</option>
-                              <option  v-for="state in location.state" id = "selectstate"   v-bind:value=state.id></option>
-                            </select>
+                            <label for="expect-locations">Preferred Work Locations:</label>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            <select name="cities[]" class="cities form-control profile_select_287 profile_select_normal"  id="cityId">
-                              <option id = "selecity"  selected>{{ $city }}</option>
-                              <option  v-for="city in location.city" id = "selectcity"   v-bind:value=city.name></option>
-                            </select>
-                          </td>
-                          <td>
-                            @if ($loop->last) <a id="expect-new-add">Add another city</a> @endif
+                          <td colspan="2">
+                            <div class="select2-blue">
+                              <select id="expect-locations" name="locations[]" class="select2" multiple="multiple" data-placeholder="Add your preferred work locations" data-dropdown-css-class="select2-blue" style="width: 100%">
+                                @foreach ($locations as $location)
+                                <option value="{{ $location->city }}, {{ $location->state }}, {{ $location->country }}"
+                                  @if ($profile->expect_locations && in_array($location->city. ', '. $location->state. ', '. $location->country, $profile->expect_locations))
+                                  selected @endif>
+                                  {{ $location->city }}, {{ $location->state }}, {{ $location->country }}
+                                </option>
+                                @endforeach
+                              </select>
+                            </div>
                           </td>
                         </tr>
-                        @endforeach
-                        @endif -->
-                      </tbody>
+                    </tbody>
                       <tfoot>
                         <tr>
                           <td colspan="2">
@@ -902,18 +868,22 @@
                   <form action="{{ route('download_resume') }}" method="POST">
                     {{ csrf_field() }}
                     <button for="download-resume" class="btn btn-block btn-light" style="border-radius: 20px;">
-                      <?php $filenameRes = explode(".", $profile->resume); $fileExtRes = end($filenameRes) ?>
+                      <?php
+                      $filenameSplits = explode("/", $profile->resume);
+                      $filenameResume = end($filenameSplits);
+                      $filenameSplits = explode(".", $filenameResume);
+                      $fileExtRes = end($filenameSplits);
+                      ?>
                       @if ($fileExtRes == "doc" || $fileExtRes == "docx")
-                      <?php  $fileExtRes ?>
                       <i class="far fa-file-word fa-lg"></i>
                       @elseif ($fileExtRes == "pdf")
                       <i class="far fa-file-pdf fa-lg"></i>
                       @else
                       <i class="far fa-file-alt fa-lg"></i>
                       @endif
-                      &nbsp;{{ $profile->resume }}
+                      &nbsp;{{ $filenameResume }}
                     </button>
-                    <input class="hidden" type="text" name="filename" value="{{ $profile->resume }}"/>
+                    <input class="hidden" type="text" name="path" value="{{ $profile->resume }}"/>
                     <input id="download-resume" class="hidden" type="submit"/>
                   </form>
                   <form action="{{ route('upload_resume') }}" method="POST" enctype="multipart/form-data">
@@ -922,7 +892,7 @@
                   </form>
                   <p class="card-text"> Download to view your resume or
                     <label for="upload-resume">
-                      <a class="theme-color theme-color" style="cursor: pointer">use another resume</a>
+                      <a class="theme-color" style="cursor: pointer">use another resume</a>
                     </label>.
                   </p>
                   @else
@@ -946,18 +916,22 @@
                   <form action="{{ route('download_transcript') }}" method="POST">
                     {{ csrf_field() }}
                     <button for="download-transcript" class="btn btn-block btn-light" style="border-radius: 20px;">
-                      <?php $filenameTr = explode(".", $profile->transcript); $fileExtTr = end($filenameTr) ?>
-                      @if ($fileExtTr == "doc" || $fileExtTr == "docx")
-                      <?php  $fileExtTr ?>
+                      <?php
+                      $filenameSplits = explode("/", $profile->transcript);
+                      $filenameTrans = end($filenameSplits);
+                      $filenameSplits = explode(".", $filenameTrans);
+                      $fileExtTrans = end($filenameSplits);
+                      ?>
+                      @if ($fileExtTrans == "doc" || $fileExtTrans == "docx")
                       <i class="far fa-file-word fa-lg"></i>
-                      @elseif ($fileExtTr == "pdf")
+                      @elseif ($fileExtTrans == "pdf")
                       <i class="far fa-file-pdf fa-lg"></i>
                       @else
                       <i class="far fa-file-alt fa-lg"></i>
                       @endif
-                      &nbsp;{{ $profile->transcript }}
+                      &nbsp;{{ $filenameTrans }}
                     </button>
-                    <input class="hidden" type="text" name="filename" value="{{ $profile->transcript }}"/>
+                    <input class="hidden" type="text" name="path" value="{{ $profile->transcript }}"/>
                     <input id="download-transcript" class="hidden" type="submit"/>
                   </form>
                   <form action="{{ route('upload_transcript') }}" method="POST" enctype="multipart/form-data">
@@ -966,7 +940,7 @@
                   </form>
                   <p class="card-text"> Download to view your transcript or
                     <label for="upload-transcript">
-                      <a class="theme-color text-primary" style="cursor: pointer">use another transcript</a>
+                      <a class="theme-color" style="cursor: pointer">use another transcript</a>
                     </label>.
                   </p>
                   @else
@@ -1142,9 +1116,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-12 bg-white">
-
-        </div> -->
       </div>
     </div>
 

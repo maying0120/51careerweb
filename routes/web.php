@@ -105,6 +105,7 @@ Route::group(['namespace'=> 'user', 'middleware' => ['auth']], function() {
 
 Route::group(['namespace'=> 'Admin' , 'middleware' => ['auth']],function() {
   Route::post('/admin/application/create', 'ApplicationController@create')->name("application_create");
+  Route::post('/admin/application/download', 'ApplicationController@download')->name("download_application_file");
 
 });
 

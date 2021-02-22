@@ -20,7 +20,7 @@ class CreateApplicationsTable extends Migration
             $table->string('review')->nullable();
             $table->string('resume_path')->nullable();
             $table->string('coverletter_path')->nullable();
-            $table->string('transcript_path');
+            $table->string('transcript_path')->nullable();;
             $table->timestamps();
             $table->string('status');
         });

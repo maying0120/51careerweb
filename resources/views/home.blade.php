@@ -204,13 +204,9 @@ font-family:lora,serif;
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
-      {{--   <img src="{{ asset('user/img/slider/b1.png') }}" alt="" title="#slider-direction-1" />
+        <img src="{{ asset('user/img/slider/test6.png') }}" alt="" title="#slider-direction-1" />
 
-         <img src="{{ asset('user/img/slider/b2.png') }}" alt=""  title="#slider-direction-2" />--}}
-
-        <img src="{{ asset('user/img/218/218b1.png') }}" alt="" title="#slider-direction-1" />
-
-         <img src="{{ asset('user/img/218/218b2.png') }}" alt=""  title="#slider-direction-2" />
+         <img src="{{ asset('user/img/slider/test7.png') }}" alt=""  title="#slider-direction-2" />
 
      <!--  <img src="{{ asset('user/img/slider/slider2.jpg') }}" alt="" title="#slider-direction-2" />
         <img src="{{ asset('user/img/slider/slider3.jpg') }}" alt="" title="#slider-direction-3" />-->
@@ -255,13 +251,13 @@ font-family:lora,serif;
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="slider-content text-center">
                 <!-- layer 1 -->
-
+                </br></br></br></br>
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                   <h2 class="title1" style="font-size:72px; color:black; ">Make <span style="color:#F5BB2A">Dreams</span> Happen </h2>
                 </div>
                 <!-- layer 2 -->
              <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                 <h1 class="title2" style="font-family:lora,serif;font-size:30px; color:black; margin-top:20px; font-weight:400; " >Taking your career to next level</h1>
+                 <h1 class="title2" style="font-family:lora,serif;font-size:30px; color:black;margin-top:-1px; font-weight:400;"> Taking your career to next level</h1>
                 </div>
             {{--    <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -311,37 +307,58 @@ font-family:lora,serif;
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
 
+
+            {{--      <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class=" text-center">
+                <h2  style="font-size:60px; text-align:left;">10,000 + </h2>
+              </div></div>
+
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class=" text-center">
+                  <h2  style="font-size:60px; text-align:left;">2,000 +</h2>
+                </div> </div>
+
+
+
+
+
+
+
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <div class=" text-center">
+                    <h2  style="font-size:60px; text-align:left;">99%+ </h2>
+                  </div> </div>--}}
+
      <div class=" text-center" style="margin-top:-20px;">
 
 
-              <h20 >A Reputable Career Consulting Brand</h20> </br> </br>
+              <h2 style="font-family:'lora',serif; font-size:48px;">A Reputable Career Consulting Brand</h2> </br> </br>
 
 
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4" >
+                <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                 <div class=" text-center" style="font-style: italic; ">
-                 <h22 >10,000 + </h22>
- </br>
-             <h21 >​Partners</h21>
+                 <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">10,000 + </h2>
+                 </br>
+             <h2 style="font-family:'Lora',serif;font-weight:400; font-size:36px; margin-top:-10px;">​Partners</h2>
            </div></div>
- </br> </br> </br>
-               <div class="col-md-4 col-sm-4 col-xs-4" >
+
+               <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                  <div class=" text-center">
-            <h22 >2,000 +</h22>
-             </br>
-                       <h21 >​Offers</h21>
+            <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px; font-style:italic;">2,000 +</h2> </br>
+                       <h2 style="font-family:'Lora',serif; font-weight:400; font-size:36px;margin-top:-10px; ">​Offers</h2>
 
 
                   </div> </div>
- </br> </br>
- </br>
-               <div class="col-md-4 col-sm-4 col-xs-4" >
+
+
+               <div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:-20px;">
                  <div class=" text-center">
 
-                  <h22>99% + </h22> </br>
-                        <h21 >Praise</h21>
+                  <h2  style="font-size:64px; color:#3078be; text-shadow:#ffffff 3px 3px 0px, rgba(0, 0, 0, 0.2) 6px 6px 0px;font-style:italic;">99% + </h2> </br>
+                        <h2 style="ffont-family:'Lora',serif; font-weight:400; font-size:36px; margin-top:-10px;">Praise</h2>
                       </div>
 
                   </div>
@@ -352,21 +369,20 @@ font-family:lora,serif;
             </div><!-- End About Section -->
 
     <!-- ======= Services Section ======= -->
-      <div id="about" class="about-area " style="margin-top:-20px;">
-      <div class="container">
+      <div id="about" class="about-area area-padding" style="margin-top:-60px;">
+      <div class="container" style="margin-top:-20px; margin-bottom:-20px;">
 
         <div class="row text-center">
           <!-- Start Left services -->
-             <div class="col-md-1 col-sm-1 col-xs-12">
-           </div>
           <div class="col-md-5 col-sm-5 col-xs-12">
             <div class="about-move">
               <div class="services-details">
-                <div class="single-services text-left">
+                <div class="single-services">
 
-                  <h20> <strong>51 Careers </strong></h20>
+                  <h2  style="font-size:60px; text-align:left;">51 Careers </h2>
                   </br> </br>
-                  <h23> We are a top career consulting firm that tailors members' needs to achieve career ambitions. </h23>
+                  <h3 style=" font-family:Roboto,Helvetica,Arial,sans-serif; font-size:30px;text-align:left; line-height:36px;
+                    font-weight:normal"> We are a top career consulting firm that tailors members' needs to achieve career ambitions. </h3>
 
                  <div style="text-align:left;">
                  <a class="ready-btn right-btn page-scroll" href="/aboutus" style="background-color:#3078be; color:white; border-radius:0px;" >Learn More</a>
@@ -377,10 +393,11 @@ font-family:lora,serif;
               <!-- end about-details -->
             </div>
           </div>
-
-          <div class="col-md-6 col-sm-6 col-xs-12" class="hpyuan">
+             <div class="col-md-1 col-sm-1 col-xs-12">
+ </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
                 {{-- <img src="{{ asset('user/img/slider/51adv.PNG') }}" alt="">--}}
-                 <img src="{{ asset('user/img/slider/homepageyuan1.png') }}" alt="" class="hpyuan" >
+                 <img src="{{ asset('user/img/slider/homepageyuan1.png') }}" alt="" style="height:400px; width:400px;">
           </div>
 
 
@@ -405,7 +422,7 @@ font-family:lora,serif;
                <div class="col-md-12 col-sm-12 col-xs-12">
 
                          <div class=" text-center">
-                           <h19>Our Service System </h19>
+                           <h2  style="font-family:'Lora',serif;font-size:48px; margin-bottom:-30px; font-weight:700;">Our Service System </h2>
 
                          </div> </div>
 </br></br></br></br>
@@ -599,141 +616,113 @@ font-family:lora,serif;
 
 
 <div id="about" class="about-area area-padding" style=" margin-top:-70px;z-index:-1;height:790px;background-image: url('user/img/slider/industry/ids.jpg') ; background-size:100% 790px; ">
-
-
-
-   <div class="container">
-
+      <div class="container text-center">
       </br>
-      <div class="text-center">
-      <h19>Our Specialized ​Industries</h19>
-      </div>
+ <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100;">
+ Our Specialized ​Industrie</h2>
 </br></br></br>
 
+
     <div class="row">
-
-
-
-
-            <div class="col-md-2 col-sm-4 col-4 " >
-             <div>
+            <div class="col-md-2 col-sm-2 col-xs-2 ">
            <img src="{{ asset('user/img/slider/industry/i1.png') }}" alt=""  class="newimg">
-             </div>
-           <div>
-       <h30 >Financial </h30><br> <h30 >Services </h30>
+       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Financial Services </h2>
 
             </div>
-  </div>
 
-         <div class="col-md-2 col-sm-4 col-4 " >
-                 <div>
+
+            <div class="col-md-2 col-sm-2 col-xs-2 ">
            <img src="{{ asset('user/img/slider/industry/i2.png') }}" alt=""  class="newimg">
-            </div>
-                      <div>
-       <h30 > Banking </h30>
+       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Banking </h2>
 
-               </div>
+            </div>
+
+             <div class="col-md-2 col-sm-2 col-xs-2">
+                     <img src="{{ asset('user/img/slider/industry/i3.png') }}" alt=""  class="newimg">
+ <h2  style="font-family:roboto,sans-serif;font-size:22px;">Consulting </h2>
               </div>
 
-             <div class="col-md-2 col-sm-4 col-4 " >
-               <div>
-                     <img src="{{ asset('user/img/slider/industry/i3.png') }}" alt=""  class="newimg">
-                       </div>
-                                           <div>
- <h30 > Consulting </h30>
-              </div></div>
-
-                <div class="col-md-2 col-sm-4 col-4 " >
-                           <div>
+             <div class="col-md-2 col-sm-2 col-xs-2">
 
                      <img src="{{ asset('user/img/slider/industry/i4.png') }}" alt=""  class="newimg" >
-                         </div>
-                                                                <div>
-                       <h30 >Technology</h30>
-              </div></div>
-
-             <div class="col-md-2 col-sm-4 col-4 " >
-              <div>
-                    <img src="{{ asset('user/img/slider/industry/i5.png') }}" alt=""  class="newimg">
-                       </div>
-                      <div>
-                         <h30 > Accounting </h30>
-              </div> </div>
-
-              <div class="col-md-2 col-sm-4 col-4 " >
-                           <div> <img src="{{ asset('user/img/slider/industry/i6.png') }}" alt=""  class="newimg">
-                           </div>
-                            <div>   <h30>Investment Management </h30>
-
-              </div> </div>
-
-              <div class="col-md-2 col-sm-4 col-4 " >
-           <div> <img src="{{ asset('user/img/slider/industry/i21.png') }}" alt=""  class="newimg">
-      </div> <div> <h30>Fashion </h30>
-
-            </div>  </div>
-
-                 <div class="col-md-2 col-sm-4 col-4 " >
-                    <div>  <img src="{{ asset('user/img/slider/industry/i22.png') }}" alt=""  class="newimg">
-
-                  </div>
-                                             <div>
-                  <h30> Internet </h30>
- </div>
+                      <h2  style="font-family:roboto,sans-serif;font-size:22px;">Technology </h2>
               </div>
 
-           <div class="col-md-2 col-sm-4 col-4 " >
-                     <div>   <img src="{{ asset('user/img/slider/industry/i23.png') }}" alt=""  class="newimg">
-                  </div>  <div>   <h30> Automotive </h30>
-              </div> </div>
+             <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img src="{{ asset('user/img/slider/industry/i5.png') }}" alt=""  class="newimg">
+                         <h2  style="font-family:roboto,sans-serif;font-size:22px;">Accounting </h2>
+              </div>
 
-  <div class="col-md-2 col-sm-4 col-4 " >
-   <div>
+             <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="{{ asset('user/img/slider/industry/i6.png') }}" alt=""  class="newimg">
+                            <h2  style="font-family:roboto,sans-serif;font-size:22px;">Investment Management </h2>
+
+              </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-2">
+           <img src="{{ asset('user/img/slider/industry/i21.png') }}" alt=""  class="newimg">
+       <h2  style="font-family:roboto,sans-serif;font-size:22px;">Fashion </h2>
+
+            </div>
+
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="{{ asset('user/img/slider/industry/i22.png') }}" alt=""  class="newimg">
+                  <h2  style="font-family:roboto,sans-serif;font-size:22px;">Internet </h2>
+
+              </div>
+
+             <div class="col-md-2 col-sm-2 col-xs-2">
+                     <img src="{{ asset('user/img/slider/industry/i23.png') }}" alt=""  class="newimg">
+                    <h2  style="font-family:roboto,sans-serif;font-size:22px;">Automotive </h2>
+              </div>
+
+             <div class="col-md-2 col-sm-2 col-xs-2">
+
                      <img src="{{ asset('user/img/slider/industry/i24.png') }}" alt=""  class="newimg">
-                      </div>  <div>  <h30>Retail</h30>
-              </div> </div>
+                     <h2  style="font-family:roboto,sans-serif;font-size:22px;">Retail </h2>
+              </div>
 
-            <div class="col-md-2 col-sm-4 col-4 " >
-                      <div><img src="{{ asset('user/img/slider/industry/i25.png') }}" alt=""  class="newimg">
-                      </div>  <div>   <h30>Nonprofit</h30>
-              </div>   </div>
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                    <img src="{{ asset('user/img/slider/industry/i25.png') }}" alt=""  class="newimg">
+                      <h2  style="font-family:roboto,sans-serif;font-size:22px;">Nonprofit </h2>
+              </div>
 
-            <div class="col-md-2 col-sm-4 col-4 " >
-                       <div> <img src="{{ asset('user/img/slider/industry/i26.png') }}" alt=""  class="newimg">
-                  </div>  <div>    <h30>Marketing & Adverting</h30>
-              </div> </div>
-         <div class="col-md-2 col-sm-4 col-4 " >
+             <div class="col-md-2 col-sm-2 col-xs-2  ">
+                        <img src="{{ asset('user/img/slider/industry/i26.png') }}" alt=""  class="newimg">
+                  <h2  style="font-family:roboto,sans-serif;font-size:22px;">Marketing & Adverting </h2>
+              </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 ">
            <img src="{{ asset('user/img/slider/industry/i31.png') }}" alt=""  class="newimg">
-             <h30>Mechanical Engineering </h30>
+            <h2  style="font-family:roboto,sans-serif;font-size:22px;">Mechanical Engineering </h2>
 
 
             </div>
 
-           <div class="col-md-2 col-sm-4 col-4 " >
-                   <div> <img src="{{ asset('user/img/slider/industry/i32.png') }}" alt=""  class="newimg">
-                 </div>  <div>  <h30> Airline </h30>
-              </div> </div>
+              <div class="col-md-2 col-sm-2 col-xs-2 ">
+                  <img src="{{ asset('user/img/slider/industry/i32.png') }}" alt=""  class="newimg">
+                <h2  style="font-family:roboto,sans-serif;font-size:22px;"> Airline </h2>
+              </div>
 
-             <div class="col-md-2 col-sm-4 col-4 " >
-                     <div> <img src="{{ asset('user/img/slider/industry/i33.png') }}" alt=""  class="newimg">
-                  </div>   <div> <h30>Real Estate</h30>
-              </div>  </div>
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                     <img src="{{ asset('user/img/slider/industry/i33.png') }}" alt=""  class="newimg">
+                 <h2  style="font-family:roboto,sans-serif;font-size:22px;">Real Estate</h2>
+              </div>
 
-          <div class="col-md-2 col-sm-4 col-4 " >
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
 
-                     <div> <img src="{{ asset('user/img/slider/industry/i34.png') }}" alt=""  class="newimg">
-                      </div>   <div> <h30>Insurance </h30>
-              </div>  </div>
+                     <img src="{{ asset('user/img/slider/industry/i34.png') }}" alt=""  class="newimg">
+                      <h2  style="font-family:roboto,sans-serif;font-size:22px;">Insurance </h2>
+              </div>
 
-           <div class="col-md-2 col-sm-4 col-4 " >
-                   <div>  <img src="{{ asset('user/img/slider/industry/i35.png') }}" alt=""  class="newimg">
-                </div>   <div><h30>Manufacturing </h30>
-              </div> </div>
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                    <img src="{{ asset('user/img/slider/industry/i35.png') }}" alt=""  class="newimg">
+                <h2  style="font-family:roboto,sans-serif;font-size:22px;">Manufacturing </h2>
+              </div>
 
-             <div class="col-md-2 col-sm-4 col-4 " >
-                       <div>  <img src="{{ asset('user/img/slider/industry/i36.png') }}" alt=""  class="newimg">
-                         </div>   <div> <h30>More </h30>
-              </div> </div>
+             <div class="col-md-2 col-sm-2 col-xs-2 ">
+                        <img src="{{ asset('user/img/slider/industry/i36.png') }}" alt=""  class="newimg">
+                        <h2  style="font-family:roboto,sans-serif;font-size:22px;">More </h2>
+              </div>
 
 
 
@@ -753,7 +742,34 @@ font-family:lora,serif;
 
 
 
+
+
+
                            {{--  user/img/slider/blue11.PNG--}}
+    <div id="hotTags" class="about-area area-padding" style="z-index:-1;height:790px;background-image: url('user/img/slider/offerbg111.png') ; background-size:100% 790px;">
+      <div class="container text-center">
+      </br>
+ <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100; color:white;">
+Our Offers</h2>
+</br>
+    <div class="box">
+        <ul id="list" >
+           <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+           <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
+        </ul>
+        <ol id="list2" style="padding-top:110px;">
+        </ol>
+        <div id="btn">
+            <div class="btnLeft btn">&lt;</div>
+            <div class="btnRight btn">&gt;</div>
+        </div>
+    </div>
+
+            <a class="ready-btn right-btn page-scroll" href="/ouroffer" style="background-color:white; color:black; border-radius:0px; float: right; font-family:Roboto,Helvetica,Arial,sans-serif; " >Learn More</a>
+ </div> </div>
 
 
 
@@ -1463,37 +1479,13 @@ font-family:lora,serif;
  <div class="container">
             <img src="{{ asset('user/img/slider/comlog1.png') }}" alt="" style="width: 100%;">
      </div> </div></div>
- <div id="hotTags" class="about-area area-padding" style="z-index:-1;height:790px;background-image: url('user/img/218/homepageofferupdated218.png') ; background-size:100% 790px;">
-      <div class="container text-center">
-      </br>
- <h2  style="font-family:'Lora',serif;font-size:48px; font-weight:700; margin-top:-30px; z-index:100; color:white;">
-Our Offers</h2>
-</br>
-    <div class="box">
-        <ul id="list" >
-           <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
-            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
-            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
-            <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
-           <li><img src="{{ asset('user/img/slider/Homepageoffer1.png') }}"   alt=""></li>
-        </ul>
-        <ol id="list2" style="padding-top:110px;">
-        </ol>
-        <div id="btn">
-            <div class="btnLeft btn">&lt;</div>
-            <div class="btnRight btn">&gt;</div>
-        </div>
-    </div>
-
-            <a class="ready-btn right-btn page-scroll" href="/ouroffer" style="background-color:white; color:black; border-radius:0px; float: right; font-family:Roboto,Helvetica,Arial,sans-serif; " >Learn More</a>
- </div> </div>
 
 
 
   </main><!-- End #main -->
 
    <!-- ======= Footer ======= -->
-  <footer >
+  <footer style="margin-top:-60px;">
 
  @include('user/layouts/footer')
   </footer><!-- End  Footer -->

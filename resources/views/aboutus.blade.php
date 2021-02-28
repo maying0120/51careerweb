@@ -225,9 +225,9 @@ font-family:'Lora';
 
   </section>
    <section>
- {{--     <div style="z-index:-1;height:100%;background-image: url('user/img/218/218philosophy.png') ; background-size:100% 100%;">--}}
+ {{--     <div style="z-index:-1;height:100%;background-image: url('user/img/slider/ourphilosophy.jpg') ; background-size:100% 100%;">--}}
 
-      <div style="z-index:-1;height:100%;background-image: url('user/img/218/philosophyupdated218.png') ; background-size:100% 100%;">
+      <div style="z-index:-1;height:100%;background-image: url('user/img/slider/pht.jpg') ; background-size:100% 100%;">
 
        <div class="container py-xl-5 py-lg-3" >
          <div class=" text-left" >

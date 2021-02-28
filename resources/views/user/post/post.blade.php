@@ -19,7 +19,7 @@
     <div class="bend niceties preview-2">
 
 
-   <img src="{{ asset('user/img/218/218resource.png') }}" alt="" title="#slider-direction-1"  width="100%;"/>
+   <img src="{{ asset('user/img/service/diannao1.png') }}" alt="" title="#slider-direction-1"  width="100%;"/>
  {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
 
    <div class="text-center" >

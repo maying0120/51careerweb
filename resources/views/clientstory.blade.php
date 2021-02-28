@@ -69,7 +69,7 @@ text-decoration:none;
   <div>
    <div class="text-center" >
 
-       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">Employer  &nbsp; Stories</h2>
+       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">OUR  &nbsp; OFFER</h2>
 
                                            </div>
 </div>
@@ -87,7 +87,7 @@ text-decoration:none;
               <ul>
             <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
                 <li ><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
-                <li ><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Member Stories</a></li>
+                <li ><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
 
 
 

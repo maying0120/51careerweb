@@ -65,12 +65,12 @@ a1:active {
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
 
-   <img src="{{ asset('user/img/218/218offerbg.png') }}" alt="" title="#slider-direction-1"  width="100%; 60%;"/>
+   <img src="{{ asset('user/story/assets/img/offer/700.png') }}" alt="" title="#slider-direction-1"  width="100%; 60%;"/>
  {{--  <img src="{{ asset('user/story/assets/img/offer/offbg1.png') }}" style=" height:790px; width:100%;" />--}}
   <div>
    <div class="text-center" >
 
-       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">Member  &nbsp; Stories</h2>
+       <h2 style="font-family:'Lora'; font-weight:bold; font-size:60px;  z-index:999; color:white; margin-top:-180px;background:#black; ">OUR  &nbsp; OFFER</h2>
 
                                            </div>
 </div>
@@ -89,7 +89,7 @@ a1:active {
               <ul>
             <li><a style="font-family:'Lora';font-size:18px;padding-right:1px;">  SUCCESS STORIES  |</a></li>
                 <li ><a href="/ouroffer" style="font-family:'Lora';font-size:18px;padding-right:15px;">Offer</a></li>
-                <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Member Stories</a></li>
+                <li class="active"><a href="/ourstory" style="font-family:'Lora';font-size:18px;padding-right:15px;">Candidates Story</a></li>
 
 
 

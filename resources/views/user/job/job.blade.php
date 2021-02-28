@@ -720,162 +720,83 @@ function getMessage() {
 </div>
 </div>
 </div>
-</div>
 
-
-		   <!-- 模态框主体 -->
+<!-- 模态框主体 -->
 <div class="zhezhao" id='zhezhao' style="height:20px;">
 	<div class="tankuang" >
 		<div id="header">
-		   <div class="modal-body">
-			<div class="job_details_area">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="apply_job_form white-bg">
-							<h4>Quick Apply For The Job</h4>
-							<form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
-								{{ csrf_field() }}
-
-
-								<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value=""
-									   >
-
-								<h5>* 1: Upload your Resume</h5>
-
-								<div class="col-md-12">
-
-									<div class="input-group">
-										<input type = checkbox name="useprev_resume" value ="1">
-
-										<td><a href = "{{route('host')}}/uploads/{{ Auth::guard('web')->user()->resume }}"> Use your previous resume</a> </td>
-
-
-									</div>
-
-
-									<div class="input-group">
-
-                                            <p>accept .pdf, .doc, .docx </p>
-										<div class="custom-file">
-											<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
+			<div id="header-right" onclick="hidder()">x</div>
+			<div class="modal-body">
+				<div class="job_details_area">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="apply_job_form white-bg">
+								<h4>Quick Apply For The Job</h4>
+								<form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
+									{{ csrf_field() }}
+									<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value="">
+									<h5>* 1: Upload your Resume</h5>
+									<div class="col-md-12">
+										<div class="input-group">
+											<input type="checkbox" name="useprev_resume" value ="1">
+											<td>
+												<a class="theme-color"> Use your uploaded resume</a>
+											</td>
 										</div>
-									</ul>
-								</div>
-
-
-
-
-								<h5> 2: Upload your Coverletter</h5>
-
-								<div class="col-md-12">
-									<div class="input-group">
-									 <p>accept .pdf, .doc, .docx </p>
-										<div class="custom-file">
-											<label> <input name="coverletter" id="coverletter" type="file"
-														   accept=".pdf, .doc, .docx"/> </label>
-										</div>
-
-									</div>
-									<h3>Job Description:</h3>
-									<span v-html="jobdetail.detail">
-									</span>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 模态框主体 -->
-	<div class="zhezhao" id='zhezhao' style="height:20px;">
-		<div class="tankuang" >
-			<div id="header">
-				<div class="modal-body">
-					<div class="job_details_area">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="apply_job_form white-bg">
-									<h4>Quick Apply For The Job</h4>
-									<form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
-										{{ csrf_field() }}
-										<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value="">
-										<h5>* 1: Upload your Resume</h5>
-										<div class="col-md-12">
-											<div class="input-group">
-												<input type="checkbox" name="useprev_resume" value ="1">
-												<td>
-													<a class="theme-color"> Use your uploaded resume</a>
-												</td>
+										<div class="input-group">
+											<p>accept .pdf, .doc, .docx </p>
+											<div class="custom-file">
+												<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
 											</div>
-											<div class="input-group">
-												<p>accept .pdf, .doc, .docx </p>
-												<div class="custom-file">
-													<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
+										</div>
+									</div>
+									<h5> 2: Upload your Coverletter</h5>
+									<div class="col-md-12">
+										<div class="input-group">
+											<p>accept .pdf, .doc, .docx </p>
+											<div class="custom-file">
+												<label> <input name="coverletter" id="coverletter" type="file"
+													accept=".pdf, .doc, .docx"/> </label>
 												</div>
 											</div>
 										</div>
-										<h5> 2: Upload your Coverletter</h5>
+										<h5> 3: Upload your Transcript</h5>
 										<div class="col-md-12">
 											<div class="input-group">
 												<p>accept .pdf, .doc, .docx </p>
 												<div class="custom-file">
-													<label> <input name="coverletter" id="coverletter" type="file"
+													<label> <input name="transcript" id="transcript" type="file"
 														accept=".pdf, .doc, .docx"/> </label>
 													</div>
 												</div>
 											</div>
-											<h5> 3: Upload your Transcript</h5>
 											<div class="col-md-12">
-												<div class="input-group">
-													<p>accept .pdf, .doc, .docx </p>
-													<div class="custom-file">
-														<label> <input name="transcript" id="transcript" type="file"
-															accept=".pdf, .doc, .docx"/> </label>
-														</div>
-													</div>
+												<div class="submit_btn">
+													<button class="boxed-btn3 w-100" type="submit">Apply Now</button>
 												</div>
-												<div class="col-md-12">
-													<div class="submit_btn">
-														<button class="boxed-btn3 w-100" type="submit">Apply Now</button>
-													</div>
-												</div>
-											</form>
+											</div>
+										</form>
 
-										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div id="header-right" onclick="hidder()">x</div>
-						<!-- 模态框底部 -->
-						{{--                <div class="modal-footer">--}}
-							{{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>--}}
-							{{--                </div>--}}
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="header-right" onclick="hidder()">x</div>
 
-		<!-- 模态框底部 -->
-{{--                <div class="modal-footer">--}}
-{{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>--}}
-{{--                </div>--}}
-
-
+		<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+		</div>
 	</div>
+
 	<!--
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/b.tabs.js" ></script>
 		<script type="text/javascript" src="js/demo.js" ></script>
 	-->
-	<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-	</div>
 	<script>
 		dataset = {
 			jobs: [
@@ -912,17 +833,13 @@ function getMessage() {
 		}
 		function hidder(){
 			document.getElementById('zhezhao').style.display="none";
-			function dianwo(){
-				document.getElementById('zhezhao').style.display="";
-			}
-			function hidder(){
-				document.getElementById('zhezhao').style.display="none";
-			}
+		}
 </script>
 
 <!-- ======= Footer ======= -->
 <footer>
 	@include('user/layouts/footer')
+	@include('user/layouts/vendorjsfiles')
 </footer>
 <!-- End  Footer -->
 </body>

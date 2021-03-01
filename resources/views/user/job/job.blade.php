@@ -13,57 +13,40 @@
 
 <script src="{{ asset('user/job/js/vendor/jquery-2.2.4.min.js') }}"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-
-
 <link rel="stylesheet" href="{{ asset('user/job/css/magnific-popup.css') }}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-
-
-
-
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
 <script>
-	function getMessage() {
-		$.ajax({
-			type: 'get',
-			url: '{{ route('ajax') }}',
-			data: filter,
-
-			success: function (data) {
-				if (data.jobs.length == 0) {
-                    dataset.jobs = []
-                    dataset.jobdetail = {id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''}
-
-                } else {
-                    dataset.jobs = data.jobs;
-                    dataset.jobdetail = dataset.jobs[0]
-                }
-
+function getMessage() {
+	$.ajax({
+		type: 'get',
+		url: '{{ route('ajax') }}',
+		data: filter,
+		success: function (data) {
+			if (data.jobs.length == 0) {
+				dataset.jobs = []
+				dataset.jobdetail = {id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''}
+			} else {
+				dataset.jobs = data.jobs;
+				dataset.jobdetail = dataset.jobs[0]
 			}
-		});
-	}
-
-
+		}
+	});
+}
 </script>
-
 <script>
 	function setjobid(id){
 		$("#jobid").val(id);
 		dianwo();
 	}
 </script>
-
-
-
 <script>
 	filter = {
 		location: '', industry: '', exp_level: '', position:''
 	}
 </script>
-
 <script>
 	function feedfilter() {
 		filter.location = $("#default-selects").val();
@@ -72,7 +55,6 @@
 		filter.position = $("#default-search").val();
 		getMessage();
 	}
-
 	function quicklocation(data){
 		filter.location = data;
 		getMessage();
@@ -862,31 +844,17 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 
 
 <script type="text/javascript">
-
 	window.onload=function(){
-
 		var Button = document.getElementsByClassName("blue1");
-
 		for (i = 0; i < Button.length; i++) {
-
 			Button[i].onclick=function(){
-
 				for (i = 0; i < Button.length; i++) {
-
 					Button[i].style.backgroundColor = "";
-
 				}
-
 				this.style.backgroundColor = "#f00283";
-
 			}
-
 		}
-
 	}
-
-
-
 </script>
 
 
@@ -1103,8 +1071,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 										<div class="custom-file">
 											<label> <input name="resume" id="resume" type="file" accept=".pdf, .doc, .docx" /> </label>
 										</div>
-
-									</div>
+									</ul>
 								</div>
 
 
@@ -1121,6 +1088,9 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 										</div>
 
 									</div>
+									<h3>Job Description:</h3>
+									<span v-html="jobdetail.detail">
+									</span>
 								</div>
 
 
@@ -1133,19 +1103,16 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 											<label> <input name="transcript" id="transcript" type="file"
 														   accept=".pdf, .doc, .docx"/> </label>
 										</div>
-
 									</div>
 								</div>
-
-
-								<div class="col-md-12">
-									<div class="submit_btn">
-										<button class="boxed-btn3 w-100" type="submit">Apply Now</button>
-									</div>
-								</div>
-							</form>
+							</div>
 						</div>
-
+						<div id="header-right" onclick="hidder()">x</div>
+						<!-- 模态框底部 -->
+						{{--                <div class="modal-footer">--}}
+							{{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>--}}
+							{{--                </div>--}}
+						</div>
 					</div>
 
 
@@ -1161,76 +1128,57 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 {{--                </div>--}}
 
 	</div>
+	<!--
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/b.tabs.js" ></script>
+		<script type="text/javascript" src="js/demo.js" ></script>
+	-->
+	<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 	</div>
-</div>
-</div>
-</div>
-</div>
-<!--
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/b.tabs.js" ></script>
-<script type="text/javascript" src="js/demo.js" ></script>
--->
-
-
-
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-</div>
-
-
-<script>
-	dataset = {
-		jobs: [
-
-		],
-
-		jobdetail:
+	<script>
+		dataset = {
+			jobs: [
+			],
+			jobdetail:
 			{id:'' ,position: '',industry: '', city: '', state: '', exp_level: '',company_size: '', job_type: '', detail: '', salary: '', start_time: ''},
-
-
-	}
-	$(document).ready(function () {
-	new Vue({
-		delimiters: ['${', '}'],
-		el: '#jobdetails',
-		data: dataset,
-		methods: {
-			display: function(event) {
-				if (event) {
-					dataset.jobdetail = dataset.jobs[event.target.id]
-      			}
-			}
 		}
-	})
-	})
-	@if ($rec_jobs == "null") {
-		getMessage();
-
-	} @else {
 		$(document).ready(function () {
-			dataset.jobs = {!! $rec_jobs !!};
-		});
-
-	}@endif
-
-
-
-</script>
-
-<script>
+			new Vue({
+				delimiters: ['${', '}'],
+				el: '#jobdetails',
+				data: dataset,
+				methods: {
+					display: function(event) {
+						if (event) {
+							dataset.jobdetail = dataset.jobs[event.target.id]
+						}
+					}
+				}
+			})
+		})
+		@if ($rec_jobs == "null") {
+			getMessage();
+		} @else {
+			$(document).ready(function () {
+				dataset.jobs = {!! $rec_jobs !!};
+			});
+		}@endif
+	</script>
+	<script>
+		document.getElementById('zhezhao').style.display="none";
+		function dianwo(){
+			document.getElementById('zhezhao').style.display="";
+		}
+		function hidder(){
 			document.getElementById('zhezhao').style.display="none";
-			function dianwo(){
-				document.getElementById('zhezhao').style.display="";
-			}
-			function hidder(){
-				document.getElementById('zhezhao').style.display="none";
-			}
-</script>
-  <footer>
-
- @include('user/layouts/footer')
- @include('user/layouts/vendorjsfiles')
-  </footer><!-- End  Footer -->
+		}
+	</script>
+	<!-- ======= Footer ======= -->
+	<footer>
+		@include('user/layouts/footer')
+		@include('user/layouts/vendorjsfiles')
+	</footer>
+	<!-- End  Footer -->
 </body>
 </html>

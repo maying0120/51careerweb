@@ -21,7 +21,7 @@ class CreateExperiencesTable extends Migration
         $table->boolean('present')->nullable();
         $table->string('title');
         $table->date('start_date');
-        $table->date('end_date');
+        $table->date('end_date')->nullable();
         $table->text('description');
         $table->timestamps();
       });

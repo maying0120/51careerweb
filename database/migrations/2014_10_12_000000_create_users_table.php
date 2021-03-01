@@ -18,9 +18,16 @@ class CreateUsersTable extends Migration
         $table->integer('status')->default(0);
         $table->string('name');
         $table->string('email')->unique();
-        $table->boolean('subscription')->default(0);
         $table->string('phone')->unique();
         $table->string('password');
+        $table->string('first_name')->nullable();
+        $table->string('last_name')->nullable();
+        $table->date('date_of_birth')->nullable();
+        $table->string('gender')->nullable();
+        $table->string('recommend_job')->nullable();
+        $table->boolean('profile_complete')->nullable();
+        $table->boolean('receive_notification')->default(1);
+        $table->boolean('receive_promotion')->default(1);
         $table->rememberToken();
         $table->timestamps();
       });

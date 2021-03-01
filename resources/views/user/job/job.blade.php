@@ -161,12 +161,12 @@ function getMessage() {
 
 .zhezhao{
 	position: fixed;
+	z-index: 100;
 	left: 0px;
 	top: 0px;
 	background:#D0D3D4 ;
 	width: 100%;
 	height: 100%;
-	opacity: 0.95;
 }
 .tankuang{
 	position: relative;
@@ -189,7 +189,7 @@ function getMessage() {
 	padding-top:0px;
 	padding-left:0px;
 	padding-right:0px;
-	padding-bottom: 0px;
+	padding-bottom: 30px;
 }
 
 
@@ -508,7 +508,7 @@ function getMessage() {
 
 .boxed-btn3 {
 	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#F91842+0,fd8e5e+100 */
-	background: #00D363;
+	background: #3078be;
 	color: #fff;
 	display: inline-block;
 	padding: 13px 29px 13px 29px;
@@ -724,18 +724,17 @@ function getMessage() {
 <!-- 模态框主体 -->
 <div class="zhezhao" id='zhezhao' style="height:20px;">
 	<div class="tankuang" >
-		<div id="header">
-			<div id="header-right" onclick="hidder()">x</div>
 			<div class="modal-body">
 				<div class="job_details_area">
+					<div id="header-right" onclick="hidder()" style="float: right; margin: 10px 10px 0px 0px;">x</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="apply_job_form white-bg">
+							<div class="apply_job_form">
 								<h4>Quick Apply For The Job</h4>
 								<form action="{{ route('application_create') }}" method="POST" enctype="multipart/form-data">
 									{{ csrf_field() }}
 									<input type="hidden" class="form-control" id="jobid" name="jobid" placeholder="jobid" value="">
-									<h5>* 1: Upload your Resume</h5>
+									<h5>* 1. Upload Your Resume</h5>
 									<div class="col-md-12">
 										<div class="input-group">
 											<input type="checkbox" name="useprev_resume" value ="1">
@@ -750,7 +749,7 @@ function getMessage() {
 											</div>
 										</div>
 									</div>
-									<h5> 2: Upload your Coverletter</h5>
+									<h5> 2. Upload Your Cover Letter</h5>
 									<div class="col-md-12">
 										<div class="input-group">
 											<p>accept .pdf, .doc, .docx </p>
@@ -760,7 +759,7 @@ function getMessage() {
 												</div>
 											</div>
 										</div>
-										<h5> 3: Upload your Transcript</h5>
+										<h5> 3. Upload Your Transcript</h5>
 										<div class="col-md-12">
 											<div class="input-group">
 												<p>accept .pdf, .doc, .docx </p>
@@ -782,7 +781,6 @@ function getMessage() {
 							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 

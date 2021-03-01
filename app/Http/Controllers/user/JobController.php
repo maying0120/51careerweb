@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Model\job\Job;
 use Illuminate\Support\Facades\DB;
 use App\Model\user\profile;
+use App\Model\application\Application;
 
 class JobController extends Controller
 {
@@ -45,7 +46,14 @@ class JobController extends Controller
          }
          $rec_jobs = json_encode($jobs);
 
-        return view('user/job/job',['jobsbylo'=>$jobsbylo, 'rec_jobs'=>$rec_jobs]);
+         $user_id = auth()->user()->id;
+         $apps = DB::select("SELECT job_id FROM applications WHERE user_id=$user_id");
+         $applications = array();
+         foreach ($apps as &$application) {
+           array_push($applications, $application->job_id);
+         }
+
+        return view('user/job/job',['jobsbylo'=>$jobsbylo, 'rec_jobs'=>$rec_jobs, $applications]);
       }
 
 

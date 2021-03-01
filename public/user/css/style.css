@@ -19,6 +19,9 @@ html, body {
 footer {
   margin-top: auto;
 }
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
 .centered {
   margin: auto;
   position: relative;

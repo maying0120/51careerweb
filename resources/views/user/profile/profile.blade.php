@@ -7,9 +7,6 @@
   @include('user/layouts/head')
   <link href="{{ asset('user/profile/style/css/select2.css') }}" rel="stylesheet">
   <style>
-  input[type="checkbox"] {
-    -webkit-appearance: checkbox;
-  }
   .modal input {
     margin-bottom: 8px;
   }
